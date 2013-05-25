@@ -14,11 +14,11 @@ namespace dfv
 
     }
 
-/*    Vector3::Vector3(const Quaternion& q):
+    Vector3::Vector3(const Quaternion& q):
         x(q.x), y(q.y), z(q.z)
     {
 
-    }*/
+    }
 
     Vector3::~Vector3()
     {
@@ -151,7 +151,19 @@ namespace dfv
     {
         return Vector3(this->x*k, this->y*k, this->z*k);
     }
-
+    
+    Vector3& Vector3::Rotate(const Quaternion q)
+    {
+        *this = this->GetRotated(q);
+        return *this;
+    }
+    
+    const Vector3 Vector3::GetRotated(const Quaternion& q) const
+    {
+        Quaternion v(*this);
+        return Vector3(q*v*(q.GetConjugate()));
+    }
+    
     std::string Vector3::ToString() const
     {
         std::stringstream ss;
