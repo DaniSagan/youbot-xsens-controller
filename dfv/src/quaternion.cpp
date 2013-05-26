@@ -97,7 +97,7 @@ namespace dfv
     
     bool Quaternion::operator==(const Quaternion& q) const
     {
-        return (this->x == q.x) && (this->y == q.y) && (this->z == q.z);
+        return (this->w == q.w) && (this->x == q.x) && (this->y == q.y) && (this->z == q.z);
     }
     
     bool Quaternion::operator!=(const Quaternion& q) const
@@ -176,7 +176,7 @@ namespace dfv
         if(r == Vector3(0.0, 0.0, 0.0))
         {
             r = ((vu ^ Vector3::i) + (vu ^ Vector3::j)).GetNormalized();
-            return Quaternion::GetRotationQuaternion(r, 3.1415926535);
+            return Quaternion::GetRotationQuaternion(r, pi);
         }
         else
         {
@@ -271,7 +271,7 @@ namespace dfv
         }
     }
 
-    void Quaternion::GetAxisAndAngle(Vector3& vector, double& angle)
+    void Quaternion::GetAxisAndAngle(Vector3& vector, double& angle) const
     {
         Quaternion qr = *this;
         Vector3 e(qr);
@@ -284,10 +284,10 @@ namespace dfv
         angle = ang;
     }
 
-    Quaternion Quaternion::identity = Quaternion(1,0,0,0);
-    Quaternion Quaternion::i        = Quaternion(0,1,0,0);
-    Quaternion Quaternion::j        = Quaternion(0,0,1,0);
-    Quaternion Quaternion::k        = Quaternion(0,0,0,1);
+    const Quaternion Quaternion::identity = Quaternion(1,0,0,0);
+    const Quaternion Quaternion::i        = Quaternion(0,1,0,0);
+    const Quaternion Quaternion::j        = Quaternion(0,0,1,0);
+    const Quaternion Quaternion::k        = Quaternion(0,0,0,1);
     
     std::ostream& operator<<(std::ostream& os, const Quaternion& q)
     {

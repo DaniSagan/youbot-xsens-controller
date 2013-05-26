@@ -6,12 +6,13 @@
  */
 
 #include <iostream>
-#include <limits>
 #include <dfv/dfv.h>
 
 int main(int argc, char** argv)
 {
-    // Ejemplos de operaciones con Vector3
+    // ***************************************************** //
+    // ******** Ejemplos de operaciones con Vector3 ******** //
+    // ***************************************************** //
     std::cout << "===========================================" << std::endl;
     std::cout << "Programa de demostración de la librería dfv" << std::endl;
     std::cout << "===========================================" << std::endl;
@@ -61,7 +62,9 @@ int main(int argc, char** argv)
     std::cout << "\tj = " << dfv::Vector3::j << std::endl;
     std::cout << "\tk = " << dfv::Vector3::k << std::endl;
     
-    // Ejemplos de operaciones con Quaternion
+    // ******************************************************** //
+    // ******** Ejemplos de operaciones con Quaternion ******** //
+    // ******************************************************** //
     
     std::cout << std::endl;
     std::cout << "Clase Quaternion:" << std::endl;

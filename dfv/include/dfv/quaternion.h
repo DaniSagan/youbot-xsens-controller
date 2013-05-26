@@ -12,6 +12,7 @@
 #include <cmath>
 #include <sstream>
 #include <dfv/vector3.h>
+#include <dfv/utils.h>
 
 namespace dfv
 {
@@ -106,13 +107,13 @@ namespace dfv
             // Función para obtener el eje y el ángulo asociados al
             // cuaternión:
             void                    GetAxisAndAngle(Vector3& vector, 
-                                                    double& angle);
+                                                    double& angle) const;
 
             // Quaterniones unitarios colineales a las componentes w, x, y, z:
-            static Quaternion   identity;
-            static Quaternion   i;
-            static Quaternion   j;
-            static Quaternion   k;
+            static const Quaternion identity;
+            static const Quaternion i;
+            static const Quaternion j;
+            static const Quaternion k;
             
             // Componentes del cuaternión:
             double w;
