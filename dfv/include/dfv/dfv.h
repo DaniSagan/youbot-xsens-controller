@@ -4,5 +4,6 @@
 #include <dfv/utils.h>
 #include <dfv/vector3.h>
 #include <dfv/quaternion.h>
+#include <dfv/matrix.h>
 
 #endif
