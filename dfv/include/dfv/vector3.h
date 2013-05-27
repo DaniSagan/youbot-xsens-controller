@@ -12,6 +12,9 @@
 #include <sstream>
 #include <cmath>
 #include <dfv/quaternion.h>
+#include <ros/ros.h>
+#include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/Vector3Stamped.h>
 
 namespace dfv
 {

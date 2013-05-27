@@ -11,6 +11,11 @@ namespace xsens
         skip_factor_count(0),
         lp_packet(NULL)
     {
+        if(this->DoHardwareScan() == false)
+        {
+            ROS_ERROR("DoHardwareScan()");
+            this->cmt3.closePort();
+        }
     }
 
     Driver::~Driver()
@@ -207,12 +212,12 @@ namespace xsens
 
     bool Driver::Initialize()
     {
-        if (this->DoHardwareScan() == false)
+        /*if (this->DoHardwareScan() == false)
         {
             std::cout << "ERROR: DoHardwareScan()" << std::endl;
             this->cmt3.closePort();
             return false;
-        }
+        }*/
         
         if (this->mt_count == 0)
         {

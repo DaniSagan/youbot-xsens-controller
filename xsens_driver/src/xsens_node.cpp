@@ -12,10 +12,14 @@
 #include <xsens_driver/xsens_driver.h>
 #include <ros/ros.h>
 #include <geometry_msgs/Vector3Stamped.h>
+#include <dfv/dfv.h>
+#include <xsens_driver/utils.h>
 
 int main(int argc, char** argv)
 {
     xsens::Driver driver;
+    ROS_INFO("Número de sensores detectados: %d", driver.GetMtCount());
+    driver.SetAlignmentMatrix(0, xsens::DfvToCmtMatrix(dfv::Matrix::Identity(3)));
     if(driver.Initialize() == false)
     {
         std::cout << "ERROR: No se han encontrado sensores Xsens. Abortando..." << std::endl;
