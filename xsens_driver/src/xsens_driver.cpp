@@ -6,11 +6,12 @@ namespace xsens
     Driver::Driver():
         mt_count(0),
         output_mode(CMT_OUTPUTMODE_CALIB | CMT_OUTPUTMODE_ORIENT),
-        output_settings(CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION),
+        output_settings(CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION | CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT),
         skip_factor(10),
         skip_factor_count(0),
         lp_packet(NULL)
     {
+        //this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
         if(this->DoHardwareScan() == false)
         {
             ROS_ERROR("DoHardwareScan()");
@@ -29,9 +30,20 @@ namespace xsens
         this->output_mode = output_mode;
     }
     
+    CmtOutputMode Driver::GetOutputMode() const
+    {
+        return this->output_mode;
+    }
+    
     void Driver::SetOutputSettings(CmtOutputSettings output_settings)
     {
-        this->output_settings = output_settings;
+        this->output_settings = (output_settings | CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT);
+    }
+    
+    CmtOutputSettings Driver::GetOutputSettings() const
+    {
+        //return (this->output_settings & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK);
+        return this->output_settings;
     }
     
     void Driver::SetAlignmentMatrix(unsigned int sensor_index, CmtMatrix alignment_matrix)
@@ -160,18 +172,21 @@ namespace xsens
         
         // set the device output mode for the devices
         
-        CmtOutputSettings settings;
+        //CmtOutputSettings settings;
         if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0)
         {
+            std::cout << "aaa" << std::endl;
             this->output_settings = 0;
+            this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
         }        
-        settings = this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
+        //settings = this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
+        //settings = (this->output_settings | CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT);
         
         std::cout << "Configuring your mode selection" << std::endl;
         for (unsigned int i = 0; i < this->mt_count; i++)
         {
             CmtDeviceMode device_mode(this->output_mode, 
-                                      settings, 
+                                      this->output_settings, 
                                       sample_freq);
             if ((this->v_sensors[i].device_id & 0xFFF00000) != 0x00500000) 
             {
@@ -334,9 +349,9 @@ namespace xsens
         return true;
     }
 
-    int Driver::GetMtCount()
+    unsigned int Driver::GetMtCount()
     {
-        return (int)this->mt_count;
+        return this->mt_count;
     }
 
     CmtOutputMode Driver::GetOutputMode()
@@ -349,7 +364,7 @@ namespace xsens
         return this->output_settings;
     }
 
-    CmtQuat& Driver::GetQuatData(int mt_index)
+    CmtQuat& Driver::GetOriQuat(int mt_index)
     {
         return this->v_sensors[mt_index].quaternion_data;
     }

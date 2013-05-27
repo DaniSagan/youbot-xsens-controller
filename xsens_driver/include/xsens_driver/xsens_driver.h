@@ -37,17 +37,21 @@ namespace xsens
             bool Initialize();
             
             void SetOutputMode(CmtOutputMode output_mode);
+            CmtOutputMode GetOutputMode() const;
+            
             void SetOutputSettings(CmtOutputSettings output_settings);
+            CmtOutputSettings GetOutputSettings() const;
+            
             void SetAlignmentMatrix(unsigned int sensor_index, CmtMatrix alignment_matrix);
             
             bool SpinOnce();
             bool RetrieveData();
-            int  GetMtCount();
+            unsigned int  GetMtCount();
             CmtOutputMode GetOutputMode();
             CmtOutputSettings GetOutputSettings();
             
             // functions for getting data
-            CmtQuat&    GetQuatData(int mt_index = 0);
+            CmtQuat&    GetOriQuat(int mt_index = 0);
             CmtRawData& GetRawData(int mt_index = 0);
             CmtCalData& GetCalData(int mt_index = 0);
             
