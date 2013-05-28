@@ -32,6 +32,7 @@ namespace xsens
             CmtEuler            euler_data;
             CmtMatrix           matrix_data;
             CmtRawData          raw_data;
+            CmtVector           position_lla;
             double              temperature_data;
             
             CmtDeviceId         device_id;

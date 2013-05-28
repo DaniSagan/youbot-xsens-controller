@@ -11,6 +11,7 @@
 #define XSENS_DRIVER_H
 
 #include <vector>
+#include <sstream>
 
 #include <unistd.h>
 #include <sys/ioctl.h>
@@ -52,8 +53,11 @@ namespace xsens
             
             // functions for getting data
             CmtQuat&    GetOriQuat(int mt_index = 0);
+            CmtMatrix&  GetOriMatrix(int mt_index = 0);
+            CmtEuler&   GetOriEuler(int mt_index = 0);
             CmtRawData& GetRawData(int mt_index = 0);
             CmtCalData& GetCalData(int mt_index = 0);
+            CmtVector&  GetPositionLLA(int mt_index = 0);
             
             // Vector de sensores
             std::vector<Sensor> v_sensors;

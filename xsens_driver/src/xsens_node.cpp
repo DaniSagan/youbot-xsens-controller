@@ -13,12 +13,21 @@
 #include <ros/ros.h>
 #include <geometry_msgs/Vector3Stamped.h>
 #include <geometry_msgs/QuaternionStamped.h>
+#include <std_msgs/Float64MultiArray.h>
 #include <dfv/dfv.h>
 #include <xsens_driver/utils.h>
 
 int main(int argc, char** argv)
 {
+    // Declaración de un objeto driver.
+    // Valores por defecto:
+    // OutputMode: CMT_OUTPUTMODE_CALIB | CMT_OUTPUTMODE_ORIENT
+    // OutputSettings: CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION
     xsens::Driver driver;
+    
+    // Aquí podemos cambiar la configuración del sensor
+    
+    // Número de dispositivos detectados (sin contar el Xbus Master)
     ROS_INFO("Detected sensor count: %d", driver.GetMtCount());
     
     // Asignamos a los sensores una matriz de pre-rotación unitaria
@@ -27,7 +36,14 @@ int main(int argc, char** argv)
         driver.SetAlignmentMatrix(i, xsens::DfvToCmtMatrix(dfv::Matrix::Identity(3)));
     }
     
-    // Inicializamos el driver. Esto realizará la configuración del sensor 
+    // Ejemplo para cambiar el modo de salida del sensor
+    // para que nos de la matriz de rotación en lugar
+    // del cuaternión de orientación:
+    
+    // driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX);
+    
+    // Inicializamos el driver. Esto realizará la configuración del sensor
+    // con los valores que le hayamos asignado hasta ahora 
     // y lo pondrá en modo de medida
     if(driver.Initialize() == false)
     {
@@ -35,11 +51,12 @@ int main(int argc, char** argv)
         return -1;
     }
     
-    std::cout << "Initializing ROS..." << std::endl;
+    // Inicialización de ROS
+    ROS_INFO("Initializing ROS...");
     ros::init(argc, argv, "xsens_node");
     ros::NodeHandle node_handle("~");
-    std::cout << "Now publishing data..." << std::endl;
     
+    // Creamos un NodeHandle para cada sensor
     std::vector<ros::NodeHandle> sensor_node_handles(driver.GetMtCount()); 
     for(unsigned int i = 0; i < driver.GetMtCount(); i++)
     {
@@ -49,7 +66,7 @@ int main(int argc, char** argv)
     }
     
     
-    
+    // Declaramos los publicadores
     std::vector<ros::Publisher> acc_publishers(driver.GetMtCount());
     std::vector<ros::Publisher> gyr_publishers(driver.GetMtCount());
     std::vector<ros::Publisher> mag_publishers(driver.GetMtCount());
@@ -59,12 +76,15 @@ int main(int argc, char** argv)
     std::vector<ros::Publisher> raw_mag_publishers(driver.GetMtCount());
     
     std::vector<ros::Publisher> ori_quat_publishers(driver.GetMtCount());
-    std::vector<ros::Publisher> ori_mat_publishers(driver.GetMtCount());
-    std::vector<ros::Publisher> ori_eul_publishers(driver.GetMtCount());
+    std::vector<ros::Publisher> ori_matrix_publishers(driver.GetMtCount());
+    std::vector<ros::Publisher> ori_euler_publishers(driver.GetMtCount());
     
-    // Datos calibrados
+    std::vector<ros::Publisher> pos_lla_publishers(driver.GetMtCount());
+    
+    // Creamos los topics a publicar
     for(unsigned int i = 0; i < driver.GetMtCount(); i++)
     {
+        // Datos calibrados
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_CALIB) != 0)
         {
             acc_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("acc", 1);
@@ -80,6 +100,11 @@ int main(int argc, char** argv)
             raw_mag_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_mag", 1);
         }
         
+        if((driver.GetOutputMode() & CMT_OUTPUTMODE_POSITION) != 0)
+        {
+            pos_lla_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("pos_lla", 1);
+        }
+        
         // Datos de orientación
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_ORIENT) != 0)
         {  
@@ -88,10 +113,26 @@ int main(int argc, char** argv)
             {
                 ori_quat_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::QuaternionStamped>("ori_quat", 1);       
             }
-        }
+            
+            // Matriz de orientación
+            if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX)
+            {
+                ori_matrix_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_matrix", 1);       
+            }
+            
+            // Ángulos de Euler
+            if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_EULER)
+            {
+                ori_euler_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_euler", 1);       
+            }
+        } 
     }
     
+    // Contador
     int count = 0;
+    
+    // Empezamos a publicar los datos
+    ROS_INFO("Now publishing data...");
     
     while(driver.SpinOnce() && ros::ok())
     {
@@ -131,6 +172,15 @@ int main(int argc, char** argv)
                 raw_mag_publishers[i].publish(msg);
             }
             
+            if((driver.GetOutputMode() & CMT_OUTPUTMODE_POSITION) != 0)
+            {
+                geometry_msgs::Vector3Stamped msg;
+                            
+                msg = xsens::ToVector3StampedMsg(xsens::CmtToDfvVector(driver.GetPositionLLA(i)));
+                msg.header.seq = count;
+                pos_lla_publishers[i].publish(msg);
+            }
+            
             // Datos de orientación
             if((driver.GetOutputMode() & CMT_OUTPUTMODE_ORIENT) != 0)
             {
@@ -146,6 +196,36 @@ int main(int argc, char** argv)
                     msg.header.stamp = ros::Time::now();
                     ori_quat_publishers[i].publish(msg);       
                 }
+                
+                // Matriz de orientación
+                if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX)
+                {
+                    std_msgs::Float64MultiArray msg;
+                    msg.data.clear();
+                    msg.data.resize(9);
+                    msg.data[0] = driver.GetOriMatrix(i).m_data[0][0];
+                    msg.data[1] = driver.GetOriMatrix(i).m_data[0][1];
+                    msg.data[2] = driver.GetOriMatrix(i).m_data[0][2];
+                    msg.data[3] = driver.GetOriMatrix(i).m_data[1][0];
+                    msg.data[4] = driver.GetOriMatrix(i).m_data[1][1];
+                    msg.data[5] = driver.GetOriMatrix(i).m_data[1][2];
+                    msg.data[6] = driver.GetOriMatrix(i).m_data[2][0];
+                    msg.data[7] = driver.GetOriMatrix(i).m_data[2][1];
+                    msg.data[8] = driver.GetOriMatrix(i).m_data[2][2];
+                    ori_matrix_publishers[i].publish(msg);       
+                }
+                
+                // Ángulos de Euler
+                if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_EULER)
+                {
+                    std_msgs::Float64MultiArray msg;
+                    msg.data.clear();
+                    msg.data.resize(3);
+                    msg.data[0] = driver.GetOriEuler(i).m_roll;
+                    msg.data[1] = driver.GetOriEuler(i).m_pitch;
+                    msg.data[2] = driver.GetOriEuler(i).m_yaw;
+                    ori_matrix_publishers[i].publish(msg);       
+                }
             }
         }
         
@@ -154,7 +234,7 @@ int main(int argc, char** argv)
 
     }
 
-    std::cout << "Terminando el programa..." << std::endl;
+    ROS_INFO("Finishing program...");
 
     return 0;
 }

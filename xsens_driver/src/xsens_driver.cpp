@@ -14,7 +14,7 @@ namespace xsens
         //this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
         if(this->DoHardwareScan() == false)
         {
-            ROS_ERROR("DoHardwareScan()");
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
             this->cmt3.closePort();
         }
     }
@@ -57,52 +57,54 @@ namespace xsens
         List<CmtPortInfo>   port_info;
         unsigned long       port_count = 0;
         
-        std::cout << "Scanning for connected Xsens devices..." << std::endl;
+        ROS_INFO("Scanning for connected Xsens devices...");
         xsens::cmtScanPorts(port_info);
         port_count = port_info.length();
-        std::cout << "done" << std::endl;
+        ROS_INFO("Scanning done");
         
         if (port_count == 0)
         {
-            std::cout << "No motion trackers found" << std::endl;
+            ROS_ERROR("No motion trackers found");
             return false;
         }
         
         for (int i = 0; i < (int)port_count; i++)
         {
-            std::cout << "Using COM port " << port_info[i].m_portName << " at ";
+            std::stringstream ss;
+            ss << "Using COM port " << port_info[i].m_portName << " at ";
             switch (port_info[i].m_baudrate) 
             {
                 case B9600:
-                    std::cout << "9k6";
+                    ss << "9k6";
                     break;
                 case B19200:
-                    std::cout << "19k2";
+                    ss << "19k2";
                     break;
                 case B38400:
-                    std::cout << "38k4";
+                    ss << "38k4";
                     break;
                 case B57600:
-                    std::cout << "57k6";
+                    ss << "57k6";
                     break;
                 case B115200:
-                    std::cout << "115k2";
+                    ss << "115k2";
                     break;
                 case B230400:
-                    std::cout << "230k4";
+                    ss << "230k4";
                     break;
                 case B460800:
-                    std::cout << "460k8";
+                    ss << "460k8";
                     break;
                 case B921600:
-                    std::cout << "921k6";
+                    ss << "921k6";
                     break;
                 default:
-                    std::cout << port_info[i].m_baudrate;
+                    ss << port_info[i].m_baudrate;
             }
-            std::cout << " baud" << std::endl;
+            ss << " baud" << std::endl;
+            ROS_INFO("%s", ss.str().c_str());
         }
-        std::cout << "Opening ports...";
+        ROS_INFO("Opening ports...");
         
         // open the port which the device is connected to and connect at the device's baudrate.
         
@@ -112,7 +114,7 @@ namespace xsens
                                       port_info[p].m_baudrate);
             if (res != XRV_OK)
             {
-                std::cout << "ERROR: cmtOpenPort" << std::endl;
+                ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
                 return false;
             }
         }
@@ -124,29 +126,29 @@ namespace xsens
         res = this->cmt3.setTimeoutMeasurement(timeout);
         if (res != XRV_OK)
         {
-            std::cout << "ERROR: set measurement timeout" << std::endl;
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
             return false;
         }
-        std::cout << "Timeout set to " << timeout << " ms" << std::endl;
+        ROS_INFO("Timeout set to %d ms", timeout);
         
         // get the MT sensor count
         
-        std::cout << "Retrieving MT count (excluding attached Xbus Master(s))" << std::endl;
+        ROS_INFO("Retrieving MT count (excluding attached Xbus Master(s))");
         this->mt_count = this->cmt3.getMtCount();
-        std::cout << "MT count: " << this->mt_count << std::endl;    
+        ROS_INFO("MT count: %d", this->mt_count);
         
         this->v_sensors.resize(this->mt_count);
         
         // retrieve the device IDs
 
-        std::cout << "Retrieving MT device IDs" << std::endl;
+        ROS_INFO("Retrieving MT device IDs");
         for (unsigned int j = 0; j < this->mt_count; j++)
         {
             // res = this->cmt3.getDeviceId((unsigned char)(j+1), this->device_ids[j]);
             res = this->cmt3.getDeviceId((unsigned char)(j+1), this->v_sensors[j].device_id);
             if (res != XRV_OK)
             {
-                std::cout << "ERROR: get device id" << std::endl;
+                ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
                 return false;
             }
         }
@@ -163,7 +165,8 @@ namespace xsens
         res = this->cmt3.gotoConfig();
         if (res != XRV_OK)
         {
-            ROS_ERROR("ERROR: go to config");
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
+            ROS_ERROR("Could not go to configuration mode");
             return false;
         }
         
@@ -171,18 +174,14 @@ namespace xsens
         sample_freq = this->cmt3.getSampleFrequency();
         
         // set the device output mode for the devices
-        
-        //CmtOutputSettings settings;
+
         if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0)
         {
-            std::cout << "aaa" << std::endl;
             this->output_settings = 0;
             this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
         }        
-        //settings = this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
-        //settings = (this->output_settings | CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT);
         
-        std::cout << "Configuring your mode selection" << std::endl;
+        ROS_INFO("Configuring your mode selection");
         for (unsigned int i = 0; i < this->mt_count; i++)
         {
             CmtDeviceMode device_mode(this->output_mode, 
@@ -196,7 +195,7 @@ namespace xsens
 		    res = this->cmt3.setDeviceMode(device_mode, true, this->v_sensors[i].device_id);
 		    if (res != XRV_OK)
 		    {
-		        std::cout << "ERROR: set device mode" << std::endl;
+		        ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
 		        return false;
 		    }
         }
@@ -236,19 +235,20 @@ namespace xsens
         
         if (this->mt_count == 0)
         {
-            std::cout << "No IMUs found" << std::endl;
+            //ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
+            ROS_ERROR("No Imus found.");
             this->cmt3.closePort();
             return false;
         }
         
         if (this->SetConfiguration() == false)
         {
-            std::cout << "ERROR: SetConfiguration()" << std::endl;
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
             return false;
         }
         
         this->lp_packet = new Packet((unsigned short)this->mt_count, this->cmt3.isXm());
-        std::cout << "Everything is OK. Retrieving data..." << std::endl;
+        ROS_INFO("Everything is OK. Retrieving data...");
         
         return true;
     }
@@ -265,14 +265,15 @@ namespace xsens
             
             delete this->lp_packet;
             this->cmt3.closePort();
-            std::cout << "ERROR: " << (int)res << " ocurred in waitForDataMessage. Can not recover." << std::endl;
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
             return false;        
         }
         
         this->sample_data = this->lp_packet->getSampleCounter();
         if (this->RetrieveData() == false)
         {
-            std::cout << "ERROR: RetrieveData()" << std::endl;
+            //std::cout << "ERROR: RetrieveData()" << std::endl;
+            ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
             return false;
         }
         
@@ -322,28 +323,29 @@ namespace xsens
 				    break;
 		    }
 		
-		    /*if ((this->output_mode & CMT_OUTPUTMODE_POSITION) != 0) 
+		    if ((this->output_mode & CMT_OUTPUTMODE_POSITION) != 0) 
 		    {
 			    if (this->lp_packet->containsPositionLLA()) 
 			    {
-				    CmtVector positionLLA = this->lp_packet->getPositionLLA();
-				    if (this->result_value != XRV_OK) 
+				    //CmtVector positionLLA = this->lp_packet->getPositionLLA();
+				    this->v_sensors[i].position_lla = this->lp_packet->getPositionLLA();
+				    /*if (this->result_value != XRV_OK) 
 				    {
 					    std::cout << "ERROR: get position LLA" << std::endl;
-				    }
+				    }*/
 	
-				    for (int i = 0; i < 2; i++) 
+				    /*for (int i = 0; i < 2; i++) 
 				    {
 					    double deg = positionLLA.m_data[i];
 					    double min = (deg - (int)deg)*60;
 					    double sec = (min - (int)min)*60;
-				    }
+				    }*/
 			    } 
-			    else 
+			    /*else 
 			    {
 				    std::cout << "No position data available" << std::endl;
-			    }
-		    }*/
+			    }*/
+		    }
         }
         
         return true;
@@ -368,6 +370,16 @@ namespace xsens
     {
         return this->v_sensors[mt_index].quaternion_data;
     }
+    
+    CmtMatrix& Driver::GetOriMatrix(int mt_index)
+    {
+        return this->v_sensors[mt_index].matrix_data;
+    }
+    
+    CmtEuler& Driver::GetOriEuler(int mt_index)
+    {
+        return this->v_sensors[mt_index].euler_data;
+    }
 
     CmtRawData& Driver::GetRawData(int mt_index)
     {
@@ -377,6 +389,11 @@ namespace xsens
     CmtCalData& Driver::GetCalData(int mt_index)
     {
         return this->v_sensors[mt_index].calibrated_data;
+    }
+    
+    CmtVector& Driver::GetPositionLLA(int mt_index)
+    {
+        return this->v_sensors[mt_index].position_lla;
     }
 
 }
