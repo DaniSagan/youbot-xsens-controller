@@ -32,3 +32,6 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 rosbuild_add_executable(xsens_node src/cmtmessage.cpp src/cmtpacket.cpp src/cmtscan.cpp src/cmt1.cpp src/cmt2.cpp src/cmt3.cpp src/xsens_exception.cpp src/xsens_std.cpp src/xsens_time.cpp src/xsens_sensor.cpp src/xsens_driver.cpp src/utils.cpp src/xsens_node.cpp)
 target_link_libraries(xsens_node dfv)
 
+rosbuild_add_library(${PROJECT_NAME} src/xsens_sensor_subscriber.cpp)
+
+

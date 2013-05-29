@@ -56,6 +56,11 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "xsens_node");
     ros::NodeHandle node_handle("~");
     
+    // Asignamos valor a algunos parámetros
+    node_handle.setParam("sensor_count", (int)driver.GetMtCount());
+    node_handle.setParam("output_mode", (int)driver.GetOutputMode());
+    node_handle.setParam("output_settings", (int)driver.GetOutputSettings());
+    
     // Creamos un NodeHandle para cada sensor
     std::vector<ros::NodeHandle> sensor_node_handles(driver.GetMtCount()); 
     for(unsigned int i = 0; i < driver.GetMtCount(); i++)
