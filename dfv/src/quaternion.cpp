@@ -283,6 +283,17 @@ namespace dfv
         vector = e;
         angle = ang;
     }
+    
+    void Quaternion::GetRPY(double& roll, double& pitch, double& yaw)
+    {
+        tf::Quaternion tf_q(this->x, this->y, this->z, this->w);
+        tf::Matrix3x3(tf_q).getRPY(roll, pitch, yaw);
+    }
+    
+    const Quaternion Quaternion::GetDifference(const Quaternion& q1, const Quaternion& q2)
+    {
+        return (q1.GetConjugate())*q2;
+    }
 
     const Quaternion Quaternion::identity = Quaternion(1,0,0,0);
     const Quaternion Quaternion::i        = Quaternion(0,1,0,0);

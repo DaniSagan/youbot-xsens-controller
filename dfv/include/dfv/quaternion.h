@@ -13,6 +13,8 @@
 #include <sstream>
 #include <dfv/vector3.h>
 #include <dfv/utils.h>
+#include <tf/transform_datatypes.h>
+
 
 namespace dfv
 {
@@ -108,6 +110,12 @@ namespace dfv
             // cuaternión:
             void                    GetAxisAndAngle(Vector3& vector, 
                                                     double& angle) const;
+                                                    
+            // Función para obtener el roll, pitch y yaw del cuaternión
+            void                    GetRPY(double& roll, double& pitch, double& yaw);
+            
+            // Función que devuelve el cuaternión de diferencia entre dos cuaterniones
+            static const Quaternion GetDifference(const Quaternion& q1, const Quaternion& q2);
 
             // Quaterniones unitarios colineales a las componentes w, x, y, z:
             static const Quaternion identity;

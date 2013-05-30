@@ -29,5 +29,5 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(youbot_controller src/youbot_controller.cpp)
+rosbuild_add_executable(youbot_controller src/youbot.cpp src/youbot_controller.cpp)
 target_link_libraries(youbot_controller dfv xsens_driver)

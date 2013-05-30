@@ -12,6 +12,7 @@
   <depend package="roscpp"/>
   <depend package="dfv"/>
   <depend package="xsens_driver"/>
+  <depend package="brics_actuator"/>
 
 </package>
 
