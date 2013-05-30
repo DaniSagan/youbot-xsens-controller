@@ -92,22 +92,22 @@ int main(int argc, char** argv)
         // Datos calibrados
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_CALIB) != 0)
         {
-            acc_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("acc", 1);
-            gyr_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("gyr", 1);
-            mag_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("mag", 1);
+            acc_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("acc", 1000);
+            gyr_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("gyr", 1000);
+            mag_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("mag", 1000);
         }
         
         // Datos crudos
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_RAW) != 0)
         {
-            raw_acc_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_acc", 1);
-            raw_gyr_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_gyr", 1);
-            raw_mag_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_mag", 1);
+            raw_acc_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_acc", 1000);
+            raw_gyr_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_gyr", 1000);
+            raw_mag_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("raw_mag", 1000);
         }
         
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_POSITION) != 0)
         {
-            pos_lla_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("pos_lla", 1);
+            pos_lla_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("pos_lla", 1000);
         }
         
         // Datos de orientación
@@ -116,19 +116,19 @@ int main(int argc, char** argv)
             // Cuaternión de orientación
             if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION)
             {
-                ori_quat_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::QuaternionStamped>("ori_quat", 1);       
+                ori_quat_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::QuaternionStamped>("ori_quat", 1000);       
             }
             
             // Matriz de orientación
             if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX)
             {
-                ori_matrix_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_matrix", 1);       
+                ori_matrix_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_matrix", 1000);       
             }
             
             // Ángulos de Euler
             if((driver.GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_EULER)
             {
-                ori_euler_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_euler", 1);       
+                ori_euler_publishers[i] = sensor_node_handles[i].advertise<std_msgs::Float64MultiArray>("ori_euler", 1000);       
             }
         } 
     }
@@ -236,6 +236,8 @@ int main(int argc, char** argv)
         
         ++count;
         ros::spinOnce();
+        //ros::Duration(0.1).sleep();
+        
 
     }
 

@@ -1,3 +1,17 @@
+/*
+ * Clases SensorSubscriber y SensorSubscriberList
+ * 
+ * Estas clases no son utilizadas por el driver.
+ * Forman parte de la librería xsens_driver, que
+ * proporciona una interfaz sencilla para acceder
+ * a los datos publicados en ROS por el driver en
+ * otros programas.
+ *
+ * Autor: Daniel Fernández Villanueva
+ * Mayo 2013
+ *
+ */
+
 #ifndef XSENS_SENSOR_SUBSCRIBER_H
 #define XSENS_SENSOR_SUBSCRIBER_H
 
@@ -14,20 +28,33 @@ namespace xsens
     class SensorSubscriber
     {
         public:
-            SensorSubscriber(unsigned int mt_index_ = 0);
+            SensorSubscriber(unsigned int mt_index_, ros::NodeHandle& node_handle_);
             ~SensorSubscriber();
             
             bool                    SubscribeToTopics();
             
+            // Función que devuelve el vector aceleración
             const dfv::Vector3      GetAcc() const;
+            
+            // Función que devuelve el vector giróscopo
             const dfv::Vector3      GetGyr() const;
+            
+            // Función que devuelve el vector campo magnético
             const dfv::Vector3      GetMag() const;
             
+            // Función que devuelve el cuaternión de orientación
             const dfv::Quaternion   GetOriQuat() const;
+            
+            // Función que devuelve la matriz de orientación
             const dfv::Matrix       GetOriMatrix() const;
+            
+            // Función que devuelve un vector con los ángulos de Euler
             const dfv::Vector3      GetOriEuler() const;
             
+            
+            
         private:
+            ros::NodeHandle&    node_handle;
             unsigned int        mt_index;
             
             std::string         acc_topic_name;
@@ -51,37 +78,52 @@ namespace xsens
             dfv::Vector3        position_lla;            
             double              temperature;
             
-            ros::NodeHandle     node_handle;
-            
             ros::Subscriber     acc_subscriber;
-            void                AccSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
-            
             ros::Subscriber     gyr_subscriber;
-            void                GyrSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
-            
             ros::Subscriber     mag_subscriber;
-            void                MagSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
-            
             ros::Subscriber     ori_quat_subscriber;
-            void                OriQuatSubCallback(const geometry_msgs::QuaternionStamped::ConstPtr& msg);
-            
             ros::Subscriber     ori_matrix_subscriber;
-            void                OriMatrixSubCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
-            
             ros::Subscriber     ori_euler_subscriber;
-            void                OriEulerSubCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
             
+            void                AccSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
+            void                GyrSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
+            void                MagSubCallback(const geometry_msgs::Vector3Stamped::ConstPtr& msg);
+            void                OriQuatSubCallback(const geometry_msgs::QuaternionStamped::ConstPtr& msg);
+            void                OriMatrixSubCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
+            void                OriEulerSubCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
     };
     
     class SensorSubscriberList
     {
         public:
-            SensorSubscriberList();
+            SensorSubscriberList(ros::NodeHandle& node_handle_);
             ~SensorSubscriberList(); 
+
+            // Función que devuelve el número de sensores detectados
+            unsigned int GetMtCount() const;
             
-        private:
-            std::vector<SensorSubscriber> sensors;
+            // Función que devuelve el vector aceleración
+            const dfv::Vector3      GetAcc(unsigned int mt_index) const;
+            
+            // Función que devuelve el vector giróscopo
+            const dfv::Vector3      GetGyr(unsigned int mt_index) const;
+            
+            // Función que devuelve el vector campo magnético
+            const dfv::Vector3      GetMag(unsigned int mt_index) const;
+            
+            // Función que devuelve el cuaternión de orientación
+            const dfv::Quaternion   GetOriQuat(unsigned int mt_index) const;
+            
+            // Función que devuelve la matriz de orientación
+            const dfv::Matrix       GetOriMatrix(unsigned int mt_index) const;
+            
+            // Función que devuelve un vector con los ángulos de Euler
+            const dfv::Vector3      GetOriEuler(unsigned int mt_index) const;
+            
+        private:            
             ros::NodeHandle node_handle;
+            unsigned int mt_count;
+            SensorSubscriber** sensors;
             
     };
 }

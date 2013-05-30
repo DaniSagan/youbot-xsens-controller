@@ -2,38 +2,40 @@
 
 namespace xsens
 {
-    SensorSubscriber::SensorSubscriber(unsigned int mt_index_):
-        mt_index(mt_index_)
+    SensorSubscriber::SensorSubscriber(unsigned int mt_index_, ros::NodeHandle& node_handle_):
+        node_handle(node_handle_), mt_index(mt_index_)
     {
         std::stringstream ss;
-        ss << "/xsens/sensor" << this->mt_index << "/acc";
+        ss << "/xsens_node/sensor" << this->mt_index << "/acc";
         this->acc_topic_name = ss.str();
         
         ss.str(std::string());
-        ss << "/xsens/sensor" << this->mt_index << "/gyr";
+        ss << "/xsens_node/sensor" << this->mt_index << "/gyr";
         this->gyr_topic_name = ss.str();
         
         ss.str(std::string());
-        ss << "/xsens/sensor" << this->mt_index << "/mag";
+        ss << "/xsens_node/sensor" << this->mt_index << "/mag";
         this->mag_topic_name = ss.str();
         
         ss.str(std::string());
-        ss << "/xsens/sensor" << this->mt_index << "/ori_quat";
+        ss << "xsens_node/sensor" << this->mt_index << "/ori_quat";
         this->ori_quat_topic_name = ss.str();
         
         ss.str(std::string());
-        ss << "/xsens/sensor" << this->mt_index << "/ori_matrix";
+        ss << "/xsens_node/sensor" << this->mt_index << "/ori_matrix";
         this->ori_matrix_topic_name = ss.str();
         
         ss.str(std::string());
-        ss << "/xsens/sensor" << this->mt_index << "/ori_euler";
+        ss << "/xsens_node/sensor" << this->mt_index << "/ori_euler";
         this->ori_euler_topic_name = ss.str();
         
         int param;
-        this->node_handle.param<int>("/xsens/output_mode", param, 0);
+        this->node_handle.param<int>("/xsens_node/output_mode", param, 0);
         this->output_mode = param;
-        this->node_handle.param<int>("/xsens/output_settings", param, 0);
+        this->node_handle.param<int>("/xsens_node/output_settings", param, 0);
         this->output_settings = param;
+        
+        this->SubscribeToTopics();
         
     }
     
@@ -46,6 +48,7 @@ namespace xsens
     {
         if((this->output_mode & CMT_OUTPUTMODE_CALIB) != 0)
         {
+            ROS_INFO("[SensorSubscriber] Subscribing to calibrated data topics...");
             this->acc_subscriber = this->node_handle.subscribe(this->acc_topic_name, 
                                                                1,
                                                                &SensorSubscriber::AccSubCallback,
@@ -64,6 +67,7 @@ namespace xsens
         {
             if((this->output_settings & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION)
             {
+                ROS_INFO("[SensorSubscriber] Subscribing to ori_quat topic...");
                 this->ori_quat_subscriber = this->node_handle.subscribe(this->ori_quat_topic_name, 
                                                                         1,
                                                                         &SensorSubscriber::OriQuatSubCallback,
@@ -72,6 +76,7 @@ namespace xsens
             
             if((this->output_settings & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX)
             {
+                ROS_INFO("[SensorSubscriber] Subscribing to ori_matrix topic...");
                 this->ori_matrix_subscriber = this->node_handle.subscribe(this->ori_matrix_topic_name, 
                                                                           1,
                                                                           &SensorSubscriber::OriMatrixSubCallback,
@@ -80,6 +85,7 @@ namespace xsens
             
             if((this->output_settings & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) == CMT_OUTPUTSETTINGS_ORIENTMODE_EULER)
             {
+                ROS_INFO("[SensorSubscriber] Subscribing to ori_euler topic...");
                 this->ori_euler_subscriber = this->node_handle.subscribe(this->ori_euler_topic_name, 
                                                                          1,
                                                                          &SensorSubscriber::OriEulerSubCallback,
@@ -164,21 +170,62 @@ namespace xsens
 //          Clase SensorSubscriberList          //
 // ============================================ //
 
-    SensorSubscriberList::SensorSubscriberList()
+    SensorSubscriberList::SensorSubscriberList(ros::NodeHandle& node_handle_):
+        node_handle(node_handle_)
     {
         int param;
-        this->node_handle.param<int>("/xsens/sensor_count", param, 0);
+        this->node_handle.param<int>("/xsens_node/sensor_count", param, 0);
+        this->mt_count = param;
+        this->sensors = new SensorSubscriber*[this->mt_count];
         
         for(int i = 0; i < param; ++i)
         {
-            SensorSubscriber ss(i);
-            this->sensors.push_back(ss);        
+            this->sensors[i] = new SensorSubscriber(i, this->node_handle);                
         }
     }
     
     SensorSubscriberList::~SensorSubscriberList()
     {
-        
+        for(int i = 0; i < this->mt_count; ++i)
+        {
+            delete this->sensors[i];
+        }
+        delete this->sensors;
+    }
+    
+    unsigned int SensorSubscriberList::GetMtCount() const
+    {
+        return this->mt_count;
+    }
+    
+    const dfv::Vector3 SensorSubscriberList::GetAcc(unsigned int mt_index) const
+    {
+        return dfv::Vector3(this->sensors[mt_index]->GetAcc());
+    }
+    
+    const dfv::Vector3 SensorSubscriberList::GetGyr(unsigned int mt_index) const
+    {
+        return dfv::Vector3(this->sensors[mt_index]->GetGyr());
+    }
+    
+    const dfv::Vector3 SensorSubscriberList::GetMag(unsigned int mt_index) const
+    {
+        return dfv::Vector3(this->sensors[mt_index]->GetMag());
+    }
+            
+    const dfv::Quaternion SensorSubscriberList::GetOriQuat(unsigned int mt_index) const
+    {
+        return dfv::Quaternion(this->sensors[mt_index]->GetOriQuat());
+    }
+    
+    const dfv::Matrix SensorSubscriberList::GetOriMatrix(unsigned int mt_index) const
+    {
+        return dfv::Matrix(this->sensors[mt_index]->GetOriMatrix());
+    }
+    
+    const dfv::Vector3 SensorSubscriberList::GetOriEuler(unsigned int mt_index) const
+    {
+        return dfv::Vector3(this->sensors[mt_index]->GetOriEuler());
     }
     
 }

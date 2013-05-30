@@ -33,5 +33,6 @@ rosbuild_add_executable(xsens_node src/cmtmessage.cpp src/cmtpacket.cpp src/cmts
 target_link_libraries(xsens_node dfv)
 
 rosbuild_add_library(${PROJECT_NAME} src/xsens_sensor_subscriber.cpp)
+target_link_libraries(${PROJECT_NAME} dfv)
 
 
