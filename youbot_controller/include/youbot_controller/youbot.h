@@ -10,18 +10,21 @@ class Youbot
 {
     public:
         Youbot(ros::NodeHandle& node_handle_, 
-               std::string topic_name_ = "arm_1/arm_controller/position_command", 
+               std::string arm_topic_name_ = "arm_1/arm_controller/position_command", 
                std::string gripper_topic_name_ = "arm_1/gripper_controller/position_command");
         ~Youbot();
         
         double joint_positions[5];
         double gripper_positions[2];
-        void PublishMessage();
+        void PublishMessage(bool publish_gripper = false);
         
     private:
         ros::NodeHandle& node_handle;
-        ros::Publisher publisher;
+        ros::Publisher arm_publisher;
         ros::Publisher gripper_publisher;
+        
+        std::vector<brics_actuator::JointValue> v_joint_values;
+        std::vector<brics_actuator::JointValue> v_gripper_values;
 };
 
 #endif

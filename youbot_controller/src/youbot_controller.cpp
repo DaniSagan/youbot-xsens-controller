@@ -76,17 +76,24 @@ int main(int argc, char** argv)
         double pitch_12;
         double yaw_12;
         
-        q01.GetRPY(roll_12, pitch_12, yaw_12);
+        q12.GetRPY(roll_12, pitch_12, yaw_12);
         /*std::cout << "q12: " << q12 << std::endl;
         std::cout << "roll_12: " << roll_12 << std::endl;
         std::cout << "pitch_12: " << pitch_12 << std::endl;
         std::cout << "yaw_12: " << yaw_12 << std::endl;*/
         
-        youbot.joint_positions[0] = -NormalizeAngle(yaw_0);
-        youbot.joint_positions[1] = -pitch_0 < 0 ? 0 : -pitch_0;
-        youbot.joint_positions[2] = -2.5 + 1.0 * (-pitch_01);
-        youbot.joint_positions[3] = 1.5 + 1.0 * (-pitch_12);
-        youbot.joint_positions[4] = 1.5 + 2.0 * (-roll_01);
+        double angs[5];
+        angs[0] = NormalizeAngle(-yaw_0);
+        angs[1] = -pitch_0 < 0 ? 0 : -pitch_0;
+        angs[2] = -2.5 + 1.0 * (-pitch_01);
+        angs[3] = 1.5 + 1.0 * (-pitch_12);
+        angs[4] = 1.5 + 2.0 * (-roll_01);
+        
+        youbot.joint_positions[0] = (angs[0] <  0.02) ?  0.02 : ((angs[0] >  5.83) ?  5.83 : angs[0]);
+        youbot.joint_positions[1] = (angs[1] <  0.02) ?  0.02 : ((angs[1] >  2.60) ?  2.60 : angs[1]);
+        youbot.joint_positions[2] = (angs[2] < -5.01) ? -5.01 : ((angs[2] > -0.02) ? -0.02 : angs[2]);
+        youbot.joint_positions[3] = (angs[3] <  0.03) ?  0.03 : ((angs[3] >  3.41) ?  3.41 : angs[3]);
+        youbot.joint_positions[4] = (angs[4] <  0.12) ?  0.12 : ((angs[4] >  5.63) ?  5.63 : angs[4]);
         youbot.PublishMessage();
         
         std::cout << "Published angles: " << std::endl;
@@ -94,6 +101,7 @@ int main(int argc, char** argv)
         {
             std::cout << "joint #" << (i+1) << ": " << youbot.joint_positions[i] << std::endl; 
         }
+        std::cout << "--------------------------------" << std::endl;
         
         ros::Duration(0.05).sleep();
         ros::spinOnce();
