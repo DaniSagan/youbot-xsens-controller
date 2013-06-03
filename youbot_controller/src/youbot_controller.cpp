@@ -1,3 +1,15 @@
+/*
+ * Programa que toma los datos de los topics
+ * de tres sensores xsens, calcula los ángulos
+ * de rotación entre cada sensor y los publica 
+ * en el topic para mover el brazo robótico del
+ * robot Youbot.
+ *
+ * Autor: Daniel Fernández Villanueva
+ * Mayo de 2013
+ *
+ */
+
 #include <iostream>
 #include <ros/ros.h>
 #include <dfv/dfv.h>
@@ -5,7 +17,7 @@
 #include <youbot_controller/youbot.h>
 
 // Función que devuelve el equivalente al ángulo
-// si se encontrara fuera del rango [0, 2*pi]
+// dentro del rango [0, 2*pi]
 double NormalizeAngle(double angle);
 
 int main(int argc, char** argv)
@@ -52,35 +64,26 @@ int main(int argc, char** argv)
         dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0, q1);
         dfv::Quaternion q12 = dfv::Quaternion::GetDifference(q1, q2);
         
+        // Cálculo de los ángulos entre cada sensor
+        
         double roll_0;
         double pitch_0;
-        double yaw_0;
-        
+        double yaw_0;        
         q0.GetRPY(roll_0, pitch_0, yaw_0);
-        /*std::cout << "q0: " << q0 << std::endl;
-        std::cout << "roll_0: " << roll_0 << std::endl;
-        std::cout << "pitch_0: " << pitch_0 << std::endl;
-        std::cout << "yaw_0: " << yaw_0 << std::endl;*/
         
         double roll_01;
         double pitch_01;
-        double yaw_01;
-        
+        double yaw_01;        
         q01.GetRPY(roll_01, pitch_01, yaw_01);
-        /*std::cout << "q01: " << q01 << std::endl;
-        std::cout << "roll_01: " << roll_01 << std::endl;
-        std::cout << "pitch_01: " << pitch_01 << std::endl;
-        std::cout << "yaw_01: " << yaw_01 << std::endl;*/
         
         double roll_12;
         double pitch_12;
-        double yaw_12;
-        
+        double yaw_12;        
         q12.GetRPY(roll_12, pitch_12, yaw_12);
-        /*std::cout << "q12: " << q12 << std::endl;
-        std::cout << "roll_12: " << roll_12 << std::endl;
-        std::cout << "pitch_12: " << pitch_12 << std::endl;
-        std::cout << "yaw_12: " << yaw_12 << std::endl;*/
+        
+        // Adaptación de los ángulos obtenidos
+        // teniendo en cuenta los offsets de cada
+        // articulación
         
         double angs[5];
         angs[0] = NormalizeAngle(-yaw_0);
@@ -88,13 +91,21 @@ int main(int argc, char** argv)
         angs[2] = -2.5 + 1.0 * (-pitch_01);
         angs[3] = 1.5 + 1.0 * (-pitch_12);
         angs[4] = 1.5 + 2.0 * (-roll_01);
+                
+        // Pasamos los ángulos al robot
+        // Los limitamos al intervalo que acepta cada articulación
         
         youbot.joint_positions[0] = (angs[0] <  0.02) ?  0.02 : ((angs[0] >  5.83) ?  5.83 : angs[0]);
         youbot.joint_positions[1] = (angs[1] <  0.02) ?  0.02 : ((angs[1] >  2.60) ?  2.60 : angs[1]);
         youbot.joint_positions[2] = (angs[2] < -5.01) ? -5.01 : ((angs[2] > -0.02) ? -0.02 : angs[2]);
         youbot.joint_positions[3] = (angs[3] <  0.03) ?  0.03 : ((angs[3] >  3.41) ?  3.41 : angs[3]);
         youbot.joint_positions[4] = (angs[4] <  0.12) ?  0.12 : ((angs[4] >  5.63) ?  5.63 : angs[4]);
+        
+        // Publicamos en el topic del robot
+        
         youbot.PublishMessage();
+        
+        // Imprimimos en pantalla los ángulos que le hemos pasado al robot
         
         std::cout << "Published angles: " << std::endl;
         for(unsigned int i = 0; i < 5; ++i)
@@ -103,6 +114,7 @@ int main(int argc, char** argv)
         }
         std::cout << "--------------------------------" << std::endl;
         
+        // Frecuencia del bucle: 20 Hz
         ros::Duration(0.05).sleep();
         ros::spinOnce();
     }

@@ -1,3 +1,14 @@
+/*
+ * Clase Youbot. Encapsula el mecanismo
+ * de publicación de los mensajes necesarios
+ * para mover las articulaciones del
+ * robot Youbot.
+ *
+ * Autor: Daniel Fernández Villanueva
+ * Mayo de 2013
+ *
+ */
+
 #ifndef YOUBOT_H
 #define YOUBOT_H
 
