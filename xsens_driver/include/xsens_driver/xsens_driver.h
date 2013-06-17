@@ -52,12 +52,13 @@ namespace xsens
             CmtOutputSettings GetOutputSettings();
             
             // functions for getting data
-            CmtQuat&    GetOriQuat(int mt_index = 0);
-            CmtMatrix&  GetOriMatrix(int mt_index = 0);
-            CmtEuler&   GetOriEuler(int mt_index = 0);
-            CmtRawData& GetRawData(int mt_index = 0);
-            CmtCalData& GetCalData(int mt_index = 0);
-            CmtVector&  GetPositionLLA(int mt_index = 0);
+            CmtQuat&        GetOriQuat(int mt_index = 0);
+            CmtMatrix&      GetOriMatrix(int mt_index = 0);
+            CmtEuler&       GetOriEuler(int mt_index = 0);
+            CmtRawData&     GetRawData(int mt_index = 0);
+            CmtCalData&     GetCalData(int mt_index = 0);
+            CmtVector&      GetPositionLLA(int mt_index = 0);
+            CmtGpsPvtData&  GetGpsPvtData(int mt_index = 0);
             
             // Vector de sensores
             std::vector<Sensor> v_sensors;

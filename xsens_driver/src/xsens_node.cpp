@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     // para que nos de la matriz de rotación en lugar
     // del cuaternión de orientación:
     
-    // driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX);
+    //driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_EULER);
     
     // Inicializamos el driver. Esto realizará la configuración del sensor
     // con los valores que le hayamos asignado hasta ahora 
@@ -86,6 +86,9 @@ int main(int argc, char** argv)
     
     std::vector<ros::Publisher> pos_lla_publishers(driver.GetMtCount());
     
+    std::vector<ros::Publisher> gps_llh_publishers(driver.GetMtCount());
+    std::vector<ros::Publisher> gps_vel_publishers(driver.GetMtCount());
+    
     // Creamos los topics a publicar
     for(unsigned int i = 0; i < driver.GetMtCount(); i++)
     {
@@ -108,6 +111,12 @@ int main(int argc, char** argv)
         if((driver.GetOutputMode() & CMT_OUTPUTMODE_POSITION) != 0)
         {
             pos_lla_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("pos_lla", 1000);
+        }
+        
+        if((driver.GetOutputMode() & CMT_OUTPUTMODE_GPSPVT_PRESSURE) != 0)
+        {
+            gps_llh_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("gps_llh", 1000);
+            gps_vel_publishers[i] = sensor_node_handles[i].advertise<geometry_msgs::Vector3Stamped>("gps_vel", 1000);
         }
         
         // Datos de orientación
@@ -186,6 +195,28 @@ int main(int argc, char** argv)
                 pos_lla_publishers[i].publish(msg);
             }
             
+            if((driver.GetOutputMode() & CMT_OUTPUTMODE_GPSPVT_PRESSURE) != 0)
+            {
+                CmtGpsPvtData data = driver.GetGpsPvtData(i);
+                
+                geometry_msgs::Vector3Stamped llh_msg;
+                llh_msg.vector.x = (float)data.m_latitude;
+                llh_msg.vector.y = (float)data.m_longitude;
+                llh_msg.vector.z = (float)data.m_height;
+                llh_msg.header.stamp = ros::Time::now();
+                llh_msg.header.seq = count;
+                gps_llh_publishers[i].publish(llh_msg);
+                
+                geometry_msgs::Vector3Stamped vel_msg;
+                vel_msg.vector.x = (float)data.m_veln;
+                vel_msg.vector.y = (float)data.m_vele;
+                vel_msg.vector.z = (float)data.m_veld;
+                vel_msg.header.stamp = ros::Time::now();
+                vel_msg.header.seq = count;
+                gps_vel_publishers[i].publish(vel_msg);
+                
+            }
+            
             // Datos de orientación
             if((driver.GetOutputMode() & CMT_OUTPUTMODE_ORIENT) != 0)
             {
@@ -229,7 +260,7 @@ int main(int argc, char** argv)
                     msg.data[0] = driver.GetOriEuler(i).m_roll;
                     msg.data[1] = driver.GetOriEuler(i).m_pitch;
                     msg.data[2] = driver.GetOriEuler(i).m_yaw;
-                    ori_matrix_publishers[i].publish(msg);       
+                    ori_euler_publishers[i].publish(msg);       
                 }
             }
         }

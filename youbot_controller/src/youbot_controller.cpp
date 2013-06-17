@@ -19,6 +19,7 @@
 // Función que devuelve el equivalente al ángulo
 // dentro del rango [0, 2*pi]
 double NormalizeAngle(double angle);
+void CorrectRPY(double& roll, double& pitch, double& yaw);
 
 int main(int argc, char** argv)
 {
@@ -70,16 +71,19 @@ int main(int argc, char** argv)
         double pitch_0;
         double yaw_0;        
         q0.GetRPY(roll_0, pitch_0, yaw_0);
+        CorrectRPY(roll_0, pitch_0, yaw_0);
         
         double roll_01;
         double pitch_01;
         double yaw_01;        
         q01.GetRPY(roll_01, pitch_01, yaw_01);
+        CorrectRPY(roll_01, pitch_01, yaw_01);
         
         double roll_12;
         double pitch_12;
         double yaw_12;        
         q12.GetRPY(roll_12, pitch_12, yaw_12);
+        CorrectRPY(roll_12, pitch_12, yaw_12);
         
         // Adaptación de los ángulos obtenidos
         // teniendo en cuenta los offsets de cada
@@ -133,4 +137,21 @@ double NormalizeAngle(double angle)
         angle -= 2*dfv::pi;
     }
     return angle;
+}
+
+void CorrectRPY(double& roll, double& pitch, double& yaw)
+{
+    if (roll > dfv::pi/2.0)
+    {
+        roll -= dfv::pi;
+        pitch = (pitch < 0)? - dfv::pi - pitch : dfv::pi - pitch;
+        yaw = (yaw < 0)? yaw + dfv::pi : yaw - dfv::pi;
+        
+    }
+    else if (roll < -dfv::pi/2.0)
+    {
+        roll += dfv::pi;
+        pitch = (pitch < 0)? - dfv::pi - pitch : dfv::pi - pitch;
+        yaw = (yaw < 0)? yaw + dfv::pi : yaw - dfv::pi;
+    }
 }

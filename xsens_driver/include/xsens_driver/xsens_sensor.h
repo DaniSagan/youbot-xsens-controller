@@ -33,6 +33,7 @@ namespace xsens
             CmtMatrix           matrix_data;
             CmtRawData          raw_data;
             CmtVector           position_lla;
+            CmtGpsPvtData       gps_pvt_data;
             double              temperature_data;
             
             CmtDeviceId         device_id;

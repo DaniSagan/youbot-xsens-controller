@@ -303,6 +303,45 @@ namespace xsens
                 this->v_sensors[i].calibrated_data = this->lp_packet->getCalData(i);
             }
             
+            if ((this->output_mode & CMT_OUTPUTMODE_POSITION) != 0) 
+		    {
+			    if (this->lp_packet->containsPositionLLA(i)) 
+			    {
+				    //CmtVector positionLLA = this->lp_packet->getPositionLLA();
+				    this->v_sensors[i].position_lla = this->lp_packet->getPositionLLA(i);
+				    /*if (this->result_value != XRV_OK) 
+				    {
+					    std::cout << "ERROR: get position LLA" << std::endl;
+				    }*/
+	
+				    /*for (int i = 0; i < 2; i++) 
+				    {
+					    double deg = positionLLA.m_data[i];
+					    double min = (deg - (int)deg)*60;
+					    double sec = (min - (int)min)*60;
+				    }*/
+			    } 
+			    else
+			    {
+			        ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
+			        ROS_ERROR("No PositionLLA data available");
+			    }
+		    }
+		    
+		    if((this->output_mode & CMT_OUTPUTMODE_GPSPVT_PRESSURE) != 0)
+		    {
+		        if (this->lp_packet->containsGpsPvtData(i)) 
+			    {
+				    this->v_sensors[i].gps_pvt_data = this->lp_packet->getGpsPvtData(i);
+				    // ROS_INFO("Retrieving GPS pvt Data");
+			    }
+			    else
+			    {
+			        ROS_ERROR("In function %s at line %d in file %s", __PRETTY_FUNCTION__, __LINE__, __FILE__);
+			        ROS_ERROR("No GpsPvt data available");
+			    }    
+		    }
+            
             if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0) 
 		    {
 			    continue;
@@ -321,31 +360,8 @@ namespace xsens
 				    break;
 			    default:
 				    break;
-		    }
-		
-		    if ((this->output_mode & CMT_OUTPUTMODE_POSITION) != 0) 
-		    {
-			    if (this->lp_packet->containsPositionLLA()) 
-			    {
-				    //CmtVector positionLLA = this->lp_packet->getPositionLLA();
-				    this->v_sensors[i].position_lla = this->lp_packet->getPositionLLA();
-				    /*if (this->result_value != XRV_OK) 
-				    {
-					    std::cout << "ERROR: get position LLA" << std::endl;
-				    }*/
-	
-				    /*for (int i = 0; i < 2; i++) 
-				    {
-					    double deg = positionLLA.m_data[i];
-					    double min = (deg - (int)deg)*60;
-					    double sec = (min - (int)min)*60;
-				    }*/
-			    } 
-			    /*else 
-			    {
-				    std::cout << "No position data available" << std::endl;
-			    }*/
-		    }
+		    }		
+		    
         }
         
         return true;
@@ -394,6 +410,11 @@ namespace xsens
     CmtVector& Driver::GetPositionLLA(int mt_index)
     {
         return this->v_sensors[mt_index].position_lla;
+    }
+    
+    CmtGpsPvtData& Driver::GetGpsPvtData(int mt_index)
+    {
+        return this->v_sensors[mt_index].gps_pvt_data;
     }
 
 }
