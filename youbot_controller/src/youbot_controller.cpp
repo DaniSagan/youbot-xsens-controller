@@ -70,8 +70,12 @@ int main(int argc, char** argv)
         double roll_0;
         double pitch_0;
         double yaw_0;        
-        q0.GetRPY(roll_0, pitch_0, yaw_0);
-        CorrectRPY(roll_0, pitch_0, yaw_0);
+        q0.GetRPY(roll_0, pitch_0, yaw_0, 1);
+        if(fabs(roll_0) > dfv::pi/2.0)
+        {
+            q0.GetRPY(roll_0, pitch_0, yaw_0, 2);
+        }
+        //CorrectRPY(roll_0, pitch_0, yaw_0);
         
         double roll_01;
         double pitch_01;

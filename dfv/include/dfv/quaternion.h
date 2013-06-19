@@ -112,7 +112,7 @@ namespace dfv
                                                     double& angle) const;
                                                     
             // Función para obtener el roll, pitch y yaw del cuaternión
-            void                    GetRPY(double& roll, double& pitch, double& yaw);
+            void                    GetRPY(double& roll, double& pitch, double& yaw, unsigned int solution = 1);
             
             // Función que devuelve el cuaternión de diferencia entre dos cuaterniones
             static const Quaternion GetDifference(const Quaternion& q1, const Quaternion& q2);

@@ -284,10 +284,10 @@ namespace dfv
         angle = ang;
     }
     
-    void Quaternion::GetRPY(double& roll, double& pitch, double& yaw)
+    void Quaternion::GetRPY(double& roll, double& pitch, double& yaw, unsigned int solution)
     {
         tf::Quaternion tf_q(this->x, this->y, this->z, this->w);
-        tf::Matrix3x3(tf_q).getRPY(roll, pitch, yaw);
+        tf::Matrix3x3(tf_q).getRPY(roll, pitch, yaw, solution);
     }
     
     const Quaternion Quaternion::GetDifference(const Quaternion& q1, const Quaternion& q2)
