@@ -1,0 +1,420 @@
+\documentclass[10pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{spverbatim}
+\usepackage[left=3.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\author{Daniel Fernández Villanueva}
+\title{Sistema de monitorización inercial del movimiento de las extremidades superiores}
+
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  frame=single,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=4
+}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%% ================ PARTE 1 : MEMORIA ================ %%%
+
+\part{Memoria}
+
+\pagestyle{headings}
+
+
+%% ******** Capítulo 1 ******** %%
+
+\chapter{ANTECEDENTES}
+
+
+%% ******** Capítulo 2 ******** %%
+
+\chapter{OBJETIVO DEL PROYECTO}
+
+Este proyecto tiene como objetivo la implementación de un sistema de monitorización en tiempo real del movimiento de las extremidades superiores del cuerpo humano. Para la realización de este sistema se tendrá que dar solución a los siguientes
+
+\begin{enumerate}
+\item \textbf{Aplicación para la adquisición de datos de los sensores inerciales}: \\
+Realización de un sistema que permitirá obtener en tiempo real los datos que proporcionan los sensores. En concreto se desarrollará un driver para un sensor xsens o una red de sensores xsens conectados mediante un master xbus. Este driver permitirá leer los datos que proporcionan los acelerómetros, giróscopos, magnetómetros y sensores de temperatura, además de la orientación de cada uno de los sensores conectados al PC. Este driver se encargará también de crear una interfaz para la posterior utilización de los datos en otros programas de foma sencilla. \\
+
+\item \textbf{Tratamiento de los datos para obtener los ángulos de rotación entre cada sensor}:\\
+Una vez sea posible la adquisición de los datos con el driver anterior, se creará otro programa con el que se obtendrán los ángulos de rotación entre cada sensor teniendo en cuenta además la geometría de las articulaciones del brazo o modelo sobre las que se situarán los sensores.\\
+
+\item \textbf{Utilización de los datos para el objetivo deseado}: \\
+En esta última fase se crearán los sistemas necesarios para la utilización de los datos con el objetivo deseado:
+
+\begin{itemize}
+
+\item Para la visualización de la posición del brazo en el simulador 3D Gazebo, se creará un modelo del brazo y una interfaz etre ROS y el simulador que permitirá la visualización de la posición del brazo en tiempo real.  
+
+\item Para el control del robot mediante el movimiento del brazo o modelo del robot físico, se creará otra interfaz entre ROS y el driver del propio robot. 
+
+\end{itemize}
+
+\end{enumerate}
+
+
+%%% ******** Capítulo 3 ******** %%%
+\chapter{ESPECIFICACIONES DE DISEÑO}
+
+
+
+%%% ******** Capítulo 4 ******** %%%
+\chapter{DISEÑO DEL SISTEMA}
+
+\section{Estudio de soluciones}
+\section{Simulación}
+
+%%% ******** Capítulo 3 ******** %%%
+\chapter{IMPLEMENTACIÓN FÍSICA}
+\section{Selección de componentes}
+\section{Montaje}
+\section{Ajuste}
+
+\chapter{PROTOCOLO DE PRUEBAS. REDISEÑO}
+
+\chapter{RESULTADOS OBTENIDOS}
+%%% ******** Capítulo 5 ******** %%%
+\chapter{HERRAMIENTAS UTILIZADAS}
+
+En este capítulo se realizará una breve descripción de los elementos utilizados en el proyecto, tanto de hardware como de software.
+
+\section{Hardware}
+
+\subsection{Sensores XSENS}
+
+\subsubsection{Sensor MTi-G}
+
+\subsubsection{XBUS Master}
+
+\subsection{Brazo humano}
+
+\subsection{Robot Youbot}
+
+\subsection{Modelo del robot Youbot}
+
+\section{Software}
+
+\subsection{ROS}
+
+\subsubsection{¿Qué es ROS?}
+
+ROS (del inglés \textit{Robot Operating System} - Sistema Operativo Robótico) es una plataforma de desarrollo de software que incluye conjunto de utilidades centradas en ayudar al desarrollador en la creación de programas para el control de robots. Esta herramienta incorpora abstracción del hardware, drivers para dispositivos, librerías, visualizadores, utilidades para el intercambio de mensajes entre programas y administradores de paquetes de software, entre otras muchas cosas. ROS es además software abierto, bajo una licencia BSD, por lo que cualquier persona puede ver su código fuente y modificarlo.
+
+\subsubsection{¿Por qué usar ROS?}
+
+ROS proporciona solución a diversos problemas que vienen dados inherentemente al objetivo de este proyecto:
+
+\begin{itemize}
+
+\item \textbf{Creación y compilación de programas}
+
+\begin{itemize}
+
+\item \textbf{Gestor de paquetes}
+
+\end{itemize}
+
+\item \textbf{Comunicación entre programas:}
+ROS incluye:
+
+\begin{itemize}
+
+\item \textbf{Máster}
+
+\item \textbf{Topics}
+
+\item \textbf{Servicios}
+
+\item \textbf{Servidor de parámetros}
+
+\end{itemize}
+
+\item \textbf{Visualización de datos}
+
+\item \textbf{Otras herramientas}
+
+\begin{itemize}
+
+\item \textbf{Bag}
+
+\item \textbf{rxplot}
+
+\end{itemize}
+
+
+\end{itemize}
+
+\subsection{El sistema operativo Ubuntu}
+
+\subsubsection{¿Qué es Ubuntu?}
+
+Ubuntu es un sistema operativo con núcleo Linux. Es gratuito y es distribuido como software \textit{open source}. Se trata de la distribución GNU/Linux más popular en equipos personales
+
+\subsubsection{¿Por qué usar Ubuntu?}
+
+\subsection{El lenguaje de programación C++}
+
+
+
+\subsection{Simulador Gazebo}
+
+Gazebo es programa para simulación en 3D de un robot o una población de robots interactuando entre sí y el ambiente. Incorpora simulación de la física de sólidos rígidos y de la respuesta de sensores. Además incorpora un visualizador 3D bastante potente que permite ver en tiempo real la posición de los robots de forma realista.\\
+
+La versión de Gazebo que se va a utilizar proporciona también una serie de herramientas para la comunicación con ROS. 
+ 
+
+\subsection{Visualizador RViz}
+
+\subsection{Control de versiones: git}
+
+%%% ******** Capítulo 4 ******** %%%
+
+\chapter{PROCESO DE REALIZACIÓN}
+
+En este capítulo se detallará el proceso de realización de cada una de las fases del proyecto.
+
+\section{Creación del driver para la adquisición de datos de los sensores xsens}
+
+En está primera fase se tratará de encontrar un método para la toma de datos de la red de sensores inerciales. Estos sensores estarán conectados a un máster, que irá conectado al PC mediante conexión USB. Los datos así obtenidos se publicarán en \textit{topics} de ROS.
+
+\subsubsection{Método seguido}
+
+Para la realización del driver se ha partido del código incluido en la documentación de los sensores
+
+\subsection{El paquete xsens\_driver}
+
+
+
+\section{Creación de una librería matemática en C++ que permita trabajar con posiciones y orientaciones}
+
+
+\subsection{La librería dfv}
+
+\subsubsection{La clase Quaternion}
+
+\subsubsection{La clase Vector3}
+
+\subsubsection{La clase Matrix}
+
+\section{Incorporación de las herramientas creadas}
+
+\subsection{Visualizador de la posición del brazo}
+
+\subsubsection{Obtención de los ángulos de rotación entre cada segmento del brazo}
+
+\subsubsection{Cálculo de las posiciones de cada segmento del brazo}
+
+\subsubsection{Implementación}
+
+\subsection{Controlador de un simulador del brazo robótico del robot Youbot}
+
+\subsection{Controlador del brazo robótico del robot Youbot real}
+
+%%% ******** Capítulo 5 ******** %%%
+
+\chapter{RESULTADOS EXPERIMENTALES}
+
+
+%%% ******** Capítulo 6 ******** %%%
+
+\chapter{CONCLUSIONES}
+
+
+%%% ******** Capítulo 7 ******** %%%
+
+\chapter{BIBLIOGRAFÍA}
+
+
+%%% ================ PARTE 2 : ANEXOS ================ %%%
+
+\part{Anexos}
+
+\appendix
+
+\chapter{INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE}
+
+\chapter{SOLUCIÓN DE PROBLEMAS}
+
+\section{Error iniciando Gazebo}
+
+\begin{spverbatim}
+Msg Waiting for master
+Msg Connected to gazebo master @ http://localhost:11345
+Exception [Master.cc:69] Unable to start server[Address already in use]
+
+
+terminate called after throwing an instance of 'gazebo::common::Exception'
+Aborted (core dumped)
+[gazebo-1] process has died [pid 2795, exit code 134, cmd /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1.log].
+log file: /home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1*.log
+LightListWidget::OnLightMsg
+\end{spverbatim}
+
+\textbf{Solución: }
+Ejecutar comando:
+\begin{verbatim}
+$ ps ax | grep [g]z
+\end{verbatim}
+
+Ver si hay un proceso gzserver
+
+\begin{spverbatim}
+ 3118 ?        Sl    12:47
+ /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/bin/gzserver 
+ /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de05009b5/gazebo-1.log -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_paths_plugin.so -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_api_plugin.so
+\end{spverbatim}
+
+Si lo hay, ejecutar \textit{System Monitor} y matar el proceso \textit{gzserver}.
+
+\chapter{Instalación y configuración del software necesario}
+
+\section{Instalación de ROS Fuerte}
+
+La versión de ROS que se utilizará es ROS Fuerte. Esta elección se debe a que dicha versión es compatible con el simulador Gazebo, con el que posteriormente se realizará la visualización en 3D del modelo.\\
+
+Para realizar la instalación de ROS  se partirá de una instalación previa de Ubuntu, pudiendo ser éste de cualquiera de estas \textit{releases}:
+
+\begin{itemize}
+\item 10.04 LTS (Lucid Lynx)
+\item 11.04 (Oneiric Ocelot)
+\item 12.04 LTS (Precise Pangolin)
+\end{itemize}
+
+\subsection{Configuración de los repositorios de Ubuntu}
+
+Se procederá a abrir el Centro de Sofware de Ubuntu y en la barra de menú de dicho programa, se seleccionará en el menú Edit la opción Software Sources. En la pestaña Ubuntu Software se comprobará que están seleccionados los repositorios restricted, universe y multiverse:\\
+
+\includegraphics[scale=0.5]{img/Software sources.png} 
+
+\subsection{Configuración del archivo sources.list}
+
+El archivo sorces.list le dice al gestor de paquetes de Ubuntu de dónde puede obtener cada paquete de ROS.
+Se abrirá un terminal y se ejecutará el siguiente comando que dependerá de la versión de Ubuntu que tengamos instalada:\\
+
+\textbf{Ubuntu 10.04 (Lucid)}
+\begin{verbatim}
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu lucid main" 
+> /etc/apt/sources.list.d/ros-latest.list'
+\end{verbatim}
+
+\textbf{Ubuntu 11.10 (Oneiric)}
+\begin{verbatim}
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu oneiric main" 
+> /etc/apt/sources.list.d/ros-latest.list'
+\end{verbatim}
+
+\textbf{Ubuntu 12.04 (Precise)}
+\begin{verbatim}
+$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" 
+> /etc/apt/sources.list.d/ros-latest.list'
+\end{verbatim}
+
+Este comando lo que hace es crear un archivo de texto en la ruta especificada como parámetro, que contiene la dirección de donde descargar los paquetes para la versión específica de ROS que tengamos.
+
+\subsection{Configuración de la keys}
+
+En el terminal se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+\end{verbatim}
+
+\subsection{Descarga e instalación}
+
+Se actualizará el índice de paquetes de Ubuntu para tener la seguridad de que el servidor de ROS.org está indexado:
+
+\begin{verbatim}
+$ sudo apt-get update
+\end{verbatim}
+
+A continuación se procederá a descargar e instalar la versión completa de ROS. El el terminal se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ sudo apt-get install ros-fuerte-desktop-full
+\end{verbatim}
+
+Esta instalación traerá consigo las siguientes herramientas, entre otras:
+
+\begin{itemize}
+\item ROS
+\item rx (herramientas para interfaz gráfica: rxbag,  rxgraph, rxplot, ...)
+\item rviz (herramienta de visualización 3D)
+\item librerías genéricas para robots
+\item Simuladores 2D/3D (entre ellos Gazebo)
+\item Navegación y percepción 2D y 3D
+\end{itemize}
+
+\subsection{Configuración del entorno}
+
+Cada vez que se inicie un nuevo terminal es necesario añadir las variables de entorno. Si se quisiera, se puede automatizar dicha tarea ejecutando el comando:
+
+\begin{verbatim}
+$ echo “source /opt/ros/fuerte/setup.bash” >> ~/.bashrc
+\end{verbatim}
+
+Este comando añade la línea  source /opt/ros/fuerte/setup.bash al archivo ~/.bashrc. Este archivo contiene la configuración inicial del terminal, y se ejecuta cada vez que abrimos un nuevo terminal. Posteriormente se ejecutará el archivo anterior para actualizar el terminal. De esta forma reconocerá los nuevos comandos de ROS:
+
+\begin{verbatim}
+$ . ~/.bashrc
+\end{verbatim}
+
+\subsection{Otras herramientas}
+
+Se instalarán dos herramientas que permitirán obtener los paquetes necesarios para obtener los datos de los sensores XSENS MTi-G. Para ello, en el terminal se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ sudo apt-get install python-rosinstall python-rosdep
+\end{verbatim}
+
+\section{Instalación del simulador Gazebo}
+
+Para instalar la versión de Gazebo preparada para comunicarse con ROS se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ sudo apt-get install ros-fuerte-simulator-gazebo
+\end{verbatim}
+
+
+\chapter{CÓDIGO FUENTE}
+
+\section{Driver Xsens}
+
+\subsection{xsens\_node.cpp}
+\lstinputlisting[language=C++]{../../src/xsens_node.cpp}
+\newpage
+
+\part{Otros documentos}
+
+\section{Manual del sensor MTi-G}
+
+\includepdf[pages={-}]{doc/mtig_manual.pdf}
+
+\end{document}

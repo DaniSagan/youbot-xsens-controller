@@ -19,7 +19,14 @@
 // Función que devuelve el equivalente al ángulo
 // dentro del rango [0, 2*pi]
 double NormalizeAngle(double angle);
+
+// Borrar
 void CorrectRPY(double& roll, double& pitch, double& yaw);
+
+// ángulos límite
+const double ang_min[] = {0.010, 0,010, -5.026, 0.022, 0.110};
+const double ang_max[] = {5.840, 2.617, -0.015, 3.429, 5.641};
+const double sec_ang = 0.05;
 
 int main(int argc, char** argv)
 {
@@ -93,21 +100,30 @@ int main(int argc, char** argv)
         // teniendo en cuenta los offsets de cada
         // articulación
         
+        double offsets[] = {2.9, 0.0, -2.5, 1.5, 1.5};
+        
         double angs[5];
-        angs[0] = NormalizeAngle(-yaw_0);
+        angs[0] = offsets[0] + NormalizeAngle(-yaw_0);
         angs[1] = -pitch_0 < 0 ? 0 : -pitch_0;
-        angs[2] = -2.5 + 1.0 * (-pitch_01);
-        angs[3] = 1.5 + 1.0 * (-pitch_12);
-        angs[4] = 1.5 + 2.0 * (-roll_01);
+        angs[2] = offsets[2] + 1.0 * (-pitch_01);
+        angs[3] = offsets[3] + 1.0 * (-pitch_12);
+        angs[4] = offsets[4] + 2.0 * (-roll_01);
                 
         // Pasamos los ángulos al robot
         // Los limitamos al intervalo que acepta cada articulación
         
-        youbot.joint_positions[0] = (angs[0] <  0.02) ?  0.02 : ((angs[0] >  5.83) ?  5.83 : angs[0]);
+        /*youbot.joint_positions[0] = (angs[0] <  0.02) ?  0.02 : ((angs[0] >  5.83) ?  5.83 : angs[0]);
         youbot.joint_positions[1] = (angs[1] <  0.02) ?  0.02 : ((angs[1] >  2.60) ?  2.60 : angs[1]);
         youbot.joint_positions[2] = (angs[2] < -5.01) ? -5.01 : ((angs[2] > -0.02) ? -0.02 : angs[2]);
         youbot.joint_positions[3] = (angs[3] <  0.03) ?  0.03 : ((angs[3] >  3.41) ?  3.41 : angs[3]);
-        youbot.joint_positions[4] = (angs[4] <  0.12) ?  0.12 : ((angs[4] >  5.63) ?  5.63 : angs[4]);
+        youbot.joint_positions[4] = (angs[4] <  0.12) ?  0.12 : ((angs[4] >  5.63) ?  5.63 : angs[4]);*/
+        
+        for(int i = 0; i < 5; i++)
+        {
+            youbot.joint_positions[i] = (angs[i] <  ang_min[i] + sec_ang) ?  
+                ang_min[i] + sec_ang : ((angs[i] >  ang_min[i] - sec_ang) ?  
+                    ang_min[i] - sec_ang : angs[i]);    
+        }
         
         // Publicamos en el topic del robot
         
