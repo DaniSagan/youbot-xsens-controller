@@ -1,8 +1,9 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt, a4paper]{report}
+
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{pdfpages}
@@ -12,6 +13,30 @@
 \usepackage{hyperref}
 \author{Daniel Fernández Villanueva}
 \title{Sistema de monitorización inercial del movimiento de las extremidades superiores}
+
+\makeatletter
+\renewcommand*{\UTFviii@defined}[1]{%
+  \ifx#1\relax
+    \begingroup
+      % Remove prefix "\u8:"
+      \def\x##1:{}%
+      % Extract Unicode char from command name
+      % (utf8.def does not support surrogates)
+      \edef\x{\expandafter\x\string#1}%
+      \StringEncodingConvert\x\x{utf8}{utf16be}% convert to UTF-16BE
+      % Hexadecimal representation
+      \EdefEscapeHex\x\x
+      % Enhanced error message
+      \PackageError{inputenc}{Unicode\space char\space \string#1\space
+                              (U+\x)\MessageBreak
+                              not\space set\space up\space
+                              for\space use\space with\space LaTeX}\@eha
+    \endgroup
+  \else\expandafter
+    #1%
+  \fi
+}
+\makeatother
 
 \setcounter{tocdepth}{3}
 \usepackage{color}
@@ -224,6 +249,137 @@ Para la realización del driver se ha partido del código incluido en la documen
 
 \subsubsection{La clase Matrix}
 
+\section{Cálculo de los ángulos formados entre cada sensor}
+
+\subsection{Formas de representar orientaciones espaciales}
+
+Se puede configurar el sensor xsens para que proporcione una de las siguientes representaciones de su orientación:
+
+\begin{itemize}
+
+\item Ángulos de Euler.
+\item Matriz de rotación.
+\item Cuaternión. 
+
+\end{itemize}
+
+\subsubsection{Ángulos de Euler}
+\subsubsection{Matrices de rotación}
+\subsubsection{Cuaterniones}
+
+\subsection{Utilización de cuaterniones para la representación de rotaciones}
+
+Sea un vector unitario:
+
+$$ \vec{e} = e_x i + e_y j + e_z k, \quad \|e\| = \sqrt{e_x^2 + e_y^2 + e_z^2} = 1 $$
+
+Se definirá el cuaternión de rotación con ángulo $\theta$ sobre el eje dado por el vector $\vec{e}$:
+
+$$ q(\theta, \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e_x i + \sin \left(\frac{\theta}{2}\right) e_y j + \sin \left(\frac{\theta}{2}\right) e_z k$$
+
+Se puede descomponer el cuaternión como suma de un número real y un cuaternión imaginario puro multiplicado por otro número real:
+
+$$ q(\theta, \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e  $$
+
+Donde $e$ es el cuaternión imaginario puro (parte real nula) cuyas componentes se corresponden a las del vector unitario $\vec{e}$ que define el eje de rotación.\\
+
+Por cuestión de comodidad:
+
+$$ c_i = \cos \left( \frac{\theta_i}{2} \right) $$
+
+$$ s_i = \sin \left( \frac{\theta_i}{2} \right) $$
+
+De tal forma que ahora el cuaternión se escribirá de la siguiente manera:
+
+$$ q(\theta_i, \vec{e_i}) = c_i + s_i e_i $$
+
+El producto de dos cuaterniones se puede expresar de esta forma:
+
+$$ q_1 q_2 = \left( c_1 + s_1 e_1 \right) \left( c_2 + s_2 e_2 \right) = c_1 c_2 + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_2 e_1 e_2 $$
+
+El conjugado del cuaternión se representará de la siguiente manera:
+
+$$ conj(q) = q^* $$
+
+Dado a que se va a trabajar siempre con cuaterniones unitarios (también llamados \textit{versores}), se podrá asumir lo siguiente:
+
+$$ \|q\| = 1 , \quad q^{-1} = \frac{q^*}{\|q\|^2} = q^* $$
+
+De tal forma que:
+
+$$ qq^* = q^*q = 1 $$
+
+\subsubsection{Rotación de un vector alrededor de un eje y un ángulo dados}
+
+Se puede realizar la rotación de un vector alrededor de un eje $\vec{e}$ y un ángulo $\theta$ mediante la siguiente operación:
+
+$$ p' = q_1pq_1^*, \quad q_1 = q(\theta_1, \vec{e_1})$$
+
+Si multiplicamos a la izquierda por $q_1^*$ y por la derecha por $q_1$:
+
+$$ q_1^*p'q_1 = q_1^*(q_1pq_1)q_1^* $$ 
+
+$$ q_1^*p'q_1 = p $$
+
+Obtenemos que el conjugado representa una rotación inversa a la del cuaternión original:
+
+$$ q^* = q\left(\theta, -\vec{e} \right) = q\left(-\theta, \vec{e}\right)  $$
+
+\subsubsection{Composición de rotaciones en coordenadas extrínsecas}
+
+El cuaternión de rotación definido por $q\left(\theta, \vec{e}\right)$ representa una rotación alrededor de un eje $\vec{e}$ fijo al sistema de referencia global.\\
+
+Realizando una nueva rotación al vector obtenido anteriormente, se obtendrá una rotación compuesta por una primera rotación definida por el cuaternión $q_1$ seguida de otra rotación definida por $q_2$:
+
+$$ p'' = q_2p'q_2^*, \quad q_2 = q(\theta_2, \vec{e_2})$$
+
+$$ p'' = q_2(q_1pq_1^*)q_2^* = (q_2q_1)p(q_1^*q_2^*) = q_{12}pq_{12}^* $$
+
+Se puede expresar la composición de dos rotaciones como un nuevo cuaternión que resulta de la multiplicación en orden inverso de los cuaterniones que definen las dos rotaciones:
+
+$$ q_{12} = q_2q_1 $$
+
+De aquí se obtiene que el conjugado del producto de dos cuaterniones es el producto de los conjugados en orden inverso:
+
+$$ q_{12} = \left(q_2q_1\right)^* = q_1^*q_2^* $$
+
+De forma análoga, para $n$ cuaterniones:
+
+$$ q_{12 \dotsc (n-1)n} = q_nq_{n-1} \dotsm q_2q_1 $$
+$$ q_{12 \dotsc (n-1)n} = \left( q_nq_{n-1} \dotsm q_2q_1 \right)^* = q_1^*q_2^* \dotsm q_{n-1}^*q_n^* $$
+
+\subsubsection{Composición de rotaciones en coordenadas intrínsecas}
+
+
+
+\subsubsection{Relación entre rotaciones intrínsecas y extrínsecas}
+
+A continuación se demostrará que una rotación compuesta por varias rotaciones en el sistema de coordenadas intrínseco del sólido rígido se corresponde a la composición de rotaciones en el sistema extrínseco realizadas en orden inverso.\\
+
+Se define un cuaternión de rotación asociado al eje intrínseco $\vec{e_2}$ después de haber sufrido una rotación definida por el cuaternión $q_1 = q\left( \theta_1 , \vec{e_1} \right)$ como:
+
+$$ q_{2}^I = q\left(\theta_2 , \vec{e_2}^I \right) , \quad \vec{e_2}^I = (q_1e_2q_1^*)_{\vec{v}} $$ 
+
+La orientación de partida es la misma para el sistema intrínseco y el extrínseco, por lo tanto:
+
+$$ q_1^E = q_1^I = q_1 $$
+
+Para demostrar la afirmación de partida se tendrá que demostrar la veracidad de la siguiente igualdad:
+
+$$ q_2^Iq_1 = q_1q_2^E $$
+
+Se reordenará la igualdad para que los cálculos sean más sencillos:
+
+$$ q_2^Iq_1 = q_1q_2^E \iff q_2^I = q_1q_2^Eq_1^* $$
+
+Desarrollo del lado izquierdo de la igualdad:
+
+$$ q_2^I = c_2 + s_2(q_1e_2q_1^*) $$
+
+$$ q_1e_2q_1^* = (c_1 + s_1e_1)e_2(c_1 - s_1e_1) = (c_1e_2 + s_1e_1e_2)(c_1 - s_1e_1) = $$
+
+$$ = c_1^2e_2 + s_1c_1e_1e_2 - c_1s_1e_2e_1 - s_1^2e_1e_2e_1 = c_1^2e_2 + s_1c_1(e_1e_2 - e_2e_1) - s_1^2e_1e_2e_1 $$
+
 \section{Incorporación de las herramientas creadas}
 
 \subsection{Visualizador de la posición del brazo}
@@ -312,7 +468,7 @@ Para realizar la instalación de ROS  se partirá de una instalación previa de 
 
 Se procederá a abrir el Centro de Sofware de Ubuntu y en la barra de menú de dicho programa, se seleccionará en el menú Edit la opción Software Sources. En la pestaña Ubuntu Software se comprobará que están seleccionados los repositorios restricted, universe y multiverse:\\
 
-\includegraphics[scale=0.5]{img/Software sources.png} 
+%\includegraphics[scale=0.5]{../img/Software sources.png} 
 
 \subsection{Configuración del archivo sources.list}
 
@@ -408,13 +564,14 @@ $ sudo apt-get install ros-fuerte-simulator-gazebo
 \section{Driver Xsens}
 
 \subsection{xsens\_node.cpp}
-\lstinputlisting[language=C++]{../../src/xsens_node.cpp}
+%\lstinputlisting[language=C++]{../../xsens_driver/src/xsens_node.cpp}
 \newpage
 
 \part{Otros documentos}
 
 \section{Manual del sensor MTi-G}
 
-\includepdf[pages={-}]{doc/mtig_manual.pdf}
+%\includepdf[pages={-}]{doc/mtig_manual.pdf}
+AAAAAAAAAAAAAAAAAAAAAAa
 
 \end{document}

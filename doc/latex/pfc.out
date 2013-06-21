@@ -39,13 +39,23 @@
 \BOOKMARK [3][-]{section*.9}{La clase Quaternion}{subsection.9.2.1}
 \BOOKMARK [3][-]{section*.10}{La clase Vector3}{subsection.9.2.1}
 \BOOKMARK [3][-]{section*.11}{La clase Matrix}{subsection.9.2.1}
-\BOOKMARK [1][-]{section.9.3}{Incorporaci\363n de las herramientas creadas}{chapter.9}
-\BOOKMARK [2][-]{subsection.9.3.1}{Visualizador de la posici\363n del brazo}{section.9.3}
-\BOOKMARK [3][-]{section*.12}{Obtenci\363n de los \341ngulos de rotaci\363n entre cada segmento del brazo}{subsection.9.3.1}
-\BOOKMARK [3][-]{section*.13}{C\341lculo de las posiciones de cada segmento del brazo}{subsection.9.3.1}
-\BOOKMARK [3][-]{section*.14}{Implementaci\363n}{subsection.9.3.1}
-\BOOKMARK [2][-]{subsection.9.3.2}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{section.9.3}
-\BOOKMARK [2][-]{subsection.9.3.3}{Controlador del brazo rob\363tico del robot Youbot real}{section.9.3}
+\BOOKMARK [1][-]{section.9.3}{C\341lculo de los \341ngulos formados entre cada sensor}{chapter.9}
+\BOOKMARK [2][-]{subsection.9.3.1}{Formas de representar orientaciones espaciales}{section.9.3}
+\BOOKMARK [3][-]{section*.12}{\301ngulos de Euler}{subsection.9.3.1}
+\BOOKMARK [3][-]{section*.13}{Matrices de rotaci\363n}{subsection.9.3.1}
+\BOOKMARK [3][-]{section*.14}{Cuaterniones}{subsection.9.3.1}
+\BOOKMARK [2][-]{subsection.9.3.2}{Utilizaci\363n de cuaterniones para la representaci\363n de rotaciones}{section.9.3}
+\BOOKMARK [3][-]{section*.15}{Rotaci\363n de un vector alrededor de un eje y un \341ngulo dados}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.16}{Composici\363n de rotaciones en coordenadas extr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.17}{Composici\363n de rotaciones en coordenadas intr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.18}{Relaci\363n entre rotaciones intr\355nsecas y extr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [1][-]{section.9.4}{Incorporaci\363n de las herramientas creadas}{chapter.9}
+\BOOKMARK [2][-]{subsection.9.4.1}{Visualizador de la posici\363n del brazo}{section.9.4}
+\BOOKMARK [3][-]{section*.19}{Obtenci\363n de los \341ngulos de rotaci\363n entre cada segmento del brazo}{subsection.9.4.1}
+\BOOKMARK [3][-]{section*.20}{C\341lculo de las posiciones de cada segmento del brazo}{subsection.9.4.1}
+\BOOKMARK [3][-]{section*.21}{Implementaci\363n}{subsection.9.4.1}
+\BOOKMARK [2][-]{subsection.9.4.2}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{section.9.4}
+\BOOKMARK [2][-]{subsection.9.4.3}{Controlador del brazo rob\363tico del robot Youbot real}{section.9.4}
 \BOOKMARK [0][-]{chapter.10}{RESULTADOS EXPERIMENTALES}{part.1}
 \BOOKMARK [0][-]{chapter.11}{CONCLUSIONES}{part.1}
 \BOOKMARK [0][-]{chapter.12}{BIBLIOGRAF\315A}{part.1}
@@ -62,3 +72,8 @@
 \BOOKMARK [2][-]{subsection.C.1.5}{Configuraci\363n del entorno}{section.C.1}
 \BOOKMARK [2][-]{subsection.C.1.6}{Otras herramientas}{section.C.1}
 \BOOKMARK [1][-]{section.C.2}{Instalaci\363n del simulador Gazebo}{appendix.C}
+\BOOKMARK [0][-]{appendix.D}{C\323DIGO FUENTE}{part.2}
+\BOOKMARK [1][-]{section.D.1}{Driver Xsens}{appendix.D}
+\BOOKMARK [2][-]{subsection.D.1.1}{xsens\137node.cpp}{section.D.1}
+\BOOKMARK [-1][-]{part.3}{III Otros documentos}{}
+\BOOKMARK [0][-]{section.D.2}{Manual del sensor MTi-G}{part.3}
