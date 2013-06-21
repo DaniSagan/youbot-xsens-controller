@@ -24,12 +24,12 @@ double NormalizeAngle(double angle);
 void CorrectRPY(double& roll, double& pitch, double& yaw);
 
 // ángulos límite
-const double ang_min[] = {0.010, 0,010, -5.026, 0.022, 0.110};
+const double ang_min[] = {0.010, 0.010, -5.026, 0.022, 0.110};
 const double ang_max[] = {5.840, 2.617, -0.015, 3.429, 5.641};
 const double sec_ang = 0.05;
 
 int main(int argc, char** argv)
-{
+{    
     ros::init(argc, argv, "youbot_controller");
     ros::NodeHandle node_handle;
     
@@ -87,27 +87,41 @@ int main(int argc, char** argv)
         double roll_01;
         double pitch_01;
         double yaw_01;        
-        q01.GetRPY(roll_01, pitch_01, yaw_01);
-        CorrectRPY(roll_01, pitch_01, yaw_01);
+        q01.GetRPY(roll_01, pitch_01, yaw_01, 1);
+        //CorrectRPY(roll_01, pitch_01, yaw_01);
+        if(fabs(roll_01) > dfv::pi/2.0)
+        {
+            q01.GetRPY(roll_01, pitch_01, yaw_01, 2);
+        }
         
         double roll_12;
         double pitch_12;
         double yaw_12;        
-        q12.GetRPY(roll_12, pitch_12, yaw_12);
-        CorrectRPY(roll_12, pitch_12, yaw_12);
+        q12.GetRPY(roll_12, pitch_12, yaw_12, 1);
+        //CorrectRPY(roll_12, pitch_12, yaw_12);
+        if(fabs(roll_12) > dfv::pi/2.0)
+        {
+            q12.GetRPY(roll_12, pitch_12, yaw_12, 2);
+        }
         
         // Adaptación de los ángulos obtenidos
         // teniendo en cuenta los offsets de cada
         // articulación
         
-        double offsets[] = {2.9, 0.0, -2.5, 1.5, 1.5};
+        double offsets[] = {2.9, -0.5, -2.5, 1.5, 1.5};
         
         double angs[5];
         angs[0] = offsets[0] + NormalizeAngle(-yaw_0);
-        angs[1] = -pitch_0 < 0 ? 0 : -pitch_0;
+        //angs[1] = -pitch_0 < 0 ? 0 : -pitch_0;
+        angs[1] = offsets[1] + 1.0 * (-pitch_0);
         angs[2] = offsets[2] + 1.0 * (-pitch_01);
         angs[3] = offsets[3] + 1.0 * (-pitch_12);
         angs[4] = offsets[4] + 2.0 * (-roll_01);
+        
+        for(int i = 0; i < 5; i++)
+        {
+            std::cout << "ang[" << i << "] " << angs[i] << std::endl;
+        }
                 
         // Pasamos los ángulos al robot
         // Los limitamos al intervalo que acepta cada articulación
@@ -121,8 +135,11 @@ int main(int argc, char** argv)
         for(int i = 0; i < 5; i++)
         {
             youbot.joint_positions[i] = (angs[i] <  ang_min[i] + sec_ang) ?  
-                ang_min[i] + sec_ang : ((angs[i] >  ang_min[i] - sec_ang) ?  
-                    ang_min[i] - sec_ang : angs[i]);    
+                ang_min[i] + sec_ang : ((angs[i] >  ang_max[i] - sec_ang) ?  
+                    ang_max[i] - sec_ang : angs[i]);
+                    
+            std::cout << "ang min: " << ang_min[i] << std::endl;
+            std::cout << "ang max: " << ang_max[i] << std::endl;    
         }
         
         // Publicamos en el topic del robot
@@ -148,11 +165,11 @@ int main(int argc, char** argv)
 
 double NormalizeAngle(double angle)
 {
-    while(angle < 0)
+    while(angle < -dfv::pi)
     {
         angle += 2*dfv::pi;
     }
-    while(angle > 2*dfv::pi)
+    while(angle > dfv::pi)
     {
         angle -= 2*dfv::pi;
     }
