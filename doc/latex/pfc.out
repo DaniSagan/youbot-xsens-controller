@@ -14,46 +14,47 @@
 \BOOKMARK [0][-]{chapter.8}{HERRAMIENTAS UTILIZADAS}{part.1}
 \BOOKMARK [1][-]{section.8.1}{Hardware}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.1.1}{Sensores XSENS}{section.8.1}
-\BOOKMARK [3][-]{section*.2}{Sensor MTi-G}{subsection.8.1.1}
-\BOOKMARK [3][-]{section*.3}{XBUS Master}{subsection.8.1.1}
+\BOOKMARK [3][-]{section*.3}{Sensor MTi-G}{subsection.8.1.1}
+\BOOKMARK [3][-]{section*.4}{XBUS Master}{subsection.8.1.1}
 \BOOKMARK [2][-]{subsection.8.1.2}{Brazo humano}{section.8.1}
 \BOOKMARK [2][-]{subsection.8.1.3}{Robot Youbot}{section.8.1}
 \BOOKMARK [2][-]{subsection.8.1.4}{Modelo del robot Youbot}{section.8.1}
 \BOOKMARK [1][-]{section.8.2}{Software}{chapter.8}
 \BOOKMARK [2][-]{subsection.8.2.1}{ROS}{section.8.2}
-\BOOKMARK [3][-]{section*.4}{\277Qu\351 es ROS?}{subsection.8.2.1}
-\BOOKMARK [3][-]{section*.5}{\277Por qu\351 usar ROS?}{subsection.8.2.1}
+\BOOKMARK [3][-]{section*.5}{\277Qu\351 es ROS?}{subsection.8.2.1}
+\BOOKMARK [3][-]{section*.6}{\277Por qu\351 usar ROS?}{subsection.8.2.1}
 \BOOKMARK [2][-]{subsection.8.2.2}{El sistema operativo Ubuntu}{section.8.2}
-\BOOKMARK [3][-]{section*.6}{\277Qu\351 es Ubuntu?}{subsection.8.2.2}
-\BOOKMARK [3][-]{section*.7}{\277Por qu\351 usar Ubuntu?}{subsection.8.2.2}
+\BOOKMARK [3][-]{section*.7}{\277Qu\351 es Ubuntu?}{subsection.8.2.2}
+\BOOKMARK [3][-]{section*.8}{\277Por qu\351 usar Ubuntu?}{subsection.8.2.2}
 \BOOKMARK [2][-]{subsection.8.2.3}{El lenguaje de programaci\363n C++}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.4}{Simulador Gazebo}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.5}{Visualizador RViz}{section.8.2}
 \BOOKMARK [2][-]{subsection.8.2.6}{Control de versiones: git}{section.8.2}
 \BOOKMARK [0][-]{chapter.9}{PROCESO DE REALIZACI\323N}{part.1}
 \BOOKMARK [1][-]{section.9.1}{Creaci\363n del driver para la adquisici\363n de datos de los sensores xsens}{chapter.9}
-\BOOKMARK [2][-]{section*.8}{M\351todo seguido}{section.9.1}
+\BOOKMARK [2][-]{section*.9}{M\351todo seguido}{section.9.1}
 \BOOKMARK [2][-]{subsection.9.1.1}{El paquete xsens\137driver}{section.9.1}
 \BOOKMARK [1][-]{section.9.2}{Creaci\363n de una librer\355a matem\341tica en C++ que permita trabajar con posiciones y orientaciones}{chapter.9}
 \BOOKMARK [2][-]{subsection.9.2.1}{La librer\355a dfv}{section.9.2}
-\BOOKMARK [3][-]{section*.9}{La clase Quaternion}{subsection.9.2.1}
-\BOOKMARK [3][-]{section*.10}{La clase Vector3}{subsection.9.2.1}
-\BOOKMARK [3][-]{section*.11}{La clase Matrix}{subsection.9.2.1}
+\BOOKMARK [3][-]{section*.10}{La clase Quaternion}{subsection.9.2.1}
+\BOOKMARK [3][-]{section*.11}{La clase Vector3}{subsection.9.2.1}
+\BOOKMARK [3][-]{section*.12}{La clase Matrix}{subsection.9.2.1}
 \BOOKMARK [1][-]{section.9.3}{C\341lculo de los \341ngulos formados entre cada sensor}{chapter.9}
 \BOOKMARK [2][-]{subsection.9.3.1}{Formas de representar orientaciones espaciales}{section.9.3}
-\BOOKMARK [3][-]{section*.12}{\301ngulos de Euler}{subsection.9.3.1}
-\BOOKMARK [3][-]{section*.13}{Matrices de rotaci\363n}{subsection.9.3.1}
-\BOOKMARK [3][-]{section*.14}{Cuaterniones}{subsection.9.3.1}
-\BOOKMARK [2][-]{subsection.9.3.2}{Utilizaci\363n de cuaterniones para la representaci\363n de rotaciones}{section.9.3}
-\BOOKMARK [3][-]{section*.15}{Rotaci\363n de un vector alrededor de un eje y un \341ngulo dados}{subsection.9.3.2}
-\BOOKMARK [3][-]{section*.16}{Composici\363n de rotaciones en coordenadas extr\355nsecas}{subsection.9.3.2}
-\BOOKMARK [3][-]{section*.17}{Composici\363n de rotaciones en coordenadas intr\355nsecas}{subsection.9.3.2}
-\BOOKMARK [3][-]{section*.18}{Relaci\363n entre rotaciones intr\355nsecas y extr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.13}{\301ngulos de Euler}{subsection.9.3.1}
+\BOOKMARK [3][-]{section*.14}{Matriz de rotaci\363n}{subsection.9.3.1}
+\BOOKMARK [3][-]{section*.15}{Cuaterni\363n}{subsection.9.3.1}
+\BOOKMARK [2][-]{subsection.9.3.2}{Utilizaci\363n de cuaterniones para la representaci\363n de rotaciones de un s\363lido r\355gido}{section.9.3}
+\BOOKMARK [3][-]{section*.16}{Rotaci\363n de un vector alrededor de un eje y un \341ngulo dados}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.17}{Composici\363n de rotaciones en coordenadas extr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.18}{Composici\363n de rotaciones en coordenadas intr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.19}{Relaci\363n entre rotaciones intr\355nsecas y extr\355nsecas}{subsection.9.3.2}
+\BOOKMARK [3][-]{section*.20}{Orientaci\363n relativa entre dos s\363lidos}{subsection.9.3.2}
 \BOOKMARK [1][-]{section.9.4}{Incorporaci\363n de las herramientas creadas}{chapter.9}
 \BOOKMARK [2][-]{subsection.9.4.1}{Visualizador de la posici\363n del brazo}{section.9.4}
-\BOOKMARK [3][-]{section*.19}{Obtenci\363n de los \341ngulos de rotaci\363n entre cada segmento del brazo}{subsection.9.4.1}
-\BOOKMARK [3][-]{section*.20}{C\341lculo de las posiciones de cada segmento del brazo}{subsection.9.4.1}
-\BOOKMARK [3][-]{section*.21}{Implementaci\363n}{subsection.9.4.1}
+\BOOKMARK [3][-]{section*.21}{Obtenci\363n de los \341ngulos de rotaci\363n entre cada segmento del brazo}{subsection.9.4.1}
+\BOOKMARK [3][-]{section*.22}{C\341lculo de las posiciones de cada segmento del brazo}{subsection.9.4.1}
+\BOOKMARK [3][-]{section*.23}{Implementaci\363n}{subsection.9.4.1}
 \BOOKMARK [2][-]{subsection.9.4.2}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{section.9.4}
 \BOOKMARK [2][-]{subsection.9.4.3}{Controlador del brazo rob\363tico del robot Youbot real}{section.9.4}
 \BOOKMARK [0][-]{chapter.10}{RESULTADOS EXPERIMENTALES}{part.1}

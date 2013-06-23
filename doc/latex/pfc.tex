@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{spverbatim}
+\usepackage{multirow}
 \usepackage[left=3.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \usepackage{listings}
 \usepackage{hyperref}
@@ -66,6 +67,8 @@
 \maketitle
 
 \tableofcontents
+
+\listoftables
 
 %%% ================ PARTE 1 : MEMORIA ================ %%%
 
@@ -264,66 +267,218 @@ Se puede configurar el sensor xsens para que proporcione una de las siguientes r
 \end{itemize}
 
 \subsubsection{Ángulos de Euler}
-\subsubsection{Matrices de rotación}
-\subsubsection{Cuaterniones}
 
-\subsection{Utilización de cuaterniones para la representación de rotaciones}
+Los ángulos de Euler son tres ángulos introducidos por Leonhard Euler para describir la orientación de un sólido rígido o de un sistema de referencia respecto a otro. Representan una secuencia de tres rotaciones elementales alrededor de los ejes de un sistema de coordenadas. Cualquier orientación puede describirse como la composición de tres rotaciones elementales, que pueden suceder alrededor de los ejes de un sistema de referencia fijo (rotaciones extrínsecas) o alrededor de los ejes de un sistema solidario al sólido rígido (rotaciones intrínsecas), lo que se denomina un sistema de referencia local. \\
+
+Existen multitud de maneras distintas de expresar los ángulos de Euler, dependiendo del orden de los ejes sobre los cuales se realizan las rotaciones, y de si el sistema de referencia es local o global. La definición usada por los sensores xsens es la composición de rotaciones alrededor de los ejes XYZ en ese orden y un sistema de referencia global (fijo a la Tierra), en el que la ausencia de rotación equivale al vector Z paralelo a la línea que une la posición del sensor con el centro de la Tierra y sentido ascendente, y el vector X en dirección al norte magnético. \\
+
+Los ángulos proporcionados por el sensor son:
+
+\begin{itemize}
+
+\item $\phi$ = \textit{roll} = rotación alrededor del eje X $[-\frac{\pi}{2}, \frac{\pi}{2}]$
+
+\item $\theta$ = \textit{pitch} = rotación alrededor del eje Y $[-\frac{\pi}{4}, \frac{\pi}{4}]$
+
+\item $\psi$ = \textit{yaw} = rotación alrededor del eje Z $[-\frac{\pi}{2}, \frac{\pi}{2}]$
+
+\end{itemize}
+
+El uso de ángulos de Euler presenta un par de problemas:
+
+\begin{itemize}
+
+\item Si $\theta$ se extiende al intervalo $[-\frac{\pi}{2}, \frac{\pi}{2}]$ en vez de restringirse a $[-\frac{\pi}{4}, \frac{\pi}{4}]$, la descripción de la rotación no es única. En este caso existen dos posibles soluciones para cada orientación, por lo que los datos que proporciona el sensor no son suficientes para diferenciar entre un estado de rotación u otro.
+
+\item Cuando $\theta$ se acerca al valor $\pm\frac{\pi}{4}$ existe una singularidad matemática causada por la infinitud de valores que pueden adquirir $\phi$ y $\psi$ en dicho caso. Esta situación es la que se conoce con el nombre de \textit{gimbal lock}.
+
+\end{itemize}
+
+Estos problemas no están presentes en los demás modos de salida del sensor.
+
+\subsubsection{Matriz de rotación}
+
+Una matriz de rotación es una matriz usada para expresar una rotación en un espacio euclideo. Si se supone un sistema generador $S$ con un conjunto de vectores base $B$ del espacio vectorial $V$:
+
+$$ B = \{\vec{i}, \vec{j}, \vec{k}\}, \quad \vec{i} = \left( \begin{smallmatrix} 1\\0\\0 \end{smallmatrix} \right) \quad  \vec{j} = \left( \begin{smallmatrix} 0\\1\\0 \end{smallmatrix} \right) \quad  \vec{k} = \left( \begin{smallmatrix} 0\\0\\1 \end{smallmatrix} \right)$$
+$$ V = S(\vec{i}, \vec{j}, \vec{k}) $$
+
+Se somete al sistema de coordenadas a una rotación $R$. Los vectores base sufren una transformación que se puede expresar con respecto al sistema de referencia original de la siguiente forma:
+
+$$ \vec{i}' = \alpha_{11}\vec{i} + \alpha_{21}\vec{j} + \alpha_{31}\vec{k} = \left( \begin{smallmatrix}  \alpha_{11}\\\alpha_{21}\\\alpha_{31} \end{smallmatrix} \right)$$
+$$ \vec{j}' = \alpha_{12}\vec{i} + \alpha_{22}\vec{j} + \alpha_{32}\vec{k} = \left( \begin{smallmatrix} \alpha_{12}\\\alpha_{22}\\\alpha_{32} \end{smallmatrix} \right)$$
+$$ \vec{k}' = \alpha_{13}\vec{i} + \alpha_{23}\vec{j} + \alpha_{33}\vec{k} = \left( \begin{smallmatrix} \alpha_{13}\\\alpha_{23}\\\alpha_{33} \end{smallmatrix} \right)$$
+
+donde $\alpha_{ij}$ son las componentes de la base rotada expresadas con respecto a la base original. Se tiene un vector cualquiera en la base original:
+
+$$ \vec{v} = a\vec{i} + b\vec{j} + c\vec{k} = \left( \begin{smallmatrix} a\\b\\c \end{smallmatrix} \right)$$
+
+Tras la rotación las componentes del vector expresadas conforme a la nueva base no variarán debido a que se mueve solidario al sistema de referencia. Por lo tanto el vector rotado es el siguiente:
+
+$$ \vec{v}' = a\vec{i}' + b\vec{j}' + c\vec{k}' $$
+
+Sustituyendo los vectores $\vec{i}'$, $\vec{j}'$, $\vec{k}'$ por sus expresiones respecto a la base original:
+
+$$ \vec{v}' = a\left( \begin{smallmatrix}  \alpha_{11}\\\alpha_{21}\\\alpha_{31} \end{smallmatrix} \right) + b\left( \begin{smallmatrix}  \alpha_{12}\\\alpha_{22}\\\alpha_{32} \end{smallmatrix} \right) + c\left( \begin{smallmatrix}  \alpha_{13}\\\alpha_{23}\\\alpha_{33} \end{smallmatrix} \right) = \left( \begin{smallmatrix}  a\alpha_{11} + b\alpha_{12} + c\alpha_{13} \\ a\alpha_{21} + b\alpha_{22} + c\alpha_{23}\\ a\alpha_{31} + b\alpha_{32} + c\alpha_{33} \end{smallmatrix} \right)$$
+
+Este nuevo vector puede expresarse como el producto de una matriz por un vector:
+
+$$ \vec{v}' = \left( \begin{smallmatrix}  \alpha_{11} & \alpha_{12} & \alpha_{13} \\ \alpha_{21} & \alpha_{22} & \alpha_{23}\\ \alpha_{31} & \alpha_{32} & \alpha_{33} \end{smallmatrix} \right) \left( \begin{smallmatrix} a \\ b \\ c \end{smallmatrix} \right) = R \vec{v}$$
+
+Dicha matriz $R$ es la denominada matriz de rotación. Se comprueba que puede interpretarse como una matriz cuyos elementos son las componentes de los vectores base del sistema de coordenadas rotado expresados con respecto al sistema de coordenadas original.\\
+
+El uso de matrices de rotación evita los problemas que presentan los ángulos de Euler; Proporcionan una descripción biunívoca del estado de rotación del sensor, y además no presentan el problema del \textit{gimbal lock}. 
+
+\subsubsection{Cuaternión}
+
+Los cuaterniones son una extensión de los números complejos ideada por el matemático irlandés William Rowand Hamilton con el objetivo de poder utilizar el análisis complejo en un espacio de 3 dimensiones.Un cuaternión es la combinación lineal de cuatro cantidades \{$1$, $i$, $j$, $k$\}, donde cada una de las cantidades \{$i$, $j$, $k$\} es la raíz cuadrada de $-1$, de tal forma que se cumplen las siguientes propiedades:
+
+$$ i^2 = j^2 = k^2 = ijk = -1 $$
+
+La expresión general de un cuaternión es la siguiente:
+
+$$ q = w + xi + yj + zk $$
+
+donde $w$, $x$, $y$ y $z$ son números reales. Los cuaterniones satisfacen las leyes conmutativa y asociativa de la suma, la ley asociativa de la multiplicación, las leyes distributivas de la multiplicación respecto a la suma y la existencia de los elementos neutros para la suma y la multiplicación:
+
+\begin{table}[h]
+\center
+\begin{tabular}{|l|c|}
+
+\hline
+\multicolumn{2}{|c|}{\textbf{Propiedades de los cuaterniones}}\\
+\hline
+Conmutativa respecto a la suma & $ q_1 + q_2 = q_2 + q_1 $ \\
+\hline
+Asociativa respecto a la suma & $ q_1 + (q_2 + q_3) = (q_1 + q_2) + q_3 $ \\
+\hline
+Asociativa respecto a la multiplicación & $ q_1(q_2q_3) = (q_1q_2)q_3 $ \\
+\hline
+\multirow{2}{*}{Distributiva de la multiplicación respecto a la suma} & $ q_1(q_2 + q_3) = q_1q_2 + q_1q_3 $ \\
+\cline{2-2}
+ & $ (q_1 + q_2)q_3 = q_1q_3 + q_2q_3 $ \\
+\hline
+Elemento neutro de la suma & $ q + 0 = q $ \\
+\hline
+Elemento neutro de la multiplicación & $ q1 = 1q = q $ \\
+\hline
+
+\end{tabular}
+
+\caption{Propiedades de los cuaterniones}
+\label{tab:propiedades_cuaterniones}
+
+\end{table}
+
+Los cuaterniones presentan las mismas ventajas que las matrices de rotación, pero además son más estables numéricamente y más eficientes en términos computacionales.
+
+\subsection{Utilización de cuaterniones para la representación de rotaciones de un sólido rígido}
 
 Sea un vector unitario:
 
-$$ \vec{e} = e_x i + e_y j + e_z k, \quad \|e\| = \sqrt{e_x^2 + e_y^2 + e_z^2} = 1 $$
+\begin{equation}
+\vec{e} = e_x i + e_y j + e_z k, \quad \|e\| = \sqrt{e_x^2 + e_y^2 + e_z^2} = 1
+\end{equation}
+
 
 Se definirá el cuaternión de rotación con ángulo $\theta$ sobre el eje dado por el vector $\vec{e}$:
 
-$$ q(\theta, \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e_x i + \sin \left(\frac{\theta}{2}\right) e_y j + \sin \left(\frac{\theta}{2}\right) e_z k$$
+\begin{equation}
+q(\theta, \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e_x i + \sin \left(\frac{\theta}{2}\right) e_y j + \sin \left(\frac{\theta}{2}\right) e_z k 
+\end{equation}
 
 Se puede descomponer el cuaternión como suma de un número real y un cuaternión imaginario puro multiplicado por otro número real:
 
-$$ q(\theta, \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e  $$
+\begin{equation}
+q( \theta , \vec{e}) = \cos \left(\frac{\theta}{2}\right) + \sin \left(\frac{\theta}{2}\right) e  
+\end{equation}
 
 Donde $e$ es el cuaternión imaginario puro (parte real nula) cuyas componentes se corresponden a las del vector unitario $\vec{e}$ que define el eje de rotación.\\
 
-Por cuestión de comodidad:
+Por cuestión de comodidad definimos las siguientes variables:
 
-$$ c_i = \cos \left( \frac{\theta_i}{2} \right) $$
-
-$$ s_i = \sin \left( \frac{\theta_i}{2} \right) $$
+\begin{equation}
+c_i = \cos \left( \frac{\theta_i}{2} \right)
+\end{equation}
+\begin{equation}
+s_i = \sin \left( \frac{\theta_i}{2} \right)
+\end{equation}
 
 De tal forma que ahora el cuaternión se escribirá de la siguiente manera:
 
-$$ q(\theta_i, \vec{e_i}) = c_i + s_i e_i $$
+\begin{equation}
+q(\theta_i, \vec{e_i}) = c_i + s_i e_i
+\end{equation}
 
 El producto de dos cuaterniones se puede expresar de esta forma:
 
-$$ q_1 q_2 = \left( c_1 + s_1 e_1 \right) \left( c_2 + s_2 e_2 \right) = c_1 c_2 + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_2 e_1 e_2 $$
+\begin{equation}
+q_1 q_2 = \left( c_1 + s_1 e_1 \right) \left( c_2 + s_2 e_2 \right) = c_1 c_2 + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_2 e_1 e_2
+\end{equation}
 
-El conjugado del cuaternión se representará de la siguiente manera:
+En donde:
 
-$$ conj(q) = q^* $$
+\begin{multline}
+e_1 e_2 = (e_{1_x} i + e_{1_y} j + e_{1_z} k)(e_{2_x} i + e_{2_y} j + e_{2_z} k) = \\
+= e_{1_x} i (e_{2_x} i + e_{2_y} j + e_{2_z} k) + e_{1_y} j (e_{2_x} i + e_{2_y} j + e_{2_z} k) + e_{1_z} k (e_{2_x} i + e_{2_y} j + e_{2_z} k) = \\
+= -(e_{1_x} e_{2_x} + e_{1_y} e_{2_y} + e_{1_z} e_{2_z}) + i (e_{1_y} e_{2_z} + e_{1_z} e_{2_y}) + j (-e_{1_x} e_{2_z} + e_{1_z} e_{2_x}) + k (e_{1_x} e_{2_y} + e_{1_y} e_{2_x}) \\
+\end{multline}
+
+\begin{equation} \label{eq: e_1e_2}
+e_1 e_2 =  -e_1 \cdot e_2 + e_1 \times e_2
+\end{equation}
+
+Por lo tanto:
+
+\begin{equation}
+q_1 q_2 = c_1 c_2 + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_2 (-e_1 \cdot e_2 + e_1 \times e_2)
+\end{equation}
+
+\begin{equation}
+q_1 q_2 = c_1 c_2 - s_1 s_2 (e_1 \cdot e_2) + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_2 (e_1 \times e_2)
+\end{equation}
+
+El conjugado del cuaternión $ q = c + s e $ se representará de la siguiente manera:
+
+\begin{equation}
+conj(q) = q^* = c - s e
+\end{equation}
 
 Dado a que se va a trabajar siempre con cuaterniones unitarios (también llamados \textit{versores}), se podrá asumir lo siguiente:
 
-$$ \|q\| = 1 , \quad q^{-1} = \frac{q^*}{\|q\|^2} = q^* $$
+\begin{equation}
+\|q\| = 1 , \quad q^{-1} = \frac{q^*}{\|q\|^2} = q^*
+\end{equation}
 
 De tal forma que:
 
-$$ qq^* = q^*q = 1 $$
+\begin{equation}
+qq^* = q^*q = 1
+\end{equation}
 
 \subsubsection{Rotación de un vector alrededor de un eje y un ángulo dados}
 
 Se puede realizar la rotación de un vector alrededor de un eje $\vec{e}$ y un ángulo $\theta$ mediante la siguiente operación:
 
-$$ p' = q_1pq_1^*, \quad q_1 = q(\theta_1, \vec{e_1})$$
+\begin{equation}
+p' = q_1pq_1^*, \quad q_1 = q(\theta_1, \vec{e_1})
+\end{equation}
 
 Si multiplicamos a la izquierda por $q_1^*$ y por la derecha por $q_1$:
 
-$$ q_1^*p'q_1 = q_1^*(q_1pq_1)q_1^* $$ 
+\begin{equation}
+q_1^*p'q_1 = q_1^*(q_1pq_1)q_1^*
+\end{equation}
 
-$$ q_1^*p'q_1 = p $$
+\begin{equation}
+q_1^*p'q_1 = p
+\end{equation}
 
-Obtenemos que el conjugado representa una rotación inversa a la del cuaternión original:
+Se obtiene que el conjugado representa una rotación inversa a la del cuaternión original:
 
-$$ q^* = q\left(\theta, -\vec{e} \right) = q\left(-\theta, \vec{e}\right)  $$
+\begin{equation}
+q^* = q\left(\theta, -\vec{e} \right) = q\left(-\theta, \vec{e}\right)
+\end{equation}
 
 \subsubsection{Composición de rotaciones en coordenadas extrínsecas}
 
@@ -331,22 +486,35 @@ El cuaternión de rotación definido por $q\left(\theta, \vec{e}\right)$ represe
 
 Realizando una nueva rotación al vector obtenido anteriormente, se obtendrá una rotación compuesta por una primera rotación definida por el cuaternión $q_1$ seguida de otra rotación definida por $q_2$:
 
-$$ p'' = q_2p'q_2^*, \quad q_2 = q(\theta_2, \vec{e_2})$$
+\begin{equation}
+p'' = q_2p'q_2^*, \quad q_2 = q(\theta_2, \vec{e_2})
+\end{equation}
 
-$$ p'' = q_2(q_1pq_1^*)q_2^* = (q_2q_1)p(q_1^*q_2^*) = q_{12}pq_{12}^* $$
+\begin{equation}
+p'' = q_2(q_1pq_1^*)q_2^* = (q_2q_1)p(q_1^*q_2^*) = q_{12}pq_{12}^*
+\end{equation}
 
 Se puede expresar la composición de dos rotaciones como un nuevo cuaternión que resulta de la multiplicación en orden inverso de los cuaterniones que definen las dos rotaciones:
 
-$$ q_{12} = q_2q_1 $$
+\begin{equation}
+q_{12} = q_2 q_1
+\end{equation}
 
 De aquí se obtiene que el conjugado del producto de dos cuaterniones es el producto de los conjugados en orden inverso:
 
-$$ q_{12} = \left(q_2q_1\right)^* = q_1^*q_2^* $$
+\begin{equation}
+q_{12} = \left(q_2q_1\right)^* = q_1^*q_2^*
+\end{equation}
 
 De forma análoga, para $n$ cuaterniones:
 
-$$ q_{12 \dotsc (n-1)n} = q_nq_{n-1} \dotsm q_2q_1 $$
-$$ q_{12 \dotsc (n-1)n} = \left( q_nq_{n-1} \dotsm q_2q_1 \right)^* = q_1^*q_2^* \dotsm q_{n-1}^*q_n^* $$
+\begin{equation}
+q_{12 \dotsc (n-1)n} = q_nq_{n-1} \dotsm q_2q_1
+\end{equation}
+
+\begin{equation}
+\left( q_{12 \dotsc (n-1)n} \right)^* = \left( q_nq_{n-1} \dotsm q_2q_1 \right)^* = q_1^*q_2^* \dotsm q_{n-1}^*q_n^*
+\end{equation}
 
 \subsubsection{Composición de rotaciones en coordenadas intrínsecas}
 
@@ -358,27 +526,124 @@ A continuación se demostrará que una rotación compuesta por varias rotaciones
 
 Se define un cuaternión de rotación asociado al eje intrínseco $\vec{e_2}$ después de haber sufrido una rotación definida por el cuaternión $q_1 = q\left( \theta_1 , \vec{e_1} \right)$ como:
 
-$$ q_{2}^I = q\left(\theta_2 , \vec{e_2}^I \right) , \quad \vec{e_2}^I = (q_1e_2q_1^*)_{\vec{v}} $$ 
+\begin{equation}
+q_{2}^I = q\left(\theta_2 , \vec{e_2}^I \right) , \quad \vec{e_2}^I = (q_1e_2q_1^*)_{\vec{v}}
+\end{equation}
 
 La orientación de partida es la misma para el sistema intrínseco y el extrínseco, por lo tanto:
 
-$$ q_1^E = q_1^I = q_1 $$
+\begin{equation}
+q_1^E = q_1^I = q_1
+\end{equation}
 
 Para demostrar la afirmación de partida se tendrá que demostrar la veracidad de la siguiente igualdad:
 
-$$ q_2^Iq_1 = q_1q_2^E $$
+\begin{equation}
+q_2^Iq_1 = q_1q_2^E
+\end{equation}
 
 Se reordenará la igualdad para que los cálculos sean más sencillos:
 
-$$ q_2^Iq_1 = q_1q_2^E \iff q_2^I = q_1q_2^Eq_1^* $$
+\begin{equation} \label{eq: E01}
+q_2^Iq_1 = q_1q_2^E \iff q_2^I = q_1q_2^Eq_1^*
+\end{equation}
 
 Desarrollo del lado izquierdo de la igualdad:
 
-$$ q_2^I = c_2 + s_2(q_1e_2q_1^*) $$
+\begin{equation} \label{eq: q_2I}
+q_2^I = c_2 + s_2(q_1e_2q_1^*)
+\end{equation}
 
-$$ q_1e_2q_1^* = (c_1 + s_1e_1)e_2(c_1 - s_1e_1) = (c_1e_2 + s_1e_1e_2)(c_1 - s_1e_1) = $$
+\begin{multline} \label{eq: q_1e_2q_1}
+q_1e_2q_1^* = (c_1 + s_1e_1)e_2(c_1 - s_1e_1) = (c_1e_2 + s_1e_1e_2)(c_1 - s_1e_1) = \\
+= c_1^2e_2 + s_1c_1e_1e_2 - c_1s_1e_2e_1 - s_1^2e_1e_2e_1 = c_1^2e_2 + s_1c_1(e_1e_2 - e_2e_1) - s_1^2e_1e_2e_1
+\end{multline}
 
-$$ = c_1^2e_2 + s_1c_1e_1e_2 - c_1s_1e_2e_1 - s_1^2e_1e_2e_1 = c_1^2e_2 + s_1c_1(e_1e_2 - e_2e_1) - s_1^2e_1e_2e_1 $$
+De \eqref{eq: e_1e_2} se tiene lo siguiente:
+
+$$ e_1e_2 = -e_1 \cdot e_2 + e_1 \times e_2 $$
+$$ e_2e_1 = -e_2 \cdot e_1 + e_2 \times e_1 = -e_1 \cdot e_2 - e_1 \times e_2 $$
+
+\begin{equation} \label{eq: e_1e_2}
+e_1 e_2 - e_2 e_1 = 2(e_1 \times e_2)
+\end{equation}
+
+$$ e_1 e_2 e_1 = (-e_1 \cdot e_2 + e_1 \times e_2)e_1 =(-e_1 \cdot e_2)e_1 + (e_1 \times e_2)e_1 $$
+
+De esta ecuación:
+
+$$ (e_1 \times e_2)e_1 = -(e_1 \times e_2) \cdot e1 + (e_1 \times e_2) \times e_1 $$
+
+$(e_1 \times e_2)$ será un vector perpendicular a $e_1$, por lo que $(e_1 \times e_2) \cdot e_1 = 0$:
+
+$$ (e_1 \times e_2)e_1 = (e_1 \times e_2) \times e_1 $$
+
+Por lo tanto:
+
+\begin{equation} \label{eq: e_1e_2e_1}
+e_1 e_2 e_1 = -(e_1 \cdot e_2)e_1 + (e_1 \times e_2) \times e_1
+\end{equation}
+
+Sustituyendo en \eqref{eq: q_1e_2q_1}:
+
+$$ q_1e_2q_1^* = c_1^2e_2 + s_1c_1(e_1e_2 - e_2e_1) - s_1^2e_1e_2e_1 = $$
+$$ c_1^2e_2 + 2s_1c_1(e_1 \times e_2) - s_1^2(-(e_1 \cdot e_2)e_1 + (e_1 \times e_2) \times e_1) $$
+
+\begin{equation}
+q_1e_2q_1^* = c_1^2e_2 + 2s_1c_1(e_1 \times e_2) + s_1^2(e_1 \cdot e_2)e_1 - s_1^2(e_1 \times e_2) \times e_1
+\end{equation}
+
+Finalmente, sustituyendo en \eqref{eq: q_2I}:
+
+$$ q_2^I = c_2 + s_2(c_1^2e_2 + 2s_1c_1(e_1 \times e_2) + s_1^2(e_1 \cdot e_2)e_1 - s_1^2(e_1 \times e_2) \times e_1) $$
+
+\begin{equation} \label{eq: E02}
+q_2^I = c_2 + s_2c_1^2e_2 + 2s_1s_2c_1(e_1 \times e_2) + s_1^2s_2(e_1 \cdot e_2)e_1 - s_1^2s_2(e_1 \times e_2) \times e_1
+\end{equation}
+
+Ahora se procederá a desarrollar el lado derecho de la igualdad \eqref{eq: E01}:
+
+$$ q_1q_2^Eq_1^* = (c_1 + s_1 e_1)(c_2 + s_2 e_2)(c_1 - s_1 e_1) = $$
+
+$$ = (c_1c_2 + s_2c_1e_2 + s_1c_2e_1 + s_1s_2e_1e_2)(c_1 - s_1 e_1) = $$
+
+$$ = c_1^2c_2 + s_2c_1^2e_2 + s_1c_1c_2e_1 + s_1s_2c_1e_1e_2 - s_1c_1c_2e_1 - s_1s_2c_1e_2e_1 - s_1^2c_2e_1e_1 - s_1^2s_2e_1e_2e_1  = $$
+
+Como $\|e_1\| = 1$, se tendrá que:
+
+\begin{equation}
+e_1e_1 = -e_1 \cdot e_1 + e_1 \times e_1 = -1
+\end{equation}
+
+Sustituyendo y reorganizando:
+
+$$ q_1q_2^Eq_1^* = c_2 + s_2c_1^2e_2 + s_1s_2c_1(e_1e_2 - e_2e_1) - s_1^2s_2e_1e_2e_1 $$
+
+De \eqref{eq: e_1e_2} y \eqref{eq: e_1e_2e_1}:
+
+$$ q_1q_2^Eq_1^* = c_2 + s_2c_1^2e_2 + 2s_1s_2c_1(e_1 \times e_2) - s_1^2s_2(-(e_1 \cdot e_2)e_1 + (e_1 \times e_2) \times e_1) $$
+
+\begin{equation} \label{eq: E03}
+q_1q_2^Eq_1^* = c_2 + s_2c_1^2e_2 + 2s_1s_2c_1(e_1 \times e_2) + s_1^2s_2(e_1 \cdot e_2)e_1 - s_1^2s_2(e_1 \times e_2) \times e_1
+\end{equation}
+
+Finalmente se compara \eqref{eq: E02} con \eqref{eq: E03}:
+
+$$ q_2^I = c_2 + s_2c_1^2e_2 + 2s_1s_2c_1(e_1 \times e_2) + s_1^2s_2(e_1 \cdot e_2)e_1 - s_1^2s_2(e_1 \times e_2) \times e_1 $$
+
+$$ q_1q_2^Eq_1^* = c_2 + s_2c_1^2e_2 + 2s_1s_2c_1(e_1 \times e_2) + s_1^2s_2(e_1 \cdot e_2)e_1 - s_1^2s_2(e_1 \times e_2) \times e_1 $$
+
+Se tiene que:
+
+$$ q_2^I = q_1q_2^Eq_1^* $$
+
+Y por lo tanto es verdad que:
+
+\begin{equation}
+q_2^Iq_1 = q_1q_2^E
+\end{equation}
+
+\subsubsection{Orientación relativa entre dos sólidos}
 
 \section{Incorporación de las herramientas creadas}
 
