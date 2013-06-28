@@ -1,0 +1,1151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="relative_rotation.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="472.33718"
+     inkscape:cy="473.27135"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1855"
+     inkscape:window-height="1176"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       id="grid2991"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path3916" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path3916-6"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4336"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4338"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker4340"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4342"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <filter
+       color-interpolation-filters="sRGB"
+       x="-0.25"
+       width="1.5"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="3D warped marble texture"
+       inkscape:menu="Materials"
+       inkscape:label="3D marble"
+       id="filter4511">
+      <feGaussianBlur
+         result="result8"
+         stdDeviation="4"
+         id="feGaussianBlur4513" />
+      <feTurbulence
+         baseFrequency="0.01 0.01"
+         numOctaves="7"
+         type="turbulence"
+         result="result7"
+         seed="50"
+         id="feTurbulence4515" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1.4 0 "
+         result="result5"
+         id="feColorMatrix4517" />
+      <feComposite
+         operator="in"
+         in="result5"
+         result="result6"
+         in2="result8"
+         id="feComposite4519" />
+      <feDisplacementMap
+         result="result4"
+         scale="100"
+         yChannelSelector="A"
+         xChannelSelector="A"
+         in="result5"
+         in2="result6"
+         id="feDisplacementMap4521" />
+      <feFlood
+         result="result9"
+         flood-color="rgb(224,224,224)"
+         flood-opacity="1"
+         in="result4"
+         id="feFlood4523" />
+      <feComposite
+         operator="atop"
+         result="result2"
+         in2="result4"
+         id="feComposite4525" />
+      <feComposite
+         result="result9"
+         operator="atop"
+         in="result2"
+         in2="SourceGraphic"
+         id="feComposite4527" />
+      <feBlend
+         mode="darken"
+         result="fbSourceGraphic"
+         in2="result9"
+         id="feBlend4529" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="5"
+         id="feGaussianBlur4531" />
+      <feSpecularLighting
+         specularExponent="30"
+         specularConstant="0.8"
+         surfaceScale="8"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting4533">
+        <feDistantLight
+           azimuth="235"
+           elevation="55"
+           id="feDistantLight4535" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphic"
+         id="feComposite4537" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite4539" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.5"
+       width="1.5"
+       y="-0.25"
+       x="-0.25"
+       inkscape:menu-tooltip="Bubble effect with refraction and glow"
+       inkscape:menu="Ridges"
+       inkscape:label="Glowing bubble"
+       id="filter4663">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="1"
+         id="feGaussianBlur4665" />
+      <feGaussianBlur
+         in="result1"
+         result="result6"
+         stdDeviation="10"
+         id="feGaussianBlur4667" />
+      <feComposite
+         result="result8"
+         in="result6"
+         operator="atop"
+         in2="result1"
+         id="feComposite4669" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite4671" />
+      <feColorMatrix
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 "
+         in="fbSourceGraphic"
+         result="fbSourceGraphicAlpha"
+         id="feColorMatrix4673" />
+      <feGaussianBlur
+         stdDeviation="1"
+         in="fbSourceGraphicAlpha"
+         result="result0"
+         id="feGaussianBlur4675" />
+      <feSpecularLighting
+         in="result0"
+         result="result1"
+         lighting-color="rgb(255,255,255)"
+         surfaceScale="-2"
+         specularConstant="1.5"
+         specularExponent="35"
+         id="feSpecularLighting4677">
+        <feDistantLight
+           elevation="60"
+           azimuth="230"
+           id="feDistantLight4679" />
+      </feSpecularLighting>
+      <feComposite
+         in="result1"
+         result="result2"
+         operator="in"
+         in2="fbSourceGraphicAlpha"
+         id="feComposite4681" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="1"
+         k3="1"
+         in2="result2"
+         id="feComposite4683" />
+      <feComposite
+         result="result91"
+         in="result9"
+         operator="atop"
+         in2="result4"
+         id="feComposite4685" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend4687" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       height="1.5"
+       width="1.5"
+       y="-0.25"
+       x="-0.25"
+       inkscape:menu-tooltip="Bubble effect with refraction and glow"
+       inkscape:menu="Ridges"
+       inkscape:label="Glowing bubble"
+       id="filter4689">
+      <feGaussianBlur
+         result="result1"
+         stdDeviation="1"
+         id="feGaussianBlur4691" />
+      <feGaussianBlur
+         in="result1"
+         result="result6"
+         stdDeviation="10"
+         id="feGaussianBlur4693" />
+      <feComposite
+         result="result8"
+         in="result6"
+         operator="atop"
+         in2="result1"
+         id="feComposite4695" />
+      <feComposite
+         in="result6"
+         result="fbSourceGraphic"
+         operator="xor"
+         in2="result8"
+         id="feComposite4697" />
+      <feColorMatrix
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 2 0 "
+         in="fbSourceGraphic"
+         result="fbSourceGraphicAlpha"
+         id="feColorMatrix4699" />
+      <feGaussianBlur
+         stdDeviation="1"
+         in="fbSourceGraphicAlpha"
+         result="result0"
+         id="feGaussianBlur4701" />
+      <feSpecularLighting
+         in="result0"
+         result="result1"
+         lighting-color="rgb(255,255,255)"
+         surfaceScale="-2"
+         specularConstant="1.5"
+         specularExponent="35"
+         id="feSpecularLighting4703">
+        <feDistantLight
+           elevation="60"
+           azimuth="230"
+           id="feDistantLight4705" />
+      </feSpecularLighting>
+      <feComposite
+         in="result1"
+         result="result2"
+         operator="in"
+         in2="fbSourceGraphicAlpha"
+         id="feComposite4707" />
+      <feComposite
+         in="fbSourceGraphic"
+         result="result4"
+         operator="arithmetic"
+         k2="1"
+         k3="1"
+         in2="result2"
+         id="feComposite4709" />
+      <feComposite
+         result="result91"
+         in="result9"
+         operator="atop"
+         in2="result4"
+         id="feComposite4711" />
+      <feBlend
+         mode="multiply"
+         in2="result91"
+         id="feBlend4713" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       x="-0.25"
+       width="1.5"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="3D warped marble texture"
+       inkscape:menu="Materials"
+       inkscape:label="3D marble"
+       id="filter4965">
+      <feGaussianBlur
+         result="result8"
+         stdDeviation="4"
+         id="feGaussianBlur4967" />
+      <feTurbulence
+         baseFrequency="0.01 0.01"
+         numOctaves="7"
+         type="turbulence"
+         result="result7"
+         seed="50"
+         id="feTurbulence4969" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1.4 0 "
+         result="result5"
+         id="feColorMatrix4971" />
+      <feComposite
+         operator="in"
+         in="result5"
+         result="result6"
+         in2="result8"
+         id="feComposite4973" />
+      <feDisplacementMap
+         result="result4"
+         scale="100"
+         yChannelSelector="A"
+         xChannelSelector="A"
+         in="result5"
+         in2="result6"
+         id="feDisplacementMap4975" />
+      <feFlood
+         result="result9"
+         flood-color="rgb(224,224,224)"
+         flood-opacity="1"
+         in="result4"
+         id="feFlood4977" />
+      <feComposite
+         operator="atop"
+         result="result2"
+         in2="result4"
+         id="feComposite4979" />
+      <feComposite
+         result="result9"
+         operator="atop"
+         in="result2"
+         in2="SourceGraphic"
+         id="feComposite4981" />
+      <feBlend
+         mode="darken"
+         result="fbSourceGraphic"
+         in2="result9"
+         id="feBlend4983" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="5"
+         id="feGaussianBlur4985" />
+      <feSpecularLighting
+         specularExponent="30"
+         specularConstant="0.8"
+         surfaceScale="8"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting4987">
+        <feDistantLight
+           azimuth="235"
+           elevation="55"
+           id="feDistantLight4989" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphic"
+         id="feComposite4991" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite4993" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       x="-0.25"
+       width="1.5"
+       y="-0.25"
+       height="1.5"
+       inkscape:menu-tooltip="3D warped marble texture"
+       inkscape:menu="Materials"
+       inkscape:label="3D marble"
+       id="filter4995">
+      <feGaussianBlur
+         result="result8"
+         stdDeviation="4"
+         id="feGaussianBlur4997" />
+      <feTurbulence
+         baseFrequency="0.01 0.01"
+         numOctaves="7"
+         type="turbulence"
+         result="result7"
+         seed="50"
+         id="feTurbulence4999" />
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1.4 0 "
+         result="result5"
+         id="feColorMatrix5001" />
+      <feComposite
+         operator="in"
+         in="result5"
+         result="result6"
+         in2="result8"
+         id="feComposite5003" />
+      <feDisplacementMap
+         result="result4"
+         scale="100"
+         yChannelSelector="A"
+         xChannelSelector="A"
+         in="result5"
+         in2="result6"
+         id="feDisplacementMap5005" />
+      <feFlood
+         result="result9"
+         flood-color="rgb(224,224,224)"
+         flood-opacity="1"
+         in="result4"
+         id="feFlood5007" />
+      <feComposite
+         operator="atop"
+         result="result2"
+         in2="result4"
+         id="feComposite5009" />
+      <feComposite
+         result="result9"
+         operator="atop"
+         in="result2"
+         in2="SourceGraphic"
+         id="feComposite5011" />
+      <feBlend
+         mode="darken"
+         result="fbSourceGraphic"
+         in2="result9"
+         id="feBlend5013" />
+      <feGaussianBlur
+         result="result0"
+         in="fbSourceGraphic"
+         stdDeviation="5"
+         id="feGaussianBlur5015" />
+      <feSpecularLighting
+         specularExponent="30"
+         specularConstant="0.8"
+         surfaceScale="8"
+         lighting-color="rgb(255,255,255)"
+         result="result1"
+         in="result0"
+         id="feSpecularLighting5017">
+        <feDistantLight
+           azimuth="235"
+           elevation="55"
+           id="feDistantLight5019" />
+      </feSpecularLighting>
+      <feComposite
+         operator="in"
+         result="result2"
+         in="result1"
+         in2="fbSourceGraphic"
+         id="feComposite5021" />
+      <feComposite
+         k3="1"
+         k2="1"
+         operator="arithmetic"
+         result="result4"
+         in="fbSourceGraphic"
+         in2="result2"
+         id="feComposite5023" />
+    </filter>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path3916-1"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5037"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5039"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5041"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5043"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-72"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path3916-0"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5116"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5118"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5120"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5122"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMn"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMn">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#ff0606;stroke-width:1.0pt;fill:#ff0606;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path5277" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMI"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMI">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#ff0606;stroke-width:1.0pt;fill:#ff0606;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path5280" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutME"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutME">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#ff0606;stroke-width:1.0pt;fill:#ff0606;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path5283" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5120W"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker5120W">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#008215;stroke-width:1pt;fill:#008215;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5830"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker51203"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker51203">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#008215;stroke-width:1pt;fill:#008215;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6383"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker51203-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker51203">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill:#008215;fill-rule:evenodd;stroke:#008215;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6383-2"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker51203-23"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker51203">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill:#008215;fill-rule:evenodd;stroke:#008215;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6383-3"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker51203-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker51203">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill:#008215;fill-rule:evenodd;stroke:#008215;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6383-0"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2985"
+       d="M 254.64721,600.49416 C 252.61944,594.44505 245.4968,590.65185 240,587.36218 c -3.2227,-3.68006 -11.49965,-6.67832 -11.11168,-9.59645 -3.38564,-1.43842 -5.60967,-6.00129 -10.75081,-5.05076 -4.05176,-0.45216 -8.17045,-0.62077 -12.35626,-0.50508 -7.11959,-0.68943 -13.74992,3.14612 -20.83456,2.52538 -7.01653,1.87877 -13.789,4.01318 -20.46014,7.1874 -5.98016,3.40313 -12.17426,6.55295 -17.8994,10.28386 -4.50284,2.39625 -11.41456,5.65023 -14.13839,8.85765 -4.4264,5.00301 -7.35939,11.88019 -12.9887,16.41402 -5.55939,4.39675 -7.07012,11.54098 -9.79686,17.71731 0.94485,5.18646 -2.05466,10.60563 -3.06459,15.79874 0.34917,5.37255 -0.44497,10.8793 0.50332,16.15022 2.94032,2.39412 6.07503,12.99024 6.74046,11.7416 2.86977,4.71458 6.61219,7.70979 9.27164,10.85756 3.63723,3.47174 10.89289,8.38644 13.10673,9.78055 -3.13854,-2.04779 9.2163,5.65074 7.3787,2.9588 5.219,2.83148 10.09597,1.8273 16.40609,4.35746 0.65491,1.4739 6.60121,0.47296 9.42798,0.72989 16.45012,-0.005 32.91165,0.007 49.35327,0 7.9967,-1.29468 15.50404,-4.18377 22.72843,-7.57614 3.06896,-3.27218 7.00674,-6.00792 8.08122,-10.6066 2.66067,-4.65139 5.06247,-7.98363 6.20236,-11.53999 1.78858,-5.88593 4.83563,-11.12076 5.41439,-17.15915 -0.0485,-4.77062 -0.0825,-9.54027 0.50508,-14.23235 0,-10.10152 0,-20.20305 0,-30.30457 -1.19085,-3.49026 -5.52257,-5.65137 -7.07107,-7.57615 -0.61109,-2.48036 -1.77792,-5.50166 0,-8.08122 z"
+       style="fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2988"
+       d="m 435.74379,579.71232 c -5.68053,0.4141 -9.8779,-1.78723 -15.15229,-3.03046 -4.77393,-1.73911 -9.49147,-3.16009 -14.62927,-2.52538 -4.41567,0.49077 -8.00925,-1.67504 -12.85106,-1.01015 -4.9488,-0.18889 -9.72315,-1.49461 -14.7787,-1.01016 -7.69052,0.009 -13.64478,5.86471 -17.8288,11.88214 -5.70304,6.50966 -9.69257,14.30546 -16.01422,20.3528 -5.61087,5.65097 -12.11376,11.33534 -13.94833,19.27576 -2.18971,7.33275 -3.92815,14.87577 -3.38873,22.56814 0.30619,5.11704 -0.84021,10.4258 1.01015,15.31966 -2.0506,7.98008 3.48819,13.56302 6.75846,20.08291 2.11508,5.05809 4.92023,9.4473 9.41478,12.7356 4.96849,5.85249 12.97345,7.46084 19.1821,11.6282 4.9703,2.38507 10.78227,-0.40218 15.65737,2.02031 4.04436,2.24171 9.29428,2.36878 14.1242,2.52538 4.61584,0.79528 8.29843,-2.28159 12.64484,-3.03046 6.14154,-4.88938 14.41202,-4.9556 21.2132,-8.58629 12.87088,-3.77836 25.06064,-10.42068 34.34519,-20.20305 4.63921,-4.99425 6.37578,-10.91823 9.03598,-16.92169 2.95565,-5.46844 4.10047,-11.97487 10.13648,-14.93119 6.42539,-2.0214 10.14631,-8.58295 9.11181,-15.11922 -0.20011,-7.32348 0.4458,-14.78419 -0.42781,-21.99463 -3.3105,-6.68714 -9.42767,-11.26216 -14.2433,-16.87441 -4.57836,-4.81108 -11.86907,-5.24835 -17.96524,-7.36508 -3.27461,-1.25303 -5.80707,-3.11599 -9.64062,-2.75828 -4.03848,0.0503 -6.3394,0.2256 -8.7149,-2.06288 -0.68444,-0.97885 -2.0867,-0.6038 -3.05129,-0.96757 z"
+       style="fill:#dcdcdc;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2993"
+       d="m 190,642.36218 -10,-55"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2995"
+       d="m 190,642.36218 60,10"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2997"
+       d="m 190,642.36218 -35,35"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211"
+       y="692.36218"
+       x="155"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="692.36218"
+         x="155"
+         id="tspan4213"
+         sodipodi:role="line">x<tspan
+   id="tspan4236"
+   style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold">1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0"
+       y="667.36218"
+       x="232"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="667.36218"
+         x="232"
+         id="tspan4213-9"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">y</tspan>1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0"
+       y="592.36218"
+       x="190"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="592.36218"
+         x="190"
+         id="tspan4213-9-3"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-4"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-8"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">z</tspan>1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0-6"
+       y="592.36218"
+       x="105"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="592.36218"
+         x="105"
+         id="tspan4213-9-3-3"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-4-0"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4320"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">S</tspan>1</tspan></tspan></text>
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2993-3"
+       d="m 405,632.36218 55.39182,-7.53301"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2995-9"
+       d="m 405,632.36218 -12.67038,59.49337"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2997-2"
+       d="m 405,632.36218 -33.40151,-36.5286"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-7"
+       y="617.36218"
+       x="355"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="617.36218"
+         x="355"
+         id="tspan4213-3"
+         sodipodi:role="line">x<tspan
+   id="tspan4236-0"
+   style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold">2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-8"
+       y="692.36218"
+       x="400"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="692.36218"
+         x="400"
+         id="tspan4213-9-0"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-3"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-6"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">y</tspan>2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0-1"
+       y="617.36218"
+       x="450"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="617.36218"
+         x="450"
+         id="tspan4213-9-3-8"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-4-9"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-8-5"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">z</tspan>2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0-6-8"
+       y="582.36218"
+       x="325"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans"
+         y="582.36218"
+         x="325"
+         id="tspan4213-9-3-3-4"
+         sodipodi:role="line">S<tspan
+   id="tspan4415"
+   style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold">2</tspan></tspan></text>
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2993-1"
+       d="m 596,631.36218 -10,-55"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2995-4"
+       d="m 596,631.36218 60,10"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2997-0"
+       d="m 596,631.36218 -35,35"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-07"
+       y="681.36218"
+       x="561"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="681.36218"
+         x="561"
+         id="tspan4213-0"
+         sodipodi:role="line">x<tspan
+   id="tspan4236-9"
+   style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold">1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-4"
+       y="656.36218"
+       x="638"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="656.36218"
+         x="638"
+         id="tspan4213-9-5"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-2"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-7"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">y</tspan>1</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0-68"
+       y="581.36218"
+       x="596"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="581.36218"
+         x="596"
+         id="tspan4213-9-3-7"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-4-5"
+           style="font-size:10px;font-weight:bold;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-8-0"
+   style="font-size:20px;font-weight:normal;-inkscape-font-specification:Sans">z</tspan>1</tspan></tspan></text>
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2993-3-1"
+       d="m 596,631.36218 55.39182,-7.53301"
+       style="fill:none;stroke:#ff0606;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutMn)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2995-9-8"
+       d="m 596,631.36218 -12.67038,59.49337"
+       style="fill:none;stroke:#ff0606;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutMI)" />
+    <path
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:connector-curvature="0"
+       id="path2997-2-3"
+       d="m 596,631.36218 -33.40151,-36.5286"
+       style="fill:none;stroke:#ff0606;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutME)" />
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-7-5"
+       y="616.36218"
+       x="546"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fc0000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="616.36218"
+         x="546"
+         id="tspan4213-3-2"
+         sodipodi:role="line">x<tspan
+   id="tspan4236-0-2"
+   style="font-size:10px;font-weight:bold;fill:#fc0000;fill-opacity:1;-inkscape-font-specification:Sans Bold">2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-8-4"
+       y="691.36218"
+       x="591"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fc0000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="691.36218"
+         x="591"
+         id="tspan4213-9-0-9"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-3-9"
+           style="font-size:10px;font-weight:bold;fill:#fc0000;fill-opacity:1;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-6-1"
+   style="font-size:20px;font-weight:normal;fill:#fc0000;fill-opacity:1;-inkscape-font-specification:Sans">y</tspan>2</tspan></tspan></text>
+    <text
+       inkscape:export-ydpi="1024"
+       inkscape:export-xdpi="1024"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       sodipodi:linespacing="125%"
+       id="text4211-0-0-1-6"
+       y="616.36218"
+       x="641"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#fc0000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"><tspan
+         y="616.36218"
+         x="641"
+         id="tspan4213-9-3-8-2"
+         sodipodi:role="line"><tspan
+           id="tspan4236-5-4-9-1"
+           style="font-size:10px;font-weight:bold;fill:#fc0000;fill-opacity:1;-inkscape-font-specification:Sans Bold"><tspan
+   id="tspan4262-8-5-3"
+   style="font-size:20px;font-weight:normal;fill:#fc0000;fill-opacity:1;-inkscape-font-specification:Sans">z</tspan>2</tspan></tspan></text>
+    <path
+       d="m 603.56611,637.07126 a 15,15 0 0 1 -2.19205,-15.98074"
+       sodipodi:ry="15"
+       sodipodi:rx="15"
+       sodipodi:cy="627.36218"
+       sodipodi:cx="615"
+       id="path6069"
+       style="fill:none;stroke:#008215;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker51203)"
+       sodipodi:type="arc"
+       transform="translate(-19,4)"
+       sodipodi:start="2.4375927"
+       sodipodi:end="3.5729571"
+       sodipodi:open="true"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:export-xdpi="1024"
+       inkscape:export-ydpi="1024" />
+    <path
+       d="m 613.14232,612.47766 a 15,15 0 0 1 14.70163,7.13643"
+       sodipodi:ry="15"
+       sodipodi:rx="15"
+       sodipodi:cy="627.36218"
+       sodipodi:cx="615"
+       id="path6069-4"
+       style="fill:none;stroke:#008215;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker51203)"
+       sodipodi:type="arc"
+       transform="translate(-19.000004,3.999997)"
+       sodipodi:start="4.5882249"
+       sodipodi:end="5.7403805"
+       sodipodi:open="true"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:export-xdpi="1024"
+       inkscape:export-ydpi="1024" />
+    <path
+       d="m 629.61711,630.7297 a 15,15 0 0 1 -11.5972,11.32534"
+       sodipodi:ry="15"
+       sodipodi:rx="15"
+       sodipodi:cy="627.36218"
+       sodipodi:cx="615"
+       id="path6069-6"
+       style="fill:none;stroke:#008215;stroke-width:2;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker51203)"
+       sodipodi:type="arc"
+       transform="translate(-18.999997,3.999996)"
+       sodipodi:start="0.22643103"
+       sodipodi:end="1.3680835"
+       sodipodi:open="true"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/relative_orientation.png"
+       inkscape:export-xdpi="1024"
+       inkscape:export-ydpi="1024" />
+  </g>
+</svg>

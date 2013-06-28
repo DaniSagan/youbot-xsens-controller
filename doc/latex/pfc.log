@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.5.26)  23 JUN 2013 21:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.5.26)  28 JUN 2013 11:34
 entering extended mode
  %&-line parsing enabled.
 **pfc.tex
@@ -24,10 +24,69 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+(/usr/share/texmf-texlive/tex/latex/oberdiek/listingsutf8.sty
+Package: listingsutf8 2007/11/11 v1.1 Adding support for UTF-8 to listings (HO)
+
+
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count88
+\lst@gtempboxa=\box26
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen103
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen106
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box27
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
+ (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
+)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2008/10/27 v1.6 Converts strings between encodings (HO)
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/pdfescape.sty
+Package: pdfescape 2007/11/11 v1.8 Provides hex, PDF name and string conversion
+s (HO)
+)))
 (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks14
-\inpenc@posthook=\toks15
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
 
 (/usr/share/texmf-texlive/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
@@ -249,8 +308,8 @@ Language: spanish.ldf 2009/01/02 v5.0h Spanish support from the babel system
 
 (/usr/share/texmf-texlive/tex/generic/babel/babel.def
 File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+\babel@savecnt=\count96
+\U@D=\dimen107
 )
 
 Package babel Warning: No hyphenation patterns were loaded for
@@ -258,16 +317,16 @@ Package babel Warning: No hyphenation patterns were loaded for
 (babel)                I will use the patterns loaded for \language=0 instead.
 
 \l@spanish = a dialect from \language0
-\es@datefmt=\count89
-\es@quottoks=\toks16
-\es@quotdepth=\count90
+\es@datefmt=\count97
+\es@quottoks=\toks18
+\es@quotdepth=\count98
 Package babel Info: Making " an active character on input line 492.
 Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
 )) (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\@emptytoks=\toks17
+\@emptytoks=\toks19
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -283,64 +342,72 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks18
-\ex@=\dimen104
+\@emptytoks=\toks20
+\ex@=\dimen108
 ))
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen105
+\pmbraise@=\dimen109
 )
 (/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count91
+\inf@bad=\count99
 LaTeX Info: Redefining \frac on input line 211.
-\uproot@=\count92
-\leftroot@=\count93
+\uproot@=\count100
+\leftroot@=\count101
 LaTeX Info: Redefining \overline on input line 307.
-\classnum@=\count94
-\DOTSCASE@=\count95
+\classnum@=\count102
+\DOTSCASE@=\count103
 LaTeX Info: Redefining \ldots on input line 379.
 LaTeX Info: Redefining \dots on input line 382.
 LaTeX Info: Redefining \cdots on input line 467.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
-\big@size=\dimen106
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen110
 LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
-\macc@depth=\count96
-\c@MaxMatrixCols=\count97
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
 \dotsspace@=\muskip10
-\c@parentequation=\count98
-\dspbrk@lvl=\count99
-\tag@help=\toks19
-\row@=\count100
-\column@=\count101
-\maxfields@=\count102
-\andhelp@=\toks20
-\eqnshift@=\dimen107
-\alignsep@=\dimen108
-\tagshift@=\dimen109
-\tagwidth@=\dimen110
-\totwidth@=\dimen111
-\lineht@=\dimen112
-\@envbody=\toks21
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks21
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks22
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks23
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 )
+(/usr/share/texmf-texlive/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks25
+\thm@bodyfont=\toks26
+\thm@headfont=\toks27
+\thm@notefont=\toks28
+\thm@headpunct=\toks29
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks30
+)
 (/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks23
-)
 (/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -354,10 +421,10 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 (/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
-\Gread@gobject=\count103
+\Gread@gobject=\count111
 ))
-\Gin@req@height=\dimen113
-\Gin@req@width=\dimen114
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
 )
 (/usr/share/texmf-texlive/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2009/02/07 v0.4g Insert pages of external PDF documents (AM)
@@ -367,16 +434,16 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-texlive/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count104
-\calc@Bcount=\count105
-\calc@Adimen=\dimen115
-\calc@Bdimen=\dimen116
-\calc@Askip=\skip46
-\calc@Bskip=\skip47
+\calc@Acount=\count112
+\calc@Bcount=\count113
+\calc@Adimen=\dimen119
+\calc@Bdimen=\dimen120
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count106
-\calc@Cskip=\skip48
+\calc@Ccount=\count114
+\calc@Cskip=\skip51
 )
 (/usr/share/texmf-texlive/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2006/07/14 v1.1d eso-pic (RN)
@@ -387,16 +454,16 @@ Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 (/usr/share/texmf-texlive/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2009/02/07 v0.4g Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box28
-\AM@toc@title=\toks24
-\c@AM@survey=\count107
-\AM@templatesizebox=\box29
+\AM@pagebox=\box30
+\AM@toc@title=\toks31
+\c@AM@survey=\count115
+\AM@templatesizebox=\box31
 )
 (/usr/share/texmf-texlive/tex/latex/spverbatim/spverbatim.sty
 Package: spverbatim 2009/08/10 v1.0 Verbatim with breakable spaces
 )
 (/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen117
+\bigstrutjot=\dimen121
 )
 (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
 Package: geometry 2008/12/21 v4.2 Page Geometry
@@ -409,40 +476,173 @@ Package ifpdf Info: pdfTeX in pdf mode detected.
 Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
 Package ifvtex Info: VTeX not detected.
 )
-\Gm@cnth=\count108
-\Gm@cntv=\count109
-\c@Gm@tempcnt=\count110
-\Gm@bindingoffset=\dimen118
-\Gm@wd@mp=\dimen119
-\Gm@odd@mp=\dimen120
-\Gm@even@mp=\dimen121
-\Gm@dimlist=\toks25
+\Gm@cnth=\count116
+\Gm@cntv=\count117
+\c@Gm@tempcnt=\count118
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@dimlist=\toks32
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count111
-\lst@gtempboxa=\box30
-\lst@token=\toks26
-\lst@length=\count112
-\lst@currlwidth=\dimen122
-\lst@column=\count113
-\lst@pos=\count114
-\lst@lostspace=\dimen123
-\lst@width=\dimen124
-\lst@newlines=\count115
-\lst@lineno=\count116
-\lst@maxwidth=\dimen125
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count117
-\lst@skipnumbers=\count118
-\lst@framebox=\box31
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
 
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+)
 (/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
 
@@ -467,10 +667,6 @@ Now handling font encoding PD1 ...
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
-)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
@@ -508,27 +704,11 @@ Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
 Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
- (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
-)
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-)))
+))
 \Fld@menulength=\count121
 \Field@Width=\dimen127
 \Fld@charsize=\dimen128
-\Field@toks=\toks27
+\Field@toks=\toks33
 Package hyperref Info: Hyper figures OFF on input line 4377.
 Package hyperref Info: Link nesting OFF on input line 4382.
 Package hyperref Info: Hyper index ON on input line 4385.
@@ -549,13 +729,53 @@ Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
 File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
 \Fld@listcount=\count125
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+(/usr/share/texmf-texlive/tex/latex/floatrow/floatrow.sty
+Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 
-(/etc/texmf/tex/latex/config/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/share/texmf-texlive/tex/latex/caption/caption3.sty
+Package: caption3 2009/10/09 v3.1k caption3 kernel (AR)
+\captionmargin=\dimen129
+\captionmargin@=\dimen130
+\captionwidth=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+\c@float@type=\count126
+\float@exts=\toks34
+\float@box=\box32
+\@floatcapt=\box33
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
+
+\FR@everyfloat=\toks35
+\flrow@foot=\insert233
+\FB@wd=\dimen135
+\FBo@wd=\dimen136
+\FBc@wd=\dimen137
+\FBo@ht=\skip52
+\FBc@ht=\skip53
+\FBf@ht=\skip54
+\FBo@max=\skip55
+\FBc@max=\skip56
+\FBf@max=\skip57
+\c@FBl@b=\count127
+\floatbox@depth=\count128
+\c@FRobj=\count129
+\c@FRsobj=\count130
+\Xhsize=\skip58
+\sXhsize=\skip59
+\Zhsize=\skip60
+\sZhsize=\skip61
+\flrow@rowbox=\box34
+\FR@Zunitlength=\dimen138
+\c@FBcnt=\count131
+\FPOScnt=\count132
+\LTleft=\skip62
+\LTright=\skip63
+\LTleft=\skip64
+\LTright=\skip65
+\flrow@types=\toks36
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
@@ -565,39 +785,49 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) (./pfc.aux
+)
+\c@defn=\count133
+ (./pfc.aux
 
-LaTeX Warning: Label `eq: e_1e_2' multiply defined.
+LaTeX Warning: Label `fig: esfera_coordenadas' multiply defined.
 
 )
 \openout1 = `pfc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
- (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 72.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 72.
+ (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+\c@lstlisting=\count134
+
+(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count126
-\scratchdimen=\dimen129
-\scratchbox=\box32
-\nofMPsegments=\count127
-\nofMParguments=\count128
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count129
-\MPscratchDim=\dimen130
-\MPnumerator=\count130
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count135
+\scratchdimen=\dimen139
+\scratchbox=\box35
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen140
+\MPnumerator=\count139
+\everyMPtoPDFconversion=\toks38
 ) ABD: EveryShipout initializing macros
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -640,29 +870,30 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-\c@lstlisting=\count131
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 72.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count132
+\c@section@level=\count140
 )
-LaTeX Info: Redefining \ref on input line 65.
-LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \ref on input line 72.
+LaTeX Info: Redefining \pageref on input line 72.
  (./pfc.out)
 (./pfc.out)
 \@outlinefile=\write3
 \openout3 = `pfc.out'.
 
-\AtBeginShipoutBox=\box33
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+\AtBeginShipoutBox=\box36
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Try loading font information for U+msa on input line 75.
  (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 75.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
@@ -673,222 +904,429 @@ ext4): destination with the same identifier (name{page.1}) has been already use
 d, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 ...section}{La clase Matrix}{14}{section*.12}
+l.42 ...section}{La clase Matrix}{15}{section*.13}
                                                    [1
 
 ])
 \tf@toc=\write4
 \openout4 = `pfc.toc'.
 
- [2] (./pfc.lot)
-\tf@lot=\write5
-\openout5 = `pfc.lot'.
+ [2] (./pfc.lof)
+\tf@lof=\write5
+\openout5 = `pfc.lof'.
 
 
 [3
 
-] [4
+] (./pfc.lot)
+\tf@lot=\write6
+\openout6 = `pfc.lot'.
+
+ [4
+
+] [5
 
 ]
 Cap\'{\i }tulo 1.
-[5
+[6
 
 ]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
-[6
-
-]
-Cap\'{\i }tulo 3.
 [7
 
 ]
-Cap\'{\i }tulo 4.
+Cap\'{\i }tulo 3.
 [8
 
 ]
-Cap\'{\i }tulo 5.
+Cap\'{\i }tulo 4.
 [9
 
 ]
-Cap\'{\i }tulo 6.
+Cap\'{\i }tulo 5.
 [10
 
 ]
-Cap\'{\i }tulo 7.
+Cap\'{\i }tulo 6.
 [11
 
 ]
+Cap\'{\i }tulo 7.
+[12
+
+]
 Cap\'{\i }tulo 8.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 169.
+[13
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+
+ []
+
+[14]
+Cap\'{\i }tulo 9.
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 245.
+
+[15
+
+]
+Cap\'{\i }tulo 10.
+
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+[16
+
+] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 351.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 169.
- [12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 351.
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
-[13]
-Cap\'{\i }tulo 9.
+[19] <../img/rotation_quaternion.png, id=546, 366.85493pt x 290.91498pt>
+File: ../img/rotation_quaternion.png Graphic file (type png)
+
+<use ../img/rotation_quaternion.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 563--564
+
+ []
+
+[21 <../img/rotation_quaternion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 585--586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 654--655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+
+ []
+
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 801--802
+
+ []
+
+<../img/relative_orientation.png, id=621, 444.20642pt x 115.74492pt>
+File: ../img/relative_orientation.png Graphic file (type png)
+
+<use ../img/relative_orientation.png> [25 <../img/relative_orientation.png>]
+<../img/arm_position.png, id=630, 484.57599pt x 353.51605pt>
+File: ../img/arm_position.png Graphic file (type png)
+
+<use ../img/arm_position.png>
+Underfull \hbox (badness 10000) in paragraph at lines 832--833
+
+ []
+
+<../img/sphere.png, id=631, 213.8458pt x 217.51576pt>
+File: ../img/sphere.png Graphic file (type png)
+ <use ../img/sphere.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26 <../img/arm_position.png>]
+<../img/sphere_local.png, id=640, 128.02518pt x 86.45581pt>
+File: ../img/sphere_local.png Graphic file (type png)
+
+<use ../img/sphere_local.png>
+Underfull \hbox (badness 10000) in paragraph at lines 872--873
+
+ []
+
+[27 <../img/sphere.png> <../img/sphere_local.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../img/ea_solutions.png, id=654, 503.34926pt x 218.36267pt>
+File: ../img/ea_solutions.png Graphic file (type png)
+
+<use ../img/ea_solutions.png> [28] [29 <../img/ea_solutions.png>]
+Cap\'{\i }tulo 11.
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 236.
+(hyperref)                than one, level fixed on input line 963.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--272
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 965.
 
- []
-
-[14
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
-
- []
-
-[15]
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 525--526
-
- []
-
-[18] [19] [20]
-Cap\'{\i }tulo 10.
-[21
-
-]
-Cap\'{\i }tulo 11.
-[22
+[30
 
 ]
 Cap\'{\i }tulo 12.
-[23
+[31
 
-] [24
+]
+Cap\'{\i }tulo 13.
+[32
+
+]
+Cap\'{\i }tulo 14.
+[33
+
+] [34
 
 ]
 Ap\'{e}ndice A.
-[25
+[35
 
 ]
 Ap\'{e}ndice B.
 
-Overfull \hbox (169.50044pt too wide) in paragraph at lines 700--700
+Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1016
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1021--1023
+
+ []
+
+[36
+
+] [37]
+Ap\'{e}ndice C.
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/se-utf8.def
+File: se-utf8.def 2008/10/27 v1.6 stringenc: UTF-8
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/se-iso-8859-1.def
+File: se-iso-8859-1.def 2008/10/27 v1.6 stringenc: ISO-8859-1
+) [38
+
+] [39]
+Overfull \hbox (6.06512pt too wide) in paragraph at lines 128--129
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[40]
+Overfull \hbox (1.34018pt too wide) in paragraph at lines 159--160
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (1.34018pt too wide) in paragraph at lines 163--164
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (1.34018pt too wide) in paragraph at lines 167--168
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (24.9649pt too wide) in paragraph at lines 176--177
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (24.9649pt too wide) in paragraph at lines 180--181
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (24.9649pt too wide) in paragraph at lines 184--185
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[41] [42] [43] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [44]
+[45] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [46] [47] [48]
+[49] [50] [51] [52] [53] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)
+[54] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [55]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [56] [57] [58]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [59]
+Overfull \hbox (30.47739pt too wide) in paragraph at lines 73--74
+[][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (48.4321pt too wide) in paragraph at lines 82--83
+[][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (39.45474pt too wide) in paragraph at lines 91--92
+[][][][][][][][][][][]  
+ []
+
+[60] [61] [62] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [63]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [64] [65]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [66] [67] [68]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [69] [70] [71] [72]
+[73] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [74] [75]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [76] [77] [78]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [79] [80]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [81] [82] [83] [84]
+[85] [86] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)
+Overfull \hbox (2.28564pt too wide) in paragraph at lines 6--8
+[][][][]  
+ []
+
+[87] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [88]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [89]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [90] [91] [92] [93]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [94]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [95] [96]
+Ap\'{e}ndice D.
+
+Overfull \hbox (169.50044pt too wide) in paragraph at lines 1239--1239
 []\OT1/cmtt/m/n/10 [gazebo-1][] process[] has[] died[] [pid[] 2795,[] exit[] co
 de[] 134,[] cmd[] /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo
 []
  []
 
 
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 700--700
+Overfull \hbox (1.5019pt too wide) in paragraph at lines 1239--1239
 \OT1/cmtt/m/n/10 /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/e
 mpty.world[] __name:=gazebo[]
  []
 
 
-Overfull \hbox (6.75186pt too wide) in paragraph at lines 714--714
+Overfull \hbox (6.75186pt too wide) in paragraph at lines 1253--1253
 [][] \OT1/cmtt/m/n/10 /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/wor
 lds/empty.world[] __name:=gazebo[]
  []
 
 
-Overfull \hbox (395.24847pt too wide) in paragraph at lines 714--714
+Overfull \hbox (395.24847pt too wide) in paragraph at lines 1253--1253
 \OT1/cmtt/m/n/10 __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de0500
 9b5/gazebo-1.log[] -s[] /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libg
 azebo_ros_paths_plugin.so[]
  []
 
-[26
+[97
 
-]
-Ap\'{e}ndice C.
-
-Underfull \hbox (badness 10000) in paragraph at lines 722--723
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 734--735
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 740--742
-
- []
-
-[27
-
-] [28]
-Ap\'{e}ndice D.
-[29
-
-] [30
+] [98
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 837.
+(hyperref)                than one, level fixed on input line 1259.
 
-[31] (./pfc.aux)
+[99] (./pfc.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8592 strings out of 495061
- 119317 string characters out of 1182621
- 241003 words of memory out of 3000000
- 11454 multiletter control sequences out of 15000+50000
- 13582 words of font info for 52 fonts, out of 3000000 for 9000
+ 15218 strings out of 495061
+ 219505 string characters out of 1182621
+ 636536 words of memory out of 3000000
+ 14972 multiletter control sequences out of 15000+50000
+ 15629 words of font info for 60 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 38i,11n,58p,642b,527s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pfc.pdf (32 pages, 318138 bytes).
+ 37i,12n,58p,732b,2379s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-tex
+live/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on pfc.pdf (100 pages, 2821774 bytes).
 PDF statistics:
- 689 PDF objects out of 1000 (max. 8388607)
- 155 named destinations out of 1000 (max. 500000)
- 641 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4561 PDF objects out of 5155 (max. 8388607)
+ 3143 named destinations out of 3580 (max. 500000)
+ 687 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,1216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="rotation_quaternion.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="421.92763"
+     inkscape:cy="736.10529"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       id="grid2985"
+       type="xygrid" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="TriangleOutS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutS"
+       style="overflow:visible">
+      <path
+         id="path4008"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Send"
+       style="overflow:visible;">
+      <path
+         id="path3893"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.3) rotate(180) translate(-2.3,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInS"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInS"
+       style="overflow:visible">
+      <path
+         id="path3999"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(-0.2)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutL"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleOutL"
+       style="overflow:visible">
+      <path
+         id="path4002"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInM"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInM"
+       style="overflow:visible">
+      <path
+         id="path3996"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Mend"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         id="path3887" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path4005" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4005-6"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Mend-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mend">
+      <path
+         transform="scale(-0.6,-0.6)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path3887-8"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5667"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5669"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5671"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5673"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5675"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5677"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5679"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path5681"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible;"
+       id="Arrow2Mendn"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow2Mendn">
+      <path
+         transform="scale(0.6) rotate(180) translate(0,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         style="stroke-linejoin:round;stroke:#00c100;stroke-width:0.62500000;fill:#00c100;fill-rule:evenodd"
+         id="path6177" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5679h"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker5679h">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#00ba05;stroke-width:1pt;fill:#00ba05;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6180"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMR"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMR">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#ff0303;stroke-width:1.0pt;fill:#ff0303;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path6183" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM7"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM7">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#0700f5;stroke-width:1.0pt;fill:#0700f5;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path6186" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker5679f"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="marker5679f">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#ff0303;stroke-width:1pt;fill:#ff0303;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6321"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4005-65"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-00"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4005-0"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMo"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMo">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#aaaaaa;stroke-width:1.0pt;fill:#aaaaaa;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path6585" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMW"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMW">
+      <path
+         transform="scale(0.4)"
+         style="stroke:#adadad;stroke-width:1.0pt;fill:#adadad;fill-rule:evenodd"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         id="path6588" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMW-7"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMW">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(0.4,0.4)"
+         style="fill:#adadad;fill-rule:evenodd;stroke:#adadad;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6588-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutMo-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutMo">
+      <path
+         inkscape:connector-curvature="0"
+         transform="scale(0.4,0.4)"
+         style="fill:#aaaaaa;fill-rule:evenodd;stroke:#aaaaaa;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path6585-0" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInMU"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="TriangleInMU"
+       style="overflow:visible">
+      <path
+         id="path7544"
+         d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z "
+         style="stroke:#0700f5;stroke-width:1.0pt;fill:#0700f5;fill-rule:evenodd"
+         transform="scale(-0.4)" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-00-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4005-0-0"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-00-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path4005-0-05"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-00i"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM-00i">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#b9b9b9;stroke-width:1pt;fill:#b9b9b9;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path9546"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM-003"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM-003">
+      <path
+         transform="scale(0.4,0.4)"
+         style="stroke:#bbbbbb;stroke-width:1pt;fill:#bbbbbb;fill-rule:evenodd"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         id="path9549"
+         inkscape:connector-curvature="0" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       d="m 335,577.36218 a 55,20 0 1 1 -110,0 55,20 0 1 1 110,0 z"
+       sodipodi:ry="20"
+       sodipodi:rx="55"
+       sodipodi:cy="577.36218"
+       sodipodi:cx="280"
+       id="path2987"
+       style="fill:#3bff3b;fill-opacity:0.41095892;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 1;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="translate(28.571429,134.28571)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3759"
+       d="m 308.57143,781.64789 36,-55"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3761"
+       d="m 308.57143,711.64789 49,4.62264"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3763"
+       d="m 308.57143,711.64789 30,-14.54545"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3765"
+       d="m 308.57143,711.64789 0,-30"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3759-2"
+       d="m 344.57144,726.64792 44.05633,-68.00003"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:none;marker-end:url(#TriangleOutM)" />
+    <path
+       d="m 335,577.36218 a 55,20 0 1 1 -110,0 55,20 0 1 1 110,0 z"
+       sodipodi:ry="20"
+       sodipodi:rx="55"
+       sodipodi:cy="577.36218"
+       sodipodi:cx="280"
+       id="path2987-0"
+       style="fill:#ff7a7a;fill-opacity:0.3105023;stroke:#000000;stroke-width:0.44;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.88000003, 0.44000001;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="matrix(2.2727272,0,0,2.2727272,-327.79217,-690.53881)" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3803"
+       d="m 308.57143,781.64789 53,-65"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3803-2"
+       d="m 308.57143,781.64789 120,-147.76859"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Mend)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3761-6"
+       d="m 308.57143,621.64789 122,11.50943"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3848"
+       d="m 308.57143,711.64789 33,13.75"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:none;marker-end:url(#TriangleOutM)" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3850"
+       d="m 308.57143,731.64789 0,50"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3852"
+       d="m 308.57143,681.64789 0,-15"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3854"
+       d="m 308.57143,621.64789 82,34"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4300"
+       d="m 308.57143,621.64789 0,45"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 1;stroke-dashoffset:0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4302"
+       d="m 308.57143,711.64789 0,20"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 1;stroke-dashoffset:0" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.85607671"
+       sodipodi:start="0.24497867"
+       transform="matrix(0.45454545,0,0,0.45454545,181.2987,449.21054)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:2.20000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5649"
+       sodipodi:cx="280"
+       sodipodi:cy="577.36218"
+       sodipodi:rx="55"
+       sodipodi:ry="20"
+       d="m 333.35784,582.2129 a 55,20 0 0 1 -17.31053,10.25482" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.85674714"
+       sodipodi:start="0.24904655"
+       transform="matrix(0.90909062,0,0,0.90909062,54.026072,96.773387)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.10000038;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5651"
+       sodipodi:cx="280"
+       sodipodi:cy="577.36218"
+       sodipodi:rx="55"
+       sodipodi:ry="20"
+       d="m 333.30313,582.29178 a 55,20 0 0 1 -17.28368,10.18473" />
+    <path
+       d="m 335,577.36218 a 55,20 0 1 1 -110,0 55,20 0 1 1 110,0 z"
+       sodipodi:ry="20"
+       sodipodi:rx="55"
+       sodipodi:cy="577.36218"
+       sodipodi:cx="280"
+       id="path2987-2"
+       style="fill:#3bff3b;fill-opacity:0.41095892;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 1;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="matrix(0.8660254,0.5,-0.5,0.8660254,504.11607,-446.31847)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3759-9"
+       d="m 422.92209,254.31362 53.99703,-27.23765"
+       style="fill:none;stroke:#ff0303;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker5679f)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3763-6"
+       d="m 457.92209,193.69184 33.25349,2.40327"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       d="m 335,577.36218 a 55,20 0 1 1 -110,0 55,20 0 1 1 110,0 z"
+       sodipodi:ry="20"
+       sodipodi:rx="55"
+       sodipodi:cy="577.36218"
+       sodipodi:cx="280"
+       id="path2987-0-2"
+       style="fill:#ff7a7a;fill-opacity:0.3105023;stroke:#000000;stroke-width:0.44;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:0.88000003, 0.44000001;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       transform="matrix(1.9682395,1.1363636,-1.1363636,1.9682395,607.90839,-1338.8192)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3803-8"
+       d="m 422.92209,254.31362 72.91555,-27.64869"
+       style="fill:none;stroke:#00ba05;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker5679h)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3803-2-4"
+       d="m 501.30939,224.51841 95.3632,-36.57266"
+       style="fill:none;stroke:#00c100;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker5679h)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3761-6-2"
+       d="m 502.92209,115.74956 99.90038,70.96746"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3848-5"
+       d="m 457.92209,193.69184 21.70384,28.40785"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:none;marker-end:url(#TriangleOutM)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3850-7"
+       d="m 447.92209,211.01235 -25,43.30127"
+       style="fill:none;stroke:#0700f5;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3852-1"
+       d="m 472.92209,167.71108 7.5,-12.99038"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3854-3"
+       d="m 502.92209,115.74956 54.01408,70.44486"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4300-9"
+       d="m 502.92209,115.74956 -22.5,38.97114"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1, 1;stroke-dashoffset:0"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4302-2"
+       d="m 458.05917,193.56004 -10.13709,17.4523"
+       style="fill:none;stroke:#0700f5;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.99999994, 1.99999994;stroke-dashoffset:0;marker-start:none;marker-end:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.85607671"
+       sodipodi:start="0.24497867"
+       transform="matrix(0.39364791,0.22727272,-0.22727272,0.39364791,478.91935,-97.221934)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:2.20000005;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5649-9"
+       sodipodi:cx="280"
+       sodipodi:cy="577.36218"
+       sodipodi:rx="55"
+       sodipodi:ry="20"
+       d="m 333.35784,582.2129 a 55,20 0 0 1 -17.31053,10.25482"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="0.85674714"
+       sodipodi:start="0.24904655"
+       transform="matrix(0.78729557,0.45454531,-0.45454531,0.78729557,544.9166,-466.07778)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.10000038;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5651-0"
+       sodipodi:cx="280"
+       sodipodi:cy="577.36218"
+       sodipodi:rx="55"
+       sodipodi:ry="20"
+       d="m 333.30313,582.29178 a 55,20 0 0 1 -17.28368,10.18473"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text6427"
+       y="155.21933"
+       x="537.5"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="155.21933"
+         x="537.5"
+         id="tspan6429"
+         sodipodi:role="line">θ</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text6427-7"
+       y="210.78677"
+       x="459.08133"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="210.78677"
+         x="459.08133"
+         id="tspan6429-1"
+         sodipodi:role="line">θ</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path6452"
+       d="m 461.29464,198.16576 7.99107,0.98214 -3.52678,-4.6875"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="matrix(0.6727162,0.38839288,-0.22794567,0.39481348,283.32935,-2.9619493)"
+       d="m 331.09821,180.13004 a 1.5,1.5 0 1 1 -3,0 1.5,1.5 0 1 1 3,0 z"
+       sodipodi:ry="1.5"
+       sodipodi:rx="1.5"
+       sodipodi:cy="180.13004"
+       sodipodi:cx="329.59821"
+       style="fill:#000000;stroke:none"
+       id="path6454"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       transform="matrix(0.91168994,-0.41087887,0.41087887,0.91168994,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6456"
+       y="435.82016"
+       x="385.05176"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1111;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="435.82016"
+         x="385.05176"
+         id="tspan6458"
+         sodipodi:role="line">Pp</tspan></text>
+    <text
+       transform="matrix(0.93502759,-0.35457496,0.35457496,0.93502759,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6456-1"
+       y="448.32196"
+       x="400.10788"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#009004;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="448.32196"
+         x="400.10788"
+         id="tspan6458-6"
+         sodipodi:role="line">Pp'</tspan></text>
+    <text
+       transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6427-7-7"
+       y="462.40051"
+       x="31.86236"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2600e7;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="462.40051"
+         x="31.86236"
+         id="tspan6429-1-2"
+         sodipodi:role="line">e</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path3765-7"
+       d="m 457.92209,193.69184 13.71459,-23.85607"
+       style="fill:none;stroke:#0700f5;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutM7)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3763-6-3"
+       d="m 480.91923,222.91921 16.74673,0.9653"
+       style="fill:none;stroke:#adadad;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutMW)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path3848-5-5"
+       d="m 478.51993,195.33477 20.78088,27.21185"
+       style="fill:none;stroke:#aaaaaa;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-mid:none;marker-end:url(#TriangleOutMo)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3759-2-3"
+       d="m 481.599,224.68225 70.3237,-35.90376"
+       style="fill:none;stroke:#ff0303;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:url(#TriangleOutMR)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path3761-7"
+       d="m 457.92209,193.69184 40.12393,28.50333"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       transform="matrix(0.89638021,-0.44328604,0.44328604,0.89638021,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6456-3"
+       y="431.20425"
+       x="296.64322"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff1111;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="431.20425"
+         x="296.64322"
+         id="tspan6458-5"
+         sodipodi:role="line">p</tspan></text>
+    <text
+       transform="matrix(0.92872662,-0.37076525,0.37076525,0.92872662,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6456-1-0"
+       y="436.73862"
+       x="334.10031"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#009004;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="436.73862"
+         x="334.10031"
+         id="tspan6458-6-4"
+         sodipodi:role="line">p'</tspan></text>
+    <text
+       transform="matrix(0.5,-0.8660254,0.8660254,0.5,0,0)"
+       sodipodi:linespacing="125%"
+       id="text6427-7-7-5"
+       y="481.00134"
+       x="7.7398386"
+       style="font-size:10px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2600e7;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="481.00134"
+         x="7.7398386"
+         id="tspan6429-1-2-1"
+         sodipodi:role="line">(e·p)e</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152"
+       d="m 457.02945,193.03183 -9.09137,-5.3033"
+       style="fill:none;stroke:#130cfd;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-6"
+       d="M 421.92664,253.76726 396.29402,238.4556"
+       style="fill:none;stroke:#130cfd;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172"
+       d="M 415.86573,249.97918 450.716,189.24376"
+       style="fill:none;stroke:#130cfd;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172-9"
+       d="m 399.19821,240.06706 51.03257,-88.76715"
+       style="fill:none;stroke:#130cfd;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-2"
+       d="M 474.45458,165.50517 445.74631,148.33258"
+       style="fill:none;stroke:#130cfd;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-7"
+       d="m 423.32844,254.93853 11.19095,22.89744"
+       style="fill:none;stroke:#ff0f0f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-6-6"
+       d="m 481.56138,225.17524 4.79111,10.74639"
+       style="fill:none;stroke:#ff0f0f;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172-5"
+       d="m 485.05666,233.36713 -58.66044,28.26453"
+       style="fill:none;stroke:#ff0f0f;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172-5-7"
+       d="M 567.64323,209.3315 433.02764,274.52635"
+       style="fill:none;stroke:#ff0f0f;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-6-6-2"
+       d="m 556.91185,186.39595 12.15746,26.40376"
+       style="fill:none;stroke:#ff0f0f;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-7-1"
+       d="m 423.25462,254.96202 18.44267,48.89777"
+       style="fill:none;stroke:#00aa17;stroke-width:0.49999997;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-6-6-6"
+       d="m 500.94699,224.71523 12.43263,35.45568"
+       style="fill:none;stroke:#00aa17;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172-5-9"
+       d="m 512.35938,256.83553 -77.96854,28.48464"
+       style="fill:none;stroke:#00aa17;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path8172-5-7-5"
+       d="M 618.17848,233.42852 439.52706,298.98954"
+       style="fill:none;stroke:#00aa17;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8152-6-6-2-8"
+       d="m 601.5694,185.41558 18.718,53.44728"
+       style="fill:none;stroke:#00aa17;stroke-width:0.49999994;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="matrix(1.9506205,0,0,1.9507838,-840.03289,115.40027)"
+       d="m 624.92035,92.362183 a 54.920349,54.920349 0 1 1 -109.8407,0 54.920349,54.920349 0 1 1 109.8407,0 z"
+       sodipodi:ry="54.920349"
+       sodipodi:rx="54.920349"
+       sodipodi:cy="92.362183"
+       sodipodi:cx="570"
+       id="path8306"
+       style="fill:#7aff82;fill-opacity:0.64383563;stroke:#000000;stroke-width:1.02527189;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.02527185, 1.02527185;stroke-dashoffset:0"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8308"
+       d="m 271.8208,295.42354 104.18263,0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM-00)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8310"
+       d="m 271.8208,295.42355 0,-103.4487"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM-00)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:open="true"
+       sodipodi:end="6.2779327"
+       sodipodi:start="5.6946041"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.12976527;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path8314"
+       sodipodi:cx="570"
+       sodipodi:cy="92.362183"
+       sodipodi:rx="54.920349"
+       sodipodi:ry="54.920349"
+       d="m 615.67886,61.871419 a 54.920349,54.920349 0 0 1 9.24073,30.20229"
+       transform="matrix(0.88510261,0,0,0.88517668,-232.68768,213.82207)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text6427-7-4"
+       y="285.65765"
+       x="322.55042"
+       style="font-size:19.50702095px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       xml:space="preserve"
+       transform="scale(0.9999582,1.0000418)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         y="285.65765"
+         x="322.55042"
+         id="tspan6429-1-9"
+         sodipodi:role="line"
+         style="font-size:10px">θ</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path8310-1"
+       d="m 359.59874,295.42354 0,-55.34462"
+       style="fill:none;stroke:#b9b9b9;stroke-width:1.00000012px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM-00i)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8308-5"
+       d="m 271.8208,236.90003 85.84862,0"
+       style="fill:none;stroke:#bbbbbb;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM-003)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path8312"
+       d="m 271.82079,295.42354 86.09536,-57.4103"
+       style="fill:none;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM-00)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:none;marker-end:url(#TriangleOutS)"
+       d="m 404.28571,162.36218 c 0,0 -36.22988,-21.84698 -62.82124,17.9079"
+       id="path9767"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 281.57391,295.42354 0,-9.75392 -9.75311,0"
+       id="path11179"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:#000e01;fill-opacity:1;stroke:none"
+       id="path11187"
+       sodipodi:cx="181"
+       sodipodi:cy="146.36218"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m 182,146.36218 a 1,1 0 1 1 -2,0 1,1 0 1 1 2,0 z"
+       transform="matrix(-1.8809555,0,0,-1.8811129,617.27224,565.66138)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:78.0280838px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-222.21741"
+       y="266.52524"
+       id="text11189"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-1.0000418,0.9999582,0,0,0)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan11191"
+         x="-222.21741"
+         y="266.52524"
+         style="font-size:10px">e×p</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:78.0280838px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="298.40482"
+       y="306.35239"
+       id="text11189-0"
+       sodipodi:linespacing="125%"
+       transform="scale(0.9999582,1.0000418)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan11191-5"
+         x="298.40482"
+         y="306.35239"
+         style="font-size:10px">(e×p)×e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:78.0280838px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="279.45358"
+       y="233.25391"
+       id="text11189-0-0"
+       sodipodi:linespacing="125%"
+       transform="scale(0.9999582,1.0000418)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan11191-5-1"
+         x="279.45358"
+         y="233.25391"
+         style="font-size:10px;fill:#a2a2a2;fill-opacity:1">cosθ(e×p)×e</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:78.0280838px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-293.95102"
+       y="355.82251"
+       id="text11189-0-0-5"
+       sodipodi:linespacing="125%"
+       transform="matrix(0,-0.9999582,1.0000418,0,0,0)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/rotation_quaternion.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan11191-5-1-2"
+         x="-293.95102"
+         y="355.82251"
+         style="font-size:10px;fill:#a2a2a2;fill-opacity:1">sinθ(e×p)</tspan></text>
+  </g>
+</svg>
