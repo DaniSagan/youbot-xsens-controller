@@ -4,104 +4,67 @@
 \BOOKMARK [0][-]{chapter.3}{ESPECIFICACIONES DE DISE\321O}{part.1}
 \BOOKMARK [0][-]{chapter.4}{DISE\321O DEL SISTEMA}{part.1}
 \BOOKMARK [1][-]{section.4.1}{Estudio de soluciones}{chapter.4}
-\BOOKMARK [1][-]{section.4.2}{Simulaci\363n}{chapter.4}
-\BOOKMARK [0][-]{chapter.5}{IMPLEMENTACI\323N F\315SICA}{part.1}
-\BOOKMARK [1][-]{section.5.1}{Selecci\363n de componentes}{chapter.5}
-\BOOKMARK [1][-]{section.5.2}{Montaje}{chapter.5}
-\BOOKMARK [1][-]{section.5.3}{Ajuste}{chapter.5}
-\BOOKMARK [0][-]{chapter.6}{PROTOCOLO DE PRUEBAS. REDISE\321O}{part.1}
-\BOOKMARK [0][-]{chapter.7}{RESULTADOS OBTENIDOS}{part.1}
-\BOOKMARK [0][-]{chapter.8}{HERRAMIENTAS UTILIZADAS}{part.1}
-\BOOKMARK [1][-]{section.8.1}{Hardware}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.1.1}{Sensores XSENS}{section.8.1}
-\BOOKMARK [3][-]{section*.4}{Sensor MTi-G}{subsection.8.1.1}
-\BOOKMARK [3][-]{section*.5}{XBUS Master}{subsection.8.1.1}
-\BOOKMARK [2][-]{subsection.8.1.2}{Brazo humano}{section.8.1}
-\BOOKMARK [2][-]{subsection.8.1.3}{Robot Youbot}{section.8.1}
-\BOOKMARK [2][-]{subsection.8.1.4}{Modelo del robot Youbot}{section.8.1}
-\BOOKMARK [1][-]{section.8.2}{Software}{chapter.8}
-\BOOKMARK [2][-]{subsection.8.2.1}{ROS}{section.8.2}
-\BOOKMARK [3][-]{section*.6}{\277Qu\351 es ROS?}{subsection.8.2.1}
-\BOOKMARK [3][-]{section*.7}{\277Por qu\351 usar ROS?}{subsection.8.2.1}
-\BOOKMARK [2][-]{subsection.8.2.2}{El sistema operativo Ubuntu}{section.8.2}
-\BOOKMARK [3][-]{section*.8}{\277Qu\351 es Ubuntu?}{subsection.8.2.2}
-\BOOKMARK [3][-]{section*.9}{\277Por qu\351 usar Ubuntu?}{subsection.8.2.2}
-\BOOKMARK [2][-]{subsection.8.2.3}{El lenguaje de programaci\363n C++}{section.8.2}
-\BOOKMARK [2][-]{subsection.8.2.4}{Simulador Gazebo}{section.8.2}
-\BOOKMARK [2][-]{subsection.8.2.5}{Visualizador RViz}{section.8.2}
-\BOOKMARK [2][-]{subsection.8.2.6}{Control de versiones: git}{section.8.2}
-\BOOKMARK [0][-]{chapter.9}{PROCESO DE REALIZACI\323N}{part.1}
-\BOOKMARK [1][-]{section.9.1}{Creaci\363n del driver para la adquisici\363n de datos de los sensores xsens}{chapter.9}
-\BOOKMARK [2][-]{section*.10}{M\351todo seguido}{section.9.1}
-\BOOKMARK [2][-]{subsection.9.1.1}{El paquete xsens\137driver}{section.9.1}
-\BOOKMARK [1][-]{section.9.2}{Creaci\363n de una librer\355a matem\341tica en C++ que permita trabajar con posiciones y orientaciones}{chapter.9}
-\BOOKMARK [2][-]{subsection.9.2.1}{La librer\355a dfv}{section.9.2}
-\BOOKMARK [3][-]{section*.11}{La clase Quaternion}{subsection.9.2.1}
-\BOOKMARK [3][-]{section*.12}{La clase Vector3}{subsection.9.2.1}
-\BOOKMARK [3][-]{section*.13}{La clase Matrix}{subsection.9.2.1}
-\BOOKMARK [0][-]{chapter.10}{C\301LCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}{part.1}
-\BOOKMARK [1][-]{section.10.1}{Formas de representar orientaciones espaciales}{chapter.10}
-\BOOKMARK [2][-]{subsection.10.1.1}{\301ngulos de Euler}{section.10.1}
-\BOOKMARK [2][-]{subsection.10.1.2}{Matriz de rotaci\363n}{section.10.1}
-\BOOKMARK [2][-]{subsection.10.1.3}{Cuaterni\363n}{section.10.1}
-\BOOKMARK [2][-]{subsection.10.1.4}{Conclusi\363n}{section.10.1}
-\BOOKMARK [1][-]{section.10.2}{Utilizaci\363n de cuaterniones para la representaci\363n de rotaciones de un s\363lido r\355gido}{chapter.10}
-\BOOKMARK [2][-]{subsection.10.2.1}{Rotaci\363n de un vector alrededor de un eje y un \341ngulo dados}{section.10.2}
-\BOOKMARK [2][-]{subsection.10.2.2}{Composici\363n de rotaciones en coordenadas extr\355nsecas}{section.10.2}
-\BOOKMARK [2][-]{subsection.10.2.3}{Composici\363n de rotaciones en coordenadas intr\355nsecas}{section.10.2}
-\BOOKMARK [2][-]{subsection.10.2.4}{Relaci\363n entre rotaciones intr\355nsecas y extr\355nsecas}{section.10.2}
-\BOOKMARK [2][-]{subsection.10.2.5}{Orientaci\363n relativa entre dos s\363lidos}{section.10.2}
-\BOOKMARK [1][-]{section.10.3}{C\341lculo de la posici\363n del brazo}{chapter.10}
-\BOOKMARK [1][-]{section.10.4}{Obtenci\363n de los \341ngulos de Euler a partir del cuaterni\363n de orientaci\363n}{chapter.10}
-\BOOKMARK [2][-]{subsection.10.4.1}{Ampliaci\363n del intervalo de los \341ngulos obtenidos}{section.10.4}
-\BOOKMARK [3][-]{section*.14}{Generaci\363n de una segunda soluci\363n a partir de la primera}{subsection.10.4.1}
-\BOOKMARK [0][-]{chapter.11}{IMPLEMENTACI\323N DEL SOFTWARE}{part.1}
-\BOOKMARK [1][-]{subsection.11.0.2}{Visualizador de la posici\363n del brazo}{chapter.11}
-\BOOKMARK [2][-]{section*.15}{Obtenci\363n de los \341ngulos de rotaci\363n entre cada segmento del brazo}{subsection.11.0.2}
-\BOOKMARK [3][-]{section*.16}{C\341lculo de las posiciones de cada segmento del brazo}{section*.15}
-\BOOKMARK [3][-]{section*.17}{Implementaci\363n}{section*.15}
-\BOOKMARK [2][-]{subsection.11.0.3}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{subsection.11.0.2}
-\BOOKMARK [2][-]{subsection.11.0.4}{Controlador del brazo rob\363tico del robot Youbot real}{subsection.11.0.2}
-\BOOKMARK [0][-]{chapter.12}{RESULTADOS EXPERIMENTALES}{part.1}
-\BOOKMARK [0][-]{chapter.13}{CONCLUSIONES}{part.1}
-\BOOKMARK [0][-]{chapter.14}{BIBLIOGRAF\315A}{part.1}
+\BOOKMARK [2][-]{subsection.4.1.1}{Obtenci\363n del estado del brazo}{section.4.1}
+\BOOKMARK [3][-]{section*.4}{Encoders}{subsection.4.1.1}
+\BOOKMARK [3][-]{section*.5}{Sensores \363pticos}{subsection.4.1.1}
+\BOOKMARK [3][-]{section*.6}{Sensores inerciales}{subsection.4.1.1}
+\BOOKMARK [3][-]{section*.7}{Soluci\363n escogida: red de sensores inerciales xsens MTx}{subsection.4.1.1}
+\BOOKMARK [2][-]{subsection.4.1.2}{Comunicaci\363n entre los sensores y el PC}{section.4.1}
+\BOOKMARK [3][-]{section*.8}{Driver para la comunicaci\363n xbus Master - PC}{subsection.4.1.2}
+\BOOKMARK [2][-]{subsection.4.1.3}{Comunicaci\363n entre programas}{section.4.1}
+\BOOKMARK [3][-]{section*.9}{ROS}{subsection.4.1.3}
+\BOOKMARK [3][-]{section*.10}{Herramientas proporcionadas por ROS}{subsection.4.1.3}
+\BOOKMARK [2][-]{subsection.4.1.4}{Sistema operativo}{section.4.1}
+\BOOKMARK [3][-]{section*.11}{El sistema operativo Ubuntu}{subsection.4.1.4}
+\BOOKMARK [0][-]{chapter.5}{C\301LCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}{part.1}
+\BOOKMARK [1][-]{section.5.1}{Formas de representar orientaciones espaciales}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{\301ngulos de Euler}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.2}{Matriz de rotaci\363n}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.3}{Cuaterni\363n}{section.5.1}
+\BOOKMARK [2][-]{subsection.5.1.4}{Soluci\363n elegida: cuaterniones}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{Utilizaci\363n de cuaterniones para la representaci\363n de rotaciones de un s\363lido r\355gido}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{Rotaci\363n de un vector alrededor de un eje y un \341ngulo dados}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{Composici\363n de rotaciones en coordenadas extr\355nsecas}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{Composici\363n de rotaciones en coordenadas intr\355nsecas}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.4}{Relaci\363n entre rotaciones intr\355nsecas y extr\355nsecas}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.5}{Orientaci\363n relativa entre dos s\363lidos}{section.5.2}
+\BOOKMARK [1][-]{section.5.3}{C\341lculo de la posici\363n del brazo}{chapter.5}
+\BOOKMARK [1][-]{section.5.4}{Obtenci\363n de los \341ngulos de Euler a partir del cuaterni\363n de orientaci\363n}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.4.1}{Ampliaci\363n del intervalo de los \341ngulos obtenidos}{section.5.4}
+\BOOKMARK [3][-]{section*.12}{Generaci\363n de una segunda soluci\363n a partir de la primera}{subsection.5.4.1}
+\BOOKMARK [3][-]{section*.13}{Permutaci\363n de los ejes locales}{subsection.5.4.1}
+\BOOKMARK [0][-]{chapter.6}{IMPLEMENTACI\323N DEL SOFTWARE}{part.1}
+\BOOKMARK [1][-]{section.6.1}{Driver para la comunicaci\363n xbus Master/xsens - PC}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.1.1}{Funcionamiento de la clase xsens::Driver}{section.6.1}
+\BOOKMARK [2][-]{subsection.6.1.2}{Programa principal: xsens\137node}{section.6.1}
+\BOOKMARK [2][-]{subsection.6.1.3}{C\363mo tomar datos del sensor desde otro programa}{section.6.1}
+\BOOKMARK [1][-]{section.6.2}{Librer\355a para manejo de cuaterniones, vectores y matrices}{chapter.6}
+\BOOKMARK [1][-]{section.6.3}{Controlador del brazo rob\363tico del robot Youbot real}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.3.1}{El driver youbot\137oodl}{section.6.3}
+\BOOKMARK [2][-]{subsection.6.3.2}{La clase Youbot}{section.6.3}
+\BOOKMARK [1][-]{section.6.4}{Otras aplicaciones de visualizaci\363n y control}{chapter.6}
+\BOOKMARK [2][-]{subsection.6.4.1}{Visualizador de la posici\363n del brazo}{section.6.4}
+\BOOKMARK [2][-]{subsection.6.4.2}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{section.6.4}
+\BOOKMARK [0][-]{chapter.7}{IMPLEMENTACI\323N F\315SICA}{part.1}
+\BOOKMARK [1][-]{section.7.1}{Selecci\363n de componentes}{chapter.7}
+\BOOKMARK [1][-]{section.7.2}{Montaje}{chapter.7}
+\BOOKMARK [1][-]{section.7.3}{Ajuste}{chapter.7}
+\BOOKMARK [0][-]{chapter.8}{PROTOCOLO DE PRUEBAS. REDISE\321O}{part.1}
+\BOOKMARK [0][-]{chapter.9}{RESULTADOS OBTENIDOS}{part.1}
+\BOOKMARK [0][-]{chapter.10}{CONCLUSIONES}{part.1}
+\BOOKMARK [0][-]{chapter.11}{BIBLIOGRAF\315A}{part.1}
 \BOOKMARK [-1][-]{part.2}{II Anexos}{}
 \BOOKMARK [0][-]{appendix.A}{INSTALACI\323N Y PUESTA EN MARCHA DEL SOFTWARE}{part.2}
-\BOOKMARK [0][-]{appendix.B}{Instalaci\363n y configuraci\363n del software necesario}{part.2}
-\BOOKMARK [1][-]{section.B.1}{Instalaci\363n de ROS Fuerte}{appendix.B}
-\BOOKMARK [2][-]{subsection.B.1.1}{Configuraci\363n de los repositorios de Ubuntu}{section.B.1}
-\BOOKMARK [2][-]{subsection.B.1.2}{Configuraci\363n del archivo sources.list}{section.B.1}
-\BOOKMARK [2][-]{subsection.B.1.3}{Configuraci\363n de la keys}{section.B.1}
-\BOOKMARK [2][-]{subsection.B.1.4}{Descarga e instalaci\363n}{section.B.1}
-\BOOKMARK [2][-]{subsection.B.1.5}{Configuraci\363n del entorno}{section.B.1}
-\BOOKMARK [2][-]{subsection.B.1.6}{Otras herramientas}{section.B.1}
-\BOOKMARK [1][-]{section.B.2}{Instalaci\363n del simulador Gazebo}{appendix.B}
-\BOOKMARK [0][-]{appendix.C}{C\323DIGO FUENTE}{part.2}
-\BOOKMARK [1][-]{section.C.1}{Driver Xsens}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.1.1}{xsens\137node.cpp}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.2}{xsens\137driver.h}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.3}{xsens\137driver.cpp}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.4}{xsens\137sensor.h}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.5}{xsens\137sensor.cpp}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.6}{xsens\137sensor\137subscriber.h}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.7}{xsens\137sensor\137subscriber.cpp}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.8}{utils.h}{section.C.1}
-\BOOKMARK [2][-]{subsection.C.1.9}{utils.cpp}{section.C.1}
-\BOOKMARK [1][-]{section.C.2}{Librer\355a dfv}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.2.1}{quaternion.h}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.2}{quaternion.cpp}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.3}{vector3.h}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.4}{vector3.cpp}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.5}{matrix.h}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.6}{matrix.cpp}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.7}{utils.h}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.8}{utils.cpp}{section.C.2}
-\BOOKMARK [2][-]{subsection.C.2.9}{dfv.h}{section.C.2}
-\BOOKMARK [1][-]{section.C.3}{Youbot controller}{appendix.C}
-\BOOKMARK [2][-]{subsection.C.3.1}{youbot\137controller.h}{section.C.3}
-\BOOKMARK [2][-]{subsection.C.3.2}{youbot.h}{section.C.3}
-\BOOKMARK [2][-]{subsection.C.3.3}{youbot.cpp}{section.C.3}
-\BOOKMARK [0][-]{appendix.D}{SOLUCI\323N DE PROBLEMAS}{part.2}
-\BOOKMARK [1][-]{section.D.1}{Error iniciando Gazebo}{appendix.D}
-\BOOKMARK [-1][-]{part.3}{III Otros documentos}{}
-\BOOKMARK [0][-]{section.D.2}{Manual del sensor MTi-G}{part.3}
+\BOOKMARK [1][-]{section.A.1}{Instalaci\363n de ROS Fuerte}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.1.1}{Configuraci\363n de los repositorios de Ubuntu}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.2}{Configuraci\363n del archivo sources.list}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.3}{Configuraci\363n de la keys}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.4}{Descarga e instalaci\363n}{section.A.1}
+\BOOKMARK [2][-]{subsection.A.1.5}{Configuraci\363n del entorno}{section.A.1}
+\BOOKMARK [1][-]{section.A.2}{Instalaci\363n del simulador Gazebo}{appendix.A}
+\BOOKMARK [1][-]{section.A.3}{Instalaci\363n del simulador de brazo rob\363tico del YouBot}{appendix.A}
+\BOOKMARK [1][-]{section.A.4}{Instalaci\363n del stack youbot-xsens-controller}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.4.1}{Instalaci\363n desde el CD adjunto al proyecto}{section.A.4}
+\BOOKMARK [2][-]{subsection.A.4.2}{Instalaci\363n desde git}{section.A.4}
+\BOOKMARK [0][-]{appendix.B}{SOLUCI\323N DE PROBLEMAS}{part.2}
+\BOOKMARK [1][-]{section.B.1}{Error iniciando Gazebo}{appendix.B}

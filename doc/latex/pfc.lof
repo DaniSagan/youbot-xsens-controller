@@ -3,23 +3,26 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Red de sensores xsens conectados a un m\IeC {\'a}ster xbus}}{10}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Logotipo de ROS}}{11}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comando rostopic mostrando datos de un sensor}}{13}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Programa rxplot mostrando datos de un sensor}}{14}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Programa Gazebo con la simulaci\IeC {\'o}n del brazo del Youbot}}{14}{figure.4.5}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rotaci\IeC {\'o}n de un vector mediante la operaci\IeC {\'o}n $q_1pq_1^*$}}{22}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Orientaci\IeC {\'o}n relativa entre dos s\IeC {\'o}lidos r\IeC {\'\i }gidos}}{27}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Posiciones del brazo inicial y gen\IeC {\'e}rica}}{28}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sistema de coordenadas local sobre la esfera}}{30}{figure.5.4}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tercera rotaci\IeC {\'o}n en el sistema de coordenadas local sobre el punto P de la esfera}}{30}{figure.5.5}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Dos soluciones para $\theta $ (\textit {pitch}) y $\psi $ (\textit {yaw})}}{33}{figure.5.6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Esquema simplificado de comunicaciones}}{43}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Articulaciones del brazo robot Youbot}}{44}{figure.6.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Rotaci\IeC {\'o}n de un vector mediante la operaci\IeC {\'o}n $q_1pq_1^*$}}{21}{figure.10.1}
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Orientaci\IeC {\'o}n relativa entre dos s\IeC {\'o}lidos r\IeC {\'\i }gidos}}{25}{figure.10.2}
-\contentsline {figure}{\numberline {10.3}{\ignorespaces Posiciones del brazo inicial y gen\IeC {\'e}rica}}{26}{figure.10.3}
-\contentsline {figure}{\numberline {10.4}{\ignorespaces Sistema de coordenadas local sobre la esfera}}{27}{figure.10.4}
-\contentsline {figure}{\numberline {10.5}{\ignorespaces Tercera rotaci\IeC {\'o}n en el sistema de coordenadas local sobre el punto P de la esfera}}{27}{figure.10.5}
-\contentsline {figure}{\numberline {10.6}{\ignorespaces Dos soluciones para $\theta $ (\textit {pitch}) y $\psi $ (\textit {yaw})}}{29}{figure.10.6}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Ventana Software Sources}}{52}{figure.A.1}
 \addvspace {10\p@ }

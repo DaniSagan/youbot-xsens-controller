@@ -24,11 +24,11 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.99999999"
-     inkscape:cx="-1376.5939"
-     inkscape:cy="-100.85335"
+     inkscape:cx="-754.86616"
+     inkscape:cy="-59.247193"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     showgrid="false"
+     showgrid="true"
      inkscape:window-width="1301"
      inkscape:window-height="744"
      inkscape:window-x="65"
@@ -818,6 +818,640 @@
          style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
          transform="scale(0.4,0.4)" />
     </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMX1-9"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8259-7"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4922"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4924"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4926"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4928"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXz"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXz-2"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path9936-93"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXz"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4932"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4934"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXF"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXF-1"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8265-46"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXV"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXV-6"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8262-0"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4940"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4942"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMW"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMW-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7136-2"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInML"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInML-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7130-8"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMm"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMm-48"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7133-0"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9777-2"
+       id="linearGradient9783-4"
+       x1="449.50861"
+       y1="1547.3622"
+       x2="620.49139"
+       y2="1547.3622"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9777-2">
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:1;"
+         offset="0"
+         id="stop9779-8" />
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:0;"
+         offset="1"
+         id="stop9781-2" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="TriangleOutMXz"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXz-29"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path9936-90"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXF"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXF-7"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8265-8"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXV"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXV-00"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8262-7"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMX1-69"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8259-0"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMW"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMW-73"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7136-7"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInML"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInML-50"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7130-7"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMm"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMm-6"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7133-2"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <linearGradient
+       y2="1547.3622"
+       x2="620.49139"
+       y1="1547.3622"
+       x1="449.50861"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4999-0"
+       xlink:href="#linearGradient9777-2-8"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9777-2-8">
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:1;"
+         offset="0"
+         id="stop9779-8-2" />
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:0;"
+         offset="1"
+         id="stop9781-2-5" />
+    </linearGradient>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMX1-24"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8259-51"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6255"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6257"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6259"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6261"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXz"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXz-9"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path9936-7"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXz"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6265"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6267"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXF"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXF-8"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8265-3"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXV"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXV-3"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8262-58"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6273"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6275"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMW"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMW-2"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7136-8"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInML"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInML-4"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7130-23"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMm"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMm-24"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7133-8"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9777-5"
+       id="linearGradient9783-40"
+       x1="449.50861"
+       y1="1547.3622"
+       x2="620.49139"
+       y2="1547.3622"
+       gradientUnits="userSpaceOnUse" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9777-5">
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:1;"
+         offset="0"
+         id="stop9779-7" />
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:0;"
+         offset="1"
+         id="stop9781-0" />
+    </linearGradient>
+    <linearGradient
+       y2="1547.3622"
+       x2="620.49139"
+       y1="1547.3622"
+       x1="449.50861"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient6332"
+       xlink:href="#linearGradient9777-5"
+       inkscape:collect="always" />
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMX1-63"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8259-96"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6495"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6497"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6499"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6501"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXF"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXF-80"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8265-2"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMXV"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMXV-01"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8262-6"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMX1"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6507"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6509"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#08009a;fill-rule:evenodd;stroke:#08009a;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMW"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMW-72"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7136-12"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleInML"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleInML-8"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7130-9"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(-0.4,-0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleOutMm"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="TriangleOutMm-5"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path7133-75"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#b60000;fill-rule:evenodd;stroke:#b60000;stroke-width:1pt"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <linearGradient
+       y2="1547.3622"
+       x2="620.49139"
+       y1="1547.3622"
+       x1="449.50861"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient6332-0"
+       xlink:href="#linearGradient9777-5-6"
+       inkscape:collect="always" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9777-5-6">
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:1;"
+         offset="0"
+         id="stop9779-7-7" />
+      <stop
+         style="stop-color:#dbdbdb;stop-opacity:0;"
+         offset="1"
+         id="stop9781-0-7" />
+    </linearGradient>
+    <linearGradient
+       y2="1547.3622"
+       x2="620.49139"
+       y1="1547.3622"
+       x1="449.50861"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient6559"
+       xlink:href="#linearGradient9777-5-6"
+       inkscape:collect="always" />
   </defs>
   <metadata
      id="metadata7">
@@ -827,7 +1461,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -2835,5 +3469,679 @@
          id="tspan7823-1-6-9-1-9-5-7"
          x="-1393.0513"
          y="1114.453">z</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:url(#linearGradient6332);fill-opacity:1;stroke:#808080;stroke-width:0.98280638;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5765-0-0-8-4"
+       sodipodi:cx="535"
+       sodipodi:cy="1547.3622"
+       sodipodi:rx="85"
+       sodipodi:ry="80"
+       d="m 620,1547.3622 a 85,80 0 1 1 -170,0 85,80 0 1 1 170,0 z"
+       transform="matrix(0.73206404,-0.73206404,0.70710678,0.70710678,-1975.8046,429.86583)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.70780575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.41561152, 1.70780576;stroke-dashoffset:0"
+       id="path3777-8-2-5-0-5-7-0-4"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="60"
+       sodipodi:ry="80"
+       d="m 340,562.36218 a 60,80 0 1 1 -120,0 60,80 0 1 1 120,0 z"
+       transform="matrix(0.3235935,0.03672535,-0.0841847,1.0500001,-533.2639,531.59845)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:0.98050785;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.96101569, 0.98050784;stroke-dashoffset:0"
+       id="path3763-3-2-8-3-4-4"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="20"
+       d="M 360,562.36218 A 80,20 0 1 1 200.02417,561.87054"
+       transform="matrix(1.0375,-0.07139713,0.07426405,0.99744797,-822.2634,591.42618)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="0"
+       sodipodi:end="3.1661773"
+       sodipodi:open="true" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.35123336;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.70246678, 1.35123339;stroke-dashoffset:0"
+       id="path3763-3-2-9-4-5-9-0-7"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="20"
+       d="M 360,562.36218 A 80,20 0 1 1 200.6294,559.85833"
+       transform="matrix(0.75275575,-0.05181508,0.05388211,0.72387842,-729.4533,683.58959)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="0"
+       sodipodi:end="3.2671145"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:url(#TriangleOutMm)"
+       d="m -490,1247.3622 0,-94.625 0,-20.375 0,-41.5 0,-13.5 -10e-5,-75.0003"
+       id="path2989-5-6-0-5-1-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInML)"
+       d="m -605.884,1132.3619 88,3e-4 52,0 100,-3e-4"
+       id="path2987-4-1-9-6-0-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutMW)"
+       d="m -405,1047.3622 -23,23 -11,11 -24,24 -27,27 -80,79.9999"
+       id="path5708-5-84-8-8-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="translate(-770,569.99979)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 1;stroke-dashoffset:0"
+       id="path2993-4-5-5-4-3-3"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="80"
+       d="M 223.5208,505.70444 A 80,80 0 1 1 335.06443,620.39587"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="3.928569"
+       sodipodi:end="7.0948313"
+       sodipodi:open="true" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#970000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-590.00012"
+       y="1232.3621"
+       id="text7821-04-5-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-9-1-2"
+         x="-590.00012"
+         y="1232.3621">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-500"
+       y="987.36218"
+       id="text7821-0-3-9-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-6-0"
+         x="-500"
+         y="987.36218">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#950000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-630"
+       y="1137.3622"
+       id="text7821-0-0-7-1-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-8-7-4-7"
+         x="-630"
+         y="1137.3622">z</tspan></text>
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -504,1091.3622 -15,-40"
+       id="path5897-1-8-3-9-37"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMXV)"
+       d="m -504,1091.3622 -46,0"
+       id="path5897-1-8-3-4-75-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMXF)"
+       d="m -504,1091.3622 10,-46"
+       id="path5897-1-8-3-4-7-5-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-485"
+       y="1037.3622"
+       id="text7821-0-3-7-7-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-9-0"
+         x="-485"
+         y="1037.3622">y'</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-535"
+       y="1037.3622"
+       id="text7821-0-3-7-4-2-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-41-1"
+         x="-535"
+         y="1037.3622">x'</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-580"
+       y="1092.3622"
+       id="text7821-0-3-7-4-6-2-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-9-5-79"
+         x="-580"
+         y="1092.3622">z'</tspan></text>
+    <path
+       transform="matrix(3.00004,0,0,3.00004,1242.0233,-3463.7851)"
+       d="m -581,1518.3622 a 1,1 0 1 1 -2,0 1,1 0 1 1 2,0 z"
+       sodipodi:ry="1"
+       sodipodi:rx="1"
+       sodipodi:cy="1518.3622"
+       sodipodi:cx="-582"
+       id="path10200-5-6-1"
+       style="fill:#fc0000;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0101;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Sans"
+       x="-485"
+       y="1092.3619"
+       id="text9518-8-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan9520-7-6"
+         x="-485"
+         y="1092.3619"
+         style="font-size:20px">P</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fb500;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Sans"
+       x="-508"
+       y="1172.3622"
+       id="text9518-8-0-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan9520-7-1-7"
+         x="-508"
+         y="1172.3622"
+         style="font-size:20px;fill:#0fb500;fill-opacity:1">O</tspan></text>
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -510,1152.3622 -22.3465,22.3465"
+       id="path5897-1-8-3-9-6-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -511,1153.3622 -31.7816,0"
+       id="path5897-1-8-3-9-4-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -511,1152.3622 0,-36.6309"
+       id="path5897-1-8-3-9-3-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="matrix(3.00004,0,0,3.00004,1235.2733,-3402.3476)"
+       d="m -581,1518.3622 a 1,1 0 1 1 -2,0 1,1 0 1 1 2,0 z"
+       sodipodi:ry="1"
+       sodipodi:rx="1"
+       sodipodi:cy="1518.3622"
+       sodipodi:cx="-582"
+       id="path10200-5-6-6-0"
+       style="fill:#0fb500;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-530"
+       y="1117.3622"
+       id="text7821-0-3-7-7-8-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-9-5-7"
+         x="-530"
+         y="1117.3622">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-535.69507"
+       y="1194.3561"
+       id="text7821-0-3-7-4-2-2-8"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-41-5-8"
+         x="-535.69507"
+         y="1194.3561">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-560"
+       y="1172.3622"
+       id="text7821-0-3-7-4-6-2-1-5"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-9-5-7-3"
+         x="-560"
+         y="1172.3622">z</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:url(#linearGradient6559);fill-opacity:1;stroke:#808080;stroke-width:0.98280638;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path5765-0-0-8-4-5"
+       sodipodi:cx="535"
+       sodipodi:cy="1547.3622"
+       sodipodi:rx="85"
+       sodipodi:ry="80"
+       d="m 620,1547.3622 a 85,80 0 1 1 -170,0 85,80 0 1 1 170,0 z"
+       transform="matrix(0.73206404,-0.73206404,0.70710678,0.70710678,-2355.8046,429.86581)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.70780575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.41561152, 1.70780576;stroke-dashoffset:0"
+       id="path3777-8-2-5-0-5-7-0-4-1"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="60"
+       sodipodi:ry="80"
+       d="m 340,562.36218 a 60,80 0 1 1 -120,0 60,80 0 1 1 120,0 z"
+       transform="matrix(0.3235935,0.03672535,-0.0841847,1.0500001,-913.2639,531.59843)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:0.98050785;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.96101569, 0.98050784;stroke-dashoffset:0"
+       id="path3763-3-2-8-3-4-4-6"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="20"
+       d="M 360,562.36218 A 80,20 0 1 1 200.02417,561.87054"
+       transform="matrix(1.0375,-0.07139713,0.07426405,0.99744797,-1202.2634,591.42616)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="0"
+       sodipodi:end="3.1661773"
+       sodipodi:open="true" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1.35123336;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2.70246678, 1.35123339;stroke-dashoffset:0"
+       id="path3763-3-2-9-4-5-9-0-7-2"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="20"
+       d="M 360,562.36218 A 80,20 0 1 1 200.6294,559.85833"
+       transform="matrix(0.75275575,-0.05181508,0.05388211,0.72387842,-1109.4533,683.58957)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="0"
+       sodipodi:end="3.2671145"
+       sodipodi:open="true" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:url(#TriangleOutMm)"
+       d="m -870,1247.3622 0,-94.625 0,-20.375 0,-41.5 0,-13.5 -9e-5,-75.0003"
+       id="path2989-5-6-0-5-1-6-7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#TriangleInML)"
+       d="m -750,1132.3619 -88,3e-4 -52,0 -100,-3e-4"
+       id="path2987-4-1-9-6-0-6-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#b60000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#TriangleOutMW)"
+       d="m -785,1047.3622 -23,23 -11,11 -24,24 -27,27 -80,79.9999"
+       id="path5708-5-84-8-8-1-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="translate(-1150,569.99977)"
+       sodipodi:type="arc"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:2, 1;stroke-dashoffset:0"
+       id="path2993-4-5-5-4-3-3-7"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="80"
+       sodipodi:ry="80"
+       d="M 223.5208,505.70444 A 80,80 0 1 1 335.06443,620.39587"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="3.928569"
+       sodipodi:end="7.0948313"
+       sodipodi:open="true" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#970000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-970.00012"
+       y="1232.3621"
+       id="text7821-04-5-3-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-9-1-2-2"
+         x="-970.00012"
+         y="1232.3621">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-735"
+       y="1142.3622"
+       id="text7821-0-3-9-2-6"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-6-0-8"
+         x="-735"
+         y="1142.3622">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#950000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-870"
+       y="987.36218"
+       id="text7821-0-0-7-1-0-0"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-8-7-4-7-8"
+         x="-870"
+         y="987.36218">z</tspan></text>
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -883.99999,1091.3622 -15,-40"
+       id="path5897-1-8-3-9-37-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMXV)"
+       d="m -883.99999,1091.3622 -46.00001,0"
+       id="path5897-1-8-3-4-75-6-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMXF)"
+       d="m -883.99999,1091.3622 9.99999,-46"
+       id="path5897-1-8-3-4-7-5-8-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-865"
+       y="1037.3622"
+       id="text7821-0-3-7-7-6-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-9-0-1"
+         x="-865"
+         y="1037.3622">y'</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-915"
+       y="1037.3622"
+       id="text7821-0-3-7-4-2-0-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-41-1-0"
+         x="-915"
+         y="1037.3622">x'</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-960"
+       y="1092.3622"
+       id="text7821-0-3-7-4-6-2-5-3"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-9-5-79-3"
+         x="-960"
+         y="1092.3622">z'</tspan></text>
+    <path
+       transform="matrix(3.00004,0,0,3.00004,862.0233,-3463.7851)"
+       d="m -581,1518.3622 a 1,1 0 1 1 -2,0 1,1 0 1 1 2,0 z"
+       sodipodi:ry="1"
+       sodipodi:rx="1"
+       sodipodi:cy="1518.3622"
+       sodipodi:cx="-582"
+       id="path10200-5-6-1-1"
+       style="fill:#fc0000;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0101;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Sans"
+       x="-865"
+       y="1092.3619"
+       id="text9518-8-7-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan9520-7-6-0"
+         x="-865"
+         y="1092.3619"
+         style="font-size:20px">P</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0fb500;fill-opacity:1;stroke:#000000;stroke-opacity:1;font-family:Sans"
+       x="-888"
+       y="1172.3622"
+       id="text9518-8-0-0-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan9520-7-1-7-1"
+         x="-888"
+         y="1172.3622"
+         style="font-size:20px;fill:#0fb500;fill-opacity:1">O</tspan></text>
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -889.99999,1152.3622 -22.3465,22.3465"
+       id="path5897-1-8-3-9-6-2-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -890.99999,1153.3622 -31.78161,0"
+       id="path5897-1-8-3-9-4-7-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       style="fill:none;stroke:#08009a;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:0.72602737;stroke-dasharray:none;marker-end:url(#TriangleOutMX1)"
+       d="m -890.99999,1152.3622 0,-36.6309"
+       id="path5897-1-8-3-9-3-2-8"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       transform="matrix(3.00004,0,0,3.00004,855.2733,-3402.3476)"
+       d="m -581,1518.3622 a 1,1 0 1 1 -2,0 1,1 0 1 1 2,0 z"
+       sodipodi:ry="1"
+       sodipodi:rx="1"
+       sodipodi:cy="1518.3622"
+       sodipodi:cx="-582"
+       id="path10200-5-6-6-0-4"
+       style="fill:#0fb500;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="arc"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-910"
+       y="1117.3622"
+       id="text7821-0-3-7-7-8-6-9"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-9-5-7-6"
+         x="-910"
+         y="1117.3622">y</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-915.69507"
+       y="1194.3561"
+       id="text7821-0-3-7-4-2-2-8-7"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-41-5-8-6"
+         x="-915.69507"
+         y="1194.3561">x</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000cb;fill-opacity:1;stroke:none;font-family:Sans"
+       x="-940"
+       y="1172.3622"
+       id="text7821-0-3-7-4-6-2-1-5-2"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"><tspan
+         sodipodi:role="line"
+         id="tspan7823-1-6-9-1-9-5-7-3-5"
+         x="-940"
+         y="1172.3622">z</tspan></text>
   </g>
 </svg>

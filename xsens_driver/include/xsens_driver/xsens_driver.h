@@ -51,12 +51,14 @@ namespace xsens
             CmtOutputMode GetOutputMode();
             CmtOutputSettings GetOutputSettings();
             
-            // functions for getting data
+            // Funciones para obtener datos
             CmtQuat&        GetOriQuat(int mt_index = 0);
             CmtMatrix&      GetOriMatrix(int mt_index = 0);
             CmtEuler&       GetOriEuler(int mt_index = 0);
             CmtRawData&     GetRawData(int mt_index = 0);
             CmtCalData&     GetCalData(int mt_index = 0);
+            
+            // Funciones para implementar en el futuro
             CmtVector&      GetPositionLLA(int mt_index = 0);
             CmtGpsPvtData&  GetGpsPvtData(int mt_index = 0);
             

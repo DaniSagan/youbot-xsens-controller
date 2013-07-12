@@ -40,7 +40,7 @@ int main(int argc, char** argv)
     // para que nos de la matriz de rotación en lugar
     // del cuaternión de orientación:
     
-    //driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_EULER);
+    //driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX);
     
     // Inicializamos el driver. Esto realizará la configuración del sensor
     // con los valores que le hayamos asignado hasta ahora 
