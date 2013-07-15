@@ -120,7 +120,7 @@ En esta última fase se crearán los sistemas necesarios para la utilización de
 
 \end{enumerate}
 
-En este documento se realizará una descripción detallada de las soluciones que se han adoptado para cada problema, y como se han incorporado dentro del sistema total de monitoriación, de forma que cada parte se comunique con las demás de forma eficaz.
+En este documento se realizará una descripción detallada de las soluciones que se han adoptado para cada problema, y como se han incorporado dentro del sistema total de monitorización, de forma que cada parte se comunique con las demás de forma eficaz.
 
 %%% ******** Capítulo 3 ******** %%%
 \chapter{ESPECIFICACIONES DE DISEÑO}
@@ -186,7 +186,7 @@ Las funcionalidades que se pretenden implementar en el \textit{driver} del Xsens
 
 \item Lectura a frecuencia aceptable.
 
-\item Integración en el sistema ROS.
+\item Integración en el sistema ROS. Se verá más adelante la importancia de este punto.
 
 \end{itemize}
 
@@ -218,7 +218,7 @@ La plataforma ROS proporciona solución a diversos problemas que vienen dados in
 
 ROS proporciona librerías en los lenguajes C++, python y lisp en las que se implementan las diversas herramientas que pone a disposición, como intercambio de mensajes entre programas, servidor de parámetros, gestión del tiempo, entre muchas otras. En el presente proyecto se utilizará la implementación en C++ --\textbf{roscpp}--, que es la librería más apliamente difundida en la comunidad de ROS, además de estar diseñada para ser la librería más actualizada y con mayor número de herramientas.
 
-Además ROS pone a disposición un gestor de paquetes de software con el fin de facilitar la reutilización de código. Un \textbf{paquete} es la forma más básica de organización del software en ROS. Un paquete puede contener programas --llamados \textbf{nodos}--, librerías, o cualquier otra cosa que posea funcionalidad. La herramienta \textit{roscreate-pkg} permite la creación de un paquete de forma automática. 
+Además ROS pone a disposición un gestor de paquetes de software con el fin de facilitar la reutilización de código. Un \textbf{paquete} es la forma más básica de organización del software en ROS. Un paquete puede contener programas --llamados \textbf{nodos}--, librerías, o cualquier otra cosa que posea cierta funcionalidad. La herramienta \textit{roscreate-pkg} permite la creación de un paquete de forma automática. 
 
 En un \textbf{stack} de ROS se pueden incluir varios paquetes. Los \textit{stacks} tienen por fin hacer más sencillo compartir conjuntos de paquetes entre distintos ordenadores. Todos los paquetes creados en el presente proyecto se incluirán dentro de un mismo \textit{stack}.
 
@@ -278,7 +278,7 @@ $ rxplot -r 10 /xsens_node/sensor0/acc/vector/x:y:z
 
 \begin{figure}[h]
 	\centering
-		\includegraphics[scale=0.4]{../img/rxplot_img.png} 
+		\includegraphics[scale=0.3]{../img/rxplot_img.png} 
 	\caption[Programa rxplot mostrando datos de un sensor]{Programa rxplot mostrando una gráfica con los datos de los acelerómetros de un sensor en tiempo real} 
 	\label{fig: rxplot_img}
 \end{figure}
@@ -310,7 +310,19 @@ En la documentación del robot YouBot viene incluída una simulación del brazo 
 
 \subsection{Sistema operativo}
 
+La plataforma ROS ha sido creada para trabajar principalmente en el sistema operativo Ubuntu. Existe otras versiones capaces de funcionar en otros sistemas operativos como Windows, pero son experimentales y no poseen todas las funcionalidades de la versión principal, además de carecer de soporte y ser algo inestables. Por ello, el sistema operativo elegido para la realización y ejecución del software será Ubuntu.
+
 \subsubsection{El sistema operativo Ubuntu}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[scale=0.3]{../img/ubuntu_logo.png} 
+  \end{center}
+  \caption[El sistema operativo Ubuntu]{El sistema operativo Ubuntu.}
+  \label{fig: ubuntu_logo}
+\end{wrapfigure}
+
+Ubuntu es un sistema operativo con núcleo Linux, distribuído como software libre y de código abierto. Es la distribución más popular de los sistemas GNU/Linux en ordenadores personales.
 
 
 
@@ -320,7 +332,7 @@ En la documentación del robot YouBot viene incluída una simulación del brazo 
 \chapter{CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}
 \chaptermark{CÁLCULO DE LAS POSICIONES Y ORIENTACIONES}
 
-Uno de los objetivos del proyecto es capturar el estado de orientación de los sensores para la utilizar los datos obtenidos en otros sistemas. Para ello es necesario utilizar un sistema de representación matemática de las orientaciones que permita la derivación de las magnitudes que se deseen (como ejes y ángulos de rotación) de forma rápida e inequívoca. En este capítulo se pretende dar una visión general de la derivación matemática y justificación previa de los algoritmos cuya implementación se mostrará más adelante.
+Uno de los objetivos del proyecto es capturar el estado de orientación de los sensores para la utilizar los datos obtenidos en otros programas. Para ello es necesario utilizar un sistema de representación matemática de las orientaciones que permita la derivación de las magnitudes que se deseen (como ejes y ángulos de rotación) de forma rápida e inequívoca. En este capítulo se pretende dar una visión general de la derivación matemática y justificación de los algoritmos cuya implementación se mostrará en el capítulo \textit{IMPLEMENTACIÓN DEL SOFTWARE}.
 
 \section{Formas de representar orientaciones espaciales}
 
@@ -411,7 +423,9 @@ $$ i^2 = j^2 = k^2 = ijk = -1 $$
 
 La expresión general de un cuaternión es la siguiente:
 
-$$ q = w + xi + yj + zk $$
+\begin{equation} \label{eq: gen_quaternion}
+q = w + xi + yj + zk
+\end{equation}
 
 donde $w$, $x$, $y$ y $z$ son números reales. Los cuaterniones satisfacen las leyes conmutativa y asociativa de la suma, la ley asociativa de la multiplicación, las leyes distributivas de la multiplicación respecto a la suma y la existencia de los elementos neutros para la suma y la multiplicación. Una propiedad importante de los cuaterniones es que no satisfacen la propiedad conmutativa de la multiplicación.
 
@@ -564,10 +578,22 @@ q_1 q_2 = c_1 c_2 - s_1 s_2 (e_1 \cdot e_2) + c_1 s_2 e_2 + c_2 s_1 e_1 + s_1 s_
 \begin{defn}
 El conjugado de un cuaternión $ q = c + s e $ se define como el cuaternión resultado de negar la parte imaginaria. Se representará de la siguiente manera:
 
-\begin{equation}
+\begin{equation} \label{eq: E17}
 conj(q) = q^* = c - s e
 \end{equation}
 \end{defn}
+
+\begin{defn}
+La norma o magnitud de un cuaternión $ q = w + xi + yj + zk $ se define como la siguiente operación:
+
+\begin{equation} \label{eq: E16}
+\|q\| = \sqrt{w^2 + x^2 + y^2 + z^2}
+\end{equation}
+\end{defn}
+
+Esta magnitud representaría una hipotética longitud que tendría el cuaternión si el espacio de los cuaterniones $\mathbb{H}$ se identifica con un espacio euclídeo $\mathbb{R}^4$. Para un cuaternión de rotación se tiene que:
+
+$$ q = c + se, \quad \|q\| = \sqrt{c^2 + \|se\|^2} = \sqrt{c^2 + s^2} = 1 $$
 
 Dado a que se va a trabajar siempre con cuaterniones unitarios (también llamados \textit{versores}), se podrá asumir lo siguiente:
 
@@ -591,7 +617,7 @@ p' = qpq^*, \quad q = q(\theta, \vec{e})
 
 donde $p$ es el cuaternión asociado al vector $\vec{p}$, que se define como:
 
-\begin{equation}
+\begin{equation} \label{eq: E15}
 \vec{p} = p_x\vec{i} + p_y\vec{j} + p_z\vec{k} \quad \Rightarrow \quad p = p_xi + p_yj + p_zk
 \end{equation}
 
@@ -876,7 +902,7 @@ $$ \text{Sólido 2: } q_2' = q_1^*q_2 = q_{S_2S_1} $$
 
 donde $q_{S_2S_1}$ es la orientación relativa del sólido 2 con respecto al sólido 1. Generalizando este resultado se obtiene una expresión general para hallar la rotación relativa de un sólido $A$ con respecto a un sólido $B$:
 
-\begin{equation}
+\begin{equation} \label{eq: E18}
 q_{S_AS_B} = q_B^*q_A
 \end{equation}
 
@@ -1108,7 +1134,7 @@ Para la creación de los distintos programas se han utilizado las herramientas q
 
 \begin{figure}[h]
 	\centering
-		\includegraphics[scale=0.35]{../img/communications.png} 
+		\includegraphics[scale=0.30]{../img/communications.png} 
 	\caption[Esquema simplificado de comunicaciones]{Esquema simplificado de las comunicaciones entre programas. En azul se representan los topics y parámetros de ROS, en verde los nodos y en naranja las clases principales. } 
 	\label{fig: communications}
 \end{figure}
@@ -1118,7 +1144,7 @@ Para la creación de los distintos programas se han utilizado las herramientas q
 
 Uno de los problemas más importantes a resolver en este proyecto es conseguir una comunicación fluida de los datos de los sensores hacia el PC. La comunicación entre un dispositivo y el ordenador se realiza mediante un programa llamado \textit{driver}, que actúa de interfaz entre el dispositivo físico y el sistema operativo del PC, utilizando algún tipo de canal de datos (USB, bluetooth, etc.). En el caso del driver para los sensores xsens, la comunicación se realizará a través del puerto USB.\\
 
-En la documentación del \textit{Kit de Desarrollo de Software} de \textit{xsens} vienen proporcionadas algunas clases y estructuras en lenguaje C++ para la comunicación de bajo nivel con el sensor/máster. Para la realización del driver se han aprovechado estas clases y se han encapsulado dentro de una clase \textit{wrapper}, llamada \textit{xsens::Driver}, que proporciona una interfaz sencilla hacia las clases de bajo nivel. El programa principal del \textit{driver} realiza la configuración de los sensores, y lee los datos a través del \textit{wrapper}, publicándolos en \textit{topics} de ROS.
+En la documentación del \textit{Kit de Desarrollo de Software} de \textit{xsens} vienen proporcionadas algunas clases y estructuras en lenguaje C++ para la comunicación de bajo nivel con el sensor/máster. Para la realización del driver se han aprovechado estas clases y se han encapsulado dentro de una clase \textit{wrapper}, llamada \textit{xsens::Driver}, que proporciona una interfaz sencilla hacia las clases de bajo nivel. El programa principal del \textit{driver} realiza la configuración de los sensores, y lee los datos a través del \textit{wrapper}, publicándolos en \textit{topics} de ROS.\\
 
 Los archivos de la documentación que se han incluído en el driver son los siguientes (incluyen los archivos de extensión .cpp y .h):
 
@@ -1142,7 +1168,16 @@ Los archivos de la documentación que se han incluído en el driver son los sigu
 
 \end{itemize}
 
+En la siguiente lista se muestran los archivos creados en este paquete y la función que realizan dentro del driver:
 
+\begin{itemize}
+\item xsens\_driver: implementación de la clase \textit{xsens::Driver}, la cual básicamente realiza una encapsulación de todas las clases que se incluyen en los archivos mencionados en la lista anterior y actúa de interfaz con el nodo principal \textit{xsens\_node}.
+\item xsens\_sensor: la clase xsens::Sensor es en esencia una estructura de datos donde se almacena la configuración de cada uno de los sensores conectados y los datos leídos en cada ciclo de lectura.
+\item xsens\_node: programa principal del driver. Se encarga de publicar en ROS los datos leídos a través de la clase \textit{xsens::Driver}.
+\item xsens\_sensor\_subscriber: no pertenece al driver propiamente dicho, sino que este archivo es parte de la implementación de la librería \textit{xsens\_driver} que puede utilizarse como interfaz de lectura en otros programas de los datos publicados por el driver.
+\end{itemize}
+
+A continuación se realiza una descripción en detalle de la implementación y funcionamiento del driver.
 
 \subsection{Funcionamiento de la clase xsens::Driver}
 
@@ -1243,11 +1278,29 @@ driver.SetAlignmentMatrix(0, xsens::DfvToCmtMatrix(dfv::Matrix::Identity(3)));
 		Devuelve los ángulos de Euler del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los ángulos de Euler del sensor de id 0.
 		
 		\item \textbf{CmtRawData\& GetRawData(int mt\_index = 0)}\\
-		Devuelve los datos crudos de los acelerómetros, giróscopos y magnetómetros del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos crudos del sensor de id 0.		
+		Devuelve los datos crudos de los acelerómetros, giróscopos y magnetómetros, además de la temperatura del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos crudos del sensor de id 0. Los datos crudos tienen la forma de enteros de 16 bits. Los datos de los acelerómetros, giróscopos y magnetómetros están compuestos cada uno de un vector de 3 enteros (ejes XYZ), y la temperatura es otro entero de 16 bits.	
 		
 		\item \textbf{CmtCalData\& GetCalData(int mt\_index = 0)}\\
-		Devuelve los datos calibrados de los acelerómetros, giróscopos y magnetómetros del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos calibrados del sensor de id 0.		
-		
+		Devuelve los datos calibrados de los acelerómetros, giróscopos y magnetómetros del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos calibrados del sensor de id 0.	
+
+\begin{table}[h]
+\center
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{3}{|c|}{\textbf{Datos calibrados de los sensores}}\\
+\hline
+\textbf{Dato} & Tipo & \textbf{Unidades} \\ 
+\hline
+acelerómetros & array de 3 floats & $\displaystyle\frac{m}{s^2}$ \\
+giróscopos & array de 3 floats & $\displaystyle\frac{rad}{s}$ \\
+magnetómetros & array de 3 floats & $mGauss$ \\
+temperatura & float & $^\circ C$ \\
+\hline
+\end{tabular}	
+\caption[Unidades de los datos calibrados devueltos por los sensores]{Unidades de los datos calibrados devueltos por los sensores.}
+\label{tab:sensor_units}	
+\end{table}		
+			
 	\end{itemize}
 
 \end{itemize}
@@ -1320,7 +1373,7 @@ El nodo \textit{xsens\_node} es el encargado de publicar en topics de ROS los da
 /xsens\_node/output\_settings & entero & Forma de representación de la orientación \\
 \hline
 \end{tabular}	
-\caption[Topics publicados por el programa xsens\_node]{Topics publicados por el programa xsens\_node.}
+\caption[Parámetros publicados por el programa xsens\_node]{Prámetros publicados por el programa xsens\_node.}
 \label{tab:params_xsens_node}	
 \end{table}
 
@@ -1359,7 +1412,234 @@ En el siguiente cuadro se presenta un ejemplo de como usar la clase xsens::Senso
 
 \section{Librería para manejo de cuaterniones, vectores y matrices}
 
+Dentro del paquete \textit{dfv} se ha creado una librería con la implementación de las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix}.
 
+\subsection{La clase dfv::Quaternion}
+
+La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaternión y las operaciones que se pueden realizar con él. A continuación se muestra una breve documentación de las operaciones más importantes que se pueden realizar con esta clase.
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Quaternion()}: Constructor sin argumentos. Crea un cuaternión cuyas cuatro componentes son nulas.
+
+\item \textbf{Quaternion(double w\_, double x\_, double y\_, double z\_)}: Constructor del cuaternión genérico (ecuación \eqref{eq: gen_quaternion}). Crea un cuaternión cuyas componentes son los valores que se le pasan a modo de argumento.
+
+\item \textbf{explicit Quaternion(const Vector3\& v)}: Constructor del cuaternión asociado al vector $v$ que se le pasa como parámetro (ecuación \eqref{eq: E15}). 
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Quaternion\& operator=(const Quaternion\& q)}: realiza una copia del cuaternión que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Quaternion\& operator+=(const Quaternion\& q)}: Suma al cuaternión original el cuaternión que se le pasa como parámetro.
+\item \textbf{Quaternion\& operator-=(const Quaternion\& q)}: Resta al cuaternión original el cuaternión que se le pasa como parámetro.
+\item \textbf{Quaternion\& operator*=(const double k)}: Multiplica el cuaternión original por una constante k.
+
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Quaternion operator+(const Quaternion\& q) const}: devuelve la suma de dos cuaterniones.
+\item \textbf{const Quaternion operator-(const Quaternion\& q) const}: devuelve la diferencia entre dos cuaterniones
+\item \textbf{friend const Quaternion operator*(double k, Quaternion\& q)}: deevuelve la multiplicación de una constante por el cuaternión que se le pase como argumento.
+\item \textbf{const Quaternion operator*(double k) const}: misma operación de multiplicación por una constante, pero pudiéndose especificar en orden inverso.
+\item \textbf{const Quaternion operator*(const Quaternion\& q) const}: devuelve el producto de Hamilton de dos cuaterniones 
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Quaternion\& q) const}: devuelve \textit{true} si las componentes de los dos cuaterniones son iguales, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Quaternion\& q) const}: devuelve \textit{true} si los dos cuaterniones son diferentes. 
+\end{itemize}
+
+\item \textbf{double GetModulus() const}: devuelve el módulo del cuaternión (ecuación \eqref{eq: E16}).
+\item \textbf{void Normalize()}: realiza un normalización del cuaternión, esto es, multiplica el cuaternión por el inverso de su módulo, de forma que se obtiene un cuaternión de magnitud unitaria.
+\item \textbf{const Quaternion GetConjugate() const}: devuelve el conjugado del cuaternión (ecuación \eqref{eq: E17}).
+\item \textbf{static const Quaternion GetRotationQuaternion(...)}: función para construir un cuaternión a partir de los argumentos especificados. 
+
+	\begin{itemize}
+	\item Construcción a partir de las componentes del eje de rotación y ángulo de rotación.
+	\item Construcción a partir del vector de rotación y ángulo de rotación.
+	\item Construcción del cuaternión que define la rotación de un vector, especificando el vector antes y después de ser rotado.
+	\item Construcción del cuaternión que define la rotación de un sistema de dos vectores antes y después de ser rotados. Se supone que los dos vectores son perpendiculares entre si.
+	\end{itemize}
+
+\item \textbf{void GetAxisAndAngle(Vector3\& vector, double\& angle) const}: función que devuelve el vector y ángulo de rotación.
+\item \textbf{void GetRPY(double\& roll, double\& pitch, double\& yaw, unsigned int solution = 1)}: implementación del algoritmo descrito en la tabla \ref{tab:algoritmo_angulos_euler} para la obtención de los ángulos de Euler a partir del cuaternión de rotación.
+\item \textbf{static const Quaternion GetDifference(const Quaternion\& q1, const Quaternion\& q2)}: diferencia entre dos cuaterniones (no confundir con resta). Devuelve el cuaternión de rotación relativo entre los cuaterniones $q1$ y $q2$ (ecuación \eqref{eq: E18}).  
+
+\end{itemize}
+
+\subsection{La clase dfv::Vector3}
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Vector3()}: Constructor sin argumentos. Crea un vector cuyas tres componentes son nulas.
+
+\item \textbf{Vector3(double x\_, double y\_, double z\_)}: Constructor de un vector genérico cuyas componentes son los valores que se le pasan a modo de argumento.
+
+\item \textbf{explicit Vector3(const Quaternion\& q)}: Constructor del vector asociado al cuaternión $q$ que se le pasa como parámetro. Se obvia la componente w del cuaternión. (ecuación \eqref{eq: E15})
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Vector3\& operator=(const Vector3\& v)}: realiza una copia del vector que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Vector3\& operator+=(const Vector3\& v)}
+\item \textbf{Vector3\& operator-=(const Vector3\& v)}
+\item \textbf{Vector3\& operator*=(const double k)}
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Vector3 operator+(const Vector3\& v) const}
+\item \textbf{const Vector3 operator-(const Vector3\& v) const}
+\item \textbf{friend const Vector3 operator*(double k, Vector3\& v)}
+\item \textbf{const Vector3 operator*(double k) const}
+\item \textbf{const Vector3 operator*(const Vector3\& v) const}
+\item \textbf{const Vector3 operator$\wedge$(const Vector3\& v) const}
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Vector3\& v) const}
+\item \textbf{bool operator!=(const Vector3\& v) const}
+\end{itemize}
+
+\item \textbf{double GetMagnitude() const}
+\item \textbf{void Normalize()}
+\item \textbf{const Vector3 GetNormalized() const}
+\item \textbf{const Vector3 GetScalated(double k) const}
+\item \textbf{Vector3\& Rotate(const Quaternion q)}
+\item \textbf{const Vector3 GetRotated(const Quaternion\& q) const}
+
+\end{itemize}
+
+\subsection{La clase dfv::Matrix}
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Matrix()}: Constructor sin argumentos. Crea una matriz inválida de 0 filas y 0 columnas.
+
+\item \textbf{Matrix(unsigned int size)}: Constructor de una matriz cuadrada de tamaño \textit{size}, cuyos elementos son todos 0.
+
+\item \textbf{Matrix(unsigned int rows, unsigned int columns)}: Constructor de una matriz de \textit{rows} filas y \textit{columns} columnas cuyos elementos son todos 0.
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Matrix\& operator=(const Matrix\& q)}: realiza una copia de la matriz que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Matrix\& operator+=(const Matrix\& q)}
+\item \textbf{Matrix\& operator-=(const Matrix\& q)}
+\item \textbf{Matrix\& operator*=(const double k)}
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Matrix operator+(const Matrix\& q) const}: definición del operador ''+'' que realiza la suma de dos matrices.
+\item \textbf{const Matrix operator-(const Matrix\& q) const}: definición del operador ''-'', resta de dos matrices.
+\item \textbf{friend const Matrix operator*(double k, Matrix\& q)}: multiplicación de un escalar por una matriz (multiplicación de cada elemento de la matriz por dicho escalar).
+\item \textbf{const Matrix operator*(double k) const}: multiplicación de una matriz por un escalar.
+\item \textbf{const Matrix operator*(const Matrix\& q) const}: implementación de la multiplicación de dos matrices.
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Matrix\& v) const}: devuelve \textit{true} si las matrices son del mismo tamaño y sus elementos son iguales, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Matrix\& v) const}: operador cuyo resultado es el inverso del operador ''==''. 
+\end{itemize}
+
+\item \textbf{Matrix\& Create(unsigned int rows, unsigned int columns, double value = 0)}: crea una matriz de \textit{rows} filas y \textit{columns} columnas a cuyos elementos se les asigna el valor \textit{value} pasado como parámetro.
+\item \textbf{double Get(unsigned int row, unsigned int col) const}
+\item \textbf{void Set(unsigned int row, unsigned int col, double value)}
+\item \textbf{unsigned int GetRows() const}
+\item \textbf{unsigned int GetColumns() const}
+\item \textbf{Matrix GetMinor(unsigned int row, unsigned int column) const}
+\item \textbf{void Randomize()}
+\item \textbf{double GetDeterminant() const}
+\item \textbf{const Matrix GetTransposed() const}
+\item \textbf{const Matrix GetAdjoint() const}
+\item \textbf{const Matrix GetAdjugate() const}
+\item \textbf{const Matrix GetInverse() const}
+\item \textbf{double operator()(unsigned int row, unsigned int column) const}
+
+\end{itemize}
+
+\subsection{Cómo usar la librería dfv en otro paquete de ROS}
+
+Si se quisiera hacer uso de la librería \textit{dfv} dentro de otro paquete de ROS, se deberán seguir los siguientes pasos:
+
+\begin{enumerate}
+\item Añadir como dependencia en el archivo \textit{manifest.xml} el paquete dfv. Como ejemplo se muestra el archivo \textit{manifest.xml} del paquete \textit{youbot\_controller}:
+
+\begin{lstlisting}
+
+<package>
+  <description brief="youbot_controller">
+
+     youbot_controller
+
+  </description>
+  <author>Daniel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/youbot_controller</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="xsens_driver"/>
+  <depend package="brics_actuator"/>
+  <depend package="dfv"/>
+
+</package>
+
+\end{lstlisting}
+
+\item Enlazar la librería \textit{dfv} en el archivo \textit{CMakeLists.txt}:
+
+\begin{lstlisting}
+target_link_libraries(nombre_del_ejecutable dfv)
+\end{lstlisting}
+
+\item Incluir el archivo de cabecera \textit{dfv.h} en el programa donde se quiera utilizar la librería:
+
+\begin{lstlisting}
+#include <dfv/dfv.h>
+\end{lstlisting}
+
+\end{enumerate}
+
+Ahora se pueden utilizar las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix} y otras utilidades de la librería en el nuevo programa.
 
 \section{Controlador del brazo robótico del robot Youbot real}
 
@@ -1421,6 +1701,7 @@ Esta clase tiene un funcionamiento muy sencillo. Sólamente es necesario pasarle
 
 \subsection{Controlador de un simulador del brazo robótico del robot Youbot}
 
+En la documentación del robot Youbot existe un paquete de ROS que contiene una simulación del brazo del robot para trabajar en Gazebo y un nodo de ROS --\textit{youbot\_arm\_publisher}-- para realizar su control. Esta simulación está preparada para funcionar tal y como lo hace el robot real; Se puede controlar la posición de las articulaciones con los mismos topics de ROS y los ángulos se corresponden a los del robot real, por lo que se puede usar esta simulación a modo de prueba previa de los programas que se creen para el robot antes de ejecutarlos en el robot real. También puede utilizarse a modo de visualizador de la posición del robot en tiempo real en otro ordenador. En el anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo realizar la instalación y poner en ejecución esta simulación.
 
 \chapter{IMPLEMENTACIÓN FÍSICA}
 \section{Selección de componentes}
@@ -1707,6 +1988,8 @@ Ver si hay un proceso gzserver
 \end{spverbatim}
 
 Si lo hay, ejecutar \textit{System Monitor} y matar el proceso \textit{gzserver}.
+
+\part{Presupuesto}
 
 \iffalse
 
