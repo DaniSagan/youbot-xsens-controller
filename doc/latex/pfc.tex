@@ -18,6 +18,7 @@
 \usepackage{hyperref}
 \usepackage{floatrow}
 \usepackage{wrapfig}
+\usepackage[font=small,labelfont=bf]{caption}
 \author{Daniel Fernández Villanueva}
 \title{\huge Sistema de monitorización inercial del movimiento de las extremidades superiores}
 
@@ -1663,12 +1664,7 @@ En el paquete \textit{youbot\_controller} se implementa un controlador de las ar
 
 \end{enumerate}
 
-\begin{figure}[h]
-	\centering
-		\includegraphics[scale=0.3]{../img/youbot_joints.png} 
-	\caption[Articulaciones del brazo robot Youbot]{Articulaciones del brazo del robot Youbot} 
-	\label{fig: youbot_joints}
-\end{figure}
+
 
 \subsection{El driver youbot\_oodl}
 
@@ -1708,6 +1704,13 @@ La función \textit{PublishMessage()} admite un parámetro de tipo \textit{bool}
 \subsection{Visualizador de la posición del brazo}
 
 El paquete \textit{arm\_visualizer} proporciona una forma de poder visualizar la posición del brazo en el simulador 3D Gazebo. Contiene el nodo \textit{arm\_visualizer}, que básicamente se encarga de leer los topics con los cuaterniones de orientación de tres sensores, con ellos calcula las posiciones y orientaciones de cada eslabón del brazo --brazo, antebrazo y mano-- y publica los correspondientes mensajes de ROS para mover la simulación del brazo en el programa Gazebo. En la sección \textit{Ejecución del simulador del brazo robótico del robot Youbot} del anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo poner en marcha el visualizador junto con el simulador Gazebo.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.3]{../img/arm_visualizer.png} 
+	\caption[Programa Gazebo con un modelo de un brazo humano]{Programa Gazebo con un modelo de un brazo humano controlado con el programa arm\_visualizer. La articulación del hombro se sitúa en el origen de coordenadas. Las cajas representan el brazo, el antebrazo y la mano} 
+	\label{fig: arm_visualizer}
+\end{figure}
 
 \subsection{Controlador de un simulador del brazo robótico del robot Youbot}
 
@@ -1893,6 +1896,8 @@ $ rosrun youbot_controller youbot_controller
 
 \subsection{Ejecución del simulador del brazo robótico del robot Youbot}
 
+\subsection{Ejecución de la visualización del modelo del brazo humano}
+
 Para poner en marcha este programa hace falta haber iniciado primero el driver de los sensores Xsens y el simulador Gazebo. Los pasos a seguir son los siguientes:
 
 \begin{enumerate}
@@ -1914,7 +1919,7 @@ $ roslaunch gazebo_world empty_world.launch
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.4]{../img/gazebo_empty.png} 
+		\includegraphics[scale=0.3]{../img/gazebo_empty.png} 
 	\caption[Ventana de Gazebo abierta con el archivo empty\_world.launch]{Ventana de Gazebo abierta con el archivo empty\_world.launch} 
 	\label{fig: gazebo_empty}
 \end{figure}
@@ -1923,7 +1928,7 @@ $ roslaunch gazebo_world empty_world.launch
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.5]{../img/gazebo_delete_2b.png} 
+		\includegraphics[scale=0.4]{../img/gazebo_delete_2b.png} 
 	\caption[Eliminación del plano en la simulación de Gazebo]{Eliminación del plano en la simulación de Gazebo.} 
 	\label{fig: gazebo_delete}
 \end{figure}
@@ -1945,7 +1950,7 @@ $ rosrun arm_visualizer arm_visualizer
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=0.4]{../img/gazebo_arm.png} 
+		\includegraphics[scale=0.3]{../img/gazebo_arm.png} 
 	\caption[Visualización del brazo en Gazebo]{Visualización del brazo en Gazebo.} 
 	\label{fig: gazebo_arm}
 \end{figure}

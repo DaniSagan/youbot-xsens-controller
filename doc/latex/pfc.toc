@@ -11,12 +11,12 @@
 \contentsline {subsubsection}{Sensores inerciales}{10}{section*.6}
 \contentsline {subsubsection}{Soluci\IeC {\'o}n escogida: red de sensores inerciales xsens MTx}{10}{section*.7}
 \contentsline {subsection}{\numberline {4.1.2}Comunicaci\IeC {\'o}n entre los sensores y el PC}{10}{subsection.4.1.2}
-\contentsline {subsubsection}{Driver para la comunicaci\IeC {\'o}n xbus Master - PC}{11}{section*.8}
+\contentsline {subsubsection}{Driver para la comunicaci\IeC {\'o}n xbus Master - PC}{11}{section*.9}
 \contentsline {subsection}{\numberline {4.1.3}Comunicaci\IeC {\'o}n entre programas}{11}{subsection.4.1.3}
-\contentsline {subsubsection}{ROS}{11}{section*.9}
-\contentsline {subsubsection}{Herramientas proporcionadas por ROS}{12}{section*.10}
+\contentsline {subsubsection}{ROS}{11}{section*.10}
+\contentsline {subsubsection}{Herramientas proporcionadas por ROS}{12}{section*.12}
 \contentsline {subsection}{\numberline {4.1.4}Sistema operativo}{15}{subsection.4.1.4}
-\contentsline {subsubsection}{El sistema operativo Ubuntu}{15}{section*.11}
+\contentsline {subsubsection}{El sistema operativo Ubuntu}{15}{section*.16}
 \contentsline {chapter}{\numberline {5}C\IeC {\'A}LCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}{16}{chapter.5}
 \contentsline {section}{\numberline {5.1}Formas de representar orientaciones espaciales}{16}{section.5.1}
 \contentsline {subsection}{\numberline {5.1.1}\IeC {\'A}ngulos de Euler}{17}{subsection.5.1.1}
@@ -32,8 +32,8 @@
 \contentsline {section}{\numberline {5.3}C\IeC {\'a}lculo de la posici\IeC {\'o}n del brazo}{29}{section.5.3}
 \contentsline {section}{\numberline {5.4}Obtenci\IeC {\'o}n de los \IeC {\'a}ngulos de Euler a partir del cuaterni\IeC {\'o}n de orientaci\IeC {\'o}n}{30}{section.5.4}
 \contentsline {subsection}{\numberline {5.4.1}Ampliaci\IeC {\'o}n del intervalo de los \IeC {\'a}ngulos obtenidos}{33}{subsection.5.4.1}
-\contentsline {subsubsection}{Generaci\IeC {\'o}n de una segunda soluci\IeC {\'o}n a partir de la primera}{34}{section*.12}
-\contentsline {subsubsection}{Permutaci\IeC {\'o}n de los ejes locales}{34}{section*.13}
+\contentsline {subsubsection}{Generaci\IeC {\'o}n de una segunda soluci\IeC {\'o}n a partir de la primera}{34}{section*.25}
+\contentsline {subsubsection}{Permutaci\IeC {\'o}n de los ejes locales}{34}{section*.27}
 \contentsline {chapter}{\numberline {6}IMPLEMENTACI\IeC {\'O}N DEL SOFTWARE}{36}{chapter.6}
 \contentsline {section}{\numberline {6.1}Driver para la comunicaci\IeC {\'o}n xbus Master/xsens - PC}{36}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Funcionamiento de la clase xsens::Driver}{39}{subsection.6.1.1}
@@ -70,9 +70,10 @@
 \contentsline {subsection}{\numberline {A.5.2}Iniciaci\IeC {\'o}n del driver del robot Youbot}{60}{subsection.A.5.2}
 \contentsline {subsection}{\numberline {A.5.3}Ejecuci\IeC {\'o}n del programa youbot\_controller}{60}{subsection.A.5.3}
 \contentsline {subsection}{\numberline {A.5.4}Ejecuci\IeC {\'o}n del simulador del brazo rob\IeC {\'o}tico del robot Youbot}{60}{subsection.A.5.4}
-\contentsline {chapter}{\numberline {B}SOLUCI\IeC {\'O}N DE PROBLEMAS}{64}{appendix.B}
-\contentsline {section}{\numberline {B.1}Error iniciando Gazebo}{64}{section.B.1}
-\contentsline {section}{\numberline {B.2}Al ejecutar el simulador del brazo rob\IeC {\'o}tico no se abre la interfaz gr\IeC {\'a}fica de Gazebo}{64}{section.B.2}
-\contentsline {section}{\numberline {B.3}El driver del Xsens no contacta con los sensores}{65}{section.B.3}
-\contentsline {section}{\numberline {B.4}Al ejecutar Gazebo con el archivo empty\_world.launch no se abre la GUI}{65}{section.B.4}
-\contentsline {part}{III\hspace {1em}Presupuesto}{66}{part.3}
+\contentsline {subsection}{\numberline {A.5.5}Ejecuci\IeC {\'o}n de la visualizaci\IeC {\'o}n del modelo del brazo humano}{60}{subsection.A.5.5}
+\contentsline {chapter}{\numberline {B}SOLUCI\IeC {\'O}N DE PROBLEMAS}{63}{appendix.B}
+\contentsline {section}{\numberline {B.1}Error iniciando Gazebo}{63}{section.B.1}
+\contentsline {section}{\numberline {B.2}Al ejecutar el simulador del brazo rob\IeC {\'o}tico no se abre la interfaz gr\IeC {\'a}fica de Gazebo}{63}{section.B.2}
+\contentsline {section}{\numberline {B.3}El driver del Xsens no contacta con los sensores}{64}{section.B.3}
+\contentsline {section}{\numberline {B.4}Al ejecutar Gazebo con el archivo empty\_world.launch no se abre la GUI}{64}{section.B.4}
+\contentsline {part}{III\hspace {1em}Presupuesto}{65}{part.3}

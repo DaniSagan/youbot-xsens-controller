@@ -20,13 +20,12 @@
 // dentro del rango [0, 2*pi]
 double NormalizeAngle(double angle);
 
-// Borrar
-void CorrectRPY(double& roll, double& pitch, double& yaw);
-
 // ángulos límite
 const double ang_min[] = {0.010, 0.010, -5.026, 0.022, 0.110};
 const double ang_max[] = {5.840, 2.617, -0.015, 3.429, 5.641};
 const double sec_ang = 0.05;
+
+std::vector<double> GetAngles(xsens::SensorSubscriberList& sensors);
 
 int main(int argc, char** argv)
 {    
@@ -62,84 +61,37 @@ int main(int argc, char** argv)
     
     Youbot youbot(node_handle);
     
+    std::vector<double> angs;
+    
+    unsigned int c = 200;
+    double ang_0_offset = 0;
+    ROS_INFO("Calibrating Sensor Orientation...");
+    
+    while(ros::ok() && c != 0)
+    {
+        angs = GetAngles(sensor_subscriber_list);
+        ang_0_offset = (ang_min[0] + ang_max[0]) / 2.0 - angs[0];
+        ros::Duration(0.05).sleep();
+        c--;
+    }
+    ROS_INFO("Calibration Done.");
+    
     // bucle principal
     while(ros::ok())
     {
-        dfv::Quaternion q0 = sensor_subscriber_list.GetOriQuat(0);
-        dfv::Quaternion q1 = sensor_subscriber_list.GetOriQuat(1);
-        dfv::Quaternion q2 = sensor_subscriber_list.GetOriQuat(2);
+        // Obtención de los ángulos a partir de los cuaterniones de los sensores
+        angs = GetAngles(sensor_subscriber_list);
         
-        dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0, q1);
-        dfv::Quaternion q12 = dfv::Quaternion::GetDifference(q1, q2);
+        angs[0] += ang_0_offset;
+        angs[0] = NormalizeAngle(angs[0]);
         
-        // Cálculo de los ángulos entre cada sensor
-        
-        double roll_0;
-        double pitch_0;
-        double yaw_0;        
-        q0.GetRPY(roll_0, pitch_0, yaw_0, 1);
-        if(fabs(roll_0) > dfv::pi/2.0)
-        {
-            q0.GetRPY(roll_0, pitch_0, yaw_0, 2);
-        }
-        //CorrectRPY(roll_0, pitch_0, yaw_0);
-        
-        double roll_01;
-        double pitch_01;
-        double yaw_01;        
-        q01.GetRPY(roll_01, pitch_01, yaw_01, 1);
-        //CorrectRPY(roll_01, pitch_01, yaw_01);
-        if(fabs(roll_01) > dfv::pi/2.0)
-        {
-            q01.GetRPY(roll_01, pitch_01, yaw_01, 2);
-        }
-        
-        double roll_12;
-        double pitch_12;
-        double yaw_12;        
-        q12.GetRPY(roll_12, pitch_12, yaw_12, 1);
-        //CorrectRPY(roll_12, pitch_12, yaw_12);
-        if(fabs(roll_12) > dfv::pi/2.0)
-        {
-            q12.GetRPY(roll_12, pitch_12, yaw_12, 2);
-        }
-        
-        // Adaptación de los ángulos obtenidos
-        // teniendo en cuenta los offsets de cada
-        // articulación
-        
-        double offsets[] = {2.9, -0.5, -2.5, 1.5, 1.5};
-        
-        double angs[5];
-        angs[0] = offsets[0] + NormalizeAngle(-yaw_0);
-        //angs[1] = -pitch_0 < 0 ? 0 : -pitch_0;
-        angs[1] = offsets[1] + 1.0 * (-pitch_0);
-        angs[2] = offsets[2] + 1.0 * (-pitch_01);
-        angs[3] = offsets[3] + 1.0 * (-pitch_12);
-        angs[4] = offsets[4] + 2.0 * (-roll_01);
-        
-        for(int i = 0; i < 5; i++)
-        {
-            std::cout << "ang[" << i << "] " << angs[i] << std::endl;
-        }
-                
-        // Pasamos los ángulos al robot
-        // Los limitamos al intervalo que acepta cada articulación
-        
-        /*youbot.joint_positions[0] = (angs[0] <  0.02) ?  0.02 : ((angs[0] >  5.83) ?  5.83 : angs[0]);
-        youbot.joint_positions[1] = (angs[1] <  0.02) ?  0.02 : ((angs[1] >  2.60) ?  2.60 : angs[1]);
-        youbot.joint_positions[2] = (angs[2] < -5.01) ? -5.01 : ((angs[2] > -0.02) ? -0.02 : angs[2]);
-        youbot.joint_positions[3] = (angs[3] <  0.03) ?  0.03 : ((angs[3] >  3.41) ?  3.41 : angs[3]);
-        youbot.joint_positions[4] = (angs[4] <  0.12) ?  0.12 : ((angs[4] >  5.63) ?  5.63 : angs[4]);*/
-        
+        // Corrección de los ángulos para que no superen los límites
         for(int i = 0; i < 5; i++)
         {
             youbot.joint_positions[i] = (angs[i] <  ang_min[i] + sec_ang) ?  
                 ang_min[i] + sec_ang : ((angs[i] >  ang_max[i] - sec_ang) ?  
                     ang_max[i] - sec_ang : angs[i]);
-                    
-            std::cout << "ang min: " << ang_min[i] << std::endl;
-            std::cout << "ang max: " << ang_max[i] << std::endl;    
+                        
         }
         
         // Publicamos en el topic del robot
@@ -165,30 +117,73 @@ int main(int argc, char** argv)
 
 double NormalizeAngle(double angle)
 {
-    while(angle < -dfv::pi)
+    while(angle < 0)
     {
         angle += 2*dfv::pi;
     }
-    while(angle > dfv::pi)
+    while(angle > 2*dfv::pi)
     {
         angle -= 2*dfv::pi;
     }
     return angle;
 }
 
-void CorrectRPY(double& roll, double& pitch, double& yaw)
+std::vector<double> GetAngles(xsens::SensorSubscriberList& sensors)
 {
-    if (roll > dfv::pi/2.0)
+    std::vector<double> angles(5);
+    
+    dfv::Quaternion q0 = sensors.GetOriQuat(0);
+    dfv::Quaternion q1 = sensors.GetOriQuat(1);
+    dfv::Quaternion q2 = sensors.GetOriQuat(2);
+    
+    dfv::Quaternion q0p = dfv::Quaternion::GetRotationQuaternion(dfv::Vector3::i.GetRotated(q0), dfv::pi / 4.0);
+    dfv::Quaternion q1p = dfv::Quaternion::GetRotationQuaternion(dfv::Vector3::i.GetRotated(q1), dfv::pi / 4.0);
+    dfv::Quaternion q2p = dfv::Quaternion::GetRotationQuaternion(dfv::Vector3::i.GetRotated(q2), dfv::pi / 4.0);
+    
+    dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0p*q0, q1p*q1);
+    dfv::Quaternion q12 = dfv::Quaternion::GetDifference(q1p*q1, q2p*q2);
+    
+    // Cálculo de los ángulos entre cada sensor
+    
+    double roll_0;
+    double pitch_0;
+    double yaw_0;        
+    q0.GetRPY(roll_0, pitch_0, yaw_0, 1);
+    if(fabs(roll_0) > dfv::pi/2.0)
     {
-        roll -= dfv::pi;
-        pitch = (pitch < 0)? - dfv::pi - pitch : dfv::pi - pitch;
-        yaw = (yaw < 0)? yaw + dfv::pi : yaw - dfv::pi;
-        
+        q0.GetRPY(roll_0, pitch_0, yaw_0, 2);
     }
-    else if (roll < -dfv::pi/2.0)
+    
+    double roll_01;
+    double pitch_01;
+    double yaw_01;        
+    q01.GetRPY(roll_01, pitch_01, yaw_01, 1);
+    if(fabs(roll_01) > dfv::pi/2.0)
     {
-        roll += dfv::pi;
-        pitch = (pitch < 0)? - dfv::pi - pitch : dfv::pi - pitch;
-        yaw = (yaw < 0)? yaw + dfv::pi : yaw - dfv::pi;
+        q01.GetRPY(roll_01, pitch_01, yaw_01, 2);
     }
+    
+    double roll_12;
+    double pitch_12;
+    double yaw_12;        
+    q12.GetRPY(roll_12, pitch_12, yaw_12, 1);
+    if(fabs(roll_12) > dfv::pi/2.0)
+    {
+        q12.GetRPY(roll_12, pitch_12, yaw_12, 2);
+    }
+    
+    // Adaptación de los ángulos obtenidos
+    // teniendo en cuenta los offsets de cada
+    // articulación
+    
+    double offsets[] = {2.9, -0.4, -2.5, 1.5, 1.5};
+    
+    double angs[5];
+    angles[0] = offsets[0] + NormalizeAngle(-yaw_0);
+    angles[1] = offsets[1] + 1.0 * (-pitch_0);
+    angles[2] = offsets[2] + 1.0 * (yaw_01);
+    angles[3] = offsets[3] + 1.0 * (yaw_12);
+    angles[4] = offsets[4] ;//+ 2.0 * (-roll_01);
+    
+    return angles;
 }
