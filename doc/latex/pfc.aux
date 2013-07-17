@@ -110,80 +110,85 @@
 \@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces Algoritmo de c\IeC {\'a}lculo de los \IeC {\'a}ngulos de Euler a partir del cuaterni\IeC {\'o}n de orientaci\IeC {\'o}n.}}{33}{table.5.2}}
 \newlabel{tab:algoritmo_angulos_euler}{{5.2}{33}{Algoritmo de cálculo de los ángulos de Euler a partir del cuaternión de orientación}{table.5.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4.1}Ampliaci\IeC {\'o}n del intervalo de los \IeC {\'a}ngulos obtenidos}{33}{subsection.5.4.1}}
-\@writefile{toc}{\contentsline {subsubsection}{Generaci\IeC {\'o}n de una segunda soluci\IeC {\'o}n a partir de la primera}{33}{section*.12}}
+\@writefile{toc}{\contentsline {subsubsection}{Generaci\IeC {\'o}n de una segunda soluci\IeC {\'o}n a partir de la primera}{34}{section*.12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.6}{\ignorespaces Dos soluciones para $\theta $ (\textit  {pitch}) y $\psi $ (\textit  {yaw})}}{34}{figure.5.6}}
 \newlabel{fig: dos_soluciones_esfera}{{5.6}{34}{Dos soluciones para $\theta $ (\textit {pitch}) y $\psi $ (\textit {yaw})\relax }{figure.5.6}{}}
 \@writefile{toc}{\contentsline {subsubsection}{Permutaci\IeC {\'o}n de los ejes locales}{34}{section*.13}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}IMPLEMENTACI\IeC {\'O}N DEL SOFTWARE}{35}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}IMPLEMENTACI\IeC {\'O}N DEL SOFTWARE}{36}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Driver para la comunicaci\IeC {\'o}n xbus Master/xsens - PC}{35}{section.6.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Esquema simplificado de comunicaciones}}{36}{figure.6.1}}
-\newlabel{fig: communications}{{6.1}{36}{Esquema simplificado de comunicaciones\relax }{figure.6.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Funcionamiento de la clase xsens::Driver}{38}{subsection.6.1.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Unidades de los datos calibrados devueltos por los sensores}}{40}{table.6.1}}
-\newlabel{tab:sensor_units}{{6.1}{40}{Unidades de los datos calibrados devueltos por los sensores\relax }{table.6.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/xsens\textunderscore driver\textunderscore example.cpp}{40}{lstlisting.6.-4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Programa principal: xsens\_node}{41}{subsection.6.1.2}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Topics publicados por el programa xsens\_node}}{41}{table.6.2}}
-\newlabel{tab:topics_xsens_node}{{6.2}{41}{Topics publicados por el programa xsens\_node\relax }{table.6.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}C\IeC {\'o}mo tomar datos del sensor desde otro programa}{41}{subsection.6.1.3}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Par\IeC {\'a}metros publicados por el programa xsens\_node}}{42}{table.6.3}}
-\newlabel{tab:params_xsens_node}{{6.3}{42}{Parámetros publicados por el programa xsens\_node\relax }{table.6.3}{}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/xsens\textunderscore sensor\textunderscore subscriber\textunderscore example.cpp}{42}{lstlisting.6.-6}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Librer\IeC {\'\i }a para manejo de cuaterniones, vectores y matrices}{43}{section.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}La clase dfv::Quaternion}{43}{subsection.6.2.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}La clase dfv::Vector3}{45}{subsection.6.2.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}La clase dfv::Matrix}{46}{subsection.6.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}C\IeC {\'o}mo usar la librer\IeC {\'\i }a dfv en otro paquete de ROS}{47}{subsection.6.2.4}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Controlador del brazo rob\IeC {\'o}tico del robot Youbot real}{48}{section.6.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Articulaciones del brazo robot Youbot}}{49}{figure.6.2}}
-\newlabel{fig: youbot_joints}{{6.2}{49}{Articulaciones del brazo robot Youbot\relax }{figure.6.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}El driver youbot\_oodl}{49}{subsection.6.3.1}}
-\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Topics a los que est\IeC {\'a} suscrito el driver youbot\_oodl}}{49}{table.6.4}}
-\newlabel{tab:topics_youbot}{{6.4}{49}{Topics a los que está suscrito el driver youbot\_oodl\relax }{table.6.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}La clase Youbot}{49}{subsection.6.3.2}}
-\@writefile{lol}{\contentsline {lstlisting}{../src/youbot\textunderscore example.cpp}{50}{lstlisting.6.-10}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Otras aplicaciones de visualizaci\IeC {\'o}n y control}{50}{section.6.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Visualizador de la posici\IeC {\'o}n del brazo}{50}{subsection.6.4.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Controlador de un simulador del brazo rob\IeC {\'o}tico del robot Youbot}{50}{subsection.6.4.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}IMPLEMENTACI\IeC {\'O}N F\IeC {\'I}SICA}{52}{chapter.7}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Driver para la comunicaci\IeC {\'o}n xbus Master/xsens - PC}{36}{section.6.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Esquema simplificado de comunicaciones}}{37}{figure.6.1}}
+\newlabel{fig: communications}{{6.1}{37}{Esquema simplificado de comunicaciones\relax }{figure.6.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Funcionamiento de la clase xsens::Driver}{39}{subsection.6.1.1}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.1}{\ignorespaces Unidades de los datos calibrados devueltos por los sensores}}{41}{table.6.1}}
+\newlabel{tab:sensor_units}{{6.1}{41}{Unidades de los datos calibrados devueltos por los sensores\relax }{table.6.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/xsens\textunderscore driver\textunderscore example.cpp}{41}{lstlisting.6.-4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Programa principal: xsens\_node}{42}{subsection.6.1.2}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.2}{\ignorespaces Topics publicados por el programa xsens\_node}}{42}{table.6.2}}
+\newlabel{tab:topics_xsens_node}{{6.2}{42}{Topics publicados por el programa xsens\_node\relax }{table.6.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.3}{\ignorespaces Par\IeC {\'a}metros publicados por el programa xsens\_node}}{43}{table.6.3}}
+\newlabel{tab:params_xsens_node}{{6.3}{43}{Parámetros publicados por el programa xsens\_node\relax }{table.6.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}C\IeC {\'o}mo tomar datos del sensor desde otro programa}{43}{subsection.6.1.3}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/xsens\textunderscore sensor\textunderscore subscriber\textunderscore example.cpp}{43}{lstlisting.6.-6}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Librer\IeC {\'\i }a para manejo de cuaterniones, vectores y matrices}{44}{section.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}La clase dfv::Quaternion}{44}{subsection.6.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}La clase dfv::Vector3}{46}{subsection.6.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}La clase dfv::Matrix}{47}{subsection.6.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}C\IeC {\'o}mo usar la librer\IeC {\'\i }a dfv en otro paquete de ROS}{49}{subsection.6.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Controlador del brazo rob\IeC {\'o}tico del robot Youbot real}{50}{section.6.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}El driver youbot\_oodl}{50}{subsection.6.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}La clase Youbot}{50}{subsection.6.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Articulaciones del brazo robot Youbot}}{51}{figure.6.2}}
+\newlabel{fig: youbot_joints}{{6.2}{51}{Articulaciones del brazo robot Youbot\relax }{figure.6.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6.4}{\ignorespaces Topics a los que est\IeC {\'a} suscrito el driver youbot\_oodl}}{51}{table.6.4}}
+\newlabel{tab:topics_youbot}{{6.4}{51}{Topics a los que está suscrito el driver youbot\_oodl\relax }{table.6.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{../src/youbot\textunderscore example.cpp}{51}{lstlisting.6.-10}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Otras aplicaciones de visualizaci\IeC {\'o}n y control}{52}{section.6.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.1}Visualizador de la posici\IeC {\'o}n del brazo}{52}{subsection.6.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.4.2}Controlador de un simulador del brazo rob\IeC {\'o}tico del robot Youbot}{52}{subsection.6.4.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}PRUEBAS Y RESULTADOS OBTENIDOS}{54}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}Selecci\IeC {\'o}n de componentes}{52}{section.7.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Montaje}{52}{section.7.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.3}Ajuste}{52}{section.7.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}PROTOCOLO DE PRUEBAS. REDISE\IeC {\~N}O}{53}{chapter.8}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}BIBLIOGRAF\IeC {\'I}A}{55}{chapter.8}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {9}RESULTADOS OBTENIDOS}{54}{chapter.9}}
+\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Anexos}{56}{part.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}INSTALACI\IeC {\'O}N DEL SOFTWARE}{57}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {10}CONCLUSIONES}{55}{chapter.10}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}BIBLIOGRAF\IeC {\'I}A}{56}{chapter.11}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {part}{II\hspace  {1em}Anexos}{57}{part.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}INSTALACI\IeC {\'O}N Y PUESTA EN MARCHA DEL SOFTWARE}{58}{appendix.A}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de ROS Fuerte}{58}{section.A.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Configuraci\IeC {\'o}n de los repositorios de Ubuntu}{58}{subsection.A.1.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Configuraci\IeC {\'o}n del archivo sources.list}{58}{subsection.A.1.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Ventana Software Sources}}{59}{figure.A.1}}
-\newlabel{fig: software_sources}{{A.1}{59}{Ventana Software Sources\relax }{figure.A.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Configuraci\IeC {\'o}n de la keys}{59}{subsection.A.1.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.4}Descarga e instalaci\IeC {\'o}n}{59}{subsection.A.1.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.5}Configuraci\IeC {\'o}n del entorno}{60}{subsection.A.1.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n del simulador Gazebo}{60}{section.A.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n del simulador de brazo rob\IeC {\'o}tico del YouBot}{60}{section.A.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Instalaci\IeC {\'o}n de ROS Fuerte}{57}{section.A.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Configuraci\IeC {\'o}n de los repositorios de Ubuntu}{57}{subsection.A.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Configuraci\IeC {\'o}n del archivo sources.list}{57}{subsection.A.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.1}{\ignorespaces Ventana Software Sources}}{58}{figure.A.1}}
+\newlabel{fig: software_sources}{{A.1}{58}{Ventana Software Sources\relax }{figure.A.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.3}Configuraci\IeC {\'o}n de la keys}{58}{subsection.A.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.4}Descarga e instalaci\IeC {\'o}n}{58}{subsection.A.1.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.5}Configuraci\IeC {\'o}n del entorno}{59}{subsection.A.1.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Instalaci\IeC {\'o}n del simulador Gazebo}{59}{section.A.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Instalaci\IeC {\'o}n del simulador de brazo rob\IeC {\'o}tico del YouBot}{59}{section.A.3}}
 \@writefile{toc}{\contentsline {section}{\numberline {A.4}Instalaci\IeC {\'o}n del stack youbot-xsens-controller}{60}{section.A.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4.1}Instalaci\IeC {\'o}n desde el CD adjunto al proyecto}{60}{subsection.A.4.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {A.4.2}Instalaci\IeC {\'o}n desde git}{60}{subsection.A.4.2}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}SOLUCI\IeC {\'O}N DE PROBLEMAS}{61}{appendix.B}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.5}PUESTA EN MARCHA DEL SOFTWARE}{60}{section.A.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5.1}Iniciaci\IeC {\'o}n del driver del sensor Xsens}{60}{subsection.A.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5.2}Iniciaci\IeC {\'o}n del driver del robot Youbot}{60}{subsection.A.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5.3}Ejecuci\IeC {\'o}n del programa youbot\_controller}{60}{subsection.A.5.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5.4}Ejecuci\IeC {\'o}n del simulador del brazo rob\IeC {\'o}tico del robot Youbot}{60}{subsection.A.5.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.2}{\ignorespaces Ventana de Gazebo abierta con el archivo empty\_world.launch}}{61}{figure.A.2}}
+\newlabel{fig: gazebo_empty}{{A.2}{61}{Ventana de Gazebo abierta con el archivo empty\_world.launch\relax }{figure.A.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.3}{\ignorespaces Eliminaci\IeC {\'o}n del plano en la simulaci\IeC {\'o}n de Gazebo}}{61}{figure.A.3}}
+\newlabel{fig: gazebo_delete}{{A.3}{61}{Eliminación del plano en la simulación de Gazebo\relax }{figure.A.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.4}{\ignorespaces Puesta en pausa de la simulaci\IeC {\'o}n de Gazebo}}{62}{figure.A.4}}
+\newlabel{fig: gazebo_pause}{{A.4}{62}{Puesta en pausa de la simulación de Gazebo\relax }{figure.A.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualizaci\IeC {\'o}n del brazo en Gazebo}}{63}{figure.A.5}}
+\newlabel{fig: gazebo_arm}{{A.5}{63}{Visualización del brazo en Gazebo\relax }{figure.A.5}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}SOLUCI\IeC {\'O}N DE PROBLEMAS}{64}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}Error iniciando Gazebo}{61}{section.B.1}}
-\@writefile{toc}{\contentsline {part}{III\hspace  {1em}Presupuesto}{62}{part.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}Error iniciando Gazebo}{64}{section.B.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}Al ejecutar el simulador del brazo rob\IeC {\'o}tico no se abre la interfaz gr\IeC {\'a}fica de Gazebo}{64}{section.B.2}}
+\@writefile{lol}{\contentsline {lstlisting}{../../doc/src/youbot\textunderscore arm\textunderscore publisher.launch}{65}{lstlisting.B.-11}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.3}El driver del Xsens no contacta con los sensores}{65}{section.B.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.4}Al ejecutar Gazebo con el archivo empty\_world.launch no se abre la GUI}{65}{section.B.4}}
+\@writefile{toc}{\contentsline {part}{III\hspace  {1em}Presupuesto}{66}{part.3}}

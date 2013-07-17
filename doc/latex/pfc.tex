@@ -984,7 +984,7 @@ Utilizando las componentes del vector $i'$ resulta sencillo obtener los ángulos
 i'_z =  \sin \theta \iff \theta = \arcsin i'_z
 \end{equation}
 
-A continuación se realiza la tercera rotación sobre el eje $x'$. Los ejes $y''$ y $z''$ así obtenidos permanecerán tangentes a la superficie de la esfera, mientras el eje $x''$ coincidirá con $x'$. Esta situación final se muestra en la figura \ref{fig: esfera_local}.
+A continuación se realiza la tercera rotación sobre el eje $x'$. Los ejes $y''$ y $z''$ así obtenidos permanecerán tangentes a la superficie de la esfera, mientras el eje $x''$ coincidirá con $x'$. Esta situación final se muestra en la figura \ref{fig: esfera_local}.\\
 
 \begin{figure}[h]
 	\centering
@@ -1278,7 +1278,7 @@ driver.SetAlignmentMatrix(0, xsens::DfvToCmtMatrix(dfv::Matrix::Identity(3)));
 		Devuelve los ángulos de Euler del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los ángulos de Euler del sensor de id 0.
 		
 		\item \textbf{CmtRawData\& GetRawData(int mt\_index = 0)}\\
-		Devuelve los datos crudos de los acelerómetros, giróscopos y magnetómetros, además de la temperatura del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos crudos del sensor de id 0. Los datos crudos tienen la forma de enteros de 16 bits. Los datos de los acelerómetros, giróscopos y magnetómetros están compuestos cada uno de un vector de 3 enteros (ejes XYZ), y la temperatura es otro entero de 16 bits.	
+		Devuelve los datos crudos de los acelerómetros, giróscopos y magnetómetros, además de la temperatura del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos crudos del sensor de id 0. Los datos crudos contienen los datos de salida de los conversores analógico-digitales de los sensores, y tienen la forma de enteros de 16 bits. Los datos de los acelerómetros, giróscopos y magnetómetros están compuestos cada uno de un vector de 3 enteros de 16 bits (ejes XYZ), y la temperatura es otro entero de 16 bits.	
 		
 		\item \textbf{CmtCalData\& GetCalData(int mt\_index = 0)}\\
 		Devuelve los datos calibrados de los acelerómetros, giróscopos y magnetómetros del sensor con número de identificación especificado. Si se deja el parámetro en blanco, devuelve los datos calibrados del sensor de id 0.	
@@ -1482,6 +1482,8 @@ La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaterni
 
 \subsection{La clase dfv::Vector3}
 
+La clase \textit{dfv::Vector3} es la implementación de un vector de 3 componentes para la representación de puntos en un espacio euclídeo $\mathbb{R}^3$. 
+
 \begin{itemize}
 
 \item \textbf{Constructores}:
@@ -1503,39 +1505,41 @@ La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaterni
 \item \textbf{Operadores de asignación compuestos}:
 
 \begin{itemize}
-\item \textbf{Vector3\& operator+=(const Vector3\& v)}
-\item \textbf{Vector3\& operator-=(const Vector3\& v)}
-\item \textbf{Vector3\& operator*=(const double k)}
+\item \textbf{Vector3\& operator+=(const Vector3\& v)}: suma al vector original el vector que se le pasa como parámetro.
+\item \textbf{Vector3\& operator-=(const Vector3\& v)}: resta al vector original el vector que se le pasa como parámetro.
+\item \textbf{Vector3\& operator*=(const double k)}: multiplica el vector original por una constante $k$.
 \end{itemize}
 
 \item \textbf{Operadores aritméticos binarios}:
 
 \begin{itemize}
-\item \textbf{const Vector3 operator+(const Vector3\& v) const}
-\item \textbf{const Vector3 operator-(const Vector3\& v) const}
-\item \textbf{friend const Vector3 operator*(double k, Vector3\& v)}
-\item \textbf{const Vector3 operator*(double k) const}
-\item \textbf{const Vector3 operator*(const Vector3\& v) const}
-\item \textbf{const Vector3 operator$\wedge$(const Vector3\& v) const}
+\item \textbf{const Vector3 operator+(const Vector3\& v) const}: devuelve la suma de dos vectores.
+\item \textbf{const Vector3 operator-(const Vector3\& v) const}: devuelve la resta de dos vectores.
+\item \textbf{friend const Vector3 operator*(double k, Vector3\& v)}: devuelve la multiplicación de un escalar por un vector.
+\item \textbf{const Vector3 operator*(double k) const}: devuelve la multiplicación de un vector por un escalar. Es una operación idéntica a la anterior, pero especificada en orden inverso.
+\item \textbf{const double operator*(const Vector3\& v) const}: devuelve el producto escalar de dos vectores.
+\item \textbf{const Vector3 operator$\wedge$(const Vector3\& v) const}: devuelve el vector resultado de realizar el producto vectorial de dos vectores.
 \end{itemize}
 
 \item \textbf{Operadores de comparación}:
 
 \begin{itemize}
-\item \textbf{bool operator==(const Vector3\& v) const}
-\item \textbf{bool operator!=(const Vector3\& v) const}
+\item \textbf{bool operator==(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son iguales, esto es, si sus componentes también lo son, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son diferentes, y \textit{false} en caso contrario.
 \end{itemize}
 
-\item \textbf{double GetMagnitude() const}
-\item \textbf{void Normalize()}
-\item \textbf{const Vector3 GetNormalized() const}
-\item \textbf{const Vector3 GetScalated(double k) const}
-\item \textbf{Vector3\& Rotate(const Quaternion q)}
-\item \textbf{const Vector3 GetRotated(const Quaternion\& q) const}
+\item \textbf{double GetMagnitude() const}: devuelve la longitud del vector.
+\item \textbf{void Normalize()}: realiza una normalización del vector, multiplicándolo por la inversa de su longitud para obtener un vector de longitud unitaria.
+\item \textbf{const Vector3 GetNormalized() const}: devuelve el vector normalizado sin modificar el original.
+\item \textbf{const Vector3 GetScalated(double k) const}: deevuelve el vector escalado por una constante. Es la misma operación que la multiplicación del vector por un escalar.
+\item \textbf{Vector3\& Rotate(const Quaternion q)}: realiza una rotación del vector definida por el cuaternión $q$. Ecuación \eqref{eq: E14}.
+\item \textbf{const Vector3 GetRotated(const Quaternion\& q) const}: Devuelve el vector rotado sin modificar el original.
 
 \end{itemize}
 
 \subsection{La clase dfv::Matrix}
+
+En la clase \textit{dfv::Matrix} se realiza una implementación del concepto de matriz. Las operaciones más importantes que se pueden realizar son las siguientes:
 
 \begin{itemize}
 
@@ -1558,9 +1562,9 @@ La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaterni
 \item \textbf{Operadores de asignación compuestos}:
 
 \begin{itemize}
-\item \textbf{Matrix\& operator+=(const Matrix\& q)}
-\item \textbf{Matrix\& operator-=(const Matrix\& q)}
-\item \textbf{Matrix\& operator*=(const double k)}
+\item \textbf{Matrix\& operator+=(const Matrix\& q)}: suma a la matriz original la matriz $q$.
+\item \textbf{Matrix\& operator-=(const Matrix\& q)}: resta a la matriz original la matriz $q$.
+\item \textbf{Matrix\& operator*=(const double k)}: multiplica la matriz por un escalar $k$, esto es, realiza una multiplicación de cada uno de sus elementos.
 \end{itemize}
 
 \item \textbf{Operadores aritméticos binarios}:
@@ -1581,18 +1585,18 @@ La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaterni
 \end{itemize}
 
 \item \textbf{Matrix\& Create(unsigned int rows, unsigned int columns, double value = 0)}: crea una matriz de \textit{rows} filas y \textit{columns} columnas a cuyos elementos se les asigna el valor \textit{value} pasado como parámetro.
-\item \textbf{double Get(unsigned int row, unsigned int col) const}
-\item \textbf{void Set(unsigned int row, unsigned int col, double value)}
-\item \textbf{unsigned int GetRows() const}
-\item \textbf{unsigned int GetColumns() const}
-\item \textbf{Matrix GetMinor(unsigned int row, unsigned int column) const}
-\item \textbf{void Randomize()}
-\item \textbf{double GetDeterminant() const}
-\item \textbf{const Matrix GetTransposed() const}
-\item \textbf{const Matrix GetAdjoint() const}
-\item \textbf{const Matrix GetAdjugate() const}
-\item \textbf{const Matrix GetInverse() const}
-\item \textbf{double operator()(unsigned int row, unsigned int column) const}
+\item \textbf{double Get(unsigned int row, unsigned int col) const}: devuelve el valor situado en la fila \textit{row} y columna \textit{col}.
+\item \textbf{void Set(unsigned int row, unsigned int col, double value)}: asigna al elemento situado en la fila \textit{row} y columna \textit{col} el valor \textit{value}.
+\item \textbf{unsigned int GetRows() const}: devuelve el número de filas de la matriz.
+\item \textbf{unsigned int GetColumns() const}: devuelve el número de columnas de la matriz.
+\item \textbf{Matrix GetMinor(unsigned int row, unsigned int column) const}: devuelve el menor de la matriz asociado a la fila \textit{row} y columna \textit{col}.
+\item \textbf{void Randomize()}: asigna a cada elemento de la matriz un valor aleatorio entre 0 y 1.
+\item \textbf{double GetDeterminant() const}: devuelve el determinante de la matriz.
+\item \textbf{const Matrix GetTransposed() const}: devuelve la traspuesta de la matriz.
+\item \textbf{const Matrix GetAdjoint() const}: devuelve el adjunto de la matriz.
+\item \textbf{const Matrix GetAdjugate() const}: devuelve la matriz traspuesta conjugada.
+\item \textbf{const Matrix GetInverse() const}: devuelve la inversa de la matriz.
+\item \textbf{double operator()(unsigned int row, unsigned int column) const}: operador equivalente a la función \textit{Get()}.
 
 \end{itemize}
 
@@ -1639,7 +1643,9 @@ target_link_libraries(nombre_del_ejecutable dfv)
 
 \end{enumerate}
 
-Ahora se pueden utilizar las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix} y otras utilidades de la librería en el nuevo programa.
+Ahora se pueden utilizar las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix} y otras utilidades de la librería en el nuevo programa.\\
+
+En el archivo \textit{example.cpp} dentro de la carpeta \textit{dfv/examples/} hay un pequeño ejemplo de uso de la librería \textit{dfv}.
 
 \section{Controlador del brazo robótico del robot Youbot real}
 
@@ -1649,7 +1655,7 @@ En el paquete \textit{youbot\_controller} se implementa un controlador de las ar
 
 \item Detección de número y configuración de los sensores xsens a través de los topics y parámetros publicados por el driver \textit{xsens\_node}. Si no hay 3 sensores conectados se termina el programa imprimiendo en pantalla una advertencia de que son necesarios 3 sensores para que el programa funcione correctamente.
 
-\item Si detecta que todo está correcto, inmediatamente el programa comienza a leer los cuaterniones de orientación de los tres sensores. Con los tres cuaterniones, el programa halla los cuaterniones relativos entre cada sensor, y con éstos obtiene lo ángulos de Euler de la articulación correspondiente\footnote{En el capítulo CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES se muestra una explicación detallada de las matemáticas utilizadas para realizar esta tarea.}. En la figura \ref{fig: youbot_joints} se muestran las articulaciones del brazo y su identificación. 
+\item Si detecta que todo está correcto, inmediatamente el programa comienza a leer los cuaterniones de orientación de los tres sensores. Con los tres cuaterniones, el programa halla los cuaterniones relativos entre cada sensor, y con éstos obtiene lo ángulos de Euler de la articulación correspondiente\footnote{En el capítulo CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES se muestra una explicación detallada de los cálculos matemáticos utilizadas para realizar esta tarea.}. En la figura \ref{fig: youbot_joints} se muestran las articulaciones del brazo y su identificación. 
 
 \item A continuación se asignan determinados ángulos obtenidos a las articulaciones correspondientes del robot. 
 
@@ -1695,28 +1701,19 @@ Esta clase tiene un funcionamiento muy sencillo. Sólamente es necesario pasarle
 \lstset{inputencoding=utf8/latin1}
 \lstinputlisting[language=C++]{../src/youbot_example.cpp}
 
+La función \textit{PublishMessage()} admite un parámetro de tipo \textit{bool}, que si es \textit{false} (valor por defecto) no publica el mensaje correspondiente a la posición del \textit{gripper}. Si se quisiera controlar el \textit{gripper}, habría que pasar \textit{true} como argumento, pero hay que tener en cuenta que no es posible enviar este mensaje con la misma frecuencia que el mensaje de las articulaciones debido a que el robot no parece poder procesar el mensaje del \textit{gripper} con la suficiente rapidez y se producen comportamientos extraños del robot. De diversas pruebas se ha deducido que la frecuencia más alta de publicación del mensaje del \textit{gripper} para no producir problemas es de 1 Hz.
+
 \section{Otras aplicaciones de visualización y control}
 
 \subsection{Visualizador de la posición del brazo}
 
+El paquete \textit{arm\_visualizer} proporciona una forma de poder visualizar la posición del brazo en el simulador 3D Gazebo. Contiene el nodo \textit{arm\_visualizer}, que básicamente se encarga de leer los topics con los cuaterniones de orientación de tres sensores, con ellos calcula las posiciones y orientaciones de cada eslabón del brazo --brazo, antebrazo y mano-- y publica los correspondientes mensajes de ROS para mover la simulación del brazo en el programa Gazebo. En la sección \textit{Ejecución del simulador del brazo robótico del robot Youbot} del anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo poner en marcha el visualizador junto con el simulador Gazebo.
+
 \subsection{Controlador de un simulador del brazo robótico del robot Youbot}
 
-En la documentación del robot Youbot existe un paquete de ROS que contiene una simulación del brazo del robot para trabajar en Gazebo y un nodo de ROS --\textit{youbot\_arm\_publisher}-- para realizar su control. Esta simulación está preparada para funcionar tal y como lo hace el robot real; Se puede controlar la posición de las articulaciones con los mismos topics de ROS y los ángulos se corresponden a los del robot real, por lo que se puede usar esta simulación a modo de prueba previa de los programas que se creen para el robot antes de ejecutarlos en el robot real. También puede utilizarse a modo de visualizador de la posición del robot en tiempo real en otro ordenador. En el anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo realizar la instalación y poner en ejecución esta simulación.
+En la documentación del robot Youbot existe un paquete de ROS que contiene una simulación del brazo del robot para trabajar en Gazebo y un nodo de ROS --\textit{youbot\_arm\_publisher}-- para realizar su control. Esta simulación está preparada para funcionar tal y como lo hace el robot real; Se puede controlar la posición de las articulaciones con los mismos topics de ROS y los ángulos se corresponden a los del robot real, por lo que se puede usar esta simulación a modo de prueba previa de los programas que se creen para el robot antes de ejecutarlos en el robot real. También puede utilizarse a modo de visualizador de la posición del robot en tiempo real en otro ordenador. En la sección \textit{Instalación del simulador del brazo robótico del YouBot} del anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo realizar la instalación y puesta en ejecución de esta simulación.
 
-\chapter{IMPLEMENTACIÓN FÍSICA}
-\section{Selección de componentes}
-\section{Montaje}
-\section{Ajuste}
-
-\chapter{PROTOCOLO DE PRUEBAS. REDISEÑO}
-
-\chapter{RESULTADOS OBTENIDOS}
-
-
-%%% ******** Capítulo 6 ******** %%%
-
-\chapter{CONCLUSIONES}
-
+\chapter{PRUEBAS Y RESULTADOS OBTENIDOS}
 
 %%% ******** Capítulo 7 ******** %%%
 
@@ -1729,7 +1726,7 @@ En la documentación del robot Youbot existe un paquete de ROS que contiene una 
 
 \appendix
 
-\chapter{INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE}
+\chapter{INSTALACIÓN DEL SOFTWARE}
 
 En el presenta capítulo se describirá como instalar las siguientes herramientas:
 
@@ -1827,6 +1824,33 @@ $ sudo apt-get install ros-fuerte-simulator-gazebo
 
 \section{Instalación del simulador de brazo robótico del YouBot}
 
+En el robot Youbot ya vienen por defecto los paquetes con los que ejecutar el simulador del brazo robótico con Gazebo. Si se quisiera instalar la simulación en otro ordenador habría que descargarse los paquetes necesarios de la página web de KUKA. Los pasos a seguir son los siguientes:
+
+\begin{enumerate}
+\item Descarga de los paquetes con dependencias:
+
+\begin{verbatim}
+$ sudo apt-get install ros-fuerte-pr2-controllers
+$ sudo apt-get install ros-fuerte-pr2-simulator
+\end{verbatim}
+
+\item Instalación desde git de los paquetes con la simulación. Suponemos que se ha creado un \textit{workspace} para trabajar con ROS, y dentro de éste hay una carpeta llamada sandbox:
+
+\begin{verbatim}
+$ roscd
+$ cd sandbox
+$ git clone https://github.com/youbot/youbot-ros-pkg.git
+$ git clone https://github.com/ipa320/cob_common.git
+\end{verbatim}
+
+\item Compilación de los paquetes
+
+\begin{verbatim}
+$ rosmake brics_actuator youbot_description
+\end{verbatim}
+
+\end{enumerate}
+
 
 
 \section{Instalación del stack youbot-xsens-controller}
@@ -1836,6 +1860,97 @@ $ sudo apt-get install ros-fuerte-simulator-gazebo
 \subsection{Instalación desde el CD adjunto al proyecto}
 
 \subsection{Instalación desde git}
+
+\section{PUESTA EN MARCHA DEL SOFTWARE}
+
+\subsection{Iniciación del driver del sensor Xsens}
+
+Para ejecutar el driver \textit{xsens\_node} es necesario iniciar antes el máster de ROS. Para ello en un terminal se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ roscore
+\end{verbatim}
+
+A continuación, una vez que los sensores Xsens y el máster Xbus estén conectados al PC, se iniciará el programa driver:
+
+\begin{verbatim}
+$ rosrun xsens_driver xsens_node
+\end{verbatim}
+
+Si no se ha producido ningún error, ahora el driver estará publicando en ROS los mensajes con los datos leídos del sensor.
+
+\subsection{Iniciación del driver del robot Youbot}
+
+\begin{verbatim}
+$ roslaunch youbot_oodl youbot_oodl_driver.launch
+\end{verbatim}
+
+\subsection{Ejecución del programa youbot\_controller}
+
+\begin{verbatim}
+$ rosrun youbot_controller youbot_controller
+\end{verbatim}
+
+\subsection{Ejecución del simulador del brazo robótico del robot Youbot}
+
+Para poner en marcha este programa hace falta haber iniciado primero el driver de los sensores Xsens y el simulador Gazebo. Los pasos a seguir son los siguientes:
+
+\begin{enumerate}
+\item Una vez conectados los sensores al PC, en un terminal ejecutamos los siguientes comandos para iniciar el programa \textit{xsens\_node}:
+
+\begin{verbatim}
+$ roscore
+$ rosrun xsens_driver xsens_node
+\end{verbatim}
+
+\item Una vez se compruebe que los sensores están publicando en ROS, se procederá a iniciar Gazebo con el archivo empty\_world.launch:
+
+\begin{verbatim}
+$ roslaunch gazebo_world empty_world.launch
+\end{verbatim}
+
+\item Se abrirá el GUI de Gazebo, en el que habrá una simulación de un plano (figura \ref{fig: gazebo_empty}). 
+
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.4]{../img/gazebo_empty.png} 
+	\caption[Ventana de Gazebo abierta con el archivo empty\_world.launch]{Ventana de Gazebo abierta con el archivo empty\_world.launch} 
+	\label{fig: gazebo_empty}
+\end{figure}
+
+\item Para la correcta simulación del brazo se tendrá que eliminar el plano de la simulación (figura \ref{fig: gazebo_delete}).
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.5]{../img/gazebo_delete_2b.png} 
+	\caption[Eliminación del plano en la simulación de Gazebo]{Eliminación del plano en la simulación de Gazebo.} 
+	\label{fig: gazebo_delete}
+\end{figure}
+
+\item También será necesario poner la simulación en pausa, ya que de otra manera se realizará la simulaciñon de la gravedad sobre el brazo y se obtendrán resultados no deseados (figura \ref{fig: gazebo_pause}).
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=1.0]{../img/gazebo_pause.png} 
+	\caption[Puesta en pausa de la simulación de Gazebo]{Puesta en pausa de la simulación de Gazebo.} 
+	\label{fig: gazebo_pause}
+\end{figure}
+
+\item A continuación se procederá a ejecutar el programa \textit{arm\_visualizer}, el cuál insertará el brazo en la simulación y se encargará de comunicar a Gazebo las posiciones de cada eslabón del brazo. Para ello en un terminal se ejecutará el siguiente comando:
+
+\begin{verbatim}
+$ rosrun arm_visualizer arm_visualizer
+\end{verbatim}
+
+\begin{figure}
+	\centering
+		\includegraphics[scale=0.4]{../img/gazebo_arm.png} 
+	\caption[Visualización del brazo en Gazebo]{Visualización del brazo en Gazebo.} 
+	\label{fig: gazebo_arm}
+\end{figure}
+
+\end{enumerate} 
 
 \iffalse
 
@@ -1956,11 +2071,11 @@ $ sudo apt-get install ros-fuerte-simulator-gazebo
 
 \chapter{SOLUCIÓN DE PROBLEMAS}
 
-
-
 \section{Error iniciando Gazebo}
 
-\begin{spverbatim}
+Este error consiste en que al iniciar Gazebo, este no se abre y en la terminal aparecen mensajes parecidos a los que se muestran a continuación:
+
+\footnotesize\begin{spverbatim}
 Msg Waiting for master
 Msg Connected to gazebo master @ http://localhost:11345
 Exception [Master.cc:69] Unable to start server[Address already in use]
@@ -1971,7 +2086,12 @@ Aborted (core dumped)
 [gazebo-1] process has died [pid 2795, exit code 134, cmd /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1.log].
 log file: /home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1*.log
 LightListWidget::OnLightMsg
+
+
 \end{spverbatim}
+\normalsize
+
+Esto es debido a que ya existe un proceso Gazebo ejecutándose en el ordenador pero por alguna razón no ha abierto su interfaz gráfica.
 
 \textbf{Solución: }
 Ejecutar comando:
@@ -1981,13 +2101,34 @@ $ ps ax | grep [g]z
 
 Ver si hay un proceso gzserver
 
+\footnotesize
 \begin{spverbatim}
  3118 ?        Sl    12:47
  /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/bin/gzserver 
  /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de05009b5/gazebo-1.log -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_paths_plugin.so -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_api_plugin.so
+
 \end{spverbatim}
+\normalsize
 
 Si lo hay, ejecutar \textit{System Monitor} y matar el proceso \textit{gzserver}.
+
+\section{Al ejecutar el simulador del brazo robótico no se abre la interfaz gráfica de Gazebo}
+
+Es posible que al lanzar Gazebo con el archivo \textit{youbot\_arm\_publisher.launch} no se abra la ventana de Gazebo. Para solucionarlo es necesario abrir dicho archivo y comprobar que sea como el siguiente:
+
+\lstinputlisting[language=xml]{../../doc/src/youbot_arm_publisher.launch}
+
+Este archivo se encuentra en la carpeta \textit{launch/} dentro del paquete\\ 
+\textit{youbot-ros-pkg/youbot\_common/youbot\_description}
+
+\section{El driver del Xsens no contacta con los sensores}
+
+\section{Al ejecutar Gazebo con el archivo empty\_world.launch no se abre la GUI}
+
+\begin{verbatim}
+[gazebo_gui-2] process has died [pid 28410, exit code 139, cmd /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gui __name:=gazebo_gui __log:=/home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08edb99bab79/gazebo_gui-2.log].
+log file: /home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08edb99bab79/gazebo_gui-2*.log
+\end{verbatim}
 
 \part{Presupuesto}
 

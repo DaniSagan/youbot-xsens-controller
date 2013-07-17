@@ -7,13 +7,10 @@
 \contentsline {table}{\numberline {5.1}{\ignorespaces Propiedades de los cuaterniones}}{19}{table.5.1}
 \contentsline {table}{\numberline {5.2}{\ignorespaces Algoritmo de c\IeC {\'a}lculo de los \IeC {\'a}ngulos de Euler a partir del cuaterni\IeC {\'o}n de orientaci\IeC {\'o}n.}}{33}{table.5.2}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Unidades de los datos calibrados devueltos por los sensores}}{40}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Topics publicados por el programa xsens\_node}}{41}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Par\IeC {\'a}metros publicados por el programa xsens\_node}}{42}{table.6.3}
-\contentsline {table}{\numberline {6.4}{\ignorespaces Topics a los que est\IeC {\'a} suscrito el driver youbot\_oodl}}{49}{table.6.4}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Unidades de los datos calibrados devueltos por los sensores}}{41}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Topics publicados por el programa xsens\_node}}{42}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Par\IeC {\'a}metros publicados por el programa xsens\_node}}{43}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Topics a los que est\IeC {\'a} suscrito el driver youbot\_oodl}}{51}{table.6.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

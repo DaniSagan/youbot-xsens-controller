@@ -49,16 +49,10 @@
 \BOOKMARK [1][-]{section.6.4}{Otras aplicaciones de visualizaci\363n y control}{chapter.6}
 \BOOKMARK [2][-]{subsection.6.4.1}{Visualizador de la posici\363n del brazo}{section.6.4}
 \BOOKMARK [2][-]{subsection.6.4.2}{Controlador de un simulador del brazo rob\363tico del robot Youbot}{section.6.4}
-\BOOKMARK [0][-]{chapter.7}{IMPLEMENTACI\323N F\315SICA}{part.1}
-\BOOKMARK [1][-]{section.7.1}{Selecci\363n de componentes}{chapter.7}
-\BOOKMARK [1][-]{section.7.2}{Montaje}{chapter.7}
-\BOOKMARK [1][-]{section.7.3}{Ajuste}{chapter.7}
-\BOOKMARK [0][-]{chapter.8}{PROTOCOLO DE PRUEBAS. REDISE\321O}{part.1}
-\BOOKMARK [0][-]{chapter.9}{RESULTADOS OBTENIDOS}{part.1}
-\BOOKMARK [0][-]{chapter.10}{CONCLUSIONES}{part.1}
-\BOOKMARK [0][-]{chapter.11}{BIBLIOGRAF\315A}{part.1}
+\BOOKMARK [0][-]{chapter.7}{PRUEBAS Y RESULTADOS OBTENIDOS}{part.1}
+\BOOKMARK [0][-]{chapter.8}{BIBLIOGRAF\315A}{part.1}
 \BOOKMARK [-1][-]{part.2}{II Anexos}{}
-\BOOKMARK [0][-]{appendix.A}{INSTALACI\323N Y PUESTA EN MARCHA DEL SOFTWARE}{part.2}
+\BOOKMARK [0][-]{appendix.A}{INSTALACI\323N DEL SOFTWARE}{part.2}
 \BOOKMARK [1][-]{section.A.1}{Instalaci\363n de ROS Fuerte}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.1.1}{Configuraci\363n de los repositorios de Ubuntu}{section.A.1}
 \BOOKMARK [2][-]{subsection.A.1.2}{Configuraci\363n del archivo sources.list}{section.A.1}
@@ -70,6 +64,14 @@
 \BOOKMARK [1][-]{section.A.4}{Instalaci\363n del stack youbot-xsens-controller}{appendix.A}
 \BOOKMARK [2][-]{subsection.A.4.1}{Instalaci\363n desde el CD adjunto al proyecto}{section.A.4}
 \BOOKMARK [2][-]{subsection.A.4.2}{Instalaci\363n desde git}{section.A.4}
+\BOOKMARK [1][-]{section.A.5}{PUESTA EN MARCHA DEL SOFTWARE}{appendix.A}
+\BOOKMARK [2][-]{subsection.A.5.1}{Iniciaci\363n del driver del sensor Xsens}{section.A.5}
+\BOOKMARK [2][-]{subsection.A.5.2}{Iniciaci\363n del driver del robot Youbot}{section.A.5}
+\BOOKMARK [2][-]{subsection.A.5.3}{Ejecuci\363n del programa youbot\137controller}{section.A.5}
+\BOOKMARK [2][-]{subsection.A.5.4}{Ejecuci\363n del simulador del brazo rob\363tico del robot Youbot}{section.A.5}
 \BOOKMARK [0][-]{appendix.B}{SOLUCI\323N DE PROBLEMAS}{part.2}
 \BOOKMARK [1][-]{section.B.1}{Error iniciando Gazebo}{appendix.B}
+\BOOKMARK [1][-]{section.B.2}{Al ejecutar el simulador del brazo rob\363tico no se abre la interfaz gr\341fica de Gazebo}{appendix.B}
+\BOOKMARK [1][-]{section.B.3}{El driver del Xsens no contacta con los sensores}{appendix.B}
+\BOOKMARK [1][-]{section.B.4}{Al ejecutar Gazebo con el archivo empty\137world.launch no se abre la GUI}{appendix.B}
 \BOOKMARK [-1][-]{part.3}{III Presupuesto}{}
