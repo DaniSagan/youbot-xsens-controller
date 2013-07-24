@@ -1,30 +1,42 @@
 \select@language {spanish}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Sistema de monitorizaci\IeC {\'o}n de la cinem\IeC {\'a}tica de la espina dorsal y brazos}}{7}{figure.caption.4}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Esquema de un brazo humano}}{10}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces El robot YouBot}}{10}{figure.caption.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Uso de encoders en un exoesqueleto para la monitorizaci\IeC {\'o}n del brazo.}}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces El sensor Kinect}}{14}{figure.caption.8}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces IMU Xsens MTi-G}}{15}{figure.caption.9}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Red de sensores xsens conectados a un m\IeC {\'a}ster xbus}}{16}{figure.caption.10}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Logotipo de ROS}}{17}{figure.caption.11}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Ejemplo de una red de nodos de ROS}}{19}{figure.caption.12}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Comando rostopic mostrando datos de un sensor}}{20}{figure.caption.13}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Programa rxplot mostrando datos de un sensor}}{20}{figure.caption.14}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces El simulador Gazebo}}{21}{figure.caption.15}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Programa Gazebo con la simulaci\IeC {\'o}n del brazo del Youbot}}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces El sistema operativo Ubuntu}}{22}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Red de sensores xsens conectados a un m\IeC {\'a}ster xbus}}{11}{figure.caption.8}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Logotipo de ROS}}{12}{figure.caption.11}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Comando rostopic mostrando datos de un sensor}}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Programa rxplot mostrando datos de un sensor}}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Programa Gazebo con la simulaci\IeC {\'o}n del brazo del Youbot}}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces El sistema operativo Ubuntu}}{15}{figure.caption.17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Rotaci\IeC {\'o}n de un vector mediante la operaci\IeC {\'o}n $q_1pq_1^*$\relax }}{30}{figure.caption.19}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Orientaci\IeC {\'o}n relativa entre dos s\IeC {\'o}lidos r\IeC {\'\i }gidos\relax }}{35}{figure.caption.20}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Posiciones del brazo inicial y gen\IeC {\'e}rica}}{36}{figure.caption.21}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Sistema de coordenadas local sobre la esfera\relax }}{38}{figure.caption.22}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Tercera rotaci\IeC {\'o}n en el sistema de coordenadas local sobre el punto P de la esfera\relax }}{38}{figure.caption.23}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Dos soluciones para $\theta $ (\textit {pitch}) y $\psi $ (\textit {yaw})\relax }}{41}{figure.caption.26}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Giro de los ejes locales para evitar el gimbal lock}}{42}{figure.caption.28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Rotaci\IeC {\'o}n de un vector mediante la operaci\IeC {\'o}n $q_1pq_1^*$\relax }}{23}{figure.caption.19}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Orientaci\IeC {\'o}n relativa entre dos s\IeC {\'o}lidos r\IeC {\'\i }gidos\relax }}{28}{figure.caption.20}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Posiciones del brazo inicial y gen\IeC {\'e}rica}}{30}{figure.caption.21}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Sistema de coordenadas local sobre la esfera\relax }}{31}{figure.caption.22}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Tercera rotaci\IeC {\'o}n en el sistema de coordenadas local sobre el punto P de la esfera\relax }}{32}{figure.caption.23}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Dos soluciones para $\theta $ (\textit {pitch}) y $\psi $ (\textit {yaw})\relax }}{34}{figure.caption.26}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Esquema simplificado de comunicaciones}}{44}{figure.caption.29}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Articulaciones del brazo rob\IeC {\'o}tico del YouBot y su identificaci\IeC {\'o}n}}{58}{figure.caption.33}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Programa Gazebo con un modelo de un brazo humano}}{60}{figure.caption.35}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Esquema simplificado de comunicaciones}}{37}{figure.caption.28}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Programa Gazebo con un modelo de un brazo humano}}{52}{figure.caption.33}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica de los datos de los aceler\IeC {\'o}metros}}{65}{figure.caption.36}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Ventana Software Sources}}{72}{figure.caption.40}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Ventana Software Sources}}{58}{figure.caption.34}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Ventana de Gazebo abierta con el archivo empty\_world.launch}}{61}{figure.caption.35}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Eliminaci\IeC {\'o}n del plano en la simulaci\IeC {\'o}n de Gazebo}}{61}{figure.caption.36}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Puesta en pausa de la simulaci\IeC {\'o}n de Gazebo}}{62}{figure.caption.37}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Visualizaci\IeC {\'o}n del brazo en Gazebo}}{62}{figure.caption.38}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Ventana de Gazebo abierta con el archivo empty\_world.launch}}{77}{figure.caption.41}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces Eliminaci\IeC {\'o}n del plano en la simulaci\IeC {\'o}n de Gazebo}}{77}{figure.caption.42}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces Puesta en pausa de la simulaci\IeC {\'o}n de Gazebo}}{77}{figure.caption.43}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Visualizaci\IeC {\'o}n del brazo en Gazebo}}{78}{figure.caption.44}
 \addvspace {10\p@ }

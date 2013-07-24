@@ -24,8 +24,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.99999999"
-     inkscape:cx="-754.86616"
-     inkscape:cy="-59.247193"
+     inkscape:cx="-538.78468"
+     inkscape:cy="-57.50959"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -1461,7 +1461,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -3479,22 +3479,25 @@
        sodipodi:ry="80"
        d="m 620,1547.3622 a 85,80 0 1 1 -170,0 85,80 0 1 1 170,0 z"
        transform="matrix(0.73206404,-0.73206404,0.70710678,0.70710678,-1975.8046,429.86583)"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
        sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:1.70780575;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3.41561152, 1.70780576;stroke-dashoffset:0"
+       style="fill:none;stroke:#30ff40;stroke-width:19.12742424;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="path3777-8-2-5-0-5-7-0-4"
        sodipodi:cx="280"
        sodipodi:cy="562.36218"
        sodipodi:rx="60"
        sodipodi:ry="80"
-       d="m 340,562.36218 a 60,80 0 1 1 -120,0 60,80 0 1 1 120,0 z"
+       d="M 293.25384,640.38595 A 60,80 0 1 1 277.76116,482.4179"
        transform="matrix(0.3235935,0.03672535,-0.0841847,1.0500001,-533.2639,531.59845)"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
-       inkscape:export-ydpi="512" />
+       inkscape:export-ydpi="512"
+       sodipodi:start="1.3480619"
+       sodipodi:end="4.6750663"
+       sodipodi:open="true" />
     <path
        sodipodi:type="arc"
        style="fill:none;stroke:#000000;stroke-width:0.98050785;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:1.96101569, 0.98050784;stroke-dashoffset:0"
@@ -3505,7 +3508,7 @@
        sodipodi:ry="20"
        d="M 360,562.36218 A 80,20 0 1 1 200.02417,561.87054"
        transform="matrix(1.0375,-0.07139713,0.07426405,0.99744797,-822.2634,591.42618)"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"
        sodipodi:start="0"
@@ -3521,7 +3524,7 @@
        sodipodi:ry="20"
        d="M 360,562.36218 A 80,20 0 1 1 200.6294,559.85833"
        transform="matrix(0.75275575,-0.05181508,0.05388211,0.72387842,-729.4533,683.58959)"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"
        sodipodi:start="0"
@@ -3533,7 +3536,7 @@
        id="path2989-5-6-0-5-1-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3542,7 +3545,7 @@
        id="path2987-4-1-9-6-0-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3551,7 +3554,7 @@
        id="path5708-5-84-8-8-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3564,7 +3567,7 @@
        sodipodi:rx="80"
        sodipodi:ry="80"
        d="M 223.5208,505.70444 A 80,80 0 1 1 335.06443,620.39587"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"
        sodipodi:start="3.928569"
@@ -3577,7 +3580,7 @@
        y="1232.3621"
        id="text7821-04-5-3"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3591,7 +3594,7 @@
        y="987.36218"
        id="text7821-0-3-9-2"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3605,7 +3608,7 @@
        y="1137.3622"
        id="text7821-0-0-7-1-0"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3618,7 +3621,7 @@
        id="path5897-1-8-3-9-37"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3627,7 +3630,7 @@
        id="path5897-1-8-3-4-75-6"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3636,7 +3639,7 @@
        id="path5897-1-8-3-4-7-5-8"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <text
@@ -3646,7 +3649,7 @@
        y="1037.3622"
        id="text7821-0-3-7-7-6"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3660,7 +3663,7 @@
        y="1037.3622"
        id="text7821-0-3-7-4-2-0"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3674,7 +3677,7 @@
        y="1092.3622"
        id="text7821-0-3-7-4-6-2-5"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3691,7 +3694,7 @@
        id="path10200-5-6-1"
        style="fill:#fc0000;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        sodipodi:type="arc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <text
@@ -3701,7 +3704,7 @@
        y="1092.3619"
        id="text9518-8-7"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3716,7 +3719,7 @@
        y="1172.3622"
        id="text9518-8-0-0"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3730,7 +3733,7 @@
        id="path5897-1-8-3-9-6-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3739,7 +3742,7 @@
        id="path5897-1-8-3-9-4-7"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3748,7 +3751,7 @@
        id="path5897-1-8-3-9-3-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <path
@@ -3761,7 +3764,7 @@
        id="path10200-5-6-6-0"
        style="fill:#0fb500;fill-opacity:1;stroke:#000000;stroke-width:0.3333289;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        sodipodi:type="arc"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512" />
     <text
@@ -3771,7 +3774,7 @@
        y="1117.3622"
        id="text7821-0-3-7-7-8-6"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3785,7 +3788,7 @@
        y="1194.3561"
        id="text7821-0-3-7-4-2-2-8"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -3799,7 +3802,7 @@
        y="1172.3622"
        id="text7821-0-3-7-4-6-2-1-5"
        sodipodi:linespacing="125%"
-       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/sphere.png"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
        inkscape:export-xdpi="512"
        inkscape:export-ydpi="512"><tspan
          sodipodi:role="line"
@@ -4143,5 +4146,47 @@
          id="tspan7823-1-6-9-1-9-5-7-3-5"
          x="-940"
          y="1172.3622">z</tspan></text>
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#30ff40;stroke-width:19.1274245;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:19.1274245,19.1274245;stroke-dashoffset:0"
+       id="path3777-8-2-5-0-5-7-0-4-9"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="60"
+       sodipodi:ry="80"
+       d="m 278.00024,482.40663 a 60,80 0 1 1 -5.89302,159.26035"
+       transform="matrix(0.3235935,0.03672535,-0.0841847,1.0500001,-533.2639,531.59845)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512"
+       sodipodi:start="4.6790535"
+       sodipodi:end="7.9859103"
+       sodipodi:open="true" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#ff30eb;stroke-width:89.65986632999999983;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3777-8-2-5-0-5-7-0-4-8"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="60"
+       sodipodi:ry="80"
+       d="m 340,562.36218 a 60,80 0 1 1 -120,0 60,80 0 1 1 120,0 z"
+       transform="matrix(0.03081841,0.00349765,-0.00801759,0.09999994,-412.27126,1075.3565)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
+    <path
+       sodipodi:type="arc"
+       style="fill:none;stroke:#ff30eb;stroke-width:89.65986633;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       id="path3777-8-2-5-0-5-7-0-4-8-3"
+       sodipodi:cx="280"
+       sodipodi:cy="562.36218"
+       sodipodi:rx="60"
+       sodipodi:ry="80"
+       d="m 340,562.36218 a 60,80 0 1 1 -120,0 60,80 0 1 1 120,0 z"
+       transform="matrix(0.03081841,0.00349765,-0.00801759,0.09999994,-578.47896,1077.1467)"
+       inkscape:export-filename="/home/daniel/fuerte_workspace/sandbox/youbot-xsens-controller/doc/img/yaxis.png"
+       inkscape:export-xdpi="512"
+       inkscape:export-ydpi="512" />
   </g>
 </svg>

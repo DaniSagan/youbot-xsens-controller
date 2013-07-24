@@ -1,0 +1,31 @@
+\BOOKMARK [-1][-]{part.1}{I C\363digo fuente}{}
+\BOOKMARK [0][-]{chapter.1}{PAQUETE xsens\137driver}{part.1}
+\BOOKMARK [1][-]{section.1.1}{xsens\137node.cpp}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{xsens\137driver.h}{chapter.1}
+\BOOKMARK [1][-]{section.1.3}{xsens\137driver.cpp}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{xsens\137sensor.h}{chapter.1}
+\BOOKMARK [1][-]{section.1.5}{xsens\137sensor.cpp}{chapter.1}
+\BOOKMARK [1][-]{section.1.6}{xsens\137sensor\137subscriber.h}{chapter.1}
+\BOOKMARK [1][-]{section.1.7}{xsens\137sensor\137subscriber.cpp}{chapter.1}
+\BOOKMARK [1][-]{section.1.8}{utils.h}{chapter.1}
+\BOOKMARK [1][-]{section.1.9}{utils.cpp}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{PAQUETE dfv}{part.1}
+\BOOKMARK [1][-]{section.2.1}{quaternion.h}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{quaternion.cpp}{chapter.2}
+\BOOKMARK [1][-]{section.2.3}{vector3.h}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{vector3.cpp}{chapter.2}
+\BOOKMARK [1][-]{section.2.5}{matrix.h}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{matrix.cpp}{chapter.2}
+\BOOKMARK [1][-]{section.2.7}{utils.h}{chapter.2}
+\BOOKMARK [1][-]{section.2.8}{utils.cpp}{chapter.2}
+\BOOKMARK [1][-]{section.2.9}{dfv.h}{chapter.2}
+\BOOKMARK [0][-]{chapter.3}{PAQUETE youbot controller}{part.1}
+\BOOKMARK [1][-]{section.3.1}{youbot\137controller.h}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{youbot.h}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{youbot.cpp}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{PAQUETE arm\137visualizer}{part.1}
+\BOOKMARK [1][-]{section.4.1}{arm\137visualizer.h}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{gazebo\137model.h}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{gazebo\137model.cpp}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{gazebo\137model\137list.h}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{gazebo\137model\137list.cpp}{chapter.4}

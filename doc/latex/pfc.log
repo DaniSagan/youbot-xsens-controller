@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.5.26)  17 JUL 2013 11:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.7.22)  22 JUL 2013 21:16
 entering extended mode
  %&-line parsing enabled.
 **pfc.tex
 (./pfc.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
+yphenation, spanish, galician, catalan, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size12.clo
@@ -311,12 +311,6 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 \babel@savecnt=\count96
 \U@D=\dimen107
 )
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `Spanish'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@spanish = a dialect from \language0
 \es@datefmt=\count97
 \es@quottoks=\toks18
 \es@quotdepth=\count98
@@ -324,7 +318,8 @@ Package babel Info: Making " an active character on input line 492.
 Package babel Info: Making . an active character on input line 585.
 Package babel Info: Making < an active character on input line 630.
 Package babel Info: Making > an active character on input line 630.
-)) (/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
+))
+(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -785,9 +780,24 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \WF@everypar=\toks37
 Package: wrapfig 2003/01/31  v 3.6
 )
+(/usr/share/texmf-texlive/tex/latex/microtype/microtype.sty
+Package: microtype 2009/03/27 v2.3d Micro-typography with pdfTeX (RS)
+\MT@toks=\toks38
+\MT@count=\count134
+LaTeX Info: Redefining \lsstyle on input line 1608.
+LaTeX Info: Redefining \lslig on input line 1608.
+\MT@outer@space=\skip66
+LaTeX Info: Redefining \textls on input line 1616.
+\MT@outer@kern=\dimen141
+LaTeX Info: Redefining \textmicrotypecontext on input line 2167.
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/share/texmf-texlive/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2009/03/27 v2.3d microtype main configuration file (RS)
+))
 (/usr/share/texmf-texlive/tex/latex/caption/caption.sty
 Package: caption 2009/10/09 v3.1k Customizing captions (AR)
-\c@ContinuedFloat=\count134
+\c@ContinuedFloat=\count135
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -803,45 +813,45 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-\c@defn=\count135
+\c@defn=\count136
  (./pfc.aux)
 \openout1 = `pfc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 76.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 76.
 
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-\c@lstlisting=\count136
+LaTeX Font Info:    ... okay on input line 76.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
+LaTeX Font Info:    ... okay on input line 76.
+\c@lstlisting=\count137
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count137
-\scratchdimen=\dimen141
+\scratchcounter=\count138
+\scratchdimen=\dimen142
 \scratchbox=\box36
-\nofMPsegments=\count138
-\nofMParguments=\count139
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count140
-\MPscratchDim=\dimen142
-\MPnumerator=\count141
-\everyMPtoPDFconversion=\toks39
+\nofMPsegments=\count139
+\nofMParguments=\count140
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count141
+\MPscratchDim=\dimen143
+\MPnumerator=\count142
+\everyMPtoPDFconversion=\toks40
 ) ABD: EveryShipout initializing macros
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -884,17 +894,17 @@ driver: pdftex
 
 (1in=72.27pt, 1cm=28.45pt)
 -----------------------
-Package hyperref Info: Link coloring OFF on input line 75.
+Package hyperref Info: Link coloring OFF on input line 76.
 (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
 
 (/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
 Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
-\c@section@level=\count142
+\c@section@level=\count143
 )
-LaTeX Info: Redefining \ref on input line 75.
-LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \ref on input line 76.
+LaTeX Info: Redefining \pageref on input line 76.
  (./pfc.out)
 (./pfc.out)
 \@outlinefile=\write3
@@ -903,27 +913,43 @@ LaTeX Info: Redefining \pageref on input line 75.
 \AtBeginShipoutBox=\box37
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 78.
- (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
+LaTeX Info: Redefining \microtypecontext on input line 76.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+ (/usr/share/texmf-texlive/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2008/02/29 v1.9a microtype config. file: Computer Modern Roman
+ (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 79.
+
+(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 78.
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+(/usr/share/texmf-texlive/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./pfc.toc
-Overfull \hbox (0.88669pt too wide) in paragraph at lines 20--20
- [] [][]\OT1/cmr/bx/n/12 C[]ALCU-LO DE LAS POSI-CIONES Y ORI-ENTA-CIONES DE LOS
- SEN- 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./pfc.tocpdfTeX warning (
+ext4): destination with the same identifier (name{page.1}) has been already use
+d, duplicate ignored
 <to be read again> 
                    \relax 
-l.36 ...'o}n de los ejes locales}{34}{section*.27}
+l.35 ... de orientaci\IeC {\'o}n}{37}{section.5.4}
                                                    [1
 
 ] [2])
@@ -947,290 +973,368 @@ l.36 ...'o}n de los ejes locales}{34}{section*.27}
 
 ]
 Cap\'{\i }tulo 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+
+ []
+
+<../img/UpperShopTracking.png, id=540, 340.27126pt x 251.94125pt>
+File: ../img/UpperShopTracking.png Graphic file (type png)
+
+<use ../img/UpperShopTracking.png>
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
 [7
 
-]
+ <../img/UpperShopTracking.png>] [8]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--108
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
-[8
+<../img/brazo.png, id=557, 476.81262pt x 274.11786pt>
+File: ../img/brazo.png Graphic file (type png)
+ <use ../img/brazo.png>
 
-]
-Cap\'{\i }tulo 3.
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
 [9
 
-]
-Cap\'{\i }tulo 4.
+] <../img/youbot.png, id=566, 1353.055pt x 902.37125pt>
+File: ../img/youbot.png Graphic file (type png)
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+<use ../img/youbot.png> [10 <../img/brazo.png> <../img/youbot.png>] [11]
+Cap\'{\i }tulo 3.
+[12
+
+] [13]
+Cap\'{\i }tulo 4.
+<../img/exoskeleton.png, id=589, 380.17032pt x 250.68657pt>
+File: ../img/exoskeleton.png Graphic file (type png)
+
+<use ../img/exoskeleton.png>
+
+Package wrapfig Warning: Collision between wrapping environments on input line 
+219.
+
+<../img/kinect.png, id=590, 527.9725pt x 263.98625pt>
+File: ../img/kinect.png Graphic file (type png)
+ <use ../img/kinect.png>
+Underfull \hbox (badness 10000) in paragraph at lines 227--230
 
  []
 
-<../img/xbus_master.png, id=505, 726.46407pt x 334.24875pt>
+[14
+
+ <../img/exoskeleton.png> <../img/kinect.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+<../img/xsens_mti-g.png, id=599, 602.25pt x 341.275pt>
+File: ../img/xsens_mti-g.png Graphic file (type png)
+
+<use ../img/xsens_mti-g.png>
+<../img/xbus_master.png, id=601, 726.46407pt x 334.24875pt>
 File: ../img/xbus_master.png Graphic file (type png)
 
 <use ../img/xbus_master.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 194--195
+[15 <../img/xsens_mti-g.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
-<../img/Logo-ROS.png, id=511, 117.13762pt x 34.62938pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+[16 <../img/xbus_master.png>]
+<../img/Logo-ROS.png, id=611, 117.13762pt x 34.62938pt>
 File: ../img/Logo-ROS.png Graphic file (type png)
 
-<use ../img/Logo-ROS.png> [11 <../img/xbus_master.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 210--211
+<use ../img/Logo-ROS.png>
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
 
  []
 
-[12 <../img/Logo-ROS.png>]
-<../img/rostopic_img.png, id=528, 726.715pt x 464.73625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
+
+ []
+
+[17 <../img/Logo-ROS.png>]
+<../img/rosgraph.png, id=618, 1280.785pt x 579.16376pt>
+File: ../img/rosgraph.png Graphic file (type png)
+
+<use ../img/rosgraph.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[18] <../img/rostopic_img.png, id=626, 726.715pt x 464.73625pt>
 File: ../img/rostopic_img.png Graphic file (type png)
 
 <use ../img/rostopic_img.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../img/rxplot_img.png, id=530, 941.5175pt x 593.21625pt>
+<../img/rxplot_img.png, id=628, 941.5175pt x 593.21625pt>
 File: ../img/rxplot_img.png Graphic file (type png)
 
 <use ../img/rxplot_img.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13] <../img/gazebo_img.png, id=536, 782.17218pt x 560.0925pt>
+[19 <../img/rosgraph.png (PNG copy)>]
+<../img/gazebo.png, id=634, 196.48407pt x 282.30469pt>
+File: ../img/gazebo.png Graphic file (type png)
+ <use ../img/gazebo.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../img/gazebo_img.png, id=635, 782.17218pt x 560.0925pt>
 File: ../img/gazebo_img.png Graphic file (type png)
 
 <use ../img/gazebo_img.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <../img/rostopic_img.png> <../img/rxplot_img.png>]
-<../img/ubuntu_logo.png, id=543, 608.08429pt x 136.63547pt>
+[20 <../img/rostopic_img.png> <../img/rxplot_img.png>] [21 <../img/gazebo.png> 
+<../img/gazebo_img.png>]
+<../img/ubuntu_logo.png, id=649, 608.08429pt x 136.63547pt>
 File: ../img/ubuntu_logo.png Graphic file (type png)
 
-<use ../img/ubuntu_logo.png> [15 <../img/gazebo_img.png> <../img/ubuntu_logo.pn
-g>]
+<use ../img/ubuntu_logo.png>
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+[22 <../img/ubuntu_logo.png>]
 Cap\'{\i }tulo 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
-[16
+[23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 415--416
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 421.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 545.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 421.
- [18] [19]
-Overfull \hbox (8.85167pt too wide) in paragraph at lines 481--481
-[]\OT1/cmr/bx/n/17.28 Utilizaci^^Son de cu-ater-niones para la rep-re-sentaci^^
-Son
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 545.
+ [25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
+Underfull \hbox (badness 10000) in paragraph at lines 628--629
 
  []
 
-[20] [21] <../img/rotation_quaternion.png, id=594, 366.85493pt x 290.91498pt>
+[27] [28] <../img/rotation_quaternion.png, id=702, 366.85493pt x 290.91498pt>
 File: ../img/rotation_quaternion.png Graphic file (type png)
 
 <use ../img/rotation_quaternion.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 652--653
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 776--777
 
  []
 
-[23 <../img/rotation_quaternion.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 674--675
+[30 <../img/rotation_quaternion.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 798--799
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 694--695
+Underfull \hbox (badness 10000) in paragraph at lines 818--819
 
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 743--744
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 867--868
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 757--758
+
+Underfull \hbox (badness 10000) in paragraph at lines 881--882
 
  []
 
-[26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 890--891
+[32] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
 
  []
 
-<../img/relative_orientation.png, id=676, 444.20642pt x 115.74492pt>
+<../img/relative_orientation.png, id=782, 444.20642pt x 115.74492pt>
 File: ../img/relative_orientation.png Graphic file (type png)
 
-<use ../img/relative_orientation.png> [28 <../img/relative_orientation.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 914--915
+<use ../img/relative_orientation.png>
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
 
  []
 
-<../img/arm_position.png, id=685, 484.57599pt x 353.51605pt>
+[35 <../img/relative_orientation.png>]
+<../img/arm_position.png, id=791, 484.57599pt x 353.51605pt>
 File: ../img/arm_position.png Graphic file (type png)
 
-<use ../img/arm_position.png>
+<use ../img/arm_position.png> [36 <../img/arm_position.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1081--1082
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+
+ []
+
+<../img/sphere.png, id=798, 213.8458pt x 217.51576pt>
+File: ../img/sphere.png Graphic file (type png)
+ <use ../img/sphere.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 957--958
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
 
  []
 
-[30 <../img/arm_position.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 959--960
-
- []
-
-<../img/sphere.png, id=698, 213.8458pt x 217.51576pt>
-File: ../img/sphere.png Graphic file (type png)
- <use ../img/sphere.png>
-Underfull \hbox (badness 10000) in paragraph at lines 988--989
-
- []
-
-<../img/sphere_local.png, id=701, 128.02518pt x 86.45581pt>
+<../img/sphere_local.png, id=806, 128.02518pt x 86.45581pt>
 File: ../img/sphere_local.png Graphic file (type png)
 
 <use ../img/sphere_local.png>
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1122
+
+ []
+
+[38 <../img/sphere.png> <../img/sphere_local.png>] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 1202--1203
+
+ []
+
+<../img/ea_solutions.png, id=825, 503.34926pt x 218.36267pt>
+File: ../img/ea_solutions.png Graphic file (type png)
+
+<use ../img/ea_solutions.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 997--998
+Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
 
  []
 
-[31 <../img/sphere.png>] [32 <../img/sphere_local.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1078--1079
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1238--1239
 
  []
 
-[33] <../img/ea_solutions.png, id=726, 503.34926pt x 218.36267pt>
-File: ../img/ea_solutions.png Graphic file (type png)
+<../img/yaxis.png, id=836, 211.44621pt x 217.51576pt>
+File: ../img/yaxis.png Graphic file (type png)
+ <use ../img/yaxis.png>
 
-<use ../img/ea_solutions.png>
-Underfull \hbox (badness 10000) in paragraph at lines 1108--1109
+LaTeX Warning: `h' float specifier changed to `ht'.
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
-
- []
-
-[34 <../img/ea_solutions.png>] [35]
+[41 <../img/ea_solutions.png>] [42 <../img/yaxis.png>]
 Cap\'{\i }tulo 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1121
+Underfull \hbox (badness 10000) in paragraph at lines 1249--1250
 
  []
 
-
-Overfull \hbox (1.50343pt too wide) in paragraph at lines 1122--1123
-[]\OT1/cmr/m/n/12 El stack \OT1/cmr/m/it/12 youbot-xsens-controller \OT1/cmr/m/
-n/12 est^^Sa com-puesto por los sigu-ientes pa-que-tes, que pueden
- []
-
-<../img/communications.png, id=742, 1218.99164pt x 1413.21727pt>
+<../img/communications.png, id=850, 1218.99164pt x 1413.21727pt>
 File: ../img/communications.png Graphic file (type png)
 
 <use ../img/communications.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[43
 
-Underfull \hbox (badness 10000) in paragraph at lines 1146--1147
+] [44 <../img/communications.png>] [45] [46] [47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 1507--1508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1516
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1148--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1518
 
  []
 
-[36
-
-] [37 <../img/communications.png>] [38]
-Overfull \hbox (19.91942pt too wide) in paragraph at lines 1214--1215
-[]\OT1/cmr/m/n/12 CMT[]OUTPUTMODE[]CALIB: datos cal-i-bra-dos de los acel-er^^S
-omet-ros, gir^^Sosco-
- []
-
-
-Overfull \hbox (5.50386pt too wide) in paragraph at lines 1230--1231
-[]\OT1/cmr/m/n/12 CMT[]OUTPUTSETTINGS[]ORIENTMODE[]EULER: Ori-entaci^^Son del s
-en-
- []
-
-
-Overfull \hbox (9.50797pt too wide) in paragraph at lines 1231--1232
-[]\OT1/cmr/m/n/12 CMT[]OUTPUTSETTINGS[]ORIENTMODE[]MATRIX: Ma-triz de rotaci^^S
-on. 
- []
-
-
-Overfull \hbox (3.79414pt too wide) in paragraph at lines 1232--1233
-[]\OT1/cmr/m/n/12 CMT[]OUTPUTSETTINGS[]ORIENTMODE[]QUATERNION: Cu-ater-ni^^Son
- []
-
-[39]
-Overfull \hbox (11.65018pt too wide) in paragraph at lines 1242--1244
-[]\OT1/cmr/bx/n/12 void Se-tAl-ign-ment-Ma-trix(unsigned int sen-sor[]index, Cm
+[50] [51] [52]
+Overfull \hbox (9.39568pt too wide) in paragraph at lines 1611--1613
+[]\OT1/cmr/bx/n/12 void Se-tA-lign-ment-Ma-trix(unsigned int sen-sor[]index, Cm
 t-Ma-trix align-
  []
 
-[40] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+[53] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/se-utf8.def
@@ -1238,110 +1342,134 @@ File: se-utf8.def 2008/10/27 v1.6 stringenc: UTF-8
 )
 (/usr/share/texmf-texlive/tex/generic/oberdiek/se-iso-8859-1.def
 File: se-iso-8859-1.def 2008/10/27 v1.6 stringenc: ISO-8859-1
-) [41]
+) [54]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (74.87564pt too wide) in paragraph at lines 1383--1384
-[]\OT1/cmr/m/n/12 Junto con el pa-que-te \OT1/cmr/m/it/12 xsens[]driver \OT1/cm
-r/m/n/12 se in-cluye adem^^Sas una li-br-er^^S^^Pa con las clases \OT1/cmr/m/it
-/12 xsens::SensorSubscriber
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1383--1384
+Underfull \hbox (badness 10000) in paragraph at lines 1752--1753
 
  []
 
-[42] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-)
-Overfull \hbox (38.24661pt too wide) in paragraph at lines 1409--1410
-[]\OT1/cmr/m/n/12 En el sigu-iente cuadro se pre-sen-ta un ejem-p-lo de co-mo u
-s-ar la clase xsens::SensorSubscriberList
- []
-
-(/usr/share/texmf-texlive/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-) [43] [44]
-Overfull \hbox (1.45534pt too wide) in paragraph at lines 1466--1467
-[]\OT1/cmr/bx/n/12 double Get-Mod-u-lus() con-st\OT1/cmr/m/n/12 : de-vuelve el 
-m^^Sodu-lo del cu-ater-ni^^Son (ecuaci^^Son []). 
- []
-
-[45]
-Overfull \hbox (13.48068pt too wide) in paragraph at lines 1480--1481
-[]\OT1/cmr/bx/n/12 static con-st Quater-nion Get-D-if-fer-ence(const Quater-nio
-n& q1, con-st Quater-
- []
-
-[46] [47] [48] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+[55] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 )
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-)
-(/usr/share/texmf-texlive/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 1647--1648
-
+) [56]
+Overfull \hbox (28.97086pt too wide) in paragraph at lines 1783--1784
+[]\OT1/cmr/m/n/12 (-20) En el si-guien-te cua-dro se pre-sen-ta un ejem-plo de 
+co-mo usar la cla-se \OT1/cmr/m/it/12 (-20) xsens::SensorSubscriberList
  []
 
-[49]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+) [57]
+<../img/youbot_joints.png, id=1038, 1082.35617pt x 722.13539pt>
+File: ../img/youbot_joints.png Graphic file (type png)
 
-LaTeX Warning: Reference `fig: youbot_joints' on page 50 undefined on input lin
-e 1659.
-
+<use ../img/youbot_joints.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
+Underfull \hbox (badness 10000) in paragraph at lines 1837--1838
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1695--1696
+Underfull \hbox (badness 10000) in paragraph at lines 1839--1840
 
  []
 
-[50] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+[58 <../img/youbot_joints.png>]
+(/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-) [51]
-<../img/arm_visualizer.png, id=953, 1044.90375pt x 746.79pt>
+) [59]
+<../img/arm_visualizer.png, id=1082, 1044.90375pt x 746.79pt>
 File: ../img/arm_visualizer.png Graphic file (type png)
 
-<use ../img/arm_visualizer.png>
-Overfull \hbox (19.18073pt too wide) in paragraph at lines 1717--1718
-\OT1/cmr/m/n/12 u-laci^^Son del bra-zo del robot para tra-ba-jar en Gaze-bo y u
-n no-do de ROS --\OT1/cmr/m/it/12 youbot[]arm[]publisher\OT1/cmr/m/n/12 --
+<use ../img/arm_visualizer.png> [60 <../img/arm_visualizer.png>]
+Overfull \hbox (2.03526pt too wide) in paragraph at lines 1865--1866
+[]\OT1/cmr/bx/n/12 CModelList(ros::NodeHandle& no-de[]handle[])\OT1/cmr/m/n/12 
+(-20) : Cons-truc-tor de un ob-je-to CMo-
  []
 
-[52 <../img/arm_visualizer.png>] [53]
+[61] (/usr/share/texmf-texlive/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+)
+Overfull \hbox (2.34727pt too wide) in paragraph at lines 1896--1897
+\OT1/cmr/m/n/12 (-20) ci^^Son del bra-zo del ro-bot pa-ra fun-cio-nar en Ga-ze-
+bo, y un no-do de ROS --\OT1/cmr/m/it/12 (-20) youbot[]arm[]publisher\OT1/cmr/m
+/n/12 (-20) --
+ []
+
+[62] [63]
 Cap\'{\i }tulo 7.
-[54
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 1904--1905
+
+ []
+
+[64
+
+] <../img/sensor_output.png, id=1156, 1140.26pt x 731.73375pt>
+File: ../img/sensor_output.png Graphic file (type png)
+
+<use ../img/sensor_output.png> [65 <../img/sensor_output.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1993--1994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2019--2020
+
+ []
+
+[66]
+Underfull \hbox (badness 10000) in paragraph at lines 2057--2058
+
+ []
+
+[67] [68]
 Cap\'{\i }tulo 8.
-[55
 
-] [56
+Underfull \hbox (badness 10000) in paragraph at lines 2069--2070
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2071--2072
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2084--2085
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2086--2087
+
+ []
+
+[69
+
+] [70
 
 ]
 Ap\'{e}ndice A.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1747--1748
+Underfull \hbox (badness 10000) in paragraph at lines 2110--2111
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1751--1752
+Underfull \hbox (badness 10000) in paragraph at lines 2114--2115
 
  []
 
-<../img/software_sources.png, id=977, 569.12625pt x 449.68pt>
+<../img/software_sources.png, id=1188, 569.12625pt x 449.68pt>
 File: ../img/software_sources.png Graphic file (type png)
 
 <use ../img/software_sources.png>
@@ -1349,70 +1477,47 @@ File: ../img/software_sources.png Graphic file (type png)
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1764--1765
+Underfull \hbox (badness 10000) in paragraph at lines 2127--2128
 
  []
 
-[57
+[71
 
-] [58 <../img/software_sources.png>] [59]
-Overfull \hbox (18.4787pt too wide) in paragraph at lines 1897--1897
-[]\OT1/cmr/bx/n/14.4 Ejecuci^^Son del sim-u-lador del bra-zo rob^^Sotico del ro
-bot Youbot 
- []
+] [72 <../img/software_sources.png>] [73] [74]
+Ap\'{e}ndice B.
+[75
 
-<../img/gazebo_empty.png, id=995, 1042.89626pt x 706.64pt>
+] <../img/gazebo_empty.png, id=1215, 1042.89626pt x 706.64pt>
 File: ../img/gazebo_empty.png Graphic file (type png)
 
 <use ../img/gazebo_empty.png>
-<../img/gazebo_delete_2b.png, id=997, 763.35187pt x 516.42938pt>
+<../img/gazebo_delete_2b.png, id=1217, 763.35187pt x 516.42938pt>
 File: ../img/gazebo_delete_2b.png Graphic file (type png)
 
-<use ../img/gazebo_delete_2b.png> [60]
-<../img/gazebo_pause.png, id=1006, 349.305pt x 182.93344pt>
+<use ../img/gazebo_delete_2b.png>
+<../img/gazebo_pause.png, id=1219, 349.305pt x 182.93344pt>
 File: ../img/gazebo_pause.png Graphic file (type png)
 
 <use ../img/gazebo_pause.png>
-<../img/gazebo_arm.png, id=1007, 1044.90375pt x 746.79pt>
+<../img/gazebo_arm.png, id=1220, 1044.90375pt x 746.79pt>
 File: ../img/gazebo_arm.png Graphic file (type png)
 
-<use ../img/gazebo_arm.png> [61 <../img/gazebo_empty.png> <../img/gazebo_delete
-_2b.png>] [62 <../img/gazebo_pause.png> <../img/gazebo_arm.png>]
-Ap\'{e}ndice B.
+<use ../img/gazebo_arm.png> [76] [77 <../img/gazebo_empty.png> <../img/gazebo_d
+elete_2b.png> <../img/gazebo_pause.png>] [78 <../img/gazebo_arm.png>]
+Ap\'{e}ndice C.
 
-Overfull \hbox (169.50044pt too wide) in paragraph at lines 2096--2096
-[]\OT1/cmtt/m/n/10 [gazebo-1][] process[] has[] died[] [pid[] 2795,[] exit[] co
-de[] 134,[] cmd[] /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo
-[]
+Underfull \hbox (badness 10000) in paragraph at lines 2479--2480
+
  []
 
+[79
 
-Overfull \hbox (1.5019pt too wide) in paragraph at lines 2096--2096
-\OT1/cmtt/m/n/10 /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/e
-mpty.world[] __name:=gazebo[]
- []
-
-
-Overfull \hbox (6.75186pt too wide) in paragraph at lines 2115--2115
-[][] \OT1/cmtt/m/n/10 /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/wor
-lds/empty.world[] __name:=gazebo[]
- []
-
-
-Overfull \hbox (395.24847pt too wide) in paragraph at lines 2115--2115
-\OT1/cmtt/m/n/10 __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de0500
-9b5/gazebo-1.log[] -s[] /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libg
-azebo_ros_paths_plugin.so[]
- []
-
-(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+] (/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-) [63
-
-]
+)
 (/usr/share/texmf-texlive/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
 )
@@ -1420,67 +1525,53 @@ LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 6.
 
 (/usr/share/texmf-texlive/tex/latex/base/ts1cmtt.fd
 File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Overfull \hbox (48.72397pt too wide) in paragraph at lines 2131--2131
-[]\OT1/cmr/bx/n/17.28 Al eje-cu-tar Gaze-bo con el archi-vo emp-ty[]world.launc
-h
+) [80] [81
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2546--2548
+
  []
 
 
-Overfull \hbox (934.13158pt too wide) in paragraph at lines 2136--2136
-[]\OT1/cmtt/m/n/12 [gazebo_gui-2] process has died [pid 28410, exit code 139, c
-md /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gui __name:=gazebo_gu
-i __log:=/home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08edb99bab79/gazebo_gui-
-2.log].[] 
+Underfull \hbox (badness 10000) in paragraph at lines 2549--2550
+
  []
 
-
-Overfull \hbox (75.80615pt too wide) in paragraph at lines 2136--2136
-[]\OT1/cmtt/m/n/12 log file: /home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08ed
-b99bab79/gazebo_gui-2*.log[] 
- []
-
-[64] [65
-
-] (./pfc.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[82] (./pfc.aux) ) 
 Here is how much of TeX's memory you used:
- 12243 strings out of 495061
- 173723 string characters out of 1182621
- 351504 words of memory out of 3000000
- 14761 multiletter control sequences out of 15000+50000
- 18349 words of font info for 70 fonts, out of 3000000 for 9000
- 28 hyphenation exceptions out of 8191
- 37i,13n,58p,942b,2279s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1095.600pk> </home/
-daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi1
-2.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on pfc.pdf (66 pages, 4752995 bytes).
+ 14010 strings out of 494999
+ 203495 string characters out of 1180816
+ 426665 words of memory out of 3000000
+ 16194 multiletter control sequences out of 15000+50000
+ 26561 words of font info for 174 fonts, out of 3000000 for 9000
+ 54 hyphenation exceptions out of 8191
+ 37i,13n,58p,1247b,2291s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm100
+0.600pk> </home/daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tctt1095.600pk> <
+/home/daniel/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1000.600pk> </home/dani
+el/.texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pf
+b></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmr17.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-
+texlive/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
+s/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on pfc.pdf (83 pages, 8235510 bytes).
 PDF statistics:
- 1217 PDF objects out of 1440 (max. 8388607)
- 391 named destinations out of 1000 (max. 500000)
- 720 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1479 PDF objects out of 1728 (max. 8388607)
+ 494 named destinations out of 1000 (max. 500000)
+ 27431 words of extra memory for PDF output out of 29859 (max. 10000000)
 

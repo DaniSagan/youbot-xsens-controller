@@ -25,7 +25,7 @@ namespace gazebo
         this->model_list.push_back(lp_model);
     }
 
-    void CModelList::Spawn()
+    void CModelList::Spawn() const
     {
         for(unsigned int i = 0; i < this->model_list.size(); i++)
         {
@@ -45,15 +45,20 @@ namespace gazebo
         this->model_list[index]->SetOrientation(orientation);
     }
 
-    void CModelList::PublishMessage()
+    void CModelList::PublishMessage() const
     {
         for(unsigned int i = 0; i < this->model_list.size(); i++)
         {
             this->model_list[i]->PublishMessage();
         }
     }
+    
+    dfv::Vector3 CModelList::GetPosition(unsigned int index) const
+    {
+        return this->model_list[index]->GetPosition();
+    }
 
-    unsigned int CModelList::GetCount()
+    unsigned int CModelList::GetCount() const
     {
         return this->model_list.size();
     }

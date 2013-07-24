@@ -18,6 +18,7 @@
 \usepackage{hyperref}
 \usepackage{floatrow}
 \usepackage{wrapfig}
+\usepackage{microtype}
 \usepackage[font=small,labelfont=bf]{caption}
 \author{Daniel Fernández Villanueva}
 \title{\huge Sistema de monitorización inercial del movimiento de las extremidades superiores}
@@ -93,76 +94,157 @@
 
 \chapter{ANTECEDENTES}
 
+Los sistemas de monitorización del cuerpo humano llevan existiendo desde la década de los 70 del siglo XX. En esta época se empezaron a usar técnicas fotogramétricas en investigación biomecánica, que consistían en la medición sobre fotografías para determinar las propiedades geométricas y situaciones espaciales de los distintos objetos y partes del cuerpo.\\
+
+A medida que mejoraba la tecnología electrónica, se fue incorporando el campo de la captura de movimiento a otras especialidades, como el entrenamiento en ciertos deportes o la educación. Más recientemente, con el inmenso avance en el procesamiento gráfico, se ha empezado a utilizar en las animaciones por ordenador, videojuegos, películas, realidad virtual, y muchos otros sectores relacionados con la industria audiovisual y el entretenimiento. \\
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+  \begin{center}
+    \includegraphics[scale=0.6]{../img/UpperShopTracking.png} 
+  \end{center}
+  \caption[Sistema de monitorización de la cinemática de la espina dorsal y brazos]{Sistema de monitorización de la cinemática de la espina dorsal y de los brazos. Crédito: Escuela de Medicina Alpert, \textit{Brown University}, EEUU.}
+\end{wrapfigure}
+
+Existen además algunas aplicaciones médicas de los sistemas de monitorización del movimiento. Uno de los ejemplos más destacados es el llamado \textit{análisis de la marcha}, en el que se registran los movimientos y posiciones del cuerpo humano. El análisis de estos movimientos permite realizar estudios detallados de personas que presentan patologías como parálisis cerebral, enfermedad de Parkinson y transtornos neuromusculares, y permiten un diagnóstico más detallado, un mejor diseño del plan de tratamiento y un control de seguimiento más sofisticado. \\
+
+Por último, cabe citar el uso de la monitorización del movimiento para teleoperación de sistemas actuadores. En este caso se estaría hablando de interfaces hombre-máquina basados tanto en el movimiento del propio cuerpo humano, como en el movimiento por parte de la persona de un modelo de la máquina. Posibles aplicaciones varían desde el control de actividades forestales, hasta operaciones en entornos nucleares y de exploración espacial. En todos estos casos es posible además incorporar un \textit{feedback} a modo de fuerzas que se aplican al modelo, lo que mejora la percepción de la persona del medio en que está situado la máquina actuadora.\footnote{Wen-Hong Zhu, S. E. Salcudean. \textit{Teleoperation with Adaptative Motion/Force Control}. Dept. of Electrical and Computer Engineering, University of British Columbia, Canada.}\\
+
+Este proyecto se centrará en la implementación de un sistema de monitorización del movimiento, principalmente del brazo humano, aunque se utilizará una arquitectura que hará posible su uso en otros entornos. Además se creará una serie de aplicaciones que hagan uso de este sistema de monitorización, y se comprobará la eficacia de éste en ellas.
 
 %% ******** Capítulo 2 ******** %%
 
 \chapter{OBJETIVO DEL PROYECTO}
 
-Este proyecto tiene como objetivo la implementación de un sistema de monitorización en tiempo real del movimiento de las extremidades superiores del cuerpo humano. En concreto, este sistema deberá ser capaz de registrar el estado de orientación principalmente de un brazo humano, aunque su uso será extensible a otros sistemas articulados. De forma inherente este objetivo, aparecen unos problemas a los que es necesario proporcionar una solución: 
+El presente proyecto tiene como objetivo la implementación de un prototipo de un sistema de monitorización en tiempo real de las extremidades superiores del cuerpo humano. Entiéndase por sistema de monitorización un conjunto de elementos, tanto de hardware como de software, que permiten la determinación en tiempo real del estado de un brazo humano. El estado de un brazo puede definirse como cierto conjunto de magnitudes de las que se pueden derivar otras magnitudes que pueden resultar de mayor utilidad para la aplicación en la que se desee utilizar el sistema de monitorización. \\
+
+El estado de un brazo humano puede ser determinado mediante tres longitudes y tres orientaciones, que se corresponden con los tres eslabones principales del brazo humano --brazo, antebrazo y mano--. Estos eslabones están conectados mediante las articulaciones hombro, codo y muñeca, cada una con múltiples grados de libertad. Dado que las longitudes de los eslabones permanecen constantes a lo largo del tiempo, y el estado de rotación de una articulación puede ser determinado fácilmente si se conocen los estados de rotación de cada eslabón con referencia a un sistema fijo, el objetivo principal del presente proyecto será determinar dicho estado de rotación respecto al sistema fijo de las tres articulaciones principales del brazo. Se verá cómo únicamente con las tres mencionadas orientaciones es posible calcular el resto de magnitudes deseadas\footnote{Véase el capítulo CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}.\\
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.6]{../img/brazo.png} 
+	\caption[Esquema de un brazo humano]{Esquema de un brazo humano. Sabiendo de antemano las longitudes de  brazo, antebrazo y mano, y las orientaciones de éstos con respecto a un sistema fijo en cada momento, es posible determinar las posiciones, velocidades, aceleraciones, etc. de cada punto del brazo, además de los estados de las articulaciones.} 
+\end{figure}
+
+De forma inherente al objeto de este proyecto, aparecen una serie de problemas a los que es necesario proporcionar una solución: 
 
 \begin{enumerate}
 \item \textbf{Toma de datos de los sensores}: \\
-Realización de un sistema que permita obtener los datos que proporcionan los sensores utilizados para registrar el movimiento. Este sistema deberá de ser capaz de realizar la lectura en tiempo real, con mínima latencia y a una frecuencia aceptable. \\
+Se tendrá que implementar un sistema que permita obtener los datos que proporcionan los sensores utilizados para registrar las orientaciones. Este sistema deberá de ser capaz de realizar la lectura en tiempo real, con mínima latencia y a una frecuencia aceptable. Los elementos que componen el sistema serán los sensores, que medirán el estado real del brazo, y un programa informático llamado \textit{driver} que actuará de interfaz entre los sensores y el PC. \\
 
-\item \textbf{Tratamiento de los datos}: Una vez se tenga disponible un sistema para leer los datos de los sensores, el siguiente paso será procesar dichos datos para obtener las magnitudes necesarias para las distintas aplicaciones (Por ejemplo: orientación relativa entre sensores, ángulos de Euler, etc.)\\
+\item \textbf{Tratamiento de los datos}: Una vez se tenga disponible un sistema para leer los datos de los sensores, el siguiente paso será procesar dichos datos para obtener las magnitudes necesarias para las distintas aplicaciones (Por ejemplo: orientación relativa entre sensores, ángulos de Euler, etc.). Este procesamiento lo llevarán a cabo uno o varios programas informáticos que tienen que ser capaces de comunicarse con el \textit{driver}. Dado que se tratará de dotar al sistema de la máxima modularidad posible, estos programas serán independientes del \textit{driver}.\\
 
-\item \textbf{Utilización de los datos}: \\
-En esta última fase se crearán los sistemas necesarios para la utilización de los datos con el objetivo deseado. En este proyecto se crearán tres aplicaciones concretas:
+\item \textbf{Aplicaciones del sistema de monitorización}: \\
+En esta última fase se crearán los sistemas necesarios para la utilización de los datos con el objetivo deseado. En este proyecto se crearán en concreto tres aplicaciones en las que se usará el sistema de monitorización:
 
 \begin{enumerate}
 
-\item Visualización de un esquema del brazo en un visualizador 3D.
+\item Visualización de un esquema del brazo humano en un visualizador 3D.
 
 \item Control de un simulador de un brazo robótico.
 
-\item Control del movimiento de un robot real.
+\item Control del movimiento de un robot real (robot YouBot).
 
 \end{enumerate}
 
 \end{enumerate}
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.2]{../img/youbot.png} 
+	\caption[El robot YouBot]{El robot YouBot.} 
+	\label{fig: youbot}
+\end{figure}
 
 En este documento se realizará una descripción detallada de las soluciones que se han adoptado para cada problema, y como se han incorporado dentro del sistema total de monitorización, de forma que cada parte se comunique con las demás de forma eficaz.
 
 %%% ******** Capítulo 3 ******** %%%
 \chapter{ESPECIFICACIONES DE DISEÑO}
 
-En esta apartado se detallan las características esenciales que se pretenden implementar en el sistema de monitorización.
+En esta apartado se detallan las características esenciales que se pretenden implementar en el sistema de monitorización. 
+
+\section{Especificaciones del hardware}
+
+Las siguientes especificaciones se refieren a las características que ha de reunir el conjunto de sensores con los que se realizarán las medidas.
 
 \begin{itemize}
 
-\item \textbf{Flexibilidad}: que no sólo sea capaz de registrar la posición de un brazo humano, sino que sea aplicable a otro tipo de sistemas articulados, tanto humanos como de máquinas y robots. Por ello dicho sistema ha de ser flexible en cuanto a número de sensores y grados de libertad que se puedan monitorizar.
+\item \textbf{Flexibilidad}: La red de sensores no sólo debe ser capaz de registrar la posición de un brazo humano, sino que además debe de ser aplicable a otro tipo de sistemas articulados, tanto humanos como de máquinas y robots. Por ello dicho sistema ha de ser flexible en cuanto a número de sensores y grados de libertad que se puedan monitorizar.
 
-\item \textbf{Pequeño y ligero}: el sistema no puede ser demasiado aparatoso, ya que en se pretende colocarlo en extremidades humanas. Además no debería de dificultar la movilidad de la persona en absoluto.
+\item \textbf{Pequeño y ligero}: El sistema no puede ser demasiado aparatoso, ya que en se pretende colocarlo en extremidades humanas. Además no debería de dificultar la movilidad de la persona en absoluto.
 
-\item \textbf{Fiabilidad}. Que sea lo más fidedigno posible en las medidas que proporciona. Esto puede tener mucha importancia en aplicaciones donde se requiera precisión.
+\item \textbf{Fiabilidad}. Que sea lo más fidedigno posible en las medidas que proporciona. Esto puede tener mucha importancia en aplicaciones donde se requiera precisión, como por ejemplo el control del brazo robótico que se pretende implementar.
 
-\item \textbf{Económico}
+\item \textbf{Económico}. Por razones obvias, se buscará un sistema cuyo coste de creación e implementación sea pequeño.
 
-\item \textbf{Versatilidad}. El sistema debería dejar la puerta abierta a poder ser incorporado en otras aplicaciones de forma sencilla, además de poder ser ampliado con mayor número de sensores o de distinto tipo sin mucho esfuerzo. 
+\item \textbf{Versatilidad}. El sistema debería dejar la puerta abierta a poder ser incorporado en multitud de aplicaciones de forma sencilla, además de poder ser ampliado con mayor número de sensores o de distinto tipo sin mucho esfuerzo y sin tener que cambiar otras partes del sistema. Por ejemplo, si en un futuro se pretenden incorporar más sensores inerciales, o incluso sensores de distinto tipo, se pretenderá que sólo sea necesario modificar el programa \textit{driver} para la comunicación con los nuevos sensores, y el resto del sistema pueda funcionar como antes.  
 
 \end{itemize}
 
+\section{Especificaciones del software}
+
+En la siguiente lista se muestran las características que se buscarán tanto en el software que se utilice para el desarrollo de los programas para este proyecto, como en los propios programas en sí.
+
+\begin{itemize}
+
+\item \textbf{Modularidad}: Se ha mencionado en las especificaciones del hardware que se pretende crear un sistema en el que se puedan incorporar en un futuro otros sensores. De la misma forma, también se busca un sistema que permita que se puedan añadir nuevos programas que utilicen los datos obtenidos de los sensores, pero que realicen otras funciones distintas a los programas originales, sin tener que modificar en absoluto estos últimos. Ésto dejará la puerta abierta por ejemplo a incluir todo tipo de visualizaciones, u otro tipo de actuadores que no sean el robot YouBot.
+
+\item \textbf{Sistema distribuido}: Se pretende implementar un sistema que pueda ser ejecutado tanto en uno como en varios ordenadores de forma paralela, cada uno encargándose de realizar las tareas de cierta parte del sistema. 
+
+\item \textbf{Interactividad con el usuario}: Dado que el sistema de monitorización tiene carácter de prototipo, no se buscará de momento la creación de una interfaz gráfica a modo de producto final. A lo que se dará especial importancia es a la fácil comunicación entre programas y a la posibilidad de crear de forma sencilla y rápida otros programas que sí permitan realizar visualizaciones en programas ya existentes. Aún así, esta arquitectura deja la puerta abierta a la creación posterior de un programa final que incorpore todos los componentes del sistema y permita interactuar con él mediante una interfaz gráfica de usuario.
+
+\item \textbf{Economía}: El desarrollo del software ha de ser lo más barato posible, usando en la medida que se pueda software libre y de código abierto.
+
+\end{itemize}
 
 %%% ******** Capítulo 4 ******** %%%
-\chapter{DISEÑO DEL SISTEMA}
+\chapter{ESTUDIO DE SOLUCIONES}
 
-\section{Estudio de soluciones}
+\section{Obtención del estado del brazo}
 
-\subsection{Obtención del estado del brazo}
+Para obtener el estado del brazo, será necesario un conjunto de sensores que sean capaces de registrar las orientaciones de brazo, antebrazo y mano. A continuación se presentarán algunas opciones disponibles, junto a sus ventajas y desventajas.
 
-\subsubsection{Encoders}
+\subsection{Encoders}
 
-\subsubsection{Sensores ópticos}
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+		\includegraphics[scale=0.4]{../img/exoskeleton.png} 
+	\caption[Uso de encoders en un exoesqueleto para la monitorización del brazo.]{Uso de encoders en un exoesqueleto para la monitorización del brazo. Crédito: Mpeg-V} 
+	\label{fig: encoders}
+\end{wrapfigure}
 
-\subsubsection{Sensores inerciales}
+El uso de \textit{encoders} suele ser una opción interesante en el caso de que se quisiera detectar el ángulo de una articulación de un grado de libertad, por lo que son el tipo de sensores usados en muchos robots para saber el estado de sus articulaciones. Sin embargo, para el caso de un brazo humano no resultan prácticos; su colocación en las articulaciones del brazo es aparatosa --se tendría que hacer uso de un exo-esqueleto en el que colocar los sensores-- y serían necesarios varios encoders para registrar los ángulos en articulaciones de varios grados de libertad. 
 
-Los sensores inerciales --normalmente incluidos dentro de una misma unidad llamada Unidad de Medición Inercial - Inertial Measurement Unit o IMU para abreviar-- utilizan un conjunto de acelerómetros, giróscopos y en ocasiones magnetómetros para la obtención de la velocidad, orientación, fuerzas magnéticas entre otros posibles parámetros. \\
+\subsection{Sensores ópticos}
 
-Una de las principales desventajas que presentan los IMUs es la deriva que presentan a lo largo del tiempo. Esto es debido a que para obtener el estado en cierto tiempo, hacen uso de las medidas del estado anterior y los errores presentes se vas acumulando. Si embargo para la orientación es posible minimizar la deriva a un mínimo, incluso eliminarla, mediante un sistema llamado AHRS (\textit{Attitude and Heading Reference System}), en el que se utilizan la medida de la aceleración de la gravedad y el norte magnético para compensar las derivas que se obtienen con los giróscopos.
+\begin{wrapfigure}{l}{0.3\textwidth}
+  \begin{center}
+    \includegraphics[scale=0.2]{../img/kinect.png} 
+  \end{center}
+  \caption[El sensor Kinect]{El sensor \textit{Kinect}.}
+  \label{fig: kinect}
+\end{wrapfigure}
 
-\subsubsection{Solución escogida: red de sensores inerciales xsens MTx}
+Una opción interesante es el uso de sensores ópticos de detección de movimiento --refiriéndose a sensores de tipo \textit{Kinect}--. En estos sensores no es necesario acoplar ningún elemento al cuerpo humano, además de ser bastante económicos y capaces de registrar la posición y orientación de varios elementos a la vez. Sin embargo, la imprecisión de este tipo de sensores no resulta conveniente para el tipo de aplicaciones en las que se pretende aplicar el sistema de monitorización --llegando a tener errores máximos medios del rango de $20^\circ-40^\circ$\footnote{Choppin, S., Wheat, J.,
+\textit{MARKER-LESS TRACKING OF HUMAN MOVEMENT USING MICROSOFT
+KINECT}, 2012}--.\\
 
-Los sensores xsens MTx implementan la corrección AHRS para el cálculo de la orientación, por lo que proporcionan una medida de alta precisión y sin deriva apreciable de la orientación que presenta el sensor. Además es posible utilizar varios de estos sensores a la vez formando una red conectándolos a un máster xbus, lo que permitirá tomar los datos de los distintos eslabones que forman el brazo al mismo tiempo.
+\subsection{Sensores inerciales}
+
+Los sensores inerciales --normalmente incluidos dentro de una misma unidad llamada Unidad de Medición Inercial - Inertial Measurement Unit o IMU para abreviar-- utilizan un conjunto de acelerómetros, giróscopos y en ocasiones magnetómetros para la obtención de la velocidad, orientación, fuerzas magnéticas entre otros posibles parámetros. Esta opción es realmente interesante ya que muchos IMUs ofrecen la posibilidad de dar como salida la orientación del elemento al que estén adheridos de forma directa. Además son pequeños y sencillos de colocar en el cuerpo humano. \\
+
+\begin{wrapfigure}{r}{0.6\textwidth}
+  \begin{center}
+    \includegraphics[scale=0.4]{../img/xsens_mti-g.png} 
+  \end{center}
+  \caption[IMU Xsens MTi-G]{IMU Xsens MTi-G.}
+  \label{fig: xsens_mtig}
+\end{wrapfigure}
+
+Una de las principales desventajas que presentan los IMUs es la deriva que presentan a lo largo del tiempo. Esto es debido a que para obtener el estado en cierto tiempo, hacen uso de las medidas del estado anterior y los errores presentes se van acumulando. Sin embargo para la orientación es posible minimizar la deriva a un mínimo, incluso eliminarla, mediante un sistema llamado AHRS (\textit{Attitude and Heading Reference System}), en el que se utilizan la medida de la aceleración de la gravedad y el norte magnético para compensar las derivas que se obtienen con los giróscopos.
+
+\subsection{Solución escogida: red de sensores inerciales xsens MTx}
+
+Los sensores Xsens MTx implementan un filtro de Kalman para la obtención de la orientación, e incorporan la corrección AHRS para el cálculo de ésta, por lo que proporcionan una medida de alta precisión y sin deriva apreciable de la orientación que presenta el sensor. Además es posible utilizar varios de estos sensores a la vez formando una red conectándolos a un máster Xbus, lo que permitirá tomar los datos de los distintos eslabones que forman el brazo al mismo tiempo. En la figura \ref{fig: xbus_master} se muestra una red de sensores Xsens MTx conectados al máster Xbus.
 
 \begin{figure}[h]
 	\centering
@@ -171,11 +253,11 @@ Los sensores xsens MTx implementan la corrección AHRS para el cálculo de la or
 	\label{fig: xbus_master}
 \end{figure}
 
-\subsection{Comunicación entre los sensores y el PC}
+\section{Comunicación entre los sensores y el PC}
 
 La conexión del máster Xbus al PC se realizará mediante cable USB. Para la toma de datos del sensor será necesario un programa especial llamado \textit{driver} que se encargue de gestionar las comunicaciones a través del puerto serie.
 
-\subsubsection{Driver para la comunicación xbus Master - PC}
+\subsection{Driver para la comunicación xbus Master - PC}
 
 Las funcionalidades que se pretenden implementar en el \textit{driver} del Xsens son las siguientes:
 
@@ -191,15 +273,18 @@ Las funcionalidades que se pretenden implementar en el \textit{driver} del Xsens
 
 \end{itemize}
 
-Existen algunos drivers disponibles en internet preparados para trabajar en ROS con sensores Xsens. Sin embargo, lo que se han encontrado o bien sólo sirven para un sólo sensor, o trabajan en versiones bastante desfasadas de ROS y se encuentra poca o nula documentación sobre ellos. \\
+Existen algunos drivers disponibles en Internet preparados para trabajar en ROS con sensores Xsens. Sin embargo, los que se han encontrado o bien sólo sirven para un sólo sensor, o trabajan en versiones bastante desfasadas de ROS y se encuentra disponible poca o nula documentación sobre ellos. \\
 
-La opción que se ha decidido seguir fue aprovechar que en la documentación de los sensores Xsens se proporcionan un conjunto de archivos con código en C++ para la comunicación a través del puerto serie con un sensor Xsens o un máster Xbus, y a partir de ellos construir el driver para la comunicación con los sensores y la publicación de los datos en ROS. Se realiza una descripción detallada de este programa en la sección \textit{Driver para la comunicación Xbus Master/Xsens - PC} del capítulo \textit{IMPLEMENTACIÓN DEL SOFTWARE}. 
+La opción que se ha decidido seguir fue aprovechar que en la documentación de los sensores Xsens se proporciona un conjunto de archivos con código en C++ en los que se implementa el protocolo de comunicación a través del puerto serie con un sensor Xsens o un máster Xbus, y a partir de ellos se construirá el driver para la comunicación con los sensores y la publicación de los datos en ROS. Se realiza una descripción detallada de este programa en la sección \textit{Driver para la comunicación Xbus Master/Xsens - PC} del capítulo \textit{IMPLEMENTACIÓN DEL SOFTWARE}. 
 
-\subsection{Comunicación entre programas}
+\section{Desarrollo, comunicación entre programas y distribución en varias unidades de procesamiento}
 
-Dada la multi-modularidad de la que se pretende dotar al sistema de monitorización, será necesario un sistema en el que distintos programas se puedan comunicar entre sí. Sería posible resolver las comunicaciones partiendo desde cero mediante sockets TCP/IP. Sin embargo es bastante más práctico utilizar algún tipo de plataforma que resuelva por ella misma las comunicaciones. En este proyecto se usará la plataforma ROS, que además de solucionar el tema de las comunicaciones, posee una gran cantidad de herramientas que van a ser de mucha utilidad. \\
+Dada la multi-modularidad de la que se pretende dotar al sistema de monitorización, será necesario un sistema en el que distintos programas se puedan comunicar entre sí, tanto dentro del mismo PC como en una red de PCs. Sería posible resolver las comunicaciones partiendo desde cero mediante sockets TCP/IP. Sin embargo es bastante más práctico utilizar algún tipo de plataforma que se haga cargo por ella misma de las comunicaciones. \\
 
-\subsubsection{ROS}
+Hasta hace relativamente poco tiempo, los desarrolladores de software para robots carecían de una plataforma común sobre la que sustentarse en la creación de programas y la resolución de las comunicaciones, y sobre la que compartir y colaborar entre ellos. Con la aparición de las plataformas \textit{open source} de desarrollo, se ha eliminado la necesidad de crear las aplicaciones y las comunicaciones desde cero. Entre estas plataformas, ha comenzado a destacar una, que en poco tiempo se ha convertido en la plataforma líder para desarrollo de software para robots. \\
+
+\subsection{La plataforma de desarrollo de software para robots ROS}
+
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
     \includegraphics[scale=1.2]{../img/Logo-ROS.png} 
@@ -207,19 +292,22 @@ Dada la multi-modularidad de la que se pretende dotar al sistema de monitorizaci
   \caption[Logotipo de ROS]{Logotipo de ROS.}
   \label{fig: ros_logo}
 \end{wrapfigure}
+
 ROS (del inglés \textit{Robot Operating System} - Sistema Operativo Robótico) es una plataforma de desarrollo de software que incluye conjunto de utilidades centradas en ayudar al desarrollador en la creación de programas para el control de robots. Esta herramienta incorpora abstracción del hardware, drivers para dispositivos, librerías, visualizadores, utilidades para el intercambio de mensajes entre programas y administradores de paquetes de software, entre otras muchas cosas. ROS es además software abierto, bajo una licencia BSD, por lo que cualquier persona puede ver su código fuente y modificarlo.\\
 
-\subsubsection{Herramientas proporcionadas por ROS}
+ROS fue desarrollado originalmente en el año 2007 bajo el nombre \textit{switchyard} por el Laboratorio de Inteligencia Artificial de la Universidad de Stanford. Desde 2008 su desarrollo continúa principalmente en el laboratorio de investigación tecnológica Willow Garage. ROS destaca sobre las demás plataformas en que se centra en construir una comunidad de colaboradores, y desde sus orígenes ha sido diseñado para facilitar compartir el software creado por desarrolladores en todo el mundo. El resultado de esta filosofía es que actualmente hay disponibles miles de paquetes de ROS, que contienen \textit{drivers} para una inmensa cantidad de sensores y robots, librerías, mensajes, y todo tipo herramientas, gratuitos, fáciles de instalar y que es posible modificar si así se desease.\\
 
-La plataforma ROS proporciona solución a diversos problemas que vienen dados inherentemente al objetivo de este proyecto:
+\subsection{Herramientas proporcionadas por ROS}
+
+La plataforma ROS proporciona solución a una gran cantidad de problemas que vienen dados inherentemente al objetivo de este proyecto:
 
 \begin{itemize}
 
 \item \textbf{Creación y compilación de programas}: 
 
-ROS proporciona librerías en los lenguajes C++, python y lisp en las que se implementan las diversas herramientas que pone a disposición, como intercambio de mensajes entre programas, servidor de parámetros, gestión del tiempo, entre muchas otras. En el presente proyecto se utilizará la implementación en C++ --\textbf{roscpp}--, que es la librería más apliamente difundida en la comunidad de ROS, además de estar diseñada para ser la librería más actualizada y con mayor número de herramientas.
+ROS proporciona librerías en los lenguajes C++, python y lisp en las que se implementan las diversas herramientas que pone a disposición, como intercambio de mensajes entre programas, servidor de parámetros, gestión del tiempo, entre muchas otras. En el presente proyecto se utilizará la implementación en C++ --\textbf{roscpp}--, que es la librería más ampliamente difundida en la comunidad de ROS, además de estar diseñada para ser la librería más actualizada y con mayor número de herramientas.\\
 
-Además ROS pone a disposición un gestor de paquetes de software con el fin de facilitar la reutilización de código. Un \textbf{paquete} es la forma más básica de organización del software en ROS. Un paquete puede contener programas --llamados \textbf{nodos}--, librerías, o cualquier otra cosa que posea cierta funcionalidad. La herramienta \textit{roscreate-pkg} permite la creación de un paquete de forma automática. 
+Además ROS pone a disposición un gestor de paquetes de software con el fin de facilitar la reutilización de código. Un \textbf{paquete} es la forma más básica de organización del software en ROS. Un paquete puede contener programas --llamados \textbf{nodos}--, librerías, o cualquier otra cosa que posea cierta funcionalidad. La herramienta \textit{roscreate-pkg} permite la creación de un paquete de forma automática. También existe otra herramienta que permite realizar la compilación del paquete, llamada \textit{rosmake}.\\ 
 
 En un \textbf{stack} de ROS se pueden incluir varios paquetes. Los \textit{stacks} tienen por fin hacer más sencillo compartir conjuntos de paquetes entre distintos ordenadores. Todos los paquetes creados en el presente proyecto se incluirán dentro de un mismo \textit{stack}.
 
@@ -230,7 +318,14 @@ Uno de los puntos más fuertes de ROS son las herramientas que incluye para la c
 
 \item \textbf{Máster}: El máster de ROS es el programa que se encarga de gestionar las comunicaciones entre los distintos nodos (programas de ROS). Permite que distintos nodos se encuentren entre si, lleva un registro de los \textit{publishers} y \textit{subscribers} de los distintos \textit{topics} y de los \textit{servicios}, además de proporcionar un \textit{servidor de parámetros}.
 
-\item \textbf{Topics}: Los \textit{topics} son los canales de comunicación que utilizan los distintos \textit{nodos} para comunicarse entre sí. Esta comunicación es llevada a cabo mediante \textit{mensajes}. 
+\item \textbf{Topics}: Los \textit{topics} son los canales de comunicación que utilizan los distintos \textit{nodos} para comunicarse entre sí. Esta comunicación es llevada a cabo mediante \textit{mensajes}. Para leer de un topic un nodo hace uso de un \textit{subscriber} (subscriptor). Se dice entonces que el nodo está \textit{suscrito} al \textit{topic}. Otro nodo puede estar publicando mensajes en el \textit{topic} mediante un \textit{publisher}. En este caso se diría que el nodo está \textit{publicando} en el \textit{topic}. En la figura \ref{fig: ros_nodes} se muestra el grafo de comunicaciones de un sistema de navegación de un robot. Se puede comprobar la complejidad que puede llegar a tomar una red de nodos. En esta figura, cada flecha representa un topic. Cada \textit{topic} tiene un nombre característico, y acepta un tipo de mensajes. Las elipses se corresponden con los nodos, que también poseen un nombre único que los identifica. El inicio de cada flecha representa un \textit{publisher} del nodo del que parte la flecha, y su final se corresponde con un \textit{subscriber} al \textit{topic}, contenido en el nodo donde termina la flecha.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.35]{../img/rosgraph.png} 
+	\caption[Ejemplo de una red de nodos de ROS]{Ejemplo de una red de nodos de ROS.} 
+	\label{fig: ros_nodes}
+\end{figure}
 
 \item \textbf{Mensajes}: Un \textit{topic} acepta una determinada clase de mensaje. Los mensajes están compuestos por un conjunto de uno o varios tipos de datos --floats, strings, arrays, etc.--, o de otros mensajes en una estructura anidada. Existen unas definiciones de mensajes estándar, aunque es posible crear nuevas definiciones de estos mensajes. En este proyecto se han tratado de utilizar mensajes estándar en la medida de lo posible.
 
@@ -246,13 +341,13 @@ Uno de los puntos más fuertes de ROS son las herramientas que incluye para la c
 
 \begin{itemize}
 
-\item \textbf{rostopic}: El comando \textit{rostopic} permite conocer en tiempo real los topics que se encuentran publicados en ROS, y obtener los valores que se están publicando en ellos. Para obtener una lista de los topics se ejecutará el siguiente comando:
+\item \textbf{rostopic}: El comando \textit{rostopic} permite conocer en tiempo real los topics que se encuentran publicados en ROS, y obtener los valores que están siendo publicados en ellos. Para obtener una lista de los topics se ejecutará el siguiente comando:
 
 \begin{verbatim}
 $ rostopic list
 \end{verbatim}
 
-Si se quisiera conocer los valors publicados se ejecutará el siguiente comando:
+Si se quisiera conocer los valores publicados se puede ejecutar el siguiente comando:
 
 \begin{verbatim}
 $ rostopic echo <nombre_del_mensaje>
@@ -294,6 +389,14 @@ ROS incluye varios paquetes para la visualización y simulación 3D de objetos. 
 
 \item \textbf{rviz}: El paquete rviz incluido en ROS es un paquete que permite la lectura de topics de ROS desde el propio programa, y asignar los valores a parámetros de la visualización. No es un simulador de física de objetos 3D, por lo que no permite la simulación de robots propiamente dicha.
 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.2]{../img/gazebo.png} 
+  \end{center}
+  \caption[El simulador Gazebo]{El simulador \textit{Gazebo}.}
+  \label{fig: gazebo_logo}
+\end{figure}
+
 \item \textbf{gazebo}: El programa Gazebo es un simulador de física de objetos rígidos. Permite la simulación de un robot o de un conjunto de robots, y su interacción entre ellos y con el ambiente. Además es posible obtener una simulación de la respuesta que tendrían ciertos tipos de sensores en el mundo real.  
 
 \begin{figure}[h]
@@ -303,17 +406,42 @@ ROS incluye varios paquetes para la visualización y simulación 3D de objetos. 
 	\label{fig: gazebo_img}
 \end{figure}
 
-En la documentación del robot YouBot viene incluída una simulación del brazo del robot en Gazebo con la que se puede interactuar mediante ciertos topics de ROS.
+En la documentación del robot YouBot viene incluida una simulación del brazo del robot en Gazebo (figura \ref{fig: gazebo_img}) con la que se puede interactuar mediante ciertos topics de ROS.
 
 \end{itemize}
 
 \end{itemize}
 
-\subsection{Sistema operativo}
+\subsection{ROS como sistema distribuido}
+
+ROS ha sido diseñado para poder funcionar en una red de ordenadores de forma distribuida. Se puede crear una red de nodos ejecutándose simultáneamente en varios PCs conectados entre sí. Solamente hay que tener en cuenta lo siguiente:
+
+\begin{itemize}
+\item Sólo es necesario un máster para todos los ordenadores conectados. Se ha de determinar inicialmente en qué ordenador se localizará el máster.
+
+\item Todos los nodos serán configurados para usar el mismo máster. La variable de entorno que define la dirección del máster es ROS\_MASTER\_URI. Esta variable se tiene que definir al iniciar un \textit{shell} mediante el comando:
+
+\begin{verbatim}
+$ export ROS_MASTER_URI=http://direccion_del_master:11311
+\end{verbatim}
+
+\item Tiene que haber conectividad completa y bidireccional entre cada par de máquinas.
+
+\item Cada máquina tiene que tener un nombre único --normalmente se utilizará su dirección IP-- que el resto de máquinas puedan entender. Este nombre se establece en la variable de entorno ROS\_IP. Para definir su valor se ejecutará el siguiente comando al abrir un nuevo \textit{shell}:
+
+\begin{verbatim}
+$ export ROS_IP=mi_direccion_ip
+\end{verbatim}
+
+\end{itemize}
+
+Una vez establecidas las variables ROS\_IP y ROS\_MASTER\_URI en cada máquina, todos los nodos podrían ser ejecutados indistintamente en cualquier lugar de la red --a excepción de los drivers, que han de ejecutarse en la misma máquina que el hardware del que realizan el control--, y el conjunto debería comportarse tal y como lo haría si estuviera en un único ordenador. 
+
+\section{Sistema operativo}
 
 La plataforma ROS ha sido creada para trabajar principalmente en el sistema operativo Ubuntu. Existe otras versiones capaces de funcionar en otros sistemas operativos como Windows, pero son experimentales y no poseen todas las funcionalidades de la versión principal, además de carecer de soporte y ser algo inestables. Por ello, el sistema operativo elegido para la realización y ejecución del software será Ubuntu.
 
-\subsubsection{El sistema operativo Ubuntu}
+\subsection{El sistema operativo Ubuntu}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
   \begin{center}
@@ -323,11 +451,7 @@ La plataforma ROS ha sido creada para trabajar principalmente en el sistema oper
   \label{fig: ubuntu_logo}
 \end{wrapfigure}
 
-Ubuntu es un sistema operativo con núcleo Linux, distribuído como software libre y de código abierto. Es la distribución más popular de los sistemas GNU/Linux en ordenadores personales.
-
-
-
-
+Ubuntu es un sistema operativo con núcleo Linux, distribuido como software libre y de código abierto. Es la distribución más popular de los sistemas GNU/Linux en ordenadores personales. En este proyecto se hará un uso intensivo del intérprete de comandos (\textit{shell} o terminal) de Ubuntu, ya que permite ejecutar los comandos de ROS de forma rápida y cómoda. \\
 
 
 \chapter{CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}
@@ -337,7 +461,7 @@ Uno de los objetivos del proyecto es capturar el estado de orientación de los s
 
 \section{Formas de representar orientaciones espaciales}
 
-Existen multitud de formas de representar la orientación de un sólido rígido:
+Existen multitud de representaciones matemáticas de la orientación de un sólido rígido:
 
 \begin{itemize}
 
@@ -385,7 +509,7 @@ Estos problemas no están presentes en los demás modos de salida del sensor.
 
 \subsection{Matriz de rotación}
 
-Una matriz de rotación es una matriz usada para expresar una rotación en un espacio euclideo. Si se supone un sistema generador $S$ con un conjunto de vectores base $B$ del espacio vectorial $V$:
+Una matriz de rotación es una matriz usada para expresar una rotación en un espacio euclídeo. Si se supone un sistema generador $S$ con un conjunto de vectores base $B$ del espacio vectorial $V$:
 
 $$ B = \{\vec{i}, \vec{j}, \vec{k}\}, \quad \vec{i} = \begin{bmatrix} 1\\0\\0 \end{bmatrix} \quad  \vec{j} = \begin{bmatrix} 0\\1\\0 \end{bmatrix} \quad  \vec{k} = \begin{bmatrix} 0\\0\\1 \end{bmatrix} $$
 $$ V = S(\vec{i}, \vec{j}, \vec{k}) $$
@@ -476,7 +600,7 @@ Los cuaterniones presentan las mismas ventajas que las matrices de rotación en 
 
 \subsection{Solución elegida: cuaterniones}
 
-Por la gran cantidad de ventajas que presentan los cuaterniones con respecto a las demás formas de representar una rotación, éstos serán los escogidos para registrar el estado de orientación de los sensores y realizar los cálculos matemáticos.
+Por la gran cantidad de ventajas que presentan los cuaterniones con respecto a las demás formas de representar una rotación, éstos serán los escogidos para registrar el estado de orientación de los sensores y realizar los cálculos matemáticos.\footnote{Otra razón de índole no matemática para la elección de los cuaterniones es que el simulador Gazebo representa las orientaciones de los cuerpos mediante cuaterniones. Utilizando cuaterniones no existirá el problema de tener que generar el cuaternión de rotación cada vez que se publique un mensaje dirigido a Gazebo.}
 
 \section{Utilización de cuaterniones para la representación de rotaciones de un sólido rígido}
 
@@ -594,7 +718,7 @@ La norma o magnitud de un cuaternión $ q = w + xi + yj + zk $ se define como la
 
 Esta magnitud representaría una hipotética longitud que tendría el cuaternión si el espacio de los cuaterniones $\mathbb{H}$ se identifica con un espacio euclídeo $\mathbb{R}^4$. Para un cuaternión de rotación se tiene que:
 
-$$ q = c + se, \quad \|q\| = \sqrt{c^2 + \|se\|^2} = \sqrt{c^2 + s^2} = 1 $$
+$$ q = c + se, \quad \|q\| = \sqrt{c^2 + \|se\|^2} = \sqrt{c^2 + s^2} = \sqrt{\cos^2{\displaystyle\frac{\theta}{2}} + \sin^2{\displaystyle\frac{\theta}{2}}} = 1 $$
 
 Dado a que se va a trabajar siempre con cuaterniones unitarios (también llamados \textit{versores}), se podrá asumir lo siguiente:
 
@@ -669,7 +793,7 @@ $$ q(Pp)q^* = P\left((e \cdot p)e + \cos\theta(e \times p) \times e + \sin\theta
 
 De la figura \ref{fig: rot_cuat} se deduce que $ p' = (e \cdot p)e + \cos\theta(e \times p) \times e + \sin\theta(e \times p)$, y por lo tanto se puede concluir que:
 
-$$ q(Pp)q* = Pp' $$
+$$ q(Pp)q^* = Pp' $$
 
 Por lo que para un vector cualquiera $\vec{v}$ se cumple que $qvq^* = v'$, donde $v'$ es el cuaternión asociado al vector rotado. \\
 
@@ -730,7 +854,7 @@ Para representar una rotación alrededor de un eje expresado en el sistema de re
 
 $$ e_2^G = q_1e_2^Lq_1^* $$
 
-Teniendo en cuenta la ecuación \eqref{eq: q_theta_e}, el cuaternión de rotación asociado al ángulo $\theta_2$ y el vector local $e_2^L$ despueś de que el sólido haya sufrido una rotación definida por el cuaternión $q_1$ será:
+Teniendo en cuenta la ecuación \eqref{eq: q_theta_e}, el cuaternión de rotación asociado al ángulo $\theta_2$ y el vector local $e_2^L$ después de que el sólido haya sufrido una rotación definida por el cuaternión $q_1$ será:
 
 $$ q_{2_{q_1}} = q(\theta_2, \vec{e_2}^G) = \cos\left( \frac{\theta_2}{2}\right) + \sin\left( \frac{\theta_2}{2} \right)e_2^G $$
 
@@ -867,7 +991,7 @@ q_2^Lq_1 = q_1q_2^G
 
 Ahora se va a suponer que el cuaternión $q_1$ está compuesto de otras dos rotaciones, que se van a expresar de forma global y local según la ecuación \eqref{eq: q2lq1}:
 
-$$ q1 = q_{1b}^Lq_{1a} = q_{1a}q_{1b}^G $$
+$$ q_1 = q_{1b}^Lq_{1a} = q_{1a}q_{1b}^G $$
 
 Sustituyendo en \eqref{eq: q2lq1}:
 
@@ -913,7 +1037,7 @@ Esta expresión tiene interés a lo hora del cálculo de los ángulos de Euler e
 
 Una vez sean conocidas las orientaciones de los sensores, sabiendo que dichos sensores se encuentran solidarios al brazo y cuyo eje $x$ se ha orientado en sentido longitudinal de acuerdo a la figura \ref{fig: posiciones_brazo}, resulta muy sencillo obtener las posiciones de cada punto del brazo sabiendo su posición inicial. \\
 
-Un brazo articulado simple se definirá por un conjunto de 3 longitudes $\{L_1, L_2, L_3\}$ que representan las distancias hombro-codo, codo-muñeca y muñeca-punta de dedo respectivamente, y por 3 cuaterniones $\{q_1, q_2, q_3\}$ que indican el estado de orintación de brazo, antebrazo y mano repectivamente. Dado que para los sensores xsens la posición inicial es aquella en la que su eje $x$ apunta al norte magnético, y el eje $z$ es vertical hacia arriba, se establecerá como posición inicial del brazo aquella en la que el eje longitudinal de todos los eslabones apunta hacia el norte magnético. En esta posición se cumple que:
+Un brazo articulado simple se definirá por un conjunto de 3 longitudes $\{L_1, L_2, L_3\}$ que representan las distancias hombro-codo, codo-muñeca y muñeca-punta de dedo respectivamente, y por 3 cuaterniones $\{q_1, q_2, q_3\}$ que indican el estado de orientación de brazo, antebrazo y mano respectivamente. Dado que para los sensores xsens la posición inicial es aquella en la que su eje $x$ apunta al norte magnético, y el eje $z$ es vertical hacia arriba, se establecerá como posición inicial del brazo aquella en la que el eje longitudinal de todos los eslabones apunta hacia el norte magnético. En esta posición se cumple que:
 
 $$ q_1 = q_2 = q_3 = 1 $$
 
@@ -1048,7 +1172,7 @@ Finalmente, conociendo el vector $j'$ se puede obtener el último de los ángulo
 \tan\phi = \frac{\sin \phi}{\cos \phi} = \frac{j'' \cdot k'}{j'' \cdot j'} \quad \iff \quad \phi = \arctan \frac{j'' \cdot k'}{j'' \cdot j'}
 \end{equation}
 
-El algoritmo de cálculo de los ángulos de Euler puede resumirse en los siguientes pasos, conocido el cuaternión de orientación del sensor $q_s$ \footnote{A la hora de implementar el algorimo, se utilizará la función atan2 en lugar de $\arctan$}:
+El algoritmo de cálculo de los ángulos de Euler puede resumirse en los siguientes pasos, conocido el cuaternión de orientación del sensor $q_s$ \footnote{A la hora de implementar el algoritmo, se utilizará la función atan2 en lugar de $\arctan$}:
 
 \begin{table}[h]
 	\center
@@ -1107,27 +1231,34 @@ $$
 
 Para decidir que solución será la buena se deberá establecer un criterio de selección. Por ejemplo, en el caso de querer mover dos articulaciones, se sabe que $\phi$ tiene que ser aproximadamente $0$. En el momento en que la primera solución nos de un valor de $\phi$ muy diferente de $0$, se escogerá la segunda solución.\\
 
-En la práctica, este método funciona bastante bien siempre y cuando $\theta \not\approx \frac{\pi}{2}$. En esta zona de la esfera se tiene que $\cos\theta \approx 0$, y a la hora de calcular $ j'$ (\ref{tab:algoritmo_angulos_euler}), el término $\frac{1}{\cos\theta}$ amplifica enormemente el ruido propio del sensor, lo que genera saltos de magnitud apreciable en los valores de los ángulos obtenidos, aún cuando el sensor permanece estático.
+En la práctica, este método funciona bastante bien siempre y cuando $\theta \not\approx \frac{\pi}{2}$. En esta zona de la esfera se tiene que $\cos\theta \approx 0$, y a la hora de calcular $ j'$ (\ref{tab:algoritmo_angulos_euler}), el término $\frac{1}{\cos\theta}$ amplifica enormemente el ruido propio del sensor, lo que genera saltos de magnitud apreciable en los valores de los ángulos obtenidos, aún cuando el sensor permanece estático. Esta solución se aplica en el caso del conjunto de dos articulaciones que unen el brazo robótico a la base móvil, ya que aunque sigue habiendo problemas en la zona de \textit{gimbal lock}, ahora es posible asignar a la segunda articulación que forma el par un ángulo mayor de $90^\circ$. En el siguiente apartado se verá cómo eliminar del todo el problema, aunque esta solución sólo será posible aplicarla a articulaciones de un solo grado de libertad. 
 
-\subsubsection{Permutación de los ejes locales}
+\subsubsection{Giro de los ejes locales}
 
-Sea una articulación cuyo eje de rotación coincida con el eje $y$ de los dos sensores dispuestos para medir su estado. Es esta situación se deduce de antemano que el vector base $i$ local siempre se localizará en torno a un circulo máximo de la esfera, por lo que habrá zonas en las que nunca se situará. \\ 
+Sea una articulación cuyo eje de rotación coincida con el eje $y$ de los dos sensores dispuestos para medir su estado. Es esta situación se deduce de antemano que el vector base $i$ local siempre se localizará en torno a un circulo máximo de la esfera, por lo que habrá zonas en las que nunca se situará. El la figura \ref{fig: y_axis} se representa la situación de la esfera unitaria después de realizar un giro de los ejes locales del sensor de $90^\circ$ alrededor del eje $x$. Se había comprobado que la zona de \textit{gimbal lock} en el caso del algoritmo utilizado se situaba en las dos zonas de corte del eje $z$ con la esfera. Este giro dado al sistema de coordenadas del sensor evita que su zona de movimiento (representada en verde en la figura) pase por las zonas de \textit{gimbal lock} (en magenta). Esta es la solución aplicada en el caso de las articulaciones del robot que giran alrededor del eje $y$. \\ 
 
-\colorbox{red}{FALTA}
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.85]{../img/yaxis.png} 
+	\caption[Giro de los ejes locales para evitar el gimbal lock]{Representación en la esfera de un giro de los ejes locales alrededor de $x$ para evitar pasar por las zonas de \textit{gimbal lock} (magenta).} 
+	\label{fig: y_axis}
+\end{figure}
 
 \chapter{IMPLEMENTACIÓN DEL SOFTWARE}
 
-En este capítulo se describirá detalladamente el funcionamiento de los programas realizados para el presente proyecto. Todo el software se ha incluido dentro de un \textit{stack} de ROS --llamado youbot-xsens-controller--, de forma que su instalación \footnote{Se describirá el proceso de instalación en el anexo \textit{INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE}} en otros ordenadores con ROS sea sencilla y rápida.\\
+En este capítulo se describirá detalladamente el funcionamiento de los programas realizados para el presente proyecto. En concreto, se dará una idea del funcionamiento general de cada programa, las funciones que realizan las clases creadas y cómo se relacionan entre ellas, y se proporcionará una pequeña documentación de los métodos para interactuar con ellas. Dada la extensión resultante del código fuente, se ha optado por no incluir en el presente documento la implementación de las clases y programas, la cual se detalla en el archivo \textit{código\_fuente.pdf} y en el propio \textit{stack} que se proporciona en el CD adjunto a este proyecto. Todo el software se ha incluido dentro de un \textit{stack} de ROS --llamado youbot-xsens-controller--, de forma que su instalación \footnote{Se describirá el proceso de instalación en el anexo \textit{INSTALACIÓN DEL SOFTWARE}} en otros ordenadores con ROS sea sencilla y rápida.\\
 
-El stack \textit{youbot-xsens-controller} está compuesto por los siguientes paquetes, que pueden instalados de forma independiente si así se deseara:
+El stack \textit{youbot-xsens-controller} está compuesto por los siguientes paquetes:
 
 \begin{itemize}
 
-\item \textbf{xsens\_driver}: driver para la comunicación sensor/máster - PC
+\item \textbf{xsens\_driver}: paquete que contiene el programa \textit{xsens\_node}, que actúa de driver para la comunicación sensor/máster - PC.
 
-\item \textbf{dfv}: librería para el manejo de cuaterniones, vectores y matrices.
+\item \textbf{dfv}: librería para el manejo de cuaterniones, vectores y matrices. En ella se implementan las respectivas clases y métodos para operar con estas estructuras.
 
-\item \textbf{youbot\_controller}: programa que realiza el control del robot \textit{Youbot} utilizando los datos de los sensores \textit{xsens}.
+\item \textbf{youbot\_controller}: programa que realiza el control de las articulaciones del robot \textit{YouBot}, o de la simulación del brazo robótico del mismo, utilizando los datos de los sensores \textit{xsens}.
+
+\item \textbf{arm\_visualizer}: programa que se encarga de gestionar la visualización en el simulador Gazebo del modelo de un brazo humano.
 
 \end{itemize}
 
@@ -1140,6 +1271,244 @@ Para la creación de los distintos programas se han utilizado las herramientas q
 	\label{fig: communications}
 \end{figure}
 
+\section{Librería para manejo de cuaterniones, vectores y matrices}
+
+Dentro del paquete \textit{dfv} se ha creado una librería que contiene las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix}, en las que se realiza una implementación de los algoritmos y fórmulas vistos en el capítulo \textit{CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES}. Estas clases son utilizadas por el resto de paquetes del stack para realizar los cálculos correspondientes.
+
+\subsection{La clase dfv::Quaternion}
+
+La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaternión y las operaciones que se pueden realizar con él. A continuación se muestra una breve documentación de las operaciones más importantes que se pueden realizar con esta clase.
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Quaternion()}: Constructor sin argumentos. Crea un cuaternión cuyas cuatro componentes son nulas.
+
+\item \textbf{Quaternion(double w\_, double x\_, double y\_, double z\_)}: Constructor del cuaternión genérico (ecuación \eqref{eq: gen_quaternion}). Crea un cuaternión cuyas componentes son los valores que se le pasan a modo de argumento.
+
+\item \textbf{explicit Quaternion(const Vector3\& v)}: Constructor del cuaternión asociado al vector $v$ que se le pasa como parámetro (ecuación \eqref{eq: E15}). 
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Quaternion\& operator=(const Quaternion\& q)}: realiza una copia del cuaternión que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Quaternion\& operator+=(const Quaternion\& q)}: Suma al cuaternión original el cuaternión que se le pasa como parámetro.
+\item \textbf{Quaternion\& operator-=(const Quaternion\& q)}: Resta al cuaternión original el cuaternión que se le pasa como parámetro.
+\item \textbf{Quaternion\& operator*=(const double k)}: Multiplica el cuaternión original por una constante k.
+
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Quaternion operator+(const Quaternion\& q) const}: devuelve la suma de dos cuaterniones.
+\item \textbf{const Quaternion operator-(const Quaternion\& q) const}: devuelve la diferencia entre dos cuaterniones
+\item \textbf{friend const Quaternion operator*(double k, Quaternion\& q)}: devuelve la multiplicación de una constante por el cuaternión que se le pase como argumento.
+\item \textbf{const Quaternion operator*(double k) const}: misma operación de multiplicación por una constante, pero pudiéndose especificar en orden inverso.
+\item \textbf{const Quaternion operator*(const Quaternion\& q) const}: devuelve el producto de Hamilton de dos cuaterniones 
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Quaternion\& q) const}: devuelve \textit{true} si las componentes de los dos cuaterniones son iguales, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Quaternion\& q) const}: devuelve \textit{true} si los dos cuaterniones son diferentes. 
+\end{itemize}
+
+\item \textbf{double GetModulus() const}: devuelve el módulo del cuaternión (ecuación \eqref{eq: E16}).
+\item \textbf{void Normalize()}: realiza un normalización del cuaternión, esto es, multiplica el cuaternión por el inverso de su módulo, de forma que se obtiene un cuaternión de magnitud unitaria.
+\item \textbf{const Quaternion GetConjugate() const}: devuelve el conjugado del cuaternión (ecuación \eqref{eq: E17}).
+\item \textbf{static const Quaternion GetRotationQuaternion(...)}: función para construir un cuaternión a partir de los argumentos especificados. 
+
+	\begin{itemize}
+	\item Construcción a partir de las componentes del eje de rotación y ángulo de rotación.
+	\item Construcción a partir del vector de rotación y ángulo de rotación.
+	\item Construcción del cuaternión que define la rotación de un vector, especificando el vector antes y después de ser rotado.
+	\item Construcción del cuaternión que define la rotación de un sistema de dos vectores antes y después de ser rotados. Se supone que los dos vectores son perpendiculares entre si.
+	\end{itemize}
+
+\item \textbf{void GetAxisAndAngle(Vector3\& vector, double\& angle) const}: función que devuelve el vector y ángulo de rotación.
+\item \textbf{void GetRPY(double\& roll, double\& pitch, double\& yaw, unsigned int solution = 1)}: implementación del algoritmo descrito en la tabla \ref{tab:algoritmo_angulos_euler} para la obtención de los ángulos de Euler a partir del cuaternión de rotación.
+\item \textbf{static const Quaternion GetDifference(const Quaternion\& q1, const Quaternion\& q2)}: diferencia entre dos cuaterniones (no confundir con resta). Devuelve el cuaternión de rotación relativo entre los cuaterniones $q1$ y $q2$ (ecuación \eqref{eq: E18}).  
+
+\end{itemize}
+
+\subsection{La clase dfv::Vector3}
+
+La clase \textit{dfv::Vector3} es la implementación de un vector de 3 componentes para la representación de puntos en un espacio euclídeo $\mathbb{R}^3$. 
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Vector3()}: Constructor sin argumentos. Crea un vector cuyas tres componentes son nulas.
+
+\item \textbf{Vector3(double x\_, double y\_, double z\_)}: Constructor de un vector genérico cuyas componentes son los valores que se le pasan a modo de argumento.
+
+\item \textbf{explicit Vector3(const Quaternion\& q)}: Constructor del vector asociado al cuaternión $q$ que se le pasa como parámetro. Se obvia la componente w del cuaternión. (ecuación \eqref{eq: E15})
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Vector3\& operator=(const Vector3\& v)}: realiza una copia del vector que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Vector3\& operator+=(const Vector3\& v)}: suma al vector original el vector que se le pasa como parámetro.
+\item \textbf{Vector3\& operator-=(const Vector3\& v)}: resta al vector original el vector que se le pasa como parámetro.
+\item \textbf{Vector3\& operator*=(const double k)}: multiplica el vector original por una constante $k$.
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Vector3 operator+(const Vector3\& v) const}: devuelve la suma de dos vectores.
+\item \textbf{const Vector3 operator-(const Vector3\& v) const}: devuelve la resta de dos vectores.
+\item \textbf{friend const Vector3 operator*(double k, Vector3\& v)}: devuelve la multiplicación de un escalar por un vector.
+\item \textbf{const Vector3 operator*(double k) const}: devuelve la multiplicación de un vector por un escalar. Es una operación idéntica a la anterior, pero especificada en orden inverso.
+\item \textbf{const double operator*(const Vector3\& v) const}: devuelve el producto escalar de dos vectores.
+\item \textbf{const Vector3 operator$\wedge$(const Vector3\& v) const}: devuelve el vector resultado de realizar el producto vectorial de dos vectores.
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son iguales, esto es, si sus componentes también lo son, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son diferentes, y \textit{false} en caso contrario.
+\end{itemize}
+
+\item \textbf{double GetMagnitude() const}: devuelve la longitud del vector.
+\item \textbf{void Normalize()}: realiza una normalización del vector, multiplicándolo por la inversa de su longitud para obtener un vector de longitud unitaria.
+\item \textbf{const Vector3 GetNormalized() const}: devuelve el vector normalizado sin modificar el original.
+\item \textbf{const Vector3 GetScalated(double k) const}: devuelve el vector escalado por una constante. Es la misma operación que la multiplicación del vector por un escalar.
+\item \textbf{Vector3\& Rotate(const Quaternion q)}: realiza una rotación del vector definida por el cuaternión $q$. Ecuación \eqref{eq: E14}.
+\item \textbf{const Vector3 GetRotated(const Quaternion\& q) const}: Devuelve el vector rotado sin modificar el original.
+
+\end{itemize}
+
+\subsection{La clase dfv::Matrix}
+
+En la clase \textit{dfv::Matrix} se realiza una implementación del concepto de matriz. Las operaciones más importantes que se pueden realizar son las siguientes:
+
+\begin{itemize}
+
+\item \textbf{Constructores}:
+
+\begin{itemize}
+\item \textbf{Matrix()}: Constructor sin argumentos. Crea una matriz inválida de 0 filas y 0 columnas.
+
+\item \textbf{Matrix(unsigned int size)}: Constructor de una matriz cuadrada de tamaño \textit{size}, cuyos elementos son todos 0.
+
+\item \textbf{Matrix(unsigned int rows, unsigned int columns)}: Constructor de una matriz de \textit{rows} filas y \textit{columns} columnas cuyos elementos son todos 0.
+\end{itemize}
+
+\item \textbf{Operador de asignación}:
+
+\begin{itemize}
+\item \textbf{Matrix\& operator=(const Matrix\& q)}: realiza una copia de la matriz que se le pasa como parámetro.
+\end{itemize} 
+
+\item \textbf{Operadores de asignación compuestos}:
+
+\begin{itemize}
+\item \textbf{Matrix\& operator+=(const Matrix\& q)}: suma a la matriz original la matriz $q$.
+\item \textbf{Matrix\& operator-=(const Matrix\& q)}: resta a la matriz original la matriz $q$.
+\item \textbf{Matrix\& operator*=(const double k)}: multiplica la matriz por un escalar $k$, esto es, realiza una multiplicación de cada uno de sus elementos.
+\end{itemize}
+
+\item \textbf{Operadores aritméticos binarios}:
+
+\begin{itemize}
+\item \textbf{const Matrix operator+(const Matrix\& q) const}: definición del operador ''+'' que realiza la suma de dos matrices.
+\item \textbf{const Matrix operator-(const Matrix\& q) const}: definición del operador ''-'', resta de dos matrices.
+\item \textbf{friend const Matrix operator*(double k, Matrix\& q)}: multiplicación de un escalar por una matriz (multiplicación de cada elemento de la matriz por dicho escalar).
+\item \textbf{const Matrix operator*(double k) const}: multiplicación de una matriz por un escalar.
+\item \textbf{const Matrix operator*(const Matrix\& q) const}: implementación de la multiplicación de dos matrices.
+\end{itemize}
+
+\item \textbf{Operadores de comparación}:
+
+\begin{itemize}
+\item \textbf{bool operator==(const Matrix\& v) const}: devuelve \textit{true} si las matrices son del mismo tamaño y sus elementos son iguales, y \textit{false} en caso contrario.
+\item \textbf{bool operator!=(const Matrix\& v) const}: operador cuyo resultado es el inverso del operador ''==''. 
+\end{itemize}
+
+\item \textbf{Matrix\& Create(unsigned int rows, unsigned int columns, double value = 0)}: crea una matriz de \textit{rows} filas y \textit{columns} columnas a cuyos elementos se les asigna el valor \textit{value} pasado como parámetro.
+\item \textbf{double Get(unsigned int row, unsigned int col) const}: devuelve el valor situado en la fila \textit{row} y columna \textit{col}.
+\item \textbf{void Set(unsigned int row, unsigned int col, double value)}: asigna al elemento situado en la fila \textit{row} y columna \textit{col} el valor \textit{value}.
+\item \textbf{unsigned int GetRows() const}: devuelve el número de filas de la matriz.
+\item \textbf{unsigned int GetColumns() const}: devuelve el número de columnas de la matriz.
+\item \textbf{Matrix GetMinor(unsigned int row, unsigned int column) const}: devuelve el menor de la matriz asociado a la fila \textit{row} y columna \textit{col}.
+\item \textbf{void Randomize()}: asigna a cada elemento de la matriz un valor aleatorio entre 0 y 1.
+\item \textbf{double GetDeterminant() const}: devuelve el determinante de la matriz.
+\item \textbf{const Matrix GetTransposed() const}: devuelve la traspuesta de la matriz.
+\item \textbf{const Matrix GetAdjoint() const}: devuelve el adjunto de la matriz.
+\item \textbf{const Matrix GetAdjugate() const}: devuelve la matriz traspuesta conjugada.
+\item \textbf{const Matrix GetInverse() const}: devuelve la inversa de la matriz.
+\item \textbf{double operator()(unsigned int row, unsigned int column) const}: operador equivalente a la función \textit{Get()}.
+
+\end{itemize}
+
+\subsection{Cómo usar la librería dfv en otro paquete de ROS}
+
+Si se quisiera hacer uso de la librería \textit{dfv} dentro de otro paquete de ROS, se deberán seguir los siguientes pasos:
+
+\begin{enumerate}
+\item Añadir como dependencia en el archivo \textit{manifest.xml} el paquete dfv. Como ejemplo se muestra el archivo \textit{manifest.xml} del paquete \textit{youbot\_controller}:
+
+\begin{lstlisting}
+
+<package>
+  <description brief="youbot_controller">
+
+     youbot_controller
+
+  </description>
+  <author>Daniel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/youbot_controller</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="xsens_driver"/>
+  <depend package="brics_actuator"/>
+  <depend package="dfv"/>
+
+</package>
+
+\end{lstlisting}
+
+\item Enlazar la librería \textit{dfv} en el archivo \textit{CMakeLists.txt}:
+
+\begin{lstlisting}
+target_link_libraries(nombre_del_ejecutable dfv)
+\end{lstlisting}
+
+\item Incluir el archivo de cabecera \textit{dfv.h} en el programa donde se quiera utilizar la librería:
+
+\begin{lstlisting}
+#include <dfv/dfv.h>
+\end{lstlisting}
+
+\end{enumerate}
+
+Ahora se pueden utilizar las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix} y otras utilidades de la librería en el nuevo programa.\\
+
+En el archivo \textit{example.cpp} dentro de la carpeta \textit{dfv/examples/} hay un pequeño ejemplo de uso de la librería \textit{dfv}.
+
+
 
 \section{Driver para la comunicación xbus Master/xsens - PC}
 
@@ -1147,35 +1516,35 @@ Uno de los problemas más importantes a resolver en este proyecto es conseguir u
 
 En la documentación del \textit{Kit de Desarrollo de Software} de \textit{xsens} vienen proporcionadas algunas clases y estructuras en lenguaje C++ para la comunicación de bajo nivel con el sensor/máster. Para la realización del driver se han aprovechado estas clases y se han encapsulado dentro de una clase \textit{wrapper}, llamada \textit{xsens::Driver}, que proporciona una interfaz sencilla hacia las clases de bajo nivel. El programa principal del \textit{driver} realiza la configuración de los sensores, y lee los datos a través del \textit{wrapper}, publicándolos en \textit{topics} de ROS.\\
 
-Los archivos de la documentación que se han incluído en el driver son los siguientes (incluyen los archivos de extensión .cpp y .h):
+Los archivos de la documentación que se han incluido en el driver son los siguientes (incluyen los archivos de extensión .cpp y .h):
 
 \begin{itemize}
 
-\item cmt1: implementa las comunicaciones de bajo nivel con el puerto serie.
-\item cmt2: interfaz para mensajes y ficheros de registro.
-\item cmt3: capa de más alto nivel para las comunicaciones con el sensor. Proporciona una interfaz independiente del sistema operativo.
-\item cmtdef: definiciones de constantes y tipos de datos.
-\item cmtmessage: gestión de mensajes.
-\item cmtpacket: gestión de los paquetes de información en los que se basa la comunicación entre el sensor y el PC.
-\item cmtscan: funciones para el escaneo de los puertos del PC.
-\item pstdint: una versión portable de la librería stdint, que incluye definiciones precisas de tipos de datos enteros. 
-\item xsens\_exception: definición de la clase Exception usada por el driver.
-\item xsens\_fifoqueue: contiene la implementación de una cola FIFO.
-\item xsens\_file: definición de algunos tipos de datos.
-\item xsens\_janitors: implementación de distintos tipos de \textit{janitors}, que realizan funciones de limpieza de objetos al perder su \textit{scope}.
-\item xsens\_list: implementación de una clase lista utilizada en el driver.
-\item xsens\_std: definición de los valores de retorno de las funciones del driver.
-\item xsens\_time: implementación de funciones y constantes para la gestión del tiempo.
+\item \textbf{cmt1}: implementa las comunicaciones de bajo nivel con el puerto serie.
+\item \textbf{cmt2}: interfaz para mensajes y ficheros de registro.
+\item \textbf{cmt3}: capa de más alto nivel para las comunicaciones con el sensor. Proporciona una interfaz independiente del sistema operativo.
+\item \textbf{cmtdef}: definiciones de constantes y tipos de datos.
+\item \textbf{cmtmessage}: gestión de mensajes.
+\item \textbf{cmtpacket}: gestión de los paquetes de información en los que se basa la comunicación entre el sensor y el PC.
+\item \textbf{cmtscan}: funciones para el escaneo de los puertos del PC.
+\item \textbf{pstdint}: una versión portable de la librería stdint, que incluye definiciones precisas de tipos de datos enteros. 
+\item \textbf{xsens\_exception}: definición de la clase Exception usada por el driver.
+\item \textbf{xsens\_fifoqueue}: contiene la implementación de una cola FIFO.
+\item \textbf{xsens\_file}: definición de algunos tipos de datos.
+\item \textbf{xsens\_janitors}: implementación de distintos tipos de \textit{janitors}, que realizan funciones de limpieza de objetos al perder su \textit{scope}.
+\item \textbf{xsens\_list}: implementación de una clase lista utilizada en el driver.
+\item \textbf{xsens\_std}: definición de los valores de retorno de las funciones del driver.
+\item \textbf{xsens\_time}: implementación de funciones y constantes para la gestión del tiempo.
 
 \end{itemize}
 
 En la siguiente lista se muestran los archivos creados en este paquete y la función que realizan dentro del driver:
 
 \begin{itemize}
-\item xsens\_driver: implementación de la clase \textit{xsens::Driver}, la cual básicamente realiza una encapsulación de todas las clases que se incluyen en los archivos mencionados en la lista anterior y actúa de interfaz con el nodo principal \textit{xsens\_node}.
-\item xsens\_sensor: la clase xsens::Sensor es en esencia una estructura de datos donde se almacena la configuración de cada uno de los sensores conectados y los datos leídos en cada ciclo de lectura.
-\item xsens\_node: programa principal del driver. Se encarga de publicar en ROS los datos leídos a través de la clase \textit{xsens::Driver}.
-\item xsens\_sensor\_subscriber: no pertenece al driver propiamente dicho, sino que este archivo es parte de la implementación de la librería \textit{xsens\_driver} que puede utilizarse como interfaz de lectura en otros programas de los datos publicados por el driver.
+\item \textbf{xsens\_driver}: implementación de la clase \textit{xsens::Driver}, la cual básicamente realiza una encapsulación de todas las clases que se incluyen en los archivos mencionados en la lista anterior y actúa de interfaz con el nodo principal \textit{xsens\_node}.
+\item \textbf{xsens\_sensor}: la clase xsens::Sensor es en esencia una estructura de datos donde se almacena la configuración de cada uno de los sensores conectados y los datos leídos en cada ciclo de lectura.
+\item \textbf{xsens\_node}: programa principal del driver. Se encarga de publicar en ROS los datos leídos a través de la clase \textit{xsens::Driver}.
+\item \textbf{xsens\_sensor\_subscriber}: no pertenece al driver propiamente dicho, sino que este archivo es parte de la implementación de la librería \textit{xsens\_driver} que puede utilizarse como interfaz de lectura en otros programas de los datos publicados por el driver.
 \end{itemize}
 
 A continuación se realiza una descripción en detalle de la implementación y funcionamiento del driver.
@@ -1346,10 +1715,10 @@ El nodo \textit{xsens\_node} es el encargado de publicar en topics de ROS los da
 \hline
 \textbf{Nombre} & \textbf{Tipo} & \textbf{Descripción} \\ 
 \hline
-/xsens\_node/sensorX/acc & geometry\_msgs::Vector3Stamped & Acelerometros calibrados \\
+/xsens\_node/sensorX/acc & geometry\_msgs::Vector3Stamped & Acelerómetros calibrados \\
 /xsens\_node/sensorX/gyr & geometry\_msgs::Vector3Stamped & Giróscopos calibrados \\
 /xsens\_node/sensorX/mag & geometry\_msgs::Vector3Stamped & Magnetómetros calibrados \\
-/xsens\_node/sensorX/raw\_acc & geometry\_msgs::Vector3Stamped & Acelerometros crudos \\
+/xsens\_node/sensorX/raw\_acc & geometry\_msgs::Vector3Stamped & Acelerómetros crudos \\
 /xsens\_node/sensorX/raw\_gyr & geometry\_msgs::Vector3Stamped & Giróscopos crudos \\
 /xsens\_node/sensorX/raw\_mag & geometry\_msgs::Vector3Stamped & Magnetómetros crudos \\
 /xsens\_node/sensorX/ori\_quat & geometry\_msgs::QuaternionStamped & Cuaternión de orientación \\
@@ -1374,7 +1743,7 @@ El nodo \textit{xsens\_node} es el encargado de publicar en topics de ROS los da
 /xsens\_node/output\_settings & entero & Forma de representación de la orientación \\
 \hline
 \end{tabular}	
-\caption[Parámetros publicados por el programa xsens\_node]{Prámetros publicados por el programa xsens\_node.}
+\caption[Parámetros publicados por el programa xsens\_node]{Parámetros publicados por el programa xsens\_node.}
 \label{tab:params_xsens_node}	
 \end{table}
 
@@ -1406,247 +1775,15 @@ Para incluir la librería \textit{xsens\_driver} en otro proyecto se tendrá que
 target_link_libraries(nombre_del_ejecutable dfv xsens_driver)
 \end{lstlisting}
 
-En el siguiente cuadro se presenta un ejemplo de como usar la clase xsens::SensorSubscriberList para tomar datos de una red de sensores xsens:
+Además se deberá incluir los paquetes \textit{dfv} y \textit{xsens\_driver} en el archivo \textit{manifest.xml}:
+
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++]{../src/manifest_example.xml}
+
+En el siguiente cuadro se presenta un ejemplo de como usar la clase \textit{xsens::SensorSubscriberList} para tomar datos de una red de sensores xsens. Este esquema es el usado en el programa \textit{youbot\_controller}:
 
 \lstset{inputencoding=utf8/latin1}
 \lstinputlisting[language=C++]{../src/xsens_sensor_subscriber_example.cpp}
-
-\section{Librería para manejo de cuaterniones, vectores y matrices}
-
-Dentro del paquete \textit{dfv} se ha creado una librería con la implementación de las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix}.
-
-\subsection{La clase dfv::Quaternion}
-
-La clase \textit{dfv::Quaternion} es la implementación del concepto de cuaternión y las operaciones que se pueden realizar con él. A continuación se muestra una breve documentación de las operaciones más importantes que se pueden realizar con esta clase.
-
-\begin{itemize}
-
-\item \textbf{Constructores}:
-
-\begin{itemize}
-\item \textbf{Quaternion()}: Constructor sin argumentos. Crea un cuaternión cuyas cuatro componentes son nulas.
-
-\item \textbf{Quaternion(double w\_, double x\_, double y\_, double z\_)}: Constructor del cuaternión genérico (ecuación \eqref{eq: gen_quaternion}). Crea un cuaternión cuyas componentes son los valores que se le pasan a modo de argumento.
-
-\item \textbf{explicit Quaternion(const Vector3\& v)}: Constructor del cuaternión asociado al vector $v$ que se le pasa como parámetro (ecuación \eqref{eq: E15}). 
-\end{itemize}
-
-\item \textbf{Operador de asignación}:
-
-\begin{itemize}
-\item \textbf{Quaternion\& operator=(const Quaternion\& q)}: realiza una copia del cuaternión que se le pasa como parámetro.
-\end{itemize} 
-
-\item \textbf{Operadores de asignación compuestos}:
-
-\begin{itemize}
-\item \textbf{Quaternion\& operator+=(const Quaternion\& q)}: Suma al cuaternión original el cuaternión que se le pasa como parámetro.
-\item \textbf{Quaternion\& operator-=(const Quaternion\& q)}: Resta al cuaternión original el cuaternión que se le pasa como parámetro.
-\item \textbf{Quaternion\& operator*=(const double k)}: Multiplica el cuaternión original por una constante k.
-
-\end{itemize}
-
-\item \textbf{Operadores aritméticos binarios}:
-
-\begin{itemize}
-\item \textbf{const Quaternion operator+(const Quaternion\& q) const}: devuelve la suma de dos cuaterniones.
-\item \textbf{const Quaternion operator-(const Quaternion\& q) const}: devuelve la diferencia entre dos cuaterniones
-\item \textbf{friend const Quaternion operator*(double k, Quaternion\& q)}: deevuelve la multiplicación de una constante por el cuaternión que se le pase como argumento.
-\item \textbf{const Quaternion operator*(double k) const}: misma operación de multiplicación por una constante, pero pudiéndose especificar en orden inverso.
-\item \textbf{const Quaternion operator*(const Quaternion\& q) const}: devuelve el producto de Hamilton de dos cuaterniones 
-\end{itemize}
-
-\item \textbf{Operadores de comparación}:
-
-\begin{itemize}
-\item \textbf{bool operator==(const Quaternion\& q) const}: devuelve \textit{true} si las componentes de los dos cuaterniones son iguales, y \textit{false} en caso contrario.
-\item \textbf{bool operator!=(const Quaternion\& q) const}: devuelve \textit{true} si los dos cuaterniones son diferentes. 
-\end{itemize}
-
-\item \textbf{double GetModulus() const}: devuelve el módulo del cuaternión (ecuación \eqref{eq: E16}).
-\item \textbf{void Normalize()}: realiza un normalización del cuaternión, esto es, multiplica el cuaternión por el inverso de su módulo, de forma que se obtiene un cuaternión de magnitud unitaria.
-\item \textbf{const Quaternion GetConjugate() const}: devuelve el conjugado del cuaternión (ecuación \eqref{eq: E17}).
-\item \textbf{static const Quaternion GetRotationQuaternion(...)}: función para construir un cuaternión a partir de los argumentos especificados. 
-
-	\begin{itemize}
-	\item Construcción a partir de las componentes del eje de rotación y ángulo de rotación.
-	\item Construcción a partir del vector de rotación y ángulo de rotación.
-	\item Construcción del cuaternión que define la rotación de un vector, especificando el vector antes y después de ser rotado.
-	\item Construcción del cuaternión que define la rotación de un sistema de dos vectores antes y después de ser rotados. Se supone que los dos vectores son perpendiculares entre si.
-	\end{itemize}
-
-\item \textbf{void GetAxisAndAngle(Vector3\& vector, double\& angle) const}: función que devuelve el vector y ángulo de rotación.
-\item \textbf{void GetRPY(double\& roll, double\& pitch, double\& yaw, unsigned int solution = 1)}: implementación del algoritmo descrito en la tabla \ref{tab:algoritmo_angulos_euler} para la obtención de los ángulos de Euler a partir del cuaternión de rotación.
-\item \textbf{static const Quaternion GetDifference(const Quaternion\& q1, const Quaternion\& q2)}: diferencia entre dos cuaterniones (no confundir con resta). Devuelve el cuaternión de rotación relativo entre los cuaterniones $q1$ y $q2$ (ecuación \eqref{eq: E18}).  
-
-\end{itemize}
-
-\subsection{La clase dfv::Vector3}
-
-La clase \textit{dfv::Vector3} es la implementación de un vector de 3 componentes para la representación de puntos en un espacio euclídeo $\mathbb{R}^3$. 
-
-\begin{itemize}
-
-\item \textbf{Constructores}:
-
-\begin{itemize}
-\item \textbf{Vector3()}: Constructor sin argumentos. Crea un vector cuyas tres componentes son nulas.
-
-\item \textbf{Vector3(double x\_, double y\_, double z\_)}: Constructor de un vector genérico cuyas componentes son los valores que se le pasan a modo de argumento.
-
-\item \textbf{explicit Vector3(const Quaternion\& q)}: Constructor del vector asociado al cuaternión $q$ que se le pasa como parámetro. Se obvia la componente w del cuaternión. (ecuación \eqref{eq: E15})
-\end{itemize}
-
-\item \textbf{Operador de asignación}:
-
-\begin{itemize}
-\item \textbf{Vector3\& operator=(const Vector3\& v)}: realiza una copia del vector que se le pasa como parámetro.
-\end{itemize} 
-
-\item \textbf{Operadores de asignación compuestos}:
-
-\begin{itemize}
-\item \textbf{Vector3\& operator+=(const Vector3\& v)}: suma al vector original el vector que se le pasa como parámetro.
-\item \textbf{Vector3\& operator-=(const Vector3\& v)}: resta al vector original el vector que se le pasa como parámetro.
-\item \textbf{Vector3\& operator*=(const double k)}: multiplica el vector original por una constante $k$.
-\end{itemize}
-
-\item \textbf{Operadores aritméticos binarios}:
-
-\begin{itemize}
-\item \textbf{const Vector3 operator+(const Vector3\& v) const}: devuelve la suma de dos vectores.
-\item \textbf{const Vector3 operator-(const Vector3\& v) const}: devuelve la resta de dos vectores.
-\item \textbf{friend const Vector3 operator*(double k, Vector3\& v)}: devuelve la multiplicación de un escalar por un vector.
-\item \textbf{const Vector3 operator*(double k) const}: devuelve la multiplicación de un vector por un escalar. Es una operación idéntica a la anterior, pero especificada en orden inverso.
-\item \textbf{const double operator*(const Vector3\& v) const}: devuelve el producto escalar de dos vectores.
-\item \textbf{const Vector3 operator$\wedge$(const Vector3\& v) const}: devuelve el vector resultado de realizar el producto vectorial de dos vectores.
-\end{itemize}
-
-\item \textbf{Operadores de comparación}:
-
-\begin{itemize}
-\item \textbf{bool operator==(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son iguales, esto es, si sus componentes también lo son, y \textit{false} en caso contrario.
-\item \textbf{bool operator!=(const Vector3\& v) const}: devuelve \textit{true} si los dos vectores son diferentes, y \textit{false} en caso contrario.
-\end{itemize}
-
-\item \textbf{double GetMagnitude() const}: devuelve la longitud del vector.
-\item \textbf{void Normalize()}: realiza una normalización del vector, multiplicándolo por la inversa de su longitud para obtener un vector de longitud unitaria.
-\item \textbf{const Vector3 GetNormalized() const}: devuelve el vector normalizado sin modificar el original.
-\item \textbf{const Vector3 GetScalated(double k) const}: deevuelve el vector escalado por una constante. Es la misma operación que la multiplicación del vector por un escalar.
-\item \textbf{Vector3\& Rotate(const Quaternion q)}: realiza una rotación del vector definida por el cuaternión $q$. Ecuación \eqref{eq: E14}.
-\item \textbf{const Vector3 GetRotated(const Quaternion\& q) const}: Devuelve el vector rotado sin modificar el original.
-
-\end{itemize}
-
-\subsection{La clase dfv::Matrix}
-
-En la clase \textit{dfv::Matrix} se realiza una implementación del concepto de matriz. Las operaciones más importantes que se pueden realizar son las siguientes:
-
-\begin{itemize}
-
-\item \textbf{Constructores}:
-
-\begin{itemize}
-\item \textbf{Matrix()}: Constructor sin argumentos. Crea una matriz inválida de 0 filas y 0 columnas.
-
-\item \textbf{Matrix(unsigned int size)}: Constructor de una matriz cuadrada de tamaño \textit{size}, cuyos elementos son todos 0.
-
-\item \textbf{Matrix(unsigned int rows, unsigned int columns)}: Constructor de una matriz de \textit{rows} filas y \textit{columns} columnas cuyos elementos son todos 0.
-\end{itemize}
-
-\item \textbf{Operador de asignación}:
-
-\begin{itemize}
-\item \textbf{Matrix\& operator=(const Matrix\& q)}: realiza una copia de la matriz que se le pasa como parámetro.
-\end{itemize} 
-
-\item \textbf{Operadores de asignación compuestos}:
-
-\begin{itemize}
-\item \textbf{Matrix\& operator+=(const Matrix\& q)}: suma a la matriz original la matriz $q$.
-\item \textbf{Matrix\& operator-=(const Matrix\& q)}: resta a la matriz original la matriz $q$.
-\item \textbf{Matrix\& operator*=(const double k)}: multiplica la matriz por un escalar $k$, esto es, realiza una multiplicación de cada uno de sus elementos.
-\end{itemize}
-
-\item \textbf{Operadores aritméticos binarios}:
-
-\begin{itemize}
-\item \textbf{const Matrix operator+(const Matrix\& q) const}: definición del operador ''+'' que realiza la suma de dos matrices.
-\item \textbf{const Matrix operator-(const Matrix\& q) const}: definición del operador ''-'', resta de dos matrices.
-\item \textbf{friend const Matrix operator*(double k, Matrix\& q)}: multiplicación de un escalar por una matriz (multiplicación de cada elemento de la matriz por dicho escalar).
-\item \textbf{const Matrix operator*(double k) const}: multiplicación de una matriz por un escalar.
-\item \textbf{const Matrix operator*(const Matrix\& q) const}: implementación de la multiplicación de dos matrices.
-\end{itemize}
-
-\item \textbf{Operadores de comparación}:
-
-\begin{itemize}
-\item \textbf{bool operator==(const Matrix\& v) const}: devuelve \textit{true} si las matrices son del mismo tamaño y sus elementos son iguales, y \textit{false} en caso contrario.
-\item \textbf{bool operator!=(const Matrix\& v) const}: operador cuyo resultado es el inverso del operador ''==''. 
-\end{itemize}
-
-\item \textbf{Matrix\& Create(unsigned int rows, unsigned int columns, double value = 0)}: crea una matriz de \textit{rows} filas y \textit{columns} columnas a cuyos elementos se les asigna el valor \textit{value} pasado como parámetro.
-\item \textbf{double Get(unsigned int row, unsigned int col) const}: devuelve el valor situado en la fila \textit{row} y columna \textit{col}.
-\item \textbf{void Set(unsigned int row, unsigned int col, double value)}: asigna al elemento situado en la fila \textit{row} y columna \textit{col} el valor \textit{value}.
-\item \textbf{unsigned int GetRows() const}: devuelve el número de filas de la matriz.
-\item \textbf{unsigned int GetColumns() const}: devuelve el número de columnas de la matriz.
-\item \textbf{Matrix GetMinor(unsigned int row, unsigned int column) const}: devuelve el menor de la matriz asociado a la fila \textit{row} y columna \textit{col}.
-\item \textbf{void Randomize()}: asigna a cada elemento de la matriz un valor aleatorio entre 0 y 1.
-\item \textbf{double GetDeterminant() const}: devuelve el determinante de la matriz.
-\item \textbf{const Matrix GetTransposed() const}: devuelve la traspuesta de la matriz.
-\item \textbf{const Matrix GetAdjoint() const}: devuelve el adjunto de la matriz.
-\item \textbf{const Matrix GetAdjugate() const}: devuelve la matriz traspuesta conjugada.
-\item \textbf{const Matrix GetInverse() const}: devuelve la inversa de la matriz.
-\item \textbf{double operator()(unsigned int row, unsigned int column) const}: operador equivalente a la función \textit{Get()}.
-
-\end{itemize}
-
-\subsection{Cómo usar la librería dfv en otro paquete de ROS}
-
-Si se quisiera hacer uso de la librería \textit{dfv} dentro de otro paquete de ROS, se deberán seguir los siguientes pasos:
-
-\begin{enumerate}
-\item Añadir como dependencia en el archivo \textit{manifest.xml} el paquete dfv. Como ejemplo se muestra el archivo \textit{manifest.xml} del paquete \textit{youbot\_controller}:
-
-\begin{lstlisting}
-
-<package>
-  <description brief="youbot_controller">
-
-     youbot_controller
-
-  </description>
-  <author>Daniel</author>
-  <license>BSD</license>
-  <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/youbot_controller</url>
-  <depend package="std_msgs"/>
-  <depend package="roscpp"/>
-  <depend package="xsens_driver"/>
-  <depend package="brics_actuator"/>
-  <depend package="dfv"/>
-
-</package>
-
-\end{lstlisting}
-
-\item Enlazar la librería \textit{dfv} en el archivo \textit{CMakeLists.txt}:
-
-\begin{lstlisting}
-target_link_libraries(nombre_del_ejecutable dfv)
-\end{lstlisting}
-
-\item Incluir el archivo de cabecera \textit{dfv.h} en el programa donde se quiera utilizar la librería:
-
-\begin{lstlisting}
-#include <dfv/dfv.h>
-\end{lstlisting}
-
-\end{enumerate}
-
-Ahora se pueden utilizar las clases \textit{dfv::Quaternion}, \textit{dfv::Vector3} y \textit{dfv::Matrix} y otras utilidades de la librería en el nuevo programa.\\
-
-En el archivo \textit{example.cpp} dentro de la carpeta \textit{dfv/examples/} hay un pequeño ejemplo de uso de la librería \textit{dfv}.
 
 \section{Controlador del brazo robótico del robot Youbot real}
 
@@ -1657,6 +1794,13 @@ En el paquete \textit{youbot\_controller} se implementa un controlador de las ar
 \item Detección de número y configuración de los sensores xsens a través de los topics y parámetros publicados por el driver \textit{xsens\_node}. Si no hay 3 sensores conectados se termina el programa imprimiendo en pantalla una advertencia de que son necesarios 3 sensores para que el programa funcione correctamente.
 
 \item Si detecta que todo está correcto, inmediatamente el programa comienza a leer los cuaterniones de orientación de los tres sensores. Con los tres cuaterniones, el programa halla los cuaterniones relativos entre cada sensor, y con éstos obtiene lo ángulos de Euler de la articulación correspondiente\footnote{En el capítulo CÁLCULO DE LAS POSICIONES Y ORIENTACIONES DE LOS SENSORES se muestra una explicación detallada de los cálculos matemáticos utilizadas para realizar esta tarea.}. En la figura \ref{fig: youbot_joints} se muestran las articulaciones del brazo y su identificación. 
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.3]{../img/youbot_joints.png} 
+	\caption[Articulaciones del brazo robótico del YouBot y su identificación]{Articulaciones del brazo robótico del YouBot y su identificación.} 
+	\label{fig: youbot_joints}
+\end{figure}
 
 \item A continuación se asignan determinados ángulos obtenidos a las articulaciones correspondientes del robot. 
 
@@ -1692,18 +1836,16 @@ El driver \textit{youbot\_oodl} es un programa que crea una capa sobre la API de
 
 Con un objetivo similar al de la creación de la clase xsens::SensorSubscriberList, la clase Youbot tiene como fin encapsular las comunicaciones de ROS entre el programa \textit{youbot\_controller} y el driver \textit{youbot\_oodl} para que no interfieran en el desarrollo del programa. Esta clase es la encargada de gestionar la publicación de mensajes en los topics de ROS que utiliza el driver \textit{youbot\_oodl} (cuadro \ref{tab:topics_youbot}).\\
 
-Esta clase tiene un funcionamiento muy sencillo. Sólamente es necesario pasarle el \textit{handle} del nodo en el que se declare la clase. Para modificar los valores objetivo de las articulaciones y el \textit{gripper} hay que modificar las variables miembro \textit{joint\_positions[]} y \textit{gripper\_positions[]}. Con el método \textit{PublishMessage()}, se publica en los topics correspondientes los mensajes con las posiciones de las articulaciones. En el siguiente ejemplo se muestra un esquema básico de cómo trabajar con la clase:\\
+Esta clase tiene un funcionamiento muy sencillo. Solamente es necesario pasarle el \textit{handle} del nodo en el que se declare la clase. Para modificar los valores objetivo de las articulaciones y el \textit{gripper} hay que modificar las variables miembro \textit{joint\_positions[]} y \textit{gripper\_positions[]}. Con el método \textit{PublishMessage()}, se publica en los topics correspondientes los mensajes con las posiciones de las articulaciones. En el siguiente ejemplo se muestra un esquema básico de cómo trabajar con la clase:\\
 
 \lstset{inputencoding=utf8/latin1}
 \lstinputlisting[language=C++]{../src/youbot_example.cpp}
 
 La función \textit{PublishMessage()} admite un parámetro de tipo \textit{bool}, que si es \textit{false} (valor por defecto) no publica el mensaje correspondiente a la posición del \textit{gripper}. Si se quisiera controlar el \textit{gripper}, habría que pasar \textit{true} como argumento, pero hay que tener en cuenta que no es posible enviar este mensaje con la misma frecuencia que el mensaje de las articulaciones debido a que el robot no parece poder procesar el mensaje del \textit{gripper} con la suficiente rapidez y se producen comportamientos extraños del robot. De diversas pruebas se ha deducido que la frecuencia más alta de publicación del mensaje del \textit{gripper} para no producir problemas es de 1 Hz.
 
-\section{Otras aplicaciones de visualización y control}
+\section{Visualizador de la posición del brazo}
 
-\subsection{Visualizador de la posición del brazo}
-
-El paquete \textit{arm\_visualizer} proporciona una forma de poder visualizar la posición del brazo en el simulador 3D Gazebo. Contiene el nodo \textit{arm\_visualizer}, que básicamente se encarga de leer los topics con los cuaterniones de orientación de tres sensores, con ellos calcula las posiciones y orientaciones de cada eslabón del brazo --brazo, antebrazo y mano-- y publica los correspondientes mensajes de ROS para mover la simulación del brazo en el programa Gazebo. En la sección \textit{Ejecución del simulador del brazo robótico del robot Youbot} del anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo poner en marcha el visualizador junto con el simulador Gazebo.
+El paquete \textit{arm\_visualizer} proporciona una forma de poder visualizar la posición del brazo humano en el simulador 3D Gazebo. Contiene el nodo \textit{arm\_visualizer}, que básicamente se encarga de leer los topics con los cuaterniones de orientación de tres sensores, con ellos calcula las posiciones y orientaciones de cada eslabón del brazo --brazo, antebrazo y mano-- y publica los correspondientes mensajes de ROS para mover la simulación del brazo en el programa Gazebo. En la sección \textit{Ejecución del simulador del brazo robótico del robot Youbot} del anexo PUESTA EN MARCHA DEL SOFTWARE se detalla cómo poner en marcha el visualizador junto con el simulador Gazebo.
 
 \begin{figure}[h]
 	\centering
@@ -1712,16 +1854,237 @@ El paquete \textit{arm\_visualizer} proporciona una forma de poder visualizar la
 	\label{fig: arm_visualizer}
 \end{figure}
 
-\subsection{Controlador de un simulador del brazo robótico del robot Youbot}
+\subsection{La clase gazebo::CModelList}
 
-En la documentación del robot Youbot existe un paquete de ROS que contiene una simulación del brazo del robot para trabajar en Gazebo y un nodo de ROS --\textit{youbot\_arm\_publisher}-- para realizar su control. Esta simulación está preparada para funcionar tal y como lo hace el robot real; Se puede controlar la posición de las articulaciones con los mismos topics de ROS y los ángulos se corresponden a los del robot real, por lo que se puede usar esta simulación a modo de prueba previa de los programas que se creen para el robot antes de ejecutarlos en el robot real. También puede utilizarse a modo de visualizador de la posición del robot en tiempo real en otro ordenador. En la sección \textit{Instalación del simulador del brazo robótico del YouBot} del anexo INSTALACIÓN Y PUESTA EN MARCHA DEL SOFTWARE se detalla cómo realizar la instalación y puesta en ejecución de esta simulación.
+La clase \textit{gazebo::CModelList} tiene por objetivo crear una representación de un brazo articulado con las relaciones entre articulaciones y eslabones para poder realizar los cálculos de las posiciones de cada parte del brazo. Además esta clase también posee la capacidad de crear un mensaje con la descripción y el estado del brazo que puede ser utilizado por el simulador Gazebo para su visualización.
+
+En la siguiente lista se muestran las funciones miembro de la clase:
+
+\begin{itemize}
+
+\item \textbf{CModelList(ros::NodeHandle\& node\_handle\_)}: Constructor de un objeto CModelList. Es necesario pasarle el \textit{handle} del nodo donde se declare para poder realizar las comunicaciones mediante ROS. En el constructor no se crea ningún eslabón ni ninguna articulación.
+
+\item \textbf{void AddModel}\\
+\textbf{(std::string name, dfv::Vector3 position, std::string xml\_model)}: Añade un eslabón a la descripción del brazo. Es necesario pasar tres parámetros a esta función:
+
+	\begin{itemize}
+	\item \textbf{name}: string con el nombre que se le quiera dar al eslabón.
+	\item \textbf{position}: posición inicial del eslabón. Este parámetro es relevante si el eslabón no va a ser hijo de ningún otro eslabón. En caso contrario la posición se calculará teniendo en cuenta las posiciones y orientaciones de la cadena de eslabones de los que es hijo.
+	\item \textbf{xml\_model}: string con la dirección del archivo de extensión xml que contiene la descripción del modelo 3D del eslabón en formato \textit{URDF} \footnote{El formato URDF (\textbf{U}nified \textbf{R}obot \textbf{D}escription \textbf{F}ormat) es una descripción en lenguaje XML de un robot usada por el simulador Gazebo. Un archivo URDF contiene la descripción de las articulaciones, eslabones, propiedades físicas (masas, momentos de inercia, etc), propiedades visuales (color, forma, etc.), entre otras más cosas, que forman un robot.}.
+	\end{itemize}
+
+\item \textbf{void Spawn() const}: Crea el mensaje con el que se llamará al servicio de Gazebo \textit{/gazebo/spawn\_urdf\_model} encargado de realizar la inserción del modelo en la simulación. Se ha de llamar a esta función cuando ya se haya realizado la especificación del modelo del brazo, esto es, después de haber construido el modelo mediante las funciones \textit{AddModel()} y \textit{SetJoint()}.
+
+\item \textbf{void SetJoint}\\
+\textbf{(unsigned int parent\_index, unsigned int child\_index, dfv::Vector3 parent\_joint\_position)}: Crea una articulación entre los eslabones de índice \textit{parent\_index} y \textit{child\_index}. El parámetro \textit{parent\_joint\_position} sirve para especificar la posición de la articulación relativa al origen de coordenadas del eslabón padre.
+
+\item \textbf{void SetOrientation(unsigned int index, dfv::Quaternion orientation)}: Establece la orientación del eslabón de índice \textit{index}.
+
+\item \textbf{void PublishMessage() const}: Genera y publica un mensaje en el servicio \textit{/gazebo/set\_model\_state} con las orientaciones y posiciones de cada eslabón del brazo. Llamando a esta función se actualiza automáticamente la visualización del modelo en Gazebo.
+
+\item \textbf{dfv::Vector3 GetPosition(unsigned int index) const}: Devuelve la posición del origen de coordenadas del eslabón de índice \textit{index}. Esta posición tiene en cuenta las posiciones y orientaciones de la cadena de eslabones de los que es hijo el eslabón considerado.
+
+\item \textbf{unsigned int GetCount() const}: Devuelve el número de eslabones que se han añadido a la descripción.
+
+\end{itemize}
+
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++]{../../doc/src/arm_visualizer_example.cpp}
+
+\section{Controlador de un simulador del brazo robótico del robot Youbot}
+
+En la documentación del robot Youbot existe un paquete de ROS que contiene la descripción del brazo del robot para funcionar en Gazebo, y un nodo de ROS --\textit{youbot\_arm\_publisher}-- capaz de controlar las posiciones de las articulaciones del brazo y el \textit{gripper}. Esta simulación está preparada para funcionar tal y como lo hace el robot real; Se puede controlar la posición de las articulaciones con los mismos topics de ROS y los ángulos se corresponden a los del robot real, por lo que se puede usar esta simulación a modo de prueba previa de los programas que se creen para el robot antes de ejecutarlos en el robot real. También puede utilizarse a modo de visualizador de la posición del robot en tiempo real en otro ordenador. En la sección \textit{Instalación del simulador del brazo robótico del YouBot} del anexo \textit{INSTALACIÓN DEL SOFTWARE} se detalla cómo realizar la instalación de esta simulación, y en la sección \textit{Ejecución del simulador del brazo robótico del YouBot} del anexo \textit{PUESTA EN MARCHA DEL SOFTWARE} se describe como lanzar el simulador.
 
 \chapter{PRUEBAS Y RESULTADOS OBTENIDOS}
 
+En este capítulo se hará uso de los programas y librerías creados para realizar una serie de pruebas en las que se comprobará cómo funciona el sistema de monitorización en casos de creciente complejidad. En cada prueba se hará también un breve análisis de los resultados obtenidos.
+
+\section{Captura de datos de un sensor Xsens MTi-G}
+
+En esta primera prueba se realizará una simple toma de datos de un sensor Xsens MTi-G (figura \ref{fig: xsens_mtig}). Se leerá el topic de aceleraciones y se comprobará con qué frecuencia se están publicando datos.\\
+
+Para comenzar se conectará el sensor Xsens a un ordenador portátil, y se procederá a lanzar el programa \textit{xsens\_node} del driver \textit{xsens\_driver} mediante los siguientes comandos:
+
+\begin{verbatim}
+$ roscore
+$ rosrun xsens_driver xsens_node
+\end{verbatim}
+
+El programa reconoce el sensor y comienza a publicar los datos en \textit{topics} de ROS. Ejecutando el comando para obtener los topics que están siendo publicados se obtiene lo siguiente:
+
+\begin{verbatim}
+$ rostopic list
+/rosout
+/rosout_agg
+/xsens_node/sensor0/acc
+/xsens_node/sensor0/gyr
+/xsens_node/sensor0/mag
+/xsens_node/sensor0/ori_quat
+\end{verbatim}
+
+Se comprueba de la misma forma los parámetros publicados en el servidor de parámetros de ROS:
+
+\begin{verbatim}
+$ rosparam list
+/rosdistro
+/roslaunch/uris/host_daniel_lenovo_g580__54586
+/rosversion
+/run_id
+/xsens_node/output_mode
+/xsens_node/output_settings
+/xsens_node/sensor_count
+\end{verbatim}
+
+En ambos casos se comprueba que el programa funciona y los topics están siendo publicados. A continuación se llama a la herramienta \textit{rxplot}, que realiza una gráfica de los datos del \textit{topic} que se le pase como parámetro. En el caso del \textit{topic} de los acelerómetros se obtiene la salida de la figura \ref{fig: sensor_output_hor} con el sensor puesto sobre el suelo en posición totalmente horizontal. El valor de la aceleración $z$ se corresponde aproximadamente a los $9.8 \frac{m}{s^2}$ de la aceleración de la gravedad.
+
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale=0.3]{../img/sensor_output.png} 
+	\caption[Representación gráfica de los datos de los acelerómetros]{Representación gráfica de los datos de los acelerómetros con el sensor puesto de forma totalmente horizontal. La aceleración $z$ (en verde) se corresponde con la gravedad.} 
+	\label{fig: sensor_output_hor}
+\end{figure}
+
+Por último se hallará la frecuencia a la que se publican los datos. Para hacerlo se redirigirá la salida del comando \textit{rostopic} a un archivo de texto. El mensaje de los acelerómetros tiene su \textit{stamp} de tiempo, por lo que sabiendo el número de mensajes que se han publicado y el tiempo que ha pasado se puede obtener la frecuencia de publicación.
+
+\begin{verbatim}
+$ rostopic echo /xsens_node/sensor0/acc > sensor_output.txt
+\end{verbatim}
+
+\begin{table}[h]
+\footnotesize
+\center
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Resultados de la prueba}}\\
+\hline
+\textbf{Nº de secuencia} & \textbf{tiempo (s)} \\ 
+\hline
+343058 & $1374484117.613551113$ \\
+343578 & $1374484122.813544786$ \\
+\hline
+\end{tabular}	
+\caption[Resultados de la prueba para obtener la frecuencia de lectura de un sensor Xsens MTi-G]{Resultados de la prueba para obtener la frecuencia de un sensor Xsens MTi-G.}
+\label{tab:prueba_1}	
+\end{table}
+
+En la tabla \ref{tab:prueba_1} se recogen los resultados obtenidos. Se han publicado en total $520$ datos en $5.20$ segundos, lo que supone una \textbf{frecuencia de lectura} de $100.0 Hz$ para un solo sensor.
+
+\section{Captura de datos de una red de sensores Xsens MTx conectados a un máster Xbus}
+
+De la misma forma que para un solo sensor, se realizará la prueba para la obtención de la frecuencia de lectura con una red de sensores Xbus a los que se ha conectado 3 sensores MTx.
+
+\begin{table}[h]
+\footnotesize
+\center
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{2}{|c|}{\textbf{Resultados de la prueba}}\\
+\hline
+\textbf{Nº de secuencia} & \textbf{tiempo (s)} \\ 
+\hline
+2621 & $1374485363.188063945$ \\
+2972 & $1374485370.208524364$ \\
+\hline
+\end{tabular}	
+\caption[Resultados de la prueba para obtener la frecuencia de lectura de una red de 3 sensores MTx conectados a un máster Xbus]{Resultados de la prueba para obtener la frecuencia de lectura de una red de 3 sensores MTx conectados a un máster Xbus.}
+\label{tab:prueba_2}	
+\end{table}
+
+En este caso se han publicado $351$ mensajes a lo largo de $7.02$ segundos, lo que da una \textbf{frecuencia de lectura de datos} de $50.0 Hz$ para un máster con 3 sensores. Es decir, la frecuencia de lectura ha bajado a la mitad --comprensible, ya que se están obteniendo datos de varios sensores a la vez--. Aún así, es una frecuencia bastante buena para cualquier aplicación.\\
+
+Se comprueba además con el comando \textit{rostopic} que los \textit{topics} publicados se corresponden a los de acelerómetros, giróscopos, magnetómetros y cuaternión de orientación de los tres sensores (cuatro \textit{topics} por cada sensor):
+
+\begin{verbatim}
+$ rostopic list
+/rosout
+/rosout_agg
+/xsens_node/sensor0/acc
+/xsens_node/sensor0/gyr
+/xsens_node/sensor0/mag
+/xsens_node/sensor0/ori_quat
+/xsens_node/sensor1/acc
+/xsens_node/sensor1/gyr
+/xsens_node/sensor1/mag
+/xsens_node/sensor1/ori_quat
+/xsens_node/sensor2/acc
+/xsens_node/sensor2/gyr
+/xsens_node/sensor2/mag
+/xsens_node/sensor2/ori_quat
+\end{verbatim}
+
+%\section{Utilización de los datos obtenidos para el control de la simulación del modelo de un brazo humano}
+
+\section{Utilización de los datos obtenidos para el control del brazo robótico de un robot Youbot}
+
+Una vez se ha probado el buen funcionamiento del programa \textit{xsens\_node} para la lectura de los sensores Xsens, se comprobará como desempeña su tarea junto al programa que realiza el control del brazo robótico de un robot YouBot --el nodo \textit{youbot\_controller}--. \\
+
+Una vez puesto en marcha el robot, se procederá a conectar la red de sensores Xsens al robot y a lanzar el programa \textit{xsens\_node} en el PC embebido del YouBot, se forma análoga a como se ha realizado en la prueba anterior. A continuación se ejecuta el driver del YouBot:
+
+\begin{verbatim}
+$ roslaunch youbot_oodl youbot_oodl_driver.launch
+\end{verbatim}
+
+Este programa se queda escuchando ciertos \textit{topics} (tabla \ref{tab:topics_youbot}) a la espera de los comandos de posición de las articulaciones. A continuación se colocan los sensores en el brazo humano y se ejecuta el programa \textit{youbot\_controller} para la generación y envío de los mensajes a dichos \textit{topics} a partir de los datos de la red de sensores:
+
+\begin{verbatim}
+$ rosrun youbot_controller youbot_controller
+\end{verbatim}
+
+Ahora es posible realizar el control del brazo robótico mediante el movimiento de los sensores Xsens. El robot responde de forma rápida y fluida, y se puede comprobar que la posición del brazo del robot se corresponde con la del brazo de la persona. Como se anticipó en el capítulo \textit{CÁLCULO DE LAS POSICIONES DE LOS SENSORES}, en la zona de \textit{gimbal lock} se producen saltos en la posición del brazo robótico, pero en el resto de posiciones el conjunto de programas y sensores responde bastante bien.
+
+\section{Distribución del sistema anterior en varias unidades de procesamiento}
+
+Esta prueba consiste en ejecutar los mismos programas que la prueba anterior, pero dividiendo el procesamiento en dos PCs conectados a la misma red wi-fi. Uno de ellos es el propio robot y el otro un ordenador portátil. En máster de ROS estará localizado en el ordenador portátil, por lo que se definirán las correspondientes variables de entorno para esta situación (tabla \ref{tab:var_entorno}).
+
+\begin{table}[h]
+	\center
+	\begin{tabular}{|l|l|l|}
+	\hline
+	\multicolumn{3}{|c|}{\textbf{Valor de las variables de entorno para el sistema distribuido}}\\
+	\hline
+	& ROS\_IP & ROS\_MASTER\_URI \\
+	\hline
+	Portátil & 156.35.152.83 & http://156.35.152.83:11311 \\
+	PC YouBot & 156.35.152.95 & http://156.35.152.83:11311 \\
+	\hline
+	\end{tabular}
+
+	\caption[Valor de las variables de entorno para el sistema distribuido]{Valor de las variables de entorno para el sistema distribuido.}
+	\label{tab:var_entorno}
+
+\end{table}
+
+Una vez definidas las variables de entorno, se conectará el máster Xbus con tres sensores al portátil y a continuación se iniciará el \textit{roscore} en el portátil. Una vez el máster de ROS esté en funcionamiento, se ejecutará el driver \textit{youbot\_oodl} en el robot --los drivers tienen que ser ejecutados en el ordenador al que está conectado el hardware--, y posteriormente el resto de programas --\textit{xsens\_node} y \textit{youbot\_controller}-- en el portátil. Además se aprovechará que el portátil tiene mayor capacidad de procesamiento que el robot para ejecutar en el primero la simulación del brazo robótico del YouBot.\\
+
+Ahora el sistema completo está funcionando y se puede proceder a mover los sensores para ver como responde el robot. Se comprueba que el control del brazo robótico funciona bastante bien siempre y cuando se trabaje en entornos con buena conectividad al wi-fi. Si se mueve el robot a zonas donde hay peor conexión, el control no va tan fluido y hay ocasiones en las que se pierde el control del robot por uno o dos segundos. Sin embargo, estos problemas son por causa de la conectividad wi-fi y no tienen que ver con el propio sistema de monitorización. En zonas donde la conectividad es buena, el robot responde prácticamente de la misma manera que cuando se pone en marcha el sistema en el propio PC del robot.
+
+\section{Conclusiones}
+
+Se ha creado un sistema de monitorización fiable y de alta flexibilidad --se ha comprobado que funciona tanto en el cuerpo humano como en modelos de máquinas, en general en cualquier sistema articulado-- aprovechando la gran cantidad de herramientas que proporciona la plataforma ROS. En este sistema de monitorización se han creado además varias librerías que facilitan enormemente su uso por otros desarrolladores en futuras aplicaciones (librería \textit{xsens\_driver} y librería \textit{dfv}), y se ha implementado una arquitectura que posibilita la extensión del sistema incorporando un mayor número de sensores del mismo o distinto tipo, o incorporando todo tipo de sistemas actuadores que funcionen en la plataforma ROS. Esta arquitectura además posibilita extender la ejecución de los distintos nodos a otros PCs y así aprovechar, si estuviera disponible, una mayor capacidad de procesamiento para tareas más exigentes computacionalmente. Finalmente cabe mencionar que por la condición de prototipo de este proyecto no se ha buscado un producto final cerrado, si no que se ha dejado la puerta abierta a la modificación e incorporación de otros sistemas de la forma más sencilla posible. 
 %%% ******** Capítulo 7 ******** %%%
 
 \chapter{BIBLIOGRAFÍA}
 
+\begin{itemize}
+\item Documentación de la plataforma ROS. \textit{ros.org}\\
+
+\item Documentación del simulador Gazebo. \textit{gazebosim.org}\\
+
+\item Documentación de los sensores Xsens:
+
+	\begin{itemize}
+	\item \textit{MT Low-Level Communication Protocol Documentation}, Xsens Technologies, 2010.
+	\item \textit{MTi-G User Manual and Technical Documentation}, Xsens 	Technologies, 2010.
+	\item \textit{MTi and MTx User Manual and Technical Documentation}, Xsens Technologies, 2010.
+	\item \textit{XB-M Technical Documentation}, Xsens Technologies, 2010.
+	\end{itemize}
+
+\item Quigley, M., Gerkey, B., Conley, K., Faust, J., Foote, T., Leibs, J., Berger, E., Wheeler, R., Ng, A., \textit{ROS: an open-source Robot Operating System}, 2009.
+
+\item Penrose, R., \textit{El Camino a la Realidad}, Debate Ed. 2006, \textbf{11}, 293-316.\\
+
+\item Jazar, R. N., \textit{Theory of Applied Robotics}, Springer Ed. 2ª, 2010, \textbf{I.2, I.3}, 56-170.\\
+\end{itemize}
 
 %%% ================ PARTE 2 : ANEXOS ================ %%%
 
@@ -1748,7 +2111,7 @@ La versión de ROS que se utilizará es ROS Fuerte. Esta elección se debe a que
 
 \subsection{Configuración de los repositorios de Ubuntu}
 
-Para comenzar con la instalación se procederá a abrir el Centro de Sofware de Ubuntu y en la barra de menú de dicho programa, se seleccionará en el menú Edit la opción Software Sources. En la pestaña Ubuntu Software se comprobará que están seleccionados los repositorios restricted, universe y multiverse, tal como aparece en la figura \ref{fig: software_sources}.\\
+Para comenzar con la instalación se procederá a abrir el Centro de Software de Ubuntu y en la barra de menú de dicho programa, se seleccionará en el menú Edit la opción Software Sources. En la pestaña Ubuntu Software se comprobará que están seleccionados los repositorios restricted, universe y multiverse, tal como aparece en la figura \ref{fig: software_sources}.\\
 
 \begin{figure}[h]
 	\centering
@@ -1854,19 +2217,19 @@ $ rosmake brics_actuator youbot_description
 
 \end{enumerate}
 
-
-
 \section{Instalación del stack youbot-xsens-controller}
 
+Para instalar el stack youbot-xsens-controller desde el CD adjunto, simplemente se copiará la carpeta \textit{youbot-xsens-controller} en el directorio en el que se halle el \textit{workspace} de ROS. A continuación se compilará mediante el comando:
 
+\begin{verbatim}
+$ rosmake youbot-xsens-controller
+\end{verbatim}
 
-\subsection{Instalación desde el CD adjunto al proyecto}
+Este stack tiene por dependencia los stacks cuya instalación se detalla en el apartado \textit{Instalación del simulador de brazo robótico del YouBot} de este mismo capítulo, por lo que es necesario haber seguido los pasos descritos en dicho apartado antes de realizar la compilación del stack. 
 
-\subsection{Instalación desde git}
+\chapter{PUESTA EN MARCHA DEL SOFTWARE}
 
-\section{PUESTA EN MARCHA DEL SOFTWARE}
-
-\subsection{Iniciación del driver del sensor Xsens}
+\section{Iniciación del driver del sensor Xsens}
 
 Para ejecutar el driver \textit{xsens\_node} es necesario iniciar antes el máster de ROS. Para ello en un terminal se ejecutará el siguiente comando:
 
@@ -1882,21 +2245,33 @@ $ rosrun xsens_driver xsens_node
 
 Si no se ha producido ningún error, ahora el driver estará publicando en ROS los mensajes con los datos leídos del sensor.
 
-\subsection{Iniciación del driver del robot Youbot}
+\section{Iniciación del driver del robot Youbot}
+
+Para lanzar el driver \textit{youbot\_oodl} se ejecutará el siguiente comando en el PC del robot YouBot:
 
 \begin{verbatim}
 $ roslaunch youbot_oodl youbot_oodl_driver.launch
 \end{verbatim}
 
-\subsection{Ejecución del programa youbot\_controller}
+\section{Ejecución del programa youbot\_controller}
+
+Para lanzar el programa \textit{youbot\_controller} se ejecutará el siguiente comando en el PC correspondiente:
 
 \begin{verbatim}
 $ rosrun youbot_controller youbot_controller
 \end{verbatim}
 
-\subsection{Ejecución del simulador del brazo robótico del robot Youbot}
+\section{Ejecución del simulador del brazo robótico del robot Youbot}
 
-\subsection{Ejecución de la visualización del modelo del brazo humano}
+Para lanzar el simulador del brazo robótico se ejecutará el siguiente comando en el PC correspondiente (se evitará lanzarlo en el PC del robot YouBot ya que Gazebo consume muchos recursos y el robot no responde muy bien en este caso):
+
+\begin{verbatim}
+$ roslaunch youbot_description youbot_arm_publisher.launch
+\end{verbatim}
+
+En caso de que Gazebo no se abriese, véase el capítulo \textit{SOLUCIÓN DE PROBLEMAS}.
+
+\section{Ejecución de la visualización del modelo del brazo humano}
 
 Para poner en marcha este programa hace falta haber iniciado primero el driver de los sensores Xsens y el simulador Gazebo. Los pasos a seguir son los siguientes:
 
@@ -1933,7 +2308,7 @@ $ roslaunch gazebo_world empty_world.launch
 	\label{fig: gazebo_delete}
 \end{figure}
 
-\item También será necesario poner la simulación en pausa, ya que de otra manera se realizará la simulaciñon de la gravedad sobre el brazo y se obtendrán resultados no deseados (figura \ref{fig: gazebo_pause}).
+\item También será necesario poner la simulación en pausa, ya que de otra manera se realizará la simulación de la gravedad sobre el brazo y se obtendrán resultados no deseados (figura \ref{fig: gazebo_pause}).
 
 \begin{figure}
 	\centering
@@ -2076,11 +2451,13 @@ $ rosrun arm_visualizer arm_visualizer
 
 \chapter{SOLUCIÓN DE PROBLEMAS}
 
-\section{Error iniciando Gazebo}
+En este capítulo se da solución a determinados problemas que se han encontrado de forma frecuente al poner en marcha el sistema de monitorización.
 
-Este error consiste en que al iniciar Gazebo, este no se abre y en la terminal aparecen mensajes parecidos a los que se muestran a continuación:
+\section{Error al iniciar Gazebo}
 
-\footnotesize\begin{spverbatim}
+Este error consiste en que al iniciar Gazebo con la simulación de un mundo vacío, este no se abre y en la terminal aparecen mensajes parecidos a los que se muestran a continuación:
+
+\scriptsize\begin{spverbatim}
 Msg Waiting for master
 Msg Connected to gazebo master @ http://localhost:11345
 Exception [Master.cc:69] Unable to start server[Address already in use]
@@ -2088,7 +2465,10 @@ Exception [Master.cc:69] Unable to start server[Address already in use]
 
 terminate called after throwing an instance of 'gazebo::common::Exception'
 Aborted (core dumped)
-[gazebo-1] process has died [pid 2795, exit code 134, cmd /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1.log].
+[gazebo-1] process has died [pid 2795, exit code 134, cmd
+/opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gazebo 
+/opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo 
+__log:=/home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1.log].
 log file: /home/daniel/.ros/log/772c2f96-ab75-11e2-a2fc-001de05009b5/gazebo-1*.log
 LightListWidget::OnLightMsg
 
@@ -2096,7 +2476,7 @@ LightListWidget::OnLightMsg
 \end{spverbatim}
 \normalsize
 
-Esto es debido a que ya existe un proceso Gazebo ejecutándose en el ordenador pero por alguna razón no ha abierto su interfaz gráfica.
+Esto es debido a que ya existe un proceso Gazebo ejecutándose en el ordenador pero por alguna razón no ha abierto su interfaz gráfica. \\
 
 \textbf{Solución: }
 Ejecutar comando:
@@ -2104,18 +2484,21 @@ Ejecutar comando:
 $ ps ax | grep [g]z
 \end{verbatim}
 
-Ver si hay un proceso gzserver
+Se comprobará si hay un proceso gzserver
 
-\footnotesize
+\scriptsize
 \begin{spverbatim}
  3118 ?        Sl    12:47
  /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/bin/gzserver 
- /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de05009b5/gazebo-1.log -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_paths_plugin.so -s /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_api_plugin.so
+ /opt/ros/fuerte/stacks/simulator_gazebo/gazebo_worlds/worlds/empty.world __name:=gazebo 
+ __log:=/home/daniel/.ros/log/8188cc76-ab73-11e2-a4ec-001de05009b5/gazebo-1.log -s 
+ /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_paths_plugin.so -s
+  /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/lib/libgazebo_ros_api_plugin.so
 
 \end{spverbatim}
 \normalsize
 
-Si lo hay, ejecutar \textit{System Monitor} y matar el proceso \textit{gzserver}.
+Si lo hay, se ejecutará el programa \textit{System Monitor} y y se matará el proceso \textit{gzserver}.
 
 \section{Al ejecutar el simulador del brazo robótico no se abre la interfaz gráfica de Gazebo}
 
@@ -2128,25 +2511,44 @@ Este archivo se encuentra en la carpeta \textit{launch/} dentro del paquete\\
 
 \section{El driver del Xsens no contacta con los sensores}
 
-\section{Al ejecutar Gazebo con el archivo empty\_world.launch no se abre la GUI}
-
-\begin{verbatim}
-[gazebo_gui-2] process has died [pid 28410, exit code 139, cmd /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/scripts/gui __name:=gazebo_gui __log:=/home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08edb99bab79/gazebo_gui-2.log].
-log file: /home/daniel/.ros/log/8e1bc56a-ee44-11e2-9ac7-08edb99bab79/gazebo_gui-2*.log
-\end{verbatim}
+Es posible que en los primeros instantes tras conectar el sensor o red de sensores al PC, el programa \textit{xsens\_node} no reconozca los sensores y finalice su ejecución. En este caso se deberán esperar 5-10 segundos antes de volver ejecutar el programa.
 
 \part{Presupuesto}
 
-\iffalse
+\begin{table}[h]
+\footnotesize
+\center
+\begin{tabular}{|l|l|l|c|c|}
+\hline
+\multicolumn{5}{|c|}{\textbf{ESCUELA POLITÉCNICA DE INGENIERÍA DE GIJÓN}}\\
+\hline
+\multicolumn{5}{|c|}{PRESUPUESTO}\\
+\hline
+\rule{0pt}{4ex}\textbf{Nº} & \textbf{Nº de unidades} & \textbf{Designación} & \textbf{Precio unitario} & \textbf{Coste (€)} \\ 
+\hline
+\rule{0pt}{4ex} $1$ & $70$ horas & Horas de documentación & $50$ € & $3500$ € \\
+\rule{0pt}{4ex} $2$ & $200$ horas & Horas de programación & $25$ € & $5000$ € \\
+\rule{0pt}{4ex} $3$ & $50$ horas & Elaboración de la documentación & $50$ € & $2500$ € \\
+\rule{0pt}{4ex} $4$ & $0.1$ unidades & Usufructo del sistema Xsens & $9000$ € & $900$ € \\
+\rule{0pt}{4ex} $5$ & $0.1$ unidades & Usufructo del robot YouBot & $20000$ € & $2000$ € \\
+\hline
+\rule{0pt}{4ex} & & \textbf{Subtotal} & & $13900$ € \\
+\rule{0pt}{4ex} & & IVA(21\%) & & $2919$ €\\
+\hline
+\rule{0pt}{4ex} & & \textbf{TOTAL} & & $16819$ € \\
+\hline
+\end{tabular}	
+\label{tab:presupuesto}	
+\end{table}
 
-\part{Otros documentos}
+\vspace{1cm}
 
+El coste total del proyecto asciende a DIECISÉIS MIL OCHOCIENTOS\\ 
+DIECINUEVE Euros.\\
 
-\section{Manual del sensor MTi-G}
+En Gijón a 22 de Julio de 2013. \\
 
-%\includepdf[pages={-}]{doc/mtig_manual.pdf}
-
-\fi
+\textbf{El proyectante:}
 
 \end{document}
 

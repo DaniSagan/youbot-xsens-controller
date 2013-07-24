@@ -16,14 +16,15 @@ namespace gazebo
             void AddModel(std::string name, dfv::Vector3 position, std::string xml_model);
             //bool GenerateFromTopic(std::string topic_name);
             //void GetConfig(const test3_xbus::MTConfig::ConstPtr& msg);
-            void Spawn();
+            void Spawn() const;
             //void SubscribeModelToTopic(unsigned int index, std::string topic_name);
             void SetJoint(unsigned int parent_index, unsigned int child_index, dfv::Vector3 parent_joint_position);
             void SetOrientation(unsigned int index, dfv::Quaternion orientation);
             //void EnableGazebo(bool enable);
             //void EnableRviz(bool enable);
-            void PublishMessage();
-            unsigned int GetCount();
+            void PublishMessage() const;
+            dfv::Vector3 GetPosition(unsigned int index) const;
+            unsigned int GetCount() const;
             
         private:
             std::vector<gazebo::CModel*>    model_list;

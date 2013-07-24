@@ -1,0 +1,226 @@
+\documentclass[11pt, a4paper]{report}
+
+\usepackage{listingsutf8}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{spverbatim}
+\usepackage{multirow}
+\usepackage[left=3.5cm,right=1.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{floatrow}
+\usepackage{wrapfig}
+\usepackage{microtype}
+\usepackage[font=small,labelfont=bf]{caption}
+\author{Daniel Fernández Villanueva}
+\title{\huge Sistema de monitorización inercial del movimiento de las extremidades superiores - Código fuente}
+
+\makeatletter
+\renewcommand*{\UTFviii@defined}[1]{%
+  \ifx#1\relax
+    \begingroup
+      % Remove prefix "\u8:"
+      \def\x##1:{}%
+      % Extract Unicode char from command name
+      % (utf8.def does not support surrogates)
+      \edef\x{\expandafter\x\string#1}%
+      \StringEncodingConvert\x\x{utf8}{utf16be}% convert to UTF-16BE
+      % Hexadecimal representation
+      \EdefEscapeHex\x\x
+      % Enhanced error message
+      \PackageError{inputenc}{Unicode\space char\space \string#1\space
+                              (U+\x)\MessageBreak
+                              not\space set\space up\space
+                              for\space use\space with\space LaTeX}\@eha
+    \endgroup
+  \else\expandafter
+    #1%
+  \fi
+}
+\makeatother
+
+\setcounter{tocdepth}{3}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{red}{rgb}{1.0, 0, 0}
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  frame=single,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  %breakatwhitespace=true
+  tabsize=4
+}
+
+\newtheorem{defn}{Definición}[section]
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+%%% ================ PARTE 1 : MEMORIA ================ %%%
+
+
+\part{Código fuente}
+
+\chapter{PAQUETE xsens\_driver}
+
+\section{xsens\_node.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/src/xsens_node.cpp}
+\newpage
+
+\section{xsens\_driver.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/include/xsens_driver/xsens_driver.h}
+\newpage
+
+\section{xsens\_driver.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/src/xsens_driver.cpp}
+\newpage
+
+\section{xsens\_sensor.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/include/xsens_driver/xsens_sensor.h}
+\newpage
+
+\section{xsens\_sensor.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/src/xsens_sensor.cpp}
+\newpage
+
+\section{xsens\_sensor\_subscriber.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/include/xsens_driver/xsens_sensor_subscriber.h}
+\newpage
+
+\section{xsens\_sensor\_subscriber.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/src/xsens_sensor_subscriber.cpp}
+\newpage
+
+\section{utils.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/include/xsens_driver/utils.h}
+\newpage
+
+\section{utils.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../xsens_driver/src/utils.cpp}
+\newpage
+
+\chapter{PAQUETE dfv}
+
+\section{quaternion.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/include/dfv/quaternion.h}
+\newpage
+
+\section{quaternion.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/src/quaternion.cpp}
+\newpage
+
+\section{vector3.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/include/dfv/vector3.h}
+\newpage
+
+\section{vector3.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/src/vector3.cpp}
+\newpage
+
+\section{matrix.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/include/dfv/matrix.h}
+\newpage
+
+\section{matrix.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/src/matrix.cpp}
+\newpage
+
+\section{utils.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/include/dfv/utils.h}
+\newpage
+
+\section{utils.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/src/utils.cpp}
+\newpage
+
+\section{dfv.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../dfv/include/dfv/dfv.h}
+\newpage
+
+\chapter{PAQUETE youbot controller}
+
+\section{youbot\_controller.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../youbot_controller/src/youbot_controller.cpp}
+\newpage
+
+\section{youbot.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../youbot_controller/include/youbot_controller/youbot.h}
+\newpage
+
+\section{youbot.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../youbot_controller/src/youbot.cpp}
+\newpage
+
+\chapter{PAQUETE arm\_visualizer}
+
+\section{arm\_visualizer.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../arm_visualizer/src/arm_visualizer.cpp}
+\newpage
+
+\section{gazebo\_model.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../arm_visualizer/include/arm_visualizer/gazebo_model.h}
+\newpage
+
+\section{gazebo\_model.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../arm_visualizer/src/gazebo_model.cpp}
+\newpage
+
+\section{gazebo\_model\_list.h}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../arm_visualizer/include/arm_visualizer/gazebo_model_list.h}
+\newpage
+
+\section{gazebo\_model\_list.cpp}
+\lstset{inputencoding=utf8/latin1}
+\lstinputlisting[language=C++, breaklines=true]{../../arm_visualizer/src/gazebo_model_list.cpp}
+\newpage
+
+\end{document}
+
