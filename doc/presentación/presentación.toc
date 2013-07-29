@@ -1,2 +1,19 @@
 \beamer@endinputifotherversion {3.10pt}
 \select@language {spanish}
+\beamer@sectionintoc {1}{Visi\IeC {\'o}n general}{2}{0}{1}
+\beamer@sectionintoc {2}{Objetivo del proyecto}{3}{0}{2}
+\beamer@sectionintoc {3}{C\IeC {\'o}mo obtener la posici\IeC {\'o}n de un brazo humano}{4}{0}{3}
+\beamer@subsectionintoc {3}{1}{C\IeC {\'o}mo obtener la posici\IeC {\'o}n de un brazo humano}{4}{0}{3}
+\beamer@subsectionintoc {3}{2}{Qu\IeC {\'e} se entiende por orientaci\IeC {\'o}n}{5}{0}{3}
+\beamer@subsectionintoc {3}{3}{C\IeC {\'o}mo obtener otras magnitudes con los cuaterniones de orientaci\IeC {\'o}n}{6}{0}{3}
+\beamer@subsectionintoc {3}{4}{C\IeC {\'o}mo obtener los \IeC {\'a}ngulos de Euler a partir de los cuaterniones de orientaci\IeC {\'o}n}{7}{0}{3}
+\beamer@subsectionintoc {3}{5}{\IeC {\textquestiondown }Por qu\IeC {\'e} usar cuaterniones entonces?}{8}{0}{3}
+\beamer@subsectionintoc {3}{6}{Selecci\IeC {\'o}n de sensores}{9}{0}{3}
+\beamer@sectionintoc {4}{Qu\IeC {\'e} es ROS y qu\IeC {\'e} papel juega en el sistema de monitorizaci\IeC {\'o}n}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Qu\IeC {\'e} es la plataforma ROS}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{Por qu\IeC {\'e} usar ROS}{11}{0}{4}
+\beamer@subsectionintoc {4}{3}{\IeC {\textquestiondown }Qu\IeC {\'e} software se ha creado en ROS?}{12}{0}{4}
+\beamer@sectionintoc {5}{Interfaz hombre-m\IeC {\'a}quina utilizando el sistema de monitorizaci\IeC {\'o}n}{13}{0}{5}
+\beamer@sectionintoc {6}{Conclusi\IeC {\'o}n y trabajo futuro}{15}{0}{6}
+\beamer@subsectionintoc {6}{1}{Conclusi\IeC {\'o}n}{15}{0}{6}
+\beamer@subsectionintoc {6}{2}{Trabajo futuro}{16}{0}{6}
