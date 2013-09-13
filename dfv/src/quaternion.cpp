@@ -24,6 +24,11 @@ namespace dfv
         //dtor
     }
     
+    const Quaternion Quaternion::operator-() const
+    {
+        return dfv::Quaternion(-this->w, -this->x, -this->y, -this->z);
+    }
+    
     Quaternion& Quaternion::operator=(const Quaternion& q)
     {
         if(this != &q)

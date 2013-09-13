@@ -29,6 +29,8 @@ namespace dfv
             explicit Vector3(const Quaternion& q);
             virtual ~Vector3();
             
+            const Vector3 operator-() const;
+            
             // ******** Operador de asignación ******** //
             Vector3& operator=(const Vector3& v);
             

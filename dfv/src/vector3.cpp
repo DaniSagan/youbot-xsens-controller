@@ -25,6 +25,11 @@ namespace dfv
         //dtor
     }
     
+    const Vector3 Vector3::operator-() const
+    {
+        return Vector3(-this->x, -this->y, -this->z);
+    }
+    
     Vector3& Vector3::operator=(const Vector3& v)
     {
         if(this != &v)
