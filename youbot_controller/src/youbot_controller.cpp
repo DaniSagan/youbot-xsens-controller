@@ -140,7 +140,8 @@ std::vector<double> GetAngles(xsens::SensorSubscriberList& sensors)
     dfv::Quaternion q1p = dfv::Quaternion::GetRotationQuaternion(dfv::Vector3::i.GetRotated(q1), dfv::pi / 4.0);
     dfv::Quaternion q2p = dfv::Quaternion::GetRotationQuaternion(dfv::Vector3::i.GetRotated(q2), dfv::pi / 4.0);
     
-    dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0p*q0, q1p*q1);
+    //dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0p*q0, q1p*q1);
+    dfv::Quaternion q01 = dfv::Quaternion::GetDifference(q0, q1);
     dfv::Quaternion q12 = dfv::Quaternion::GetDifference(q1p*q1, q2p*q2);
     
     // Cálculo de los ángulos entre cada sensor
@@ -176,14 +177,15 @@ std::vector<double> GetAngles(xsens::SensorSubscriberList& sensors)
     // teniendo en cuenta los offsets de cada
     // articulación
     
-    double offsets[] = {2.9, -0.4, -2.5, 1.5, 1.5};
+    double offsets[] = {2.9, -0.4, -2.7, 1.5, 1.5};
     
     double angs[5];
     angles[0] = offsets[0] + NormalizeAngle(-yaw_0);
     angles[1] = offsets[1] + 1.0 * (-pitch_0);
-    angles[2] = offsets[2] + 1.0 * (yaw_01);
+    //angles[2] = offsets[2] + 1.0 * (-yaw_01);
+    angles[2] = offsets[2] + 1.0 * (-pitch_01);
     angles[3] = offsets[3] + 1.0 * (yaw_12);
-    //angles[4] = offsets[4] - 1.4;//+ 2.0 * (-roll_01);
+    //angles[4] = offsets[4] ;//+ 2.0 * (-roll_01);
     angles[4] = 2.91237f;
     
     return angles;
