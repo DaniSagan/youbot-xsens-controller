@@ -183,7 +183,8 @@ std::vector<double> GetAngles(xsens::SensorSubscriberList& sensors)
     angles[1] = offsets[1] + 1.0 * (-pitch_0);
     angles[2] = offsets[2] + 1.0 * (yaw_01);
     angles[3] = offsets[3] + 1.0 * (yaw_12);
-    angles[4] = offsets[4] ;//+ 2.0 * (-roll_01);
+    //angles[4] = offsets[4] - 1.4;//+ 2.0 * (-roll_01);
+    angles[4] = 2.91237f;
     
     return angles;
 }
