@@ -1,0 +1,18 @@
+<package>
+  <description brief="xsens_driver_raw">
+
+     xsens_driver_raw
+
+  </description>
+  <author>Daniel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/xsens_driver_raw</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="dfv"/>
+
+</package>
+
+

@@ -25,6 +25,11 @@ namespace xsens
             
             CmtMatrix           alignment_matrix;
             
+            CmtOutputMode       GetOutputMode() const;
+            void                SetOutputMode(const CmtOutputMode output_mode);
+            CmtOutputSettings   GetOutputSettings() const;
+            void                SetOutputSettings(const CmtOutputSettings output_settings);
+            
         protected:
         private:
             CmtCalData          calibrated_data;
@@ -37,6 +42,9 @@ namespace xsens
             double              temperature_data;
             
             CmtDeviceId         device_id;
+            
+            CmtOutputMode       output_mode;
+            CmtOutputSettings   output_settings;
             
             friend class Driver;
             

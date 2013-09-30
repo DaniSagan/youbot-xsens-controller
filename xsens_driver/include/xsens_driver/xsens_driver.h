@@ -43,6 +43,12 @@ namespace xsens
             void SetOutputSettings(CmtOutputSettings output_settings);
             CmtOutputSettings GetOutputSettings() const;
             
+            void SetOutputMode(unsigned int index, CmtOutputMode output_mode);
+            CmtOutputMode GetOutputMode(unsigned int index) const;
+            
+            void SetOutputSettings(unsigned int index, CmtOutputSettings output_settings);
+            CmtOutputSettings GetOutputSettings(unsigned int index) const;
+            
             void SetAlignmentMatrix(unsigned int sensor_index, CmtMatrix alignment_matrix);
             
             bool SpinOnce();

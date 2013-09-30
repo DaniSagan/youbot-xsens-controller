@@ -119,12 +119,13 @@ int main(int argc, char** argv)
             
             if (ang_acc >= 0.1)
             {
-                lin_vel = (ang_acc - 0.1) * 0.25;
+                lin_vel = (ang_acc - 0.1) * 0.5;
+                ang_vel = ang_vel * (-1.0);
             }
             else if (ang_acc <= -0.1)
             {
-                lin_vel = (ang_acc + 0.1) * 0.25;
-                ang_vel = ang_vel * (-1.0);
+                lin_vel = (ang_acc + 0.1) * 0.5;
+                
             }
             else
             {

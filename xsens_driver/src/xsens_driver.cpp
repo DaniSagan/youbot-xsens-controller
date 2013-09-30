@@ -46,6 +46,26 @@ namespace xsens
         return this->output_settings;
     }
     
+    void Driver::SetOutputMode(unsigned int index, CmtOutputMode output_mode)
+    {
+        this->v_sensors[index].SetOutputMode(output_mode);
+    }
+    
+    CmtOutputMode Driver::GetOutputMode(unsigned int index) const
+    {
+        return this->v_sensors[index].GetOutputMode();
+    }
+    
+    void Driver::SetOutputSettings(unsigned int index, CmtOutputSettings output_settings)
+    {
+        this->v_sensors[index].SetOutputSettings(output_settings);
+    }
+    
+    CmtOutputSettings Driver::GetOutputSettings(unsigned int index) const
+    {
+        return this->v_sensors[index].GetOutputSettings();
+    }
+    
     void Driver::SetAlignmentMatrix(unsigned int sensor_index, CmtMatrix alignment_matrix)
     {
         this->v_sensors[sensor_index].alignment_matrix = alignment_matrix;
@@ -174,18 +194,29 @@ namespace xsens
         sample_freq = this->cmt3.getSampleFrequency();
         
         // set the device output mode for the devices
-
-        if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0)
+        
+        // if there's no orient data
+        /*if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0)
         {
             this->output_settings = 0;
             this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
-        }        
+        } */       
+        
         
         ROS_INFO("Configuring your mode selection");
         for (unsigned int i = 0; i < this->mt_count; i++)
         {
-            CmtDeviceMode device_mode(this->output_mode, 
-                                      this->output_settings, 
+            //CmtDeviceMode device_mode(this->output_mode, 
+                                      //this->output_settings, 
+                                      //sample_freq);
+            if ((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_ORIENT) == 0)
+            {
+                //this->output_settings = 0;
+                //this->output_settings |= CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT;
+                this->v_sensors[i].SetOutputSettings(CMT_OUTPUTSETTINGS_TIMESTAMP_SAMPLECNT);
+            }
+            CmtDeviceMode device_mode(this->v_sensors[i].GetOutputMode(), 
+                                      this->v_sensors[i].GetOutputSettings(), 
                                       sample_freq);
             if ((this->v_sensors[i].device_id & 0xFFF00000) != 0x00500000) 
             {
@@ -293,17 +324,17 @@ namespace xsens
                 continue;
             }
             
-            if ((this->output_mode & CMT_OUTPUTMODE_TEMP) != 0)
+            if ((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_TEMP) != 0)
             {
                 this->v_sensors[i].temperature_data = this->lp_packet->getTemp(i);
             }
             
-            if ((this->output_mode & CMT_OUTPUTMODE_CALIB) != 0)
+            if ((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_CALIB) != 0)
             {
                 this->v_sensors[i].calibrated_data = this->lp_packet->getCalData(i);
             }
             
-            if ((this->output_mode & CMT_OUTPUTMODE_POSITION) != 0) 
+            if ((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_POSITION) != 0) 
 		    {
 			    if (this->lp_packet->containsPositionLLA(i)) 
 			    {
@@ -328,7 +359,7 @@ namespace xsens
 			    }
 		    }
 		    
-		    if((this->output_mode & CMT_OUTPUTMODE_GPSPVT_PRESSURE) != 0)
+		    if((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_GPSPVT_PRESSURE) != 0)
 		    {
 		        if (this->lp_packet->containsGpsPvtData(i)) 
 			    {
@@ -342,12 +373,12 @@ namespace xsens
 			    }    
 		    }
             
-            if ((this->output_mode & CMT_OUTPUTMODE_ORIENT) == 0) 
+            if ((this->v_sensors[i].GetOutputMode() & CMT_OUTPUTMODE_ORIENT) == 0) 
 		    {
 			    continue;
 		    }
 		
-		    switch (this->output_settings & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) 
+		    switch (this->v_sensors[i].GetOutputSettings() & CMT_OUTPUTSETTINGS_ORIENTMODE_MASK) 
 		    {
 			    case CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION:
 				    this->v_sensors[i].quaternion_data = this->lp_packet->getOriQuat(i);
