@@ -46,7 +46,48 @@ namespace xsens
     
     bool SensorSubscriber::SubscribeToTopics()
     {
-        if((this->output_mode & CMT_OUTPUTMODE_CALIB) != 0)
+
+        ROS_INFO("[SensorSubscriber] Subscribing to calibrated data topics...");
+        this->acc_subscriber = this->node_handle.subscribe(this->acc_topic_name, 
+                                                           1,
+                                                           &SensorSubscriber::AccSubCallback,
+                                                           this);
+        this->gyr_subscriber = this->node_handle.subscribe(this->gyr_topic_name, 
+                                                           1,
+                                                           &SensorSubscriber::GyrSubCallback,
+                                                           this);
+        this->mag_subscriber = this->node_handle.subscribe(this->mag_topic_name, 
+                                                           1,
+                                                           &SensorSubscriber::MagSubCallback,
+                                                           this);                                                   
+
+
+
+        ROS_INFO("[SensorSubscriber] Subscribing to ori_quat topic...");
+        this->ori_quat_subscriber = this->node_handle.subscribe(this->ori_quat_topic_name, 
+                                                                1,
+                                                                &SensorSubscriber::OriQuatSubCallback,
+                                                                this);
+
+    
+
+        ROS_INFO("[SensorSubscriber] Subscribing to ori_matrix topic...");
+        this->ori_matrix_subscriber = this->node_handle.subscribe(this->ori_matrix_topic_name, 
+                                                                  1,
+                                                                  &SensorSubscriber::OriMatrixSubCallback,
+                                                                  this);
+
+    
+
+        ROS_INFO("[SensorSubscriber] Subscribing to ori_euler topic...");
+        this->ori_euler_subscriber = this->node_handle.subscribe(this->ori_euler_topic_name, 
+                                                                 1,
+                                                                 &SensorSubscriber::OriEulerSubCallback,
+                                                                 this);
+
+
+        
+        /*if((this->output_mode & CMT_OUTPUTMODE_CALIB) != 0)
         {
             ROS_INFO("[SensorSubscriber] Subscribing to calibrated data topics...");
             this->acc_subscriber = this->node_handle.subscribe(this->acc_topic_name, 
@@ -91,7 +132,7 @@ namespace xsens
                                                                          &SensorSubscriber::OriEulerSubCallback,
                                                                          this);
             }
-        }
+        }*/
         
         return true;
     }

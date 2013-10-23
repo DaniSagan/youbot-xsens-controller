@@ -41,11 +41,11 @@ int main(int argc, char** argv)
     // del cuaternión de orientación:
     
     //driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_MATRIX);
-    driver.v_sensors[0].SetOutputMode(CMT_OUTPUTMODE_ORIENT);
+    driver.v_sensors[0].SetOutputMode(CMT_OUTPUTMODE_ORIENT | CMT_OUTPUTMODE_CALIB);
     driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION);
-    driver.v_sensors[1].SetOutputMode(CMT_OUTPUTMODE_ORIENT);
+    driver.v_sensors[1].SetOutputMode(CMT_OUTPUTMODE_ORIENT | CMT_OUTPUTMODE_CALIB);
     driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION);
-    driver.v_sensors[2].SetOutputMode(CMT_OUTPUTMODE_ORIENT);
+    driver.v_sensors[2].SetOutputMode(CMT_OUTPUTMODE_ORIENT | CMT_OUTPUTMODE_CALIB);
     driver.SetOutputSettings(CMT_OUTPUTSETTINGS_ORIENTMODE_QUATERNION);
     driver.v_sensors[3].SetOutputMode(CMT_OUTPUTMODE_CALIB);
     
