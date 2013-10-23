@@ -1,0 +1,211 @@
+\hypertarget{classxsens_1_1Cmt1s}{\section{\-Referencia de la \-Clase xsens\-:\-:\-Cmt1s}
+\label{classxsens_1_1Cmt1s}\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}}
+}
+
+
+\-The low-\/level serial communication class.  
+
+
+
+
+{\ttfamily \#include $<$cmt1.\-h$>$}
+
+\subsection*{\-Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1Cmt1s_a04d25a1665542ca7fa840db99fd91a07}{\hyperlink{classxsens_1_1Cmt1s_a04d25a1665542ca7fa840db99fd91a07}{\-Cmt1s} ()}\label{classxsens_1_1Cmt1s_a04d25a1665542ca7fa840db99fd91a07}
+
+\begin{DoxyCompactList}\small\item\em \-Default constructor, initializes all members to their default values. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_acb907ca4246dc9b76f38dfdf46a2d212}{\hyperlink{classxsens_1_1Cmt1s_acb907ca4246dc9b76f38dfdf46a2d212}{$\sim$\-Cmt1s} ()}\label{classxsens_1_1Cmt1s_acb907ca4246dc9b76f38dfdf46a2d212}
+
+\begin{DoxyCompactList}\small\item\em \-Destructor, de-\/initializes, frees memory allocated for buffers, etc. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a29d64fe8e43430225b02450cac4a65eb}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a29d64fe8e43430225b02450cac4a65eb}{close} (void)}\label{classxsens_1_1Cmt1s_a29d64fe8e43430225b02450cac4a65eb}
+
+\begin{DoxyCompactList}\small\item\em \-Close the serial communication port. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a59ea4755515aee0d93c76fd1298388f0}{escape} (const \-Cmt\-Control\-Line mask, const \-Cmt\-Control\-Line state)
+\begin{DoxyCompactList}\small\item\em \-Manipulate the \-Serial control lines. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a99c68d96454c25926a8c21fe0f47538c}{flush\-Data} (void)
+\begin{DoxyCompactList}\small\item\em \-Flush all data to be transmitted / received. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a2fa3c6574b80034820b837536ad04ceb}{uint32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_a2fa3c6574b80034820b837536ad04ceb}{get\-Baudrate} (void) const }\label{classxsens_1_1Cmt1s_a2fa3c6574b80034820b837536ad04ceb}
+
+\begin{DoxyCompactList}\small\item\em \-Return the baudrate that is currently being used by the port. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_aaecc76cad90f7d0bef178d978f02784e}{\-H\-A\-N\-D\-L\-E \hyperlink{classxsens_1_1Cmt1s_aaecc76cad90f7d0bef178d978f02784e}{get\-Handle} (void) const }\label{classxsens_1_1Cmt1s_aaecc76cad90f7d0bef178d978f02784e}
+
+\begin{DoxyCompactList}\small\item\em \-Return the handle of the port. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_ae00b8e70bae432cfc149c83a7cc24887}{uint16\-\_\-t \hyperlink{classxsens_1_1Cmt1s_ae00b8e70bae432cfc149c83a7cc24887}{get\-Port\-Nr} (void) const }\label{classxsens_1_1Cmt1s_ae00b8e70bae432cfc149c83a7cc24887}
+
+\begin{DoxyCompactList}\small\item\em \-Retrieve the port number that was last successfully opened. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a047ed451689538e7e2e99f248b094a6f}{void \hyperlink{classxsens_1_1Cmt1s_a047ed451689538e7e2e99f248b094a6f}{get\-Port\-Name} (char $\ast$portname) const }\label{classxsens_1_1Cmt1s_a047ed451689538e7e2e99f248b094a6f}
+
+\begin{DoxyCompactList}\small\item\em \-Retrieve the port name that was last successfully opened. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_adc840277d1cba00826d56259d7b167c1}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_adc840277d1cba00826d56259d7b167c1}{get\-Last\-Result} (void) const }\label{classxsens_1_1Cmt1s_adc840277d1cba00826d56259d7b167c1}
+
+\begin{DoxyCompactList}\small\item\em \-Return the error code of the last operation. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_abbfd628c82cd70bf26b04a524e586f2a}{uint32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_abbfd628c82cd70bf26b04a524e586f2a}{get\-Timeout} (void) const }\label{classxsens_1_1Cmt1s_abbfd628c82cd70bf26b04a524e586f2a}
+
+\begin{DoxyCompactList}\small\item\em \-Return the current timeout value. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_aaabbf7258cfaca82a1df9da8e9b796d6}{bool \hyperlink{classxsens_1_1Cmt1s_aaabbf7258cfaca82a1df9da8e9b796d6}{is\-Open} (void) const }\label{classxsens_1_1Cmt1s_aaabbf7258cfaca82a1df9da8e9b796d6}
+
+\begin{DoxyCompactList}\small\item\em \-Return whether the communication port is open or not. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a31c11cd69aba26459cbd57b5f55b4797}{open} (const char $\ast$port\-Name, const uint32\-\_\-t baud\-Rate=\hyperlink{cmtdef_8h_a56b1b182fb05cb2746c0a29ab5bae7ed}{\-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-U\-D\-\_\-\-R\-A\-T\-E}, uint32\-\_\-t read\-Buf\-Size=\hyperlink{cmtdef_8h_a59c570baa7aed9a7ca80039ea2eddef7}{\-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}, uint32\-\_\-t write\-Buf\-Size=\hyperlink{cmtdef_8h_aa23bbf277ce62aa44a107c5c873d0dcd}{\-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E})
+\begin{DoxyCompactList}\small\item\em \-Open a communcation channel to the given serial port name. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a2237eef35fbf249e18fa3e50474bf8ea}{read\-Data} (const uint32\-\_\-t max\-Length, uint8\-\_\-t $\ast$data, uint32\-\_\-t $\ast$length=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em \-Read data from the serial port and put it into the data buffer. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_aee6932a0426acd3bffe30ebc6699dba9}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_aee6932a0426acd3bffe30ebc6699dba9}{set\-Callback\-Function} (\hyperlink{cmtdef_8h_a3944c5bada7f23f30534019faf605174}{\-Cmt\-Callback\-Type} tp, int32\-\_\-t instance, \hyperlink{cmtdef_8h_a83bf10c11731ef4cd254260e7e4d13c7}{\-Cmt\-Callback\-Function} func, void $\ast$param)}\label{classxsens_1_1Cmt1s_aee6932a0426acd3bffe30ebc6699dba9}
+
+\begin{DoxyCompactList}\small\item\em \-Set the callback function for when bytes have been received. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_ad54dc31ac6d752df1a0a6df736200860}{set\-Timeout} (const uint32\-\_\-t ms=\hyperlink{cmtdef_8h_a509daae051f48c297ddc9ced2c55a6c2}{\-C\-M\-T1\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T})
+\begin{DoxyCompactList}\small\item\em \-Set the default timeout value to use in blocking operations. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a7d186b7895b9ad7ba611f50fede6e7bf}{wait\-For\-Data} (const uint32\-\_\-t max\-Length, uint8\-\_\-t $\ast$data, uint32\-\_\-t $\ast$length=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em \-Wait for data to arrive or a timeout to occur. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_a733fc297e7c1d7639f60a7e6bc5ce3bd}{write\-Data} (const uint32\-\_\-t length, const uint8\-\_\-t $\ast$data, uint32\-\_\-t $\ast$written)
+\begin{DoxyCompactList}\small\item\em \-Write the data to the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1Cmt1s_a699e276dea05aed9b120d9668228f842}{uint32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_a699e276dea05aed9b120d9668228f842}{m\-\_\-baudrate}}\label{classxsens_1_1Cmt1s_a699e276dea05aed9b120d9668228f842}
+
+\begin{DoxyCompactList}\small\item\em \-The baudrate that was last set to be used by the port. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a0fed0152b75e196817c4d62a92bc5456}{uint32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_a0fed0152b75e196817c4d62a92bc5456}{m\-\_\-end\-Time}}\label{classxsens_1_1Cmt1s_a0fed0152b75e196817c4d62a92bc5456}
+
+\begin{DoxyCompactList}\small\item\em \-The time at which an operation will end in ms, used by several functions. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_ae24943020d686262cc9e816000f3d3bd}{bool \hyperlink{classxsens_1_1Cmt1s_ae24943020d686262cc9e816000f3d3bd}{m\-\_\-is\-Open}}\label{classxsens_1_1Cmt1s_ae24943020d686262cc9e816000f3d3bd}
+
+\begin{DoxyCompactList}\small\item\em \-Indicates if the port is open or not. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_afe15f92b76a9f760cf769035d6a0f5dc}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1s_afe15f92b76a9f760cf769035d6a0f5dc}{m\-\_\-last\-Result}}\label{classxsens_1_1Cmt1s_afe15f92b76a9f760cf769035d6a0f5dc}
+
+\begin{DoxyCompactList}\small\item\em \-The last result of an operation. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a168c7ac9ed1e5d52f5bddbc0e104ffea}{uint16\-\_\-t \hyperlink{classxsens_1_1Cmt1s_a168c7ac9ed1e5d52f5bddbc0e104ffea}{m\-\_\-port}}\label{classxsens_1_1Cmt1s_a168c7ac9ed1e5d52f5bddbc0e104ffea}
+
+\begin{DoxyCompactList}\small\item\em \-The opened \-C\-O\-M port nr. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_a383451f69c25bbee46e2fe17615eb9b2}{char {\bfseries m\-\_\-portname} \mbox{[}32\mbox{]}}\label{classxsens_1_1Cmt1s_a383451f69c25bbee46e2fe17615eb9b2}
+
+\item 
+uint32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_a82faa3cd6d194a335b52f0a4b49be46c}{m\-\_\-timeout}
+\item 
+\hypertarget{classxsens_1_1Cmt1s_afdb1351636ece927fc432580e3c831da}{termios \hyperlink{classxsens_1_1Cmt1s_afdb1351636ece927fc432580e3c831da}{m\-\_\-comm\-State}}\label{classxsens_1_1Cmt1s_afdb1351636ece927fc432580e3c831da}
+
+\begin{DoxyCompactList}\small\item\em \-Stored settings about the serial port. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1s_aff3ec4c1b701a30df0f0745ce7a29302}{int32\-\_\-t \hyperlink{classxsens_1_1Cmt1s_aff3ec4c1b701a30df0f0745ce7a29302}{m\-\_\-handle}}\label{classxsens_1_1Cmt1s_aff3ec4c1b701a30df0f0745ce7a29302}
+
+\begin{DoxyCompactList}\small\item\em \-The serial port handle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-The low-\/level serial communication class. 
+
+\subsection{\-Documentación de las funciones miembro}
+\hypertarget{classxsens_1_1Cmt1s_a59ea4755515aee0d93c76fd1298388f0}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!escape@{escape}}
+\index{escape@{escape}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::escape} (
+\begin{DoxyParamCaption}
+\item[{const \-Cmt\-Control\-Line}]{mask, }
+\item[{const \-Cmt\-Control\-Line}]{state}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a59ea4755515aee0d93c76fd1298388f0}
+
+
+\-Manipulate the \-Serial control lines. 
+
+\-The function manipulates the serial control lines that are indicated by the mask parameter. \-Note that only the \-D\-T\-R and \-R\-T\-S lines can be set by win32. 
+\begin{DoxyParams}{\-Parámetros}
+{\em mask} & \-Indicates which lines are to be manipulated and which should be left alone. \\
+\hline
+{\em state} & \-Contains the new state of the control lines. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1s_a99c68d96454c25926a8c21fe0f47538c}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!flush\-Data@{flush\-Data}}
+\index{flush\-Data@{flush\-Data}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{flush\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::flush\-Data} (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a99c68d96454c25926a8c21fe0f47538c}
+
+
+\-Flush all data to be transmitted / received. 
+
+\-This function tries to send and receive any remaining data immediately and does not return until the buffers are empty. \hypertarget{classxsens_1_1Cmt1s_a31c11cd69aba26459cbd57b5f55b4797}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!open@{open}}
+\index{open@{open}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::open} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{port\-Name, }
+\item[{const uint32\-\_\-t}]{baud\-Rate = {\ttfamily {\bf \-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-B\-A\-U\-D\-\_\-\-R\-A\-T\-E}}, }
+\item[{uint32\-\_\-t}]{read\-Buf\-Size = {\ttfamily {\bf \-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-E\-A\-D\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}, }
+\item[{uint32\-\_\-t}]{write\-Buf\-Size = {\ttfamily {\bf \-C\-M\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a31c11cd69aba26459cbd57b5f55b4797}
+
+
+\-Open a communcation channel to the given serial port name. 
+
+\-The port is automatically initialized to the given baudrate. \-If the baudrate is set to 0, the baud rate is automatically detected. \-If possible. \hypertarget{classxsens_1_1Cmt1s_a2237eef35fbf249e18fa3e50474bf8ea}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::read\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{max\-Length, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{uint32\-\_\-t $\ast$}]{length = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a2237eef35fbf249e18fa3e50474bf8ea}
+
+
+\-Read data from the serial port and put it into the data buffer. 
+
+\-This function reads as much data as possible from the com port (non-\/blocking) and put as much data as will fit into the data buffer. \-Any excess data is stored in the {\ttfamily m\-\_\-read\-Buffer} member variable. \-If there was enough data in m\-\_\-read\-Buffer to fulfill the request, the data parameter is first filled and the port is polled afterwards. 
+\begin{DoxyParams}{\-Parámetros}
+{\em max\-Length} & \-The maximum amount of data read. \\
+\hline
+{\em data} & \-Pointer to a buffer that will store the received data. \\
+\hline
+{\em length} & \-The number of bytes placed into {\ttfamily data}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1s_ad54dc31ac6d752df1a0a6df736200860}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!set\-Timeout@{set\-Timeout}}
+\index{set\-Timeout@{set\-Timeout}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{set\-Timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::set\-Timeout} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{ms = {\ttfamily {\bf \-C\-M\-T1\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}}}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_ad54dc31ac6d752df1a0a6df736200860}
+
+
+\-Set the default timeout value to use in blocking operations. 
+
+\-This function sets the value of m\-\_\-timeout. \-There is no infinity value. \-The value 0 means that all blocking operations now become polling (non-\/blocking) operations. \-If the value is set to or from 0, the low-\/level serial port settings may be changed in addition to the m\-\_\-timeout value. \hypertarget{classxsens_1_1Cmt1s_a7d186b7895b9ad7ba611f50fede6e7bf}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!wait\-For\-Data@{wait\-For\-Data}}
+\index{wait\-For\-Data@{wait\-For\-Data}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{wait\-For\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::wait\-For\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{max\-Length, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{uint32\-\_\-t $\ast$}]{length = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a7d186b7895b9ad7ba611f50fede6e7bf}
+
+
+\-Wait for data to arrive or a timeout to occur. 
+
+\-The function waits until {\ttfamily max\-Length} data is available or until a timeout occurs. \-The function returns success if data is available or \-Xsens\-Result\-Value\-::\-T\-I\-M\-E\-O\-U\-T if a timeout occurred. \-A timeout value of 0 indicates that the default timeout stored in the class should be used. \hypertarget{classxsens_1_1Cmt1s_a733fc297e7c1d7639f60a7e6bc5ce3bd}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!write\-Data@{write\-Data}}
+\index{write\-Data@{write\-Data}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{write\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1s\-::write\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{length, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{uint32\-\_\-t $\ast$}]{written}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1s_a733fc297e7c1d7639f60a7e6bc5ce3bd}
+
+
+\-Write the data to the serial port. 
+
+\-The function writes the given data to the connected \-C\-O\-M port. \-The default timeout is respected in this operation. 
+
+\subsection{\-Documentación de los datos miembro}
+\hypertarget{classxsens_1_1Cmt1s_a82faa3cd6d194a335b52f0a4b49be46c}{\index{xsens\-::\-Cmt1s@{xsens\-::\-Cmt1s}!m\-\_\-timeout@{m\-\_\-timeout}}
+\index{m\-\_\-timeout@{m\-\_\-timeout}!xsens::Cmt1s@{xsens\-::\-Cmt1s}}
+\subsubsection[{m\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf xsens\-::\-Cmt1s\-::m\-\_\-timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classxsens_1_1Cmt1s_a82faa3cd6d194a335b52f0a4b49be46c}
+\-The default timeout value to use during blocking operations. \-A value of 0 means that all operations become non-\/blocking. 
+
+\-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+xsens\-\_\-driver/include/xsens\-\_\-driver/\hyperlink{cmt1_8h}{cmt1.\-h}\end{DoxyCompactItemize}

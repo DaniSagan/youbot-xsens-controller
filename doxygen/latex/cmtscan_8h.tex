@@ -1,0 +1,46 @@
+\hypertarget{cmtscan_8h}{\section{\-Referencia del \-Archivo xsens\-\_\-driver/include/xsens\-\_\-driver/cmtscan.h}
+\label{cmtscan_8h}\index{xsens\-\_\-driver/include/xsens\-\_\-driver/cmtscan.\-h@{xsens\-\_\-driver/include/xsens\-\_\-driver/cmtscan.\-h}}
+}
+
+
+\-Contains the \-Scan\-Ports interface.  
+
+
+{\ttfamily \#include $<$xsens\-\_\-driver/xsens\-\_\-list.\-h$>$}\*
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacexsens}{xsens}
+\begin{DoxyCompactList}\small\item\em \-The namespace of all \-Xsens software since 2006. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Funciones}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespacexsens_a8610d936efa1d28e3095c5aed8ac75b6}{xsens\-::cmt\-Scan\-Ports} (\-List$<$ \hyperlink{structCmtPortInfo}{\-Cmt\-Port\-Info} $>$ \&ports, uint32\-\_\-t baudrate=0, uint32\-\_\-t single\-Scan\-Timeout=1000, uint32\-\_\-t scan\-Tries=1, bool ignore\-Non\-Xsens\-Devices=true)
+\begin{DoxyCompactList}\small\item\em \-Scan \-C\-O\-M ports for connected \-Xsens devices. \end{DoxyCompactList}\item 
+bool \hyperlink{namespacexsens_a655fd426de1238dc2363cd3c4ce8e421}{xsens\-::cmt\-Scan\-Port} (\hyperlink{structCmtPortInfo}{\-Cmt\-Port\-Info} \&port\-Info, uint32\-\_\-t baudrate=0, uint32\-\_\-t single\-Scan\-Timeout=1000, uint32\-\_\-t scan\-Tries=1)
+\begin{DoxyCompactList}\small\item\em \-Scan a single \-C\-O\-M port for connected \-Xsens devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacexsens_a5e265edacaaa5449e1505a85743433da}{bool \hyperlink{namespacexsens_a5e265edacaaa5449e1505a85743433da}{xsens\-::abort\-Scan}}\label{namespacexsens_a5e265edacaaa5449e1505a85743433da}
+
+\begin{DoxyCompactList}\small\item\em \-Set to true from another thread to abort any scan currently in progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-Contains the \-Scan\-Ports interface. \-This file contains the interfaces for the functions that are required for scanning ports for \-Xsens devices.\hypertarget{xsens__std_8h_FileCopyright}{}\subsection{\-Copyright Notice}\label{xsens__std_8h_FileCopyright}
+\-Copyright (\-C) \-Xsens \-Technologies \-B.\-V., 2006. \-All rights reserved.
+
+\-This source code is intended for use only by \-Xsens \-Technologies \-B\-V and those that have explicit written permission to use it from \-Xsens \-Technologies \-B\-V.
+
+\-T\-H\-I\-S \-C\-O\-D\-E \-A\-N\-D \-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N \-I\-S \-P\-R\-O\-V\-I\-D\-E\-D \char`\"{}\-A\-S I\-S\char`\"{} \-W\-I\-T\-H\-O\-U\-T \-W\-A\-R\-R\-A\-N\-T\-Y \-O\-F \-A\-N\-Y \-K\-I\-N\-D, \-E\-I\-T\-H\-E\-R \-E\-X\-P\-R\-E\-S\-S\-E\-D \-O\-R \-I\-M\-P\-L\-I\-E\-D, \-I\-N\-C\-L\-U\-D\-I\-N\-G \-B\-U\-T \-N\-O\-T \-L\-I\-M\-I\-T\-E\-D \-T\-O \-T\-H\-E \-I\-M\-P\-L\-I\-E\-D \-W\-A\-R\-R\-A\-N\-T\-I\-E\-S \-O\-F \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y \-A\-N\-D/\-O\-R \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E.\hypertarget{xsens__fifoqueue_8h_FileChangelog}{}\subsection{\-Changelog}\label{xsens__fifoqueue_8h_FileChangelog}
+\begin{DoxyParagraph}{2006-\/06-\/09, v0.0.1}
+\begin{DoxyItemize}
+\item \-Job \-Mulder\-: \-Created \-Scan\-Ports.\-h \end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{2006-\/07-\/21, v0.1.0}
+\begin{DoxyItemize}
+\item \-Job \-Mulder\-: \-Updated file for release 0.\-1.\-0 \end{DoxyItemize}
+
+\end{DoxyParagraph}

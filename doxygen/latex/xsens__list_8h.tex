@@ -1,0 +1,51 @@
+\hypertarget{xsens__list_8h}{\section{\-Referencia del \-Archivo xsens\-\_\-driver/include/xsens\-\_\-driver/xsens\-\_\-list.h}
+\label{xsens__list_8h}\index{xsens\-\_\-driver/include/xsens\-\_\-driver/xsens\-\_\-list.\-h@{xsens\-\_\-driver/include/xsens\-\_\-driver/xsens\-\_\-list.\-h}}
+}
+
+
+\-List class interface for use in \-C\-M\-T.  
+
+
+{\ttfamily \#include $<$xsens\-\_\-driver/pstdint.\-h$>$}\*
+{\ttfamily \#include $<$xsens\-\_\-driver/xsens\-\_\-exception.\-h$>$}\*
+{\ttfamily \#include $<$xsens\-\_\-driver/xsens\-\_\-janitors.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$malloc.\-h$>$}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+\subsection*{\-Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classxsens_1_1List}{xsens\-::\-List$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em \-Dynamic list class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacexsens}{xsens}
+\begin{DoxyCompactList}\small\item\em \-The namespace of all \-Xsens software since 2006. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{'defines'}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{xsens__list_8h_a0d5a3ae168fe7ed15a6ee3accfb412fb}{\#define {\bfseries \-X\-S\-E\-N\-S\-\_\-\-L\-I\-S\-T\-\_\-\-N\-O\-T\-F\-O\-U\-N\-D}~0x\-F\-F\-F\-F\-F\-F\-F\-F}\label{xsens__list_8h_a0d5a3ae168fe7ed15a6ee3accfb412fb}
+
+\item 
+\hypertarget{xsens__list_8h_a53747020eb623a7fc7132d02b18deaae}{\#define {\bfseries \-X\-S\-E\-N\-S\-\_\-\-L\-I\-S\-T\-\_\-\-T\-H\-R\-O\-W}}\label{xsens__list_8h_a53747020eb623a7fc7132d02b18deaae}
+
+\item 
+\hypertarget{xsens__list_8h_a9aad70e59366141d442f7ca9ec3e30bc}{\#define {\bfseries \-X\-S\-E\-N\-S\-\_\-\-L\-I\-S\-T\-\_\-\-L\-I\-N\-E\-A\-R\-\_\-\-S\-E\-A\-R\-C\-H\-\_\-\-T\-R\-E\-S\-H\-O\-L\-D}~10}\label{xsens__list_8h_a9aad70e59366141d442f7ca9ec3e30bc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-List class interface for use in \-C\-M\-T. \-The implementations of the functions are in \-Cmtlist\-::hpp which is automatically included so they are inlined.
+
+\-This file requires \hyperlink{xsens__janitors_8h}{xsens\-\_\-janitors.\-h}. \-When a library header is built with this file, make sure \hyperlink{xsens__janitors_8h}{xsens\-\_\-janitors.\-h} is included before this file.
+
+\-This file requires xsens\-\_\-math.\-h if the math switch is set to 1. \-When a library header is built with this file, make sure xsens\-\_\-math.\-h is included before this file.\hypertarget{xsens__std_8h_FileCopyright}{}\subsection{\-Copyright Notice}\label{xsens__std_8h_FileCopyright}
+\-Copyright (\-C) \-Xsens \-Technologies \-B.\-V., 2006. \-All rights reserved.
+
+\-This source code is intended for use only by \-Xsens \-Technologies \-B\-V and those that have explicit written permission to use it from \-Xsens \-Technologies \-B\-V.
+
+\-T\-H\-I\-S \-C\-O\-D\-E \-A\-N\-D \-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N \-I\-S \-P\-R\-O\-V\-I\-D\-E\-D \char`\"{}\-A\-S I\-S\char`\"{} \-W\-I\-T\-H\-O\-U\-T \-W\-A\-R\-R\-A\-N\-T\-Y \-O\-F \-A\-N\-Y \-K\-I\-N\-D, \-E\-I\-T\-H\-E\-R \-E\-X\-P\-R\-E\-S\-S\-E\-D \-O\-R \-I\-M\-P\-L\-I\-E\-D, \-I\-N\-C\-L\-U\-D\-I\-N\-G \-B\-U\-T \-N\-O\-T \-L\-I\-M\-I\-T\-E\-D \-T\-O \-T\-H\-E \-I\-M\-P\-L\-I\-E\-D \-W\-A\-R\-R\-A\-N\-T\-I\-E\-S \-O\-F \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y \-A\-N\-D/\-O\-R \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E.\hypertarget{xsens__list_8h_FileSwitches}{}\subsection{\-Switches}\label{xsens__list_8h_FileSwitches}
+\begin{DoxyItemize}
+\item {\ttfamily \-\_\-\-X\-S\-E\-N\-S\-\_\-\-L\-I\-S\-T\-\_\-\-W\-I\-T\-H\-\_\-\-M\-A\-T\-H} \-Check whether to include math files when set to 1. \item {\ttfamily \-\_\-\-X\-S\-E\-N\-S\-\_\-\-L\-I\-S\-T\-\_\-\-I\-O} \-Include code for string and file \-I/\-O when set to 1. \end{DoxyItemize}

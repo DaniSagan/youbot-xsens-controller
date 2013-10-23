@@ -16,11 +16,14 @@
 #include <geometry_msgs/Vector3.h>
 #include <geometry_msgs/Vector3Stamped.h>
 
+//! El espacio de nombres para la librería dfv
 namespace dfv
 {
 
     class Quaternion;
-
+    
+    /*!	\brief	Clase para creación y manipulación de vectores de 3 dimensiones
+    */
     class Vector3
     {
         public:

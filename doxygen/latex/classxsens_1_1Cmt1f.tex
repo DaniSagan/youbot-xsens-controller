@@ -1,0 +1,323 @@
+\hypertarget{classxsens_1_1Cmt1f}{\section{\-Referencia de la \-Clase xsens\-:\-:\-Cmt1f}
+\label{classxsens_1_1Cmt1f}\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}}
+}
+
+
+\-The low-\/level file communication class.  
+
+
+
+
+{\ttfamily \#include $<$cmt1.\-h$>$}
+
+\subsection*{\-Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1Cmt1f_a919b42e4de22630c364ce79ff54d8989}{\hyperlink{classxsens_1_1Cmt1f_a919b42e4de22630c364ce79ff54d8989}{\-Cmt1f} ()}\label{classxsens_1_1Cmt1f_a919b42e4de22630c364ce79ff54d8989}
+
+\begin{DoxyCompactList}\small\item\em \-Default constructor, initializes all members to their default values. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a3f612d9d8c624b8f171a0661ce33ac2a}{\hyperlink{classxsens_1_1Cmt1f_a3f612d9d8c624b8f171a0661ce33ac2a}{$\sim$\-Cmt1f} ()}\label{classxsens_1_1Cmt1f_a3f612d9d8c624b8f171a0661ce33ac2a}
+
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a761759c365acf23f7e4159b5bedb1ae4}{append\-Data} (const uint32\-\_\-t length, const void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \-Write data to the end of the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a998f005fb3832d4945e53a41b570d634}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a998f005fb3832d4945e53a41b570d634}{close} (void)}\label{classxsens_1_1Cmt1f_a998f005fb3832d4945e53a41b570d634}
+
+\begin{DoxyCompactList}\small\item\em \-Close the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a7f88bf518daead18acd478c53874f59e}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a7f88bf518daead18acd478c53874f59e}{close\-And\-Delete} (void)}\label{classxsens_1_1Cmt1f_a7f88bf518daead18acd478c53874f59e}
+
+\begin{DoxyCompactList}\small\item\em \-Close the file and delete it. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_afe9e7fd93967527fcabfdc0e248f9acc}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_afe9e7fd93967527fcabfdc0e248f9acc}{create} (const char $\ast$filename)}\label{classxsens_1_1Cmt1f_afe9e7fd93967527fcabfdc0e248f9acc}
+
+\begin{DoxyCompactList}\small\item\em \-Open an empty file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_ae45a131665d3f94c209d51bdb382425c}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ae45a131665d3f94c209d51bdb382425c}{create} (const wchar\-\_\-t $\ast$filename)}\label{classxsens_1_1Cmt1f_ae45a131665d3f94c209d51bdb382425c}
+
+\begin{DoxyCompactList}\small\item\em \-Open an empty file using a unicode path + filename. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a51f143e00f87b2cfab723654bac58ec1}{delete\-Data} (const \-Xsens\-File\-Pos start, const uint32\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em \-Delete the given data from the file. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a0ddcd0eb51efc0a53348b8cdb2d82d7a}{find} (const void $\ast$needle, const uint32\-\_\-t needle\-Length, \-Xsens\-File\-Pos \&pos)
+\begin{DoxyCompactList}\small\item\em \-Find a string of bytes in the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_aebb4f05e2a6b0006da18fd7b21443a89}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_aebb4f05e2a6b0006da18fd7b21443a89}{flush\-Data} (void)}\label{classxsens_1_1Cmt1f_aebb4f05e2a6b0006da18fd7b21443a89}
+
+\begin{DoxyCompactList}\small\item\em \-Flush all data to be written. \-This function writes any remaining data immediately and does not return until this is done. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_af4b0d90ae27736caa5f9b9c848c7e08b}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_af4b0d90ae27736caa5f9b9c848c7e08b}{get\-File\-Size} (void) const }\label{classxsens_1_1Cmt1f_af4b0d90ae27736caa5f9b9c848c7e08b}
+
+\begin{DoxyCompactList}\small\item\em \-Return the size of the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_ac1177c0bb97bdeacac9ccc21d3f8646d}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ac1177c0bb97bdeacac9ccc21d3f8646d}{get\-Last\-Result} (void) const }\label{classxsens_1_1Cmt1f_ac1177c0bb97bdeacac9ccc21d3f8646d}
+
+\begin{DoxyCompactList}\small\item\em \-Return the result code of the last operation. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a1447858cb01e173d8ee02f45e39a39f2}{get\-Name} (char $\ast$filename) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the filename that was last successfully opened. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a6cf9e6b889f186c2d2e41c877f01831e}{get\-Name} (wchar\-\_\-t $\ast$filename) const 
+\begin{DoxyCompactList}\small\item\em \-Retrieve the filename that was last successfully opened in unicode. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a50dd342eb0ff14be0439b20aaaa328e1}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_a50dd342eb0ff14be0439b20aaaa328e1}{get\-Read\-Pos} (void) const }\label{classxsens_1_1Cmt1f_a50dd342eb0ff14be0439b20aaaa328e1}
+
+\begin{DoxyCompactList}\small\item\em \-Return the current read position. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a23d703467b142bddd066748489924e08}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_a23d703467b142bddd066748489924e08}{get\-Write\-Pos} (void) const }\label{classxsens_1_1Cmt1f_a23d703467b142bddd066748489924e08}
+
+\begin{DoxyCompactList}\small\item\em \-Return the current write position. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a7aaf400038c7dc83120eb0c166aa789d}{insert\-Data} (const \-Xsens\-File\-Pos start, const uint32\-\_\-t length, const void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \-Insert the given data into the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a2068defb2740556214948f20b23e602c}{bool \hyperlink{classxsens_1_1Cmt1f_a2068defb2740556214948f20b23e602c}{is\-Open} (void) const }\label{classxsens_1_1Cmt1f_a2068defb2740556214948f20b23e602c}
+
+\begin{DoxyCompactList}\small\item\em \-Return whether the file is open or not. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a176ec162dda5146c4f91024eb4fd1778}{bool \hyperlink{classxsens_1_1Cmt1f_a176ec162dda5146c4f91024eb4fd1778}{is\-Read\-Only} (void) const }\label{classxsens_1_1Cmt1f_a176ec162dda5146c4f91024eb4fd1778}
+
+\begin{DoxyCompactList}\small\item\em \-Return whether the file is readonly or not. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_ac3623b1bd3ab4aa7aaa1cdfe494494d7}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ac3623b1bd3ab4aa7aaa1cdfe494494d7}{open} (const char $\ast$filename, const bool \hyperlink{classxsens_1_1Cmt1f_afe9e7fd93967527fcabfdc0e248f9acc}{create}, const bool read\-Only)}\label{classxsens_1_1Cmt1f_ac3623b1bd3ab4aa7aaa1cdfe494494d7}
+
+\begin{DoxyCompactList}\small\item\em \-Open a file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a32a7d14f2a28e4624e00168c16c5e5c5}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a32a7d14f2a28e4624e00168c16c5e5c5}{open} (const wchar\-\_\-t $\ast$filename, const bool \hyperlink{classxsens_1_1Cmt1f_afe9e7fd93967527fcabfdc0e248f9acc}{create}, const bool read\-Only)}\label{classxsens_1_1Cmt1f_a32a7d14f2a28e4624e00168c16c5e5c5}
+
+\begin{DoxyCompactList}\small\item\em \-Open a file using a unicode filename. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ad5850430ffa0988986c0b10d218023a2}{read\-Data} (const uint32\-\_\-t max\-Length, void $\ast$data, uint32\-\_\-t $\ast$length)
+\begin{DoxyCompactList}\small\item\em \-Read data from the file and put it into the data buffer. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ad264a2ef6cdc9a6cfe0b9fce04e466f0}{read\-Data} (const uint32\-\_\-t max\-Length, const char terminator, void $\ast$data, uint32\-\_\-t $\ast$length)
+\begin{DoxyCompactList}\small\item\em \-Read data from the file and put it into the data buffer. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_ae901294366012d032ebe13660a1564cc}{set\-Read\-Pos} (const \-Xsens\-File\-Pos pos)
+\begin{DoxyCompactList}\small\item\em \-Set the new absolute read position. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a783c34b3976303be5e776c6b0d815768}{set\-Write\-Pos} (const \-Xsens\-File\-Pos pos=-\/1)
+\begin{DoxyCompactList}\small\item\em \-Set the new absolute write position. \end{DoxyCompactList}\item 
+\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_aa62d96ccce3c8e407d20bd0346d94991}{write\-Data} (const uint32\-\_\-t length, const void $\ast$data)
+\begin{DoxyCompactList}\small\item\em \-Write data to the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1Cmt1f_a06211472647b5865767127ce404713bf}{void \hyperlink{classxsens_1_1Cmt1f_a06211472647b5865767127ce404713bf}{goto\-Read} (void)}\label{classxsens_1_1Cmt1f_a06211472647b5865767127ce404713bf}
+
+\begin{DoxyCompactList}\small\item\em \-Change from writing to reading mode. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a70655b6aa0207f32b9bb89e0bfbeda07}{void \hyperlink{classxsens_1_1Cmt1f_a70655b6aa0207f32b9bb89e0bfbeda07}{goto\-Write} (void)}\label{classxsens_1_1Cmt1f_a70655b6aa0207f32b9bb89e0bfbeda07}
+
+\begin{DoxyCompactList}\small\item\em \-Change from reading to writing mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1Cmt1f_a9e626704be273497ae4e1408a4aa3b7b}{\-F\-I\-L\-E $\ast$ \hyperlink{classxsens_1_1Cmt1f_a9e626704be273497ae4e1408a4aa3b7b}{m\-\_\-handle}}\label{classxsens_1_1Cmt1f_a9e626704be273497ae4e1408a4aa3b7b}
+
+\begin{DoxyCompactList}\small\item\em \-The file handle. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a3e3ea40ffe4c4b4d49a18bfe70c52171}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_a3e3ea40ffe4c4b4d49a18bfe70c52171}{m\-\_\-file\-Size}}\label{classxsens_1_1Cmt1f_a3e3ea40ffe4c4b4d49a18bfe70c52171}
+
+\begin{DoxyCompactList}\small\item\em \-Contains the size of the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a8a3470f287b0483a35ad990fa654273a}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_a8a3470f287b0483a35ad990fa654273a}{m\-\_\-read\-Pos}}\label{classxsens_1_1Cmt1f_a8a3470f287b0483a35ad990fa654273a}
+
+\begin{DoxyCompactList}\small\item\em \-The last read position in the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a29a6e0711c381ba77bac31453c3fca2c}{\-Xsens\-File\-Pos \hyperlink{classxsens_1_1Cmt1f_a29a6e0711c381ba77bac31453c3fca2c}{m\-\_\-write\-Pos}}\label{classxsens_1_1Cmt1f_a29a6e0711c381ba77bac31453c3fca2c}
+
+\begin{DoxyCompactList}\small\item\em \-The last write position in the file. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a986315e350d8c3c8aed0526e77bd4ed9}{\hyperlink{group__enums_ga822a2260a20af524029eef9e9a51ff6f}{\-Xsens\-Result\-Value} \hyperlink{classxsens_1_1Cmt1f_a986315e350d8c3c8aed0526e77bd4ed9}{m\-\_\-last\-Result}}\label{classxsens_1_1Cmt1f_a986315e350d8c3c8aed0526e77bd4ed9}
+
+\begin{DoxyCompactList}\small\item\em \-The last result of an operation. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a43ddc4718e69ed4fe21c6574da58f4d2}{char \hyperlink{classxsens_1_1Cmt1f_a43ddc4718e69ed4fe21c6574da58f4d2}{m\-\_\-filename} \mbox{[}\-C\-M\-T\-\_\-\-M\-A\-X\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H\mbox{]}}\label{classxsens_1_1Cmt1f_a43ddc4718e69ed4fe21c6574da58f4d2}
+
+\begin{DoxyCompactList}\small\item\em \-Contains the name of the file that was last successfully opened. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a794d7d18b2ea76cf8a6455072261f6b9}{wchar\-\_\-t \hyperlink{classxsens_1_1Cmt1f_a794d7d18b2ea76cf8a6455072261f6b9}{m\-\_\-filename\-\_\-w} \mbox{[}\-C\-M\-T\-\_\-\-M\-A\-X\-\_\-\-F\-I\-L\-E\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H\mbox{]}}\label{classxsens_1_1Cmt1f_a794d7d18b2ea76cf8a6455072261f6b9}
+
+\begin{DoxyCompactList}\small\item\em \-Contains the name of the file that was last successfully opened using unicode. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a5f2130dc8026b6a8ad55ffbdaac74150}{bool \hyperlink{classxsens_1_1Cmt1f_a5f2130dc8026b6a8ad55ffbdaac74150}{m\-\_\-is\-Open}}\label{classxsens_1_1Cmt1f_a5f2130dc8026b6a8ad55ffbdaac74150}
+
+\begin{DoxyCompactList}\small\item\em \-Indicates if the file is open or not. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_a6da996485f79b6aa12b089b31dc4c654}{bool \hyperlink{classxsens_1_1Cmt1f_a6da996485f79b6aa12b089b31dc4c654}{m\-\_\-unicode}}\label{classxsens_1_1Cmt1f_a6da996485f79b6aa12b089b31dc4c654}
+
+\begin{DoxyCompactList}\small\item\em \-Indicates if we're using the unicode filename or the regular filename. \end{DoxyCompactList}\item 
+bool \hyperlink{classxsens_1_1Cmt1f_a743b759eb55ae888d44a37c865870bb4}{m\-\_\-reading}
+\begin{DoxyCompactList}\small\item\em \-Indicates whether the last operation was a read or write operation. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1Cmt1f_ac87b9035d8cbd6d3f7ecff38660a4216}{bool \hyperlink{classxsens_1_1Cmt1f_ac87b9035d8cbd6d3f7ecff38660a4216}{m\-\_\-read\-Only}}\label{classxsens_1_1Cmt1f_ac87b9035d8cbd6d3f7ecff38660a4216}
+
+\begin{DoxyCompactList}\small\item\em \-Indicates if the file was opened in read-\/only mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-The low-\/level file communication class. 
+
+\subsection{\-Documentación de las funciones miembro}
+\hypertarget{classxsens_1_1Cmt1f_a761759c365acf23f7e4159b5bedb1ae4}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!append\-Data@{append\-Data}}
+\index{append\-Data@{append\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{append\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::append\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{length, }
+\item[{const void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_a761759c365acf23f7e4159b5bedb1ae4}
+
+
+\-Write data to the end of the file. 
+
+\-The function writes the given data to the file at the end. \-The current write position is also moved to the end of the file. \hypertarget{classxsens_1_1Cmt1f_a51f143e00f87b2cfab723654bac58ec1}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!delete\-Data@{delete\-Data}}
+\index{delete\-Data@{delete\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{delete\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::delete\-Data} (
+\begin{DoxyParamCaption}
+\item[{const \-Xsens\-File\-Pos}]{start, }
+\item[{const uint32\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_a51f143e00f87b2cfab723654bac58ec1}
+
+
+\-Delete the given data from the file. 
+
+\-The function erases the given data from the file at the given write position. \-This operation may take a while to complete, but is faster than insert\-Data.
+
+\-The write position is not changed and the read position is checked for validity. \hypertarget{classxsens_1_1Cmt1f_a0ddcd0eb51efc0a53348b8cdb2d82d7a}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!find@{find}}
+\index{find@{find}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::find} (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{needle, }
+\item[{const uint32\-\_\-t}]{needle\-Length, }
+\item[{\-Xsens\-File\-Pos \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_a0ddcd0eb51efc0a53348b8cdb2d82d7a}
+
+
+\-Find a string of bytes in the file. 
+
+\-The function searches from the current read position until the given {\ttfamily needle} is found. \-If the needle is not found, \-Xsens\-Result\-Value\-::\-N\-O\-T\-\_\-\-F\-O\-U\-N\-D is returned. \-The function will update the seek position to the first character of the found needle. 
+\begin{DoxyParams}{\-Parámetros}
+{\em needle} & \-The byte string to find. \\
+\hline
+{\em needle\-Length} & \-The length of the byte string. \\
+\hline
+{\em pos} & \-Out\-: \-The position where the needle was found. \-This will point to the first character of the found needle. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1f_a1447858cb01e173d8ee02f45e39a39f2}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::get\-Name} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+) const}}\label{classxsens_1_1Cmt1f_a1447858cb01e173d8ee02f45e39a39f2}
+
+
+\-Retrieve the filename that was last successfully opened. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em filename} & \-A buffer for storing the filename. \-The buffer should be able to hold the filename. \-A safe size is to make it at least 256 bytes. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1f_a6cf9e6b889f186c2d2e41c877f01831e}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::get\-Name} (
+\begin{DoxyParamCaption}
+\item[{wchar\-\_\-t $\ast$}]{filename}
+\end{DoxyParamCaption}
+) const}}\label{classxsens_1_1Cmt1f_a6cf9e6b889f186c2d2e41c877f01831e}
+
+
+\-Retrieve the filename that was last successfully opened in unicode. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em filename} & \-A buffer for storing the filename. \-The buffer should be able to hold the filename. \-A safe size is to make it at least 256 wide characters. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1f_a7aaf400038c7dc83120eb0c166aa789d}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!insert\-Data@{insert\-Data}}
+\index{insert\-Data@{insert\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{insert\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::insert\-Data} (
+\begin{DoxyParamCaption}
+\item[{const \-Xsens\-File\-Pos}]{start, }
+\item[{const uint32\-\_\-t}]{length, }
+\item[{const void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_a7aaf400038c7dc83120eb0c166aa789d}
+
+
+\-Insert the given data into the file. 
+
+\-The function writes the given data to the file at the current write position. \-This operation may take a while to complete.
+
+\-The write position is placed at the end of the inserted data. \hypertarget{classxsens_1_1Cmt1f_ad5850430ffa0988986c0b10d218023a2}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::read\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{max\-Length, }
+\item[{void $\ast$}]{data, }
+\item[{uint32\-\_\-t $\ast$}]{length}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_ad5850430ffa0988986c0b10d218023a2}
+
+
+\-Read data from the file and put it into the data buffer. 
+
+\-This function reads exactly the number of bytes as requested from the file. 
+\begin{DoxyParams}{\-Parámetros}
+{\em max\-Length} & \-The amount of data that will be read. \\
+\hline
+{\em data} & \-Pointer to a buffer that will store the read data. \\
+\hline
+{\em length} & pointer to a variable that will store the number of bytes that were actually read. \-The parameter may be \-N\-U\-L\-L. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1f_ad264a2ef6cdc9a6cfe0b9fce04e466f0}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::read\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{max\-Length, }
+\item[{const char}]{terminator, }
+\item[{void $\ast$}]{data, }
+\item[{uint32\-\_\-t $\ast$}]{length}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_ad264a2ef6cdc9a6cfe0b9fce04e466f0}
+
+
+\-Read data from the file and put it into the data buffer. 
+
+\-This function reads upp to the number of bytes as requested from the file. \-The function will also stop if the given terminator character is encountered. \-The terminator is included in the output buffer. 
+\begin{DoxyParams}{\-Parámetros}
+{\em max\-Length} & \-The amount of data that will be read. \\
+\hline
+{\em data} & \-Pointer to a buffer that will store the read data. \\
+\hline
+{\em terminator} & \-A character that will end the read operation if encountered. \\
+\hline
+{\em length} & \-The actual number of bytes read, including the terminator character, if encountered. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classxsens_1_1Cmt1f_ae901294366012d032ebe13660a1564cc}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!set\-Read\-Pos@{set\-Read\-Pos}}
+\index{set\-Read\-Pos@{set\-Read\-Pos}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{set\-Read\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::set\-Read\-Pos} (
+\begin{DoxyParamCaption}
+\item[{const \-Xsens\-File\-Pos}]{pos}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_ae901294366012d032ebe13660a1564cc}
+
+
+\-Set the new absolute read position. 
+
+\-The read position is checked against the filesize before committing. \hypertarget{classxsens_1_1Cmt1f_a783c34b3976303be5e776c6b0d815768}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!set\-Write\-Pos@{set\-Write\-Pos}}
+\index{set\-Write\-Pos@{set\-Write\-Pos}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{set\-Write\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::set\-Write\-Pos} (
+\begin{DoxyParamCaption}
+\item[{const \-Xsens\-File\-Pos}]{pos = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_a783c34b3976303be5e776c6b0d815768}
+
+
+\-Set the new absolute write position. 
+
+\-The write position is checked against the filesize before committing. \hypertarget{classxsens_1_1Cmt1f_aa62d96ccce3c8e407d20bd0346d94991}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!write\-Data@{write\-Data}}
+\index{write\-Data@{write\-Data}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{write\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Xsens\-Result\-Value} {\bf xsens\-::\-Cmt1f\-::write\-Data} (
+\begin{DoxyParamCaption}
+\item[{const uint32\-\_\-t}]{length, }
+\item[{const void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classxsens_1_1Cmt1f_aa62d96ccce3c8e407d20bd0346d94991}
+
+
+\-Write data to the file. 
+
+\-The function writes the given data to the file at the current write position. 
+
+\subsection{\-Documentación de los datos miembro}
+\hypertarget{classxsens_1_1Cmt1f_a743b759eb55ae888d44a37c865870bb4}{\index{xsens\-::\-Cmt1f@{xsens\-::\-Cmt1f}!m\-\_\-reading@{m\-\_\-reading}}
+\index{m\-\_\-reading@{m\-\_\-reading}!xsens::Cmt1f@{xsens\-::\-Cmt1f}}
+\subsubsection[{m\-\_\-reading}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf xsens\-::\-Cmt1f\-::m\-\_\-reading}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}\label{classxsens_1_1Cmt1f_a743b759eb55ae888d44a37c865870bb4}
+
+
+\-Indicates whether the last operation was a read or write operation. 
+
+\-This value is used to check whether or not a seek is required to perform a requested read or write operation. 
+
+\-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+xsens\-\_\-driver/include/xsens\-\_\-driver/\hyperlink{cmt1_8h}{cmt1.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{classxsens_1_1FifoQueue}{\section{\-Referencia de la plantilla de la \-Clase xsens\-:\-:\-Fifo\-Queue$<$ \-T, \-E $>$}
+\label{classxsens_1_1FifoQueue}\index{xsens\-::\-Fifo\-Queue$<$ T, E $>$@{xsens\-::\-Fifo\-Queue$<$ T, E $>$}}
+}
+
+
+\-A \-F\-I\-F\-O queue with limited length (cyclic).  
+
+
+
+
+{\ttfamily \#include $<$xsens\-\_\-fifoqueue.\-h$>$}
+
+\subsection*{\-Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{typedef \-T \hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type}}\label{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}
+
+\begin{DoxyCompactList}\small\item\em \-The type of the value stored in this queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}{typedef size\-\_\-t \hyperlink{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}{size\-\_\-type}}\label{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}
+
+\begin{DoxyCompactList}\small\item\em \-The type of a 'size' value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1FifoQueue_aba62295440c162d8d5cbab74bf09e53e}{\hyperlink{classxsens_1_1FifoQueue_aba62295440c162d8d5cbab74bf09e53e}{\-Fifo\-Queue} (\hyperlink{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}{size\-\_\-type} \hyperlink{classxsens_1_1FifoQueue_abdc9950e2a5833b2520b83bc1daee995}{size}=16, bool del\-On\-Overwrite=true)}\label{classxsens_1_1FifoQueue_aba62295440c162d8d5cbab74bf09e53e}
+
+\begin{DoxyCompactList}\small\item\em \-Create an empty queue with capacity size. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a848cf288889b759f331cd35532f95832}{{\footnotesize template$<$bool \-E2$>$ }\\\hyperlink{classxsens_1_1FifoQueue_a848cf288889b759f331cd35532f95832}{\-Fifo\-Queue} (const \hyperlink{classxsens_1_1FifoQueue}{\-Fifo\-Queue}$<$ \-T, \-E2 $>$ \&q)}\label{classxsens_1_1FifoQueue_a848cf288889b759f331cd35532f95832}
+
+\begin{DoxyCompactList}\small\item\em \-The copy constructor. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a7127b28f9107af06ae9590a95ad1c89f}{void {\bfseries erase\-And\-Clear} (void)}\label{classxsens_1_1FifoQueue_a7127b28f9107af06ae9590a95ad1c89f}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_a9bc44c0ea07343fb6b2f594208174a32}{\hyperlink{classxsens_1_1FifoQueue_a9bc44c0ea07343fb6b2f594208174a32}{$\sim$\-Fifo\-Queue} ()}\label{classxsens_1_1FifoQueue_a9bc44c0ea07343fb6b2f594208174a32}
+
+\begin{DoxyCompactList}\small\item\em \-The destructor. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a602b54c4b491ec24fe3bc59a5d9ec69a}{{\footnotesize template$<$bool \-E2$>$ }\\\hyperlink{classxsens_1_1FifoQueue}{\-Fifo\-Queue}$<$ \-T, \-E $>$ \& \hyperlink{classxsens_1_1FifoQueue_a602b54c4b491ec24fe3bc59a5d9ec69a}{operator=} (const \hyperlink{classxsens_1_1FifoQueue}{\-Fifo\-Queue}$<$ \-T, \-E2 $>$ \&q)}\label{classxsens_1_1FifoQueue_a602b54c4b491ec24fe3bc59a5d9ec69a}
+
+\begin{DoxyCompactList}\small\item\em \-The assignment operator. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a2c02ee912d71b2a476e2513824dee88a}{void \hyperlink{classxsens_1_1FifoQueue_a2c02ee912d71b2a476e2513824dee88a}{resize} (const size\-\_\-t \hyperlink{classxsens_1_1FifoQueue_abdc9950e2a5833b2520b83bc1daee995}{size})}\label{classxsens_1_1FifoQueue_a2c02ee912d71b2a476e2513824dee88a}
+
+\begin{DoxyCompactList}\small\item\em \-Resize the queue, note that this function clears the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_af133de61bb276774138f1aab187b2918}{bool \hyperlink{classxsens_1_1FifoQueue_af133de61bb276774138f1aab187b2918}{empty} () const }\label{classxsens_1_1FifoQueue_af133de61bb276774138f1aab187b2918}
+
+\begin{DoxyCompactList}\small\item\em \-Return true if the queue is empty. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_abdc9950e2a5833b2520b83bc1daee995}{\hyperlink{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}{size\-\_\-type} \hyperlink{classxsens_1_1FifoQueue_abdc9950e2a5833b2520b83bc1daee995}{size} () const }\label{classxsens_1_1FifoQueue_abdc9950e2a5833b2520b83bc1daee995}
+
+\begin{DoxyCompactList}\small\item\em \-Return the maximum number of elements in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_adade9fdae6da5cb6c3186f9fa15fd118}{\hyperlink{classxsens_1_1FifoQueue_a6a595ab989816ba96cf0cbfa4d39b0b1}{size\-\_\-type} \hyperlink{classxsens_1_1FifoQueue_adade9fdae6da5cb6c3186f9fa15fd118}{length} () const }\label{classxsens_1_1FifoQueue_adade9fdae6da5cb6c3186f9fa15fd118}
+
+\begin{DoxyCompactList}\small\item\em \-Return the number of elements currnetly in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a41ec39c634b1b6c9fdb195b0e0bf9b6f}{\hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_a41ec39c634b1b6c9fdb195b0e0bf9b6f}{front} ()}\label{classxsens_1_1FifoQueue_a41ec39c634b1b6c9fdb195b0e0bf9b6f}
+
+\begin{DoxyCompactList}\small\item\em \-Return the oldest element in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a50ca25fc36e08035375844ecdda577b4}{const \hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_a50ca25fc36e08035375844ecdda577b4}{front} () const }\label{classxsens_1_1FifoQueue_a50ca25fc36e08035375844ecdda577b4}
+
+\begin{DoxyCompactList}\small\item\em \-Return the oldest element in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a7954676d04eae451a35fae55e8e5c6e9}{\hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_a7954676d04eae451a35fae55e8e5c6e9}{back} ()}\label{classxsens_1_1FifoQueue_a7954676d04eae451a35fae55e8e5c6e9}
+
+\begin{DoxyCompactList}\small\item\em \-Return the newest element in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a1734249c16d89e99161b515f6517400b}{const \hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_a1734249c16d89e99161b515f6517400b}{back} () const }\label{classxsens_1_1FifoQueue_a1734249c16d89e99161b515f6517400b}
+
+\begin{DoxyCompactList}\small\item\em \-Return the newest element in the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a15f1c61dae6d5811de3eeddca1a392b0}{void \hyperlink{classxsens_1_1FifoQueue_a15f1c61dae6d5811de3eeddca1a392b0}{push} (const \hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \&x)}\label{classxsens_1_1FifoQueue_a15f1c61dae6d5811de3eeddca1a392b0}
+
+\begin{DoxyCompactList}\small\item\em \-Insert x at the back of the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a88e76121245a40be2bcf971bb94860f3}{void \hyperlink{classxsens_1_1FifoQueue_a88e76121245a40be2bcf971bb94860f3}{pop} (void)}\label{classxsens_1_1FifoQueue_a88e76121245a40be2bcf971bb94860f3}
+
+\begin{DoxyCompactList}\small\item\em \-Remove the element at the front of the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_adee7b4f0f0c30d8b29360755b4ef1e62}{void \hyperlink{classxsens_1_1FifoQueue_adee7b4f0f0c30d8b29360755b4ef1e62}{pop\-Back} (void)}\label{classxsens_1_1FifoQueue_adee7b4f0f0c30d8b29360755b4ef1e62}
+
+\begin{DoxyCompactList}\small\item\em \-Remove the element at the back of the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_ac08368440cbb0080eb970878bcc85eaa}{const \hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_ac08368440cbb0080eb970878bcc85eaa}{operator\mbox{[}$\,$\mbox{]}} (size\-\_\-t index) const }\label{classxsens_1_1FifoQueue_ac08368440cbb0080eb970878bcc85eaa}
+
+\begin{DoxyCompactList}\small\item\em \-Return the index'th oldest item from the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a18a1acd59d9f6e0b7b52915134e4f3d3}{\hyperlink{classxsens_1_1FifoQueue_a61949842c92df50f702496096b9d5069}{value\-\_\-type} \& \hyperlink{classxsens_1_1FifoQueue_a18a1acd59d9f6e0b7b52915134e4f3d3}{operator\mbox{[}$\,$\mbox{]}} (size\-\_\-t index)}\label{classxsens_1_1FifoQueue_a18a1acd59d9f6e0b7b52915134e4f3d3}
+
+\begin{DoxyCompactList}\small\item\em \-Return the index'th oldest item from the queue. \end{DoxyCompactList}\item 
+\hypertarget{classxsens_1_1FifoQueue_a4ca3418799bc8e72e96dae1ede9b08ef}{void {\bfseries clear} (void)}\label{classxsens_1_1FifoQueue_a4ca3418799bc8e72e96dae1ede9b08ef}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_af97f5a1f8232edf50b1d37b365ddb49a}{void {\bfseries remove} (size\-\_\-t index)}\label{classxsens_1_1FifoQueue_af97f5a1f8232edf50b1d37b365ddb49a}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classxsens_1_1FifoQueue_a92c68d73af943dca929c9dbabe90042c}{size\-\_\-t {\bfseries m\-\_\-max\-Count}}\label{classxsens_1_1FifoQueue_a92c68d73af943dca929c9dbabe90042c}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_ae333afd4993d7558116d3fcb42ed1143}{size\-\_\-t {\bfseries m\-\_\-current\-Count}}\label{classxsens_1_1FifoQueue_ae333afd4993d7558116d3fcb42ed1143}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_ab28ce4c8eac78b214daf6ddb5d722af8}{size\-\_\-t {\bfseries m\-\_\-first}}\label{classxsens_1_1FifoQueue_ab28ce4c8eac78b214daf6ddb5d722af8}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_a669d5fc4b869368e6de3452cccc7a422}{bool {\bfseries m\-\_\-delete\-On\-Overwrite}}\label{classxsens_1_1FifoQueue_a669d5fc4b869368e6de3452cccc7a422}
+
+\item 
+\hypertarget{classxsens_1_1FifoQueue_a254fc271e83f10761f8c219fd96b35f8}{\-T $\ast$ {\bfseries m\-\_\-list}}\label{classxsens_1_1FifoQueue_a254fc271e83f10761f8c219fd96b35f8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\subsubsection*{template$<$class \-T, bool \-E = true$>$class xsens\-::\-Fifo\-Queue$<$ T, E $>$}
+
+\-A \-F\-I\-F\-O queue with limited length (cyclic). 
+
+\-The class is based on the \-S\-T\-L queue class, but has a limited size. \-If more items are inserted than would fit, the oldest item is overwritten. \-The class can only handle pointer types. 
+
+\-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+xsens\-\_\-driver/include/xsens\-\_\-driver/\hyperlink{xsens__fifoqueue_8h}{xsens\-\_\-fifoqueue.\-h}\end{DoxyCompactItemize}

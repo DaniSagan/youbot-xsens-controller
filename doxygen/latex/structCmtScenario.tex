@@ -1,0 +1,53 @@
+\hypertarget{structCmtScenario}{\section{\-Referencia de la \-Estructura \-Cmt\-Scenario}
+\label{structCmtScenario}\index{\-Cmt\-Scenario@{\-Cmt\-Scenario}}
+}
+
+
+\-A structure for storing scenario information.  
+
+
+
+
+{\ttfamily \#include $<$cmtdef.\-h$>$}
+
+\subsection*{\-Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structCmtScenario_a161e8f147c0e05b2f89dd09359c64594}{uint8\-\_\-t \hyperlink{structCmtScenario_a161e8f147c0e05b2f89dd09359c64594}{m\-\_\-type}}\label{structCmtScenario_a161e8f147c0e05b2f89dd09359c64594}
+
+\begin{DoxyCompactList}\small\item\em \-The type of the scenario. \-When set to 255 in an operation, the 'current' scenario is used. \end{DoxyCompactList}\item 
+\hypertarget{structCmtScenario_aa88dfbeb0f0c1ecfce74e4c0f7cb3904}{uint8\-\_\-t \hyperlink{structCmtScenario_aa88dfbeb0f0c1ecfce74e4c0f7cb3904}{m\-\_\-version}}\label{structCmtScenario_aa88dfbeb0f0c1ecfce74e4c0f7cb3904}
+
+\begin{DoxyCompactList}\small\item\em \-The version of the scenario. \end{DoxyCompactList}\item 
+\hypertarget{structCmtScenario_aaeb9317685371f673cc4812483ae80bf}{char \hyperlink{structCmtScenario_aaeb9317685371f673cc4812483ae80bf}{m\-\_\-label} \mbox{[}\-C\-M\-T\-\_\-\-L\-E\-N\-\_\-\-S\-C\-E\-N\-A\-R\-I\-O\-L\-A\-B\-E\-L+1\mbox{]}}\label{structCmtScenario_aaeb9317685371f673cc4812483ae80bf}
+
+\begin{DoxyCompactList}\small\item\em \-The label of the scenario. \end{DoxyCompactList}\item 
+char \hyperlink{structCmtScenario_a4b487cecc6f4d44e304c57b5e441f01a}{m\-\_\-filter\-Type}
+\begin{DoxyCompactList}\small\item\em \-The type of the \-X\-K\-F filter this scenario is intended for '3'\-: \-X\-K\-F-\/3, '6'\-: \-X\-K\-F-\/6. \end{DoxyCompactList}\item 
+\hypertarget{structCmtScenario_af27052279f30d26a6558624dedb0bf4d}{uint8\-\_\-t {\bfseries m\-\_\-filter\-Major}}\label{structCmtScenario_af27052279f30d26a6558624dedb0bf4d}
+
+\item 
+\hypertarget{structCmtScenario_a2c17090acd187d81a7b15a9cf5e498af}{uint8\-\_\-t \hyperlink{structCmtScenario_a2c17090acd187d81a7b15a9cf5e498af}{m\-\_\-filter\-Minor}}\label{structCmtScenario_a2c17090acd187d81a7b15a9cf5e498af}
+
+\begin{DoxyCompactList}\small\item\em \-The version of the \-X\-K\-F filter this scenario is intended for. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-A structure for storing scenario information. 
+
+\subsection{\-Documentación de los datos miembro}
+\hypertarget{structCmtScenario_a4b487cecc6f4d44e304c57b5e441f01a}{\index{\-Cmt\-Scenario@{\-Cmt\-Scenario}!m\-\_\-filter\-Type@{m\-\_\-filter\-Type}}
+\index{m\-\_\-filter\-Type@{m\-\_\-filter\-Type}!CmtScenario@{\-Cmt\-Scenario}}
+\subsubsection[{m\-\_\-filter\-Type}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf \-Cmt\-Scenario\-::m\-\_\-filter\-Type}}}\label{structCmtScenario_a4b487cecc6f4d44e304c57b5e441f01a}
+
+
+\-The type of the \-X\-K\-F filter this scenario is intended for '3'\-: \-X\-K\-F-\/3, '6'\-: \-X\-K\-F-\/6. 
+
+\begin{DoxyNote}{\-Nota}
+\-The value is a character, so \-X\-K\-F-\/3 is '3', which is hex 0x33 
+\end{DoxyNote}
+
+
+\-La documentación para esta estructura fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+xsens\-\_\-driver/include/xsens\-\_\-driver/\hyperlink{cmtdef_8h}{cmtdef.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>youbot-xsens-controller: Fichero Fuente xsens_driver/include/xsens_driver/xsens_sensor_subscriber.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">youbot-xsens-controller
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Generado por Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="modules.html"><span>Módulos</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">xsens_driver/include/xsens_driver/xsens_sensor_subscriber.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
+<a name="l00002"></a>00002 <span class="comment"> * Clases SensorSubscriber y SensorSubscriberList</span>
+<a name="l00003"></a>00003 <span class="comment"> * </span>
+<a name="l00004"></a>00004 <span class="comment"> * Estas clases no son utilizadas por el driver.</span>
+<a name="l00005"></a>00005 <span class="comment"> * Forman parte de la librería xsens_driver, que</span>
+<a name="l00006"></a>00006 <span class="comment"> * proporciona una interfaz sencilla para acceder</span>
+<a name="l00007"></a>00007 <span class="comment"> * a los datos publicados en ROS por el driver en</span>
+<a name="l00008"></a>00008 <span class="comment"> * otros programas.</span>
+<a name="l00009"></a>00009 <span class="comment"> *</span>
+<a name="l00010"></a>00010 <span class="comment"> * Autor: Daniel Fernández Villanueva</span>
+<a name="l00011"></a>00011 <span class="comment"> * Mayo 2013</span>
+<a name="l00012"></a>00012 <span class="comment"> *</span>
+<a name="l00013"></a>00013 <span class="comment"> */</span>
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 <span class="preprocessor">#ifndef XSENS_SENSOR_SUBSCRIBER_H</span>
+<a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#define XSENS_SENSOR_SUBSCRIBER_H</span>
+<a name="l00017"></a>00017 <span class="preprocessor"></span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;dfv/dfv.h&gt;</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;<a class="code" href="cmtdef_8h.html" title="Macros and types for use in the Xsens communication protocol and CMT classes.">xsens_driver/cmtdef.h</a>&gt;</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include &lt;ros/ros.h&gt;</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include &lt;std_msgs/Float64MultiArray.h&gt;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &lt;geometry_msgs/Vector3Stamped.h&gt;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &lt;geometry_msgs/QuaternionStamped.h&gt;</span>
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 <span class="keyword">namespace </span>xsens
+<a name="l00027"></a>00027 {
+<a name="l00028"></a><a class="code" href="classxsens_1_1SensorSubscriber.html">00028</a>     <span class="keyword">class </span><a class="code" href="classxsens_1_1SensorSubscriber.html">SensorSubscriber</a>
+<a name="l00029"></a>00029     {
+<a name="l00030"></a>00030         <span class="keyword">public</span>:
+<a name="l00031"></a>00031             <a class="code" href="classxsens_1_1SensorSubscriber.html">SensorSubscriber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index_, ros::NodeHandle&amp; node_handle_);
+<a name="l00032"></a>00032             ~<a class="code" href="classxsens_1_1SensorSubscriber.html">SensorSubscriber</a>();
+<a name="l00033"></a>00033             
+<a name="l00034"></a>00034             <span class="keywordtype">bool</span>                    SubscribeToTopics();
+<a name="l00035"></a>00035             
+<a name="l00036"></a>00036             <span class="comment">// Función que devuelve el vector aceleración</span>
+<a name="l00037"></a>00037             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetAcc() <span class="keyword">const</span>;
+<a name="l00038"></a>00038             
+<a name="l00039"></a>00039             <span class="comment">// Función que devuelve el vector giróscopo</span>
+<a name="l00040"></a>00040             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetGyr() <span class="keyword">const</span>;
+<a name="l00041"></a>00041             
+<a name="l00042"></a>00042             <span class="comment">// Función que devuelve el vector campo magnético</span>
+<a name="l00043"></a>00043             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetMag() <span class="keyword">const</span>;
+<a name="l00044"></a>00044             
+<a name="l00045"></a>00045             <span class="comment">// Función que devuelve el cuaternión de orientación</span>
+<a name="l00046"></a>00046             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>   GetOriQuat() <span class="keyword">const</span>;
+<a name="l00047"></a>00047             
+<a name="l00048"></a>00048             <span class="comment">// Función que devuelve la matriz de orientación</span>
+<a name="l00049"></a>00049             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html">dfv::Matrix</a>       GetOriMatrix() <span class="keyword">const</span>;
+<a name="l00050"></a>00050             
+<a name="l00051"></a>00051             <span class="comment">// Función que devuelve un vector con los ángulos de Euler</span>
+<a name="l00052"></a>00052             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetOriEuler() <span class="keyword">const</span>;
+<a name="l00053"></a>00053             
+<a name="l00054"></a>00054             
+<a name="l00055"></a>00055             
+<a name="l00056"></a>00056         <span class="keyword">private</span>:
+<a name="l00057"></a>00057             ros::NodeHandle&amp;    node_handle;
+<a name="l00058"></a>00058             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        mt_index;
+<a name="l00059"></a>00059             
+<a name="l00060"></a>00060             std::string         acc_topic_name;
+<a name="l00061"></a>00061             std::string         gyr_topic_name;
+<a name="l00062"></a>00062             std::string         mag_topic_name;
+<a name="l00063"></a>00063             std::string         ori_quat_topic_name;
+<a name="l00064"></a>00064             std::string         ori_matrix_topic_name;
+<a name="l00065"></a>00065             std::string         ori_euler_topic_name;
+<a name="l00066"></a>00066             
+<a name="l00067"></a>00067             <a class="code" href="cmtdef_8h.html#a85df1cdea0bf11e38292e3cd5d69e747" title="An output mode bit-field.">CmtOutputMode</a>       output_mode;
+<a name="l00068"></a>00068             <a class="code" href="cmtdef_8h.html#a4125efede0d0948ee49291165a1d089b" title="An output settings bit-field.">CmtOutputSettings</a>   output_settings;
+<a name="l00069"></a>00069             
+<a name="l00070"></a>00070             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        acc;
+<a name="l00071"></a>00071             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        gyr;
+<a name="l00072"></a>00072             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        mag;
+<a name="l00073"></a>00073             
+<a name="l00074"></a>00074             <a class="code" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>     ori_quat;
+<a name="l00075"></a>00075             <a class="code" href="classdfv_1_1Matrix.html">dfv::Matrix</a>         ori_matrix;
+<a name="l00076"></a>00076             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        ori_euler;
+<a name="l00077"></a>00077             
+<a name="l00078"></a>00078             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        position_lla;            
+<a name="l00079"></a>00079             <span class="keywordtype">double</span>              temperature;
+<a name="l00080"></a>00080             
+<a name="l00081"></a>00081             ros::Subscriber     acc_subscriber;
+<a name="l00082"></a>00082             ros::Subscriber     gyr_subscriber;
+<a name="l00083"></a>00083             ros::Subscriber     mag_subscriber;
+<a name="l00084"></a>00084             ros::Subscriber     ori_quat_subscriber;
+<a name="l00085"></a>00085             ros::Subscriber     ori_matrix_subscriber;
+<a name="l00086"></a>00086             ros::Subscriber     ori_euler_subscriber;
+<a name="l00087"></a>00087             
+<a name="l00088"></a>00088             <span class="keywordtype">void</span>                AccSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00089"></a>00089             <span class="keywordtype">void</span>                GyrSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00090"></a>00090             <span class="keywordtype">void</span>                MagSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00091"></a>00091             <span class="keywordtype">void</span>                OriQuatSubCallback(<span class="keyword">const</span> geometry_msgs::QuaternionStamped::ConstPtr&amp; msg);
+<a name="l00092"></a>00092             <span class="keywordtype">void</span>                OriMatrixSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
+<a name="l00093"></a>00093             <span class="keywordtype">void</span>                OriEulerSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
+<a name="l00094"></a>00094     };
+<a name="l00095"></a>00095     
+<a name="l00096"></a><a class="code" href="classxsens_1_1SensorSubscriberList.html">00096</a>     <span class="keyword">class </span><a class="code" href="classxsens_1_1SensorSubscriberList.html">SensorSubscriberList</a>
+<a name="l00097"></a>00097     {
+<a name="l00098"></a>00098         <span class="keyword">public</span>:
+<a name="l00099"></a>00099             <a class="code" href="classxsens_1_1SensorSubscriberList.html">SensorSubscriberList</a>(ros::NodeHandle&amp; node_handle_);
+<a name="l00100"></a>00100             ~<a class="code" href="classxsens_1_1SensorSubscriberList.html">SensorSubscriberList</a>(); 
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102             <span class="comment">// Función que devuelve el número de sensores detectados</span>
+<a name="l00103"></a>00103             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> GetMtCount() <span class="keyword">const</span>;
+<a name="l00104"></a>00104             
+<a name="l00105"></a>00105             <span class="comment">// Función que devuelve el vector aceleración</span>
+<a name="l00106"></a>00106             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetAcc(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00107"></a>00107             
+<a name="l00108"></a>00108             <span class="comment">// Función que devuelve el vector giróscopo</span>
+<a name="l00109"></a>00109             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetGyr(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00110"></a>00110             
+<a name="l00111"></a>00111             <span class="comment">// Función que devuelve el vector campo magnético</span>
+<a name="l00112"></a>00112             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetMag(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00113"></a>00113             
+<a name="l00114"></a>00114             <span class="comment">// Función que devuelve el cuaternión de orientación</span>
+<a name="l00115"></a>00115             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>   GetOriQuat(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00116"></a>00116             
+<a name="l00117"></a>00117             <span class="comment">// Función que devuelve la matriz de orientación</span>
+<a name="l00118"></a>00118             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html">dfv::Matrix</a>       GetOriMatrix(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00119"></a>00119             
+<a name="l00120"></a>00120             <span class="comment">// Función que devuelve un vector con los ángulos de Euler</span>
+<a name="l00121"></a>00121             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      GetOriEuler(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index) <span class="keyword">const</span>;
+<a name="l00122"></a>00122             
+<a name="l00123"></a>00123         <span class="keyword">private</span>:            
+<a name="l00124"></a>00124             ros::NodeHandle node_handle;
+<a name="l00125"></a>00125             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_count;
+<a name="l00126"></a>00126             <a class="code" href="classxsens_1_1SensorSubscriber.html">SensorSubscriber</a>** sensors;
+<a name="l00127"></a>00127             
+<a name="l00128"></a>00128     };
+<a name="l00129"></a>00129 }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Generado el Miércoles, 23 de Octubre de 2013 20:09:25 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
