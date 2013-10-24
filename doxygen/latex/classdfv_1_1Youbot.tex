@@ -1,0 +1,119 @@
+\hypertarget{classdfv_1_1Youbot}{\section{\-Referencia de la \-Clase dfv\-:\-:\-Youbot}
+\label{classdfv_1_1Youbot}\index{dfv\-::\-Youbot@{dfv\-::\-Youbot}}
+}
+\subsection*{\-Tipos públicos}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries \-Gripper\-State} \{ {\bfseries closed} =  0, 
+{\bfseries open}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{\-Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdfv_1_1Youbot_a7bef60e35a117942f345b07f19a09e1b}{{\bfseries \-Youbot} (ros\-::\-Node\-Handle \&node\-\_\-handle\-\_\-, std\-::string arm\-\_\-topic\-\_\-name\-\_\-=\char`\"{}arm\-\_\-1/arm\-\_\-controller/position\-\_\-command\char`\"{}, std\-::string gripper\-\_\-topic\-\_\-name\-\_\-=\char`\"{}arm\-\_\-1/gripper\-\_\-controller/position\-\_\-command\char`\"{}, std\-::string joint\-\_\-states\-\_\-topic\-\_\-name=\char`\"{}joint\-\_\-states\char`\"{}, std\-::string cmd\-\_\-vel\-\_\-topic\-\_\-name=\char`\"{}cmd\-\_\-vel\char`\"{})}\label{classdfv_1_1Youbot_a7bef60e35a117942f345b07f19a09e1b}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a9aefad604da0d465dadaf4ab923a089c}{void {\bfseries \-Publish\-Arm\-Position} ()}\label{classdfv_1_1Youbot_a9aefad604da0d465dadaf4ab923a089c}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a72ecbf08b87d31f35384d2712d5273ae}{void {\bfseries \-Publish\-Platform\-Vel} ()}\label{classdfv_1_1Youbot_a72ecbf08b87d31f35384d2712d5273ae}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_aff3bcde6d3e88c59451004471e37b4ca}{\hyperlink{classdfv_1_1Quaternion}{dfv\-::\-Quaternion} {\bfseries \-Get\-Joint\-Local\-Quaternion} (int index) const }\label{classdfv_1_1Youbot_aff3bcde6d3e88c59451004471e37b4ca}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_aa296d0281fc1c9c00ebea6cd1367c9ea}{\hyperlink{classdfv_1_1Quaternion}{dfv\-::\-Quaternion} {\bfseries \-Get\-Joint\-Local\-Quat\-From\-Angle} (int index, float angle) const }\label{classdfv_1_1Youbot_aa296d0281fc1c9c00ebea6cd1367c9ea}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_ad36241fa6b5c2bed6166a9102c709be1}{\hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries \-Get\-Joint\-Position} (int index) const }\label{classdfv_1_1Youbot_ad36241fa6b5c2bed6166a9102c709be1}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a8cd5e38e039cc50fe0f93a9344d727e4}{\hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries \-Get\-Joint\-Pos\-From\-Angles} (unsigned int index, const std\-::vector$<$ float $>$ \&joint\-\_\-angles) const }\label{classdfv_1_1Youbot_a8cd5e38e039cc50fe0f93a9344d727e4}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a6eec4021fd747e169b0cd793ecf0a21d}{void {\bfseries \-Open\-Gripper} ()}\label{classdfv_1_1Youbot_a6eec4021fd747e169b0cd793ecf0a21d}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a83eb89c33c05f1f0b0043674fd1b4561}{void {\bfseries \-Close\-Gripper} ()}\label{classdfv_1_1Youbot_a83eb89c33c05f1f0b0043674fd1b4561}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a2a2bedf8adcb1b34147f8122a0fc77a1}{void {\bfseries \-Reset\-Arm\-Position} ()}\label{classdfv_1_1Youbot_a2a2bedf8adcb1b34147f8122a0fc77a1}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a9e0c49ce6cd3d275d16cdafcd6c203d9}{std\-::vector$<$ float $>$ {\bfseries \-Find\-Angles\-For\-Pos} (\hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \&target\-\_\-pos)}\label{classdfv_1_1Youbot_a9e0c49ce6cd3d275d16cdafcd6c203d9}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Atributos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdfv_1_1Youbot_af286b747f6864610fb1d365687fa58cd}{double {\bfseries joint\-\_\-positions} \mbox{[}5\mbox{]}}\label{classdfv_1_1Youbot_af286b747f6864610fb1d365687fa58cd}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a37753d53f3b44950721a334f2291f66b}{double {\bfseries gripper\-\_\-positions} \mbox{[}2\mbox{]}}\label{classdfv_1_1Youbot_a37753d53f3b44950721a334f2291f66b}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a75f2e0846f6f2258076c789f8321593a}{\hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries linear\-\_\-vel}}\label{classdfv_1_1Youbot_a75f2e0846f6f2258076c789f8321593a}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a636caf4b690b2ee5d90895c77b156b28}{\hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries angular\-\_\-vel}}\label{classdfv_1_1Youbot_a636caf4b690b2ee5d90895c77b156b28}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a6b2fe1930c1defa4d9c8e5b188d7070f}{std\-::vector$<$ float $>$ {\bfseries joint\-\_\-states}}\label{classdfv_1_1Youbot_a6b2fe1930c1defa4d9c8e5b188d7070f}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Atributos públicos estáticos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdfv_1_1Youbot_a05630a8b60d8ce1f096c32d119b1be59}{static const float {\bfseries joint\-\_\-min\-\_\-pos} \mbox{[}$\,$\mbox{]}}\label{classdfv_1_1Youbot_a05630a8b60d8ce1f096c32d119b1be59}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_aafc2bd5c8d101ba0efea54e4c403d91a}{static const float {\bfseries joint\-\_\-max\-\_\-pos} \mbox{[}$\,$\mbox{]}}\label{classdfv_1_1Youbot_aafc2bd5c8d101ba0efea54e4c403d91a}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_ac51315d85fd33415400aa7ce942b45ef}{static const float {\bfseries joint\-\_\-ini\-\_\-pos} \mbox{[}$\,$\mbox{]}}\label{classdfv_1_1Youbot_ac51315d85fd33415400aa7ce942b45ef}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a594b3f376aa5872a821f62d0e968028e}{static const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries r} \mbox{[}$\,$\mbox{]}}\label{classdfv_1_1Youbot_a594b3f376aa5872a821f62d0e968028e}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Métodos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdfv_1_1Youbot_addea2f360258a2c60e12119a3c4d944b}{void {\bfseries \-Joint\-States\-Callback} (const sensor\-\_\-msgs\-::\-Joint\-State\-::\-Const\-Ptr \&msg)}\label{classdfv_1_1Youbot_addea2f360258a2c60e12119a3c4d944b}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Atributos protegidos}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classdfv_1_1Youbot_ac933160ab53585f288cc799b52f69a68}{ros\-::\-Node\-Handle \& {\bfseries node\-\_\-handle}}\label{classdfv_1_1Youbot_ac933160ab53585f288cc799b52f69a68}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a3e7e06d117f2f78eb27cffdb62bc7693}{ros\-::\-Publisher {\bfseries arm\-\_\-publisher}}\label{classdfv_1_1Youbot_a3e7e06d117f2f78eb27cffdb62bc7693}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a33b95ba16f704b706f691b87ed954425}{ros\-::\-Publisher {\bfseries gripper\-\_\-publisher}}\label{classdfv_1_1Youbot_a33b95ba16f704b706f691b87ed954425}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a02be5b55094854fc9113bdf722ebf53f}{ros\-::\-Publisher {\bfseries cmd\-\_\-vel\-\_\-publisher}}\label{classdfv_1_1Youbot_a02be5b55094854fc9113bdf722ebf53f}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a6bb0b4af437162dc72b5d266c316ad5a}{std\-::vector\*
+$<$ brics\-\_\-actuator\-::\-Joint\-Value $>$ {\bfseries v\-\_\-joint\-\_\-values}}\label{classdfv_1_1Youbot_a6bb0b4af437162dc72b5d266c316ad5a}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_a278c101488612b9e4b2f3ed4dc6d6d47}{std\-::vector\*
+$<$ brics\-\_\-actuator\-::\-Joint\-Value $>$ {\bfseries v\-\_\-gripper\-\_\-values}}\label{classdfv_1_1Youbot_a278c101488612b9e4b2f3ed4dc6d6d47}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_aeffb78d0de972814aeab8e7ff7841f53}{\-Gripper\-State {\bfseries gripper\-\_\-state}}\label{classdfv_1_1Youbot_aeffb78d0de972814aeab8e7ff7841f53}
+
+\item 
+\hypertarget{classdfv_1_1Youbot_ae48d141f16468e936180d6de7fee2ec0}{ros\-::\-Subscriber {\bfseries joint\-\_\-states\-\_\-subscriber}}\label{classdfv_1_1Youbot_ae48d141f16468e936180d6de7fee2ec0}
+
+\end{DoxyCompactItemize}
+
+
+\-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
+\item 
+dfv/include/dfv/youbot.\-h\end{DoxyCompactItemize}

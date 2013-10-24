@@ -164,5 +164,14 @@ int main(int argc, char** argv)
     std::cout << "Inversa de la matriz: " << std::endl;
     std::cout << m6 << std::endl;
     
+    // **************************************************** //
+    // ******** Ejemplos de operaciones con Youbot ******** //
+    // **************************************************** //
+    
+    ros::init(argc, argv, "dfv_example");
+    ros::NodeHandle node_handle;
+    dfv::Youbot youbot(node_handle); // creación de un objeto youbot
+    
+    
     return 0;
 }

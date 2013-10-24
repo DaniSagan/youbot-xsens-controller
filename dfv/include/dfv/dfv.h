@@ -5,5 +5,6 @@
 #include <dfv/vector3.h>
 #include <dfv/quaternion.h>
 #include <dfv/matrix.h>
+#include <dfv/youbot.h>
 
 #endif

@@ -29,7 +29,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #rosbuild_add_executable(example examples/example.cpp)
 #target_link_libraries(example ${PROJECT_NAME})
 
-rosbuild_add_executable(example src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp examples/example.cpp)
+rosbuild_add_executable(example src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp src/youbot.cpp examples/example.cpp)
 
-rosbuild_add_library(${PROJECT_NAME} src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp)
+rosbuild_add_library(${PROJECT_NAME} src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp src/youbot.cpp)
 
