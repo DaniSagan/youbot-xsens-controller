@@ -59,7 +59,7 @@ int main(int argc, char** argv)
         ros::spinOnce();
     }
     
-    Youbot youbot(node_handle);
+    dfv::Youbot youbot(node_handle);
     
     std::vector<double> angs;
     
@@ -96,7 +96,7 @@ int main(int argc, char** argv)
         
         // Publicamos en el topic del robot
         
-        youbot.PublishMessage();
+        youbot.PublishArmPosition();
         
         // Imprimimos en pantalla los ángulos que le hemos pasado al robot
         

@@ -145,7 +145,7 @@ int main(int argc, char** argv)
         
         // Publicamos en el topic del robot
         
-        youbot.PublishMessage();
+        youbot.PublishArmPosition();
         youbot.PublishPlatformVel();
         
         // Imprimimos en pantalla los ángulos que le hemos pasado al robot

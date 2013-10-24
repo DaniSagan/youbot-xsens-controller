@@ -13,9 +13,11 @@
 #include <sstream>
 #include <cstdlib>
 
+//! El espacio de nombres para la librería dfv
 namespace dfv
 {
-
+    /*! \brief Clase para la creación y manipulación de matrices de dimensión arbitraria.
+    */
     class Matrix
     {
         public:

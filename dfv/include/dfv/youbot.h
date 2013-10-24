@@ -20,9 +20,12 @@
 #include <sensor_msgs/JointState.h>
 #include <geometry_msgs/Twist.h>
 
+//! El espacio de nombres para la librería dfv
 namespace dfv
 {
 
+/*! \brief Clase que encapsula la comunicaciones de ROS para el control del robot YouBot
+*/
 class Youbot
 {
     public:

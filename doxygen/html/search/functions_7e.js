@@ -8,5 +8,6 @@ var searchData=
   ['_7efifoqueue',['~FifoQueue',['../classxsens_1_1FifoQueue.html#a9bc44c0ea07343fb6b2f594208174a32',1,'xsens::FifoQueue']]],
   ['_7efifoqueuebasic',['~FifoQueueBasic',['../classxsens_1_1FifoQueueBasic.html#a0e9808c170b05a5616c193525d1b324c',1,'xsens::FifoQueueBasic']]],
   ['_7elist',['~List',['../classxsens_1_1List.html#a4d4a5cbd11cda6022990701c97276980',1,'xsens::List']]],
-  ['_7emessage',['~Message',['../classxsens_1_1Message.html#a8cd4cc13aebfcd861727f311877cbfdf',1,'xsens::Message']]]
+  ['_7emessage',['~Message',['../classxsens_1_1Message.html#a8cd4cc13aebfcd861727f311877cbfdf',1,'xsens::Message']]],
+  ['_7esensorsubscriber',['~SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#aad63894472798f2e15e3f54bb8c7c78c',1,'dfv::SensorSubscriber']]]
 ];

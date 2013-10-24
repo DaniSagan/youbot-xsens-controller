@@ -77,6 +77,7 @@ var searchData=
   ['xsens_5flong_5fstring_5fsize',['XSENS_LONG_STRING_SIZE',['../xsens__std_8h.html#ae8c084d3a588e2e66f3b2c9c7427b3cb',1,'xsens_std.h']]],
   ['xsens_5fshort_5fstring_5fsize',['XSENS_SHORT_STRING_SIZE',['../xsens__std_8h.html#a02f4fedac7a77df4b858b05304cdc7e5',1,'xsens_std.h']]],
   ['xsens_5fstd_2eh',['xsens_std.h',['../xsens__std_8h.html',1,'']]],
+  ['xsenslistener',['XsensListener',['../classdfv_1_1XsensListener.html',1,'dfv']]],
   ['xsensresulttext',['xsensResultText',['../xsens__std_8h.html#a7386853937f4c078e1458f2c34049ace',1,'xsens_std.h']]],
   ['xsensresultvalue',['XsensResultValue',['../group__enums.html#ga822a2260a20af524029eef9e9a51ff6f',1,'xsens_std.h']]]
 ];

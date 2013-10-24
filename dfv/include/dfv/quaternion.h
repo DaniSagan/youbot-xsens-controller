@@ -15,11 +15,13 @@
 #include <dfv/utils.h>
 #include <tf/transform_datatypes.h>
 
-
+//! El espacio de nombres para la librería dfv
 namespace dfv
 {
     class Vector3;
-
+    
+    /*! \brief Clase para la creación y manipulación de cuaterniones.
+    */
     class Quaternion
     {
         public:

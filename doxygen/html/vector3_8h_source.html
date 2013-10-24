@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <a name="l00029"></a>00029         <span class="keyword">public</span>:
 <a name="l00030"></a>00030             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>();
 <a name="l00031"></a>00031             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>(<span class="keywordtype">double</span> x_, <span class="keywordtype">double</span> y_, <span class="keywordtype">double</span> z_);
-<a name="l00032"></a>00032             <span class="keyword">explicit</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html">Quaternion</a>&amp; q);
+<a name="l00032"></a>00032             <span class="keyword">explicit</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">Quaternion</a>&amp; q);
 <a name="l00033"></a>00033             <span class="keyword">virtual</span> ~<a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>();
 <a name="l00034"></a>00034             
 <a name="l00035"></a>00035             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a> operator-() <span class="keyword">const</span>;
@@ -153,11 +153,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <a name="l00072"></a>00072             
 <a name="l00073"></a>00073             <span class="comment">// Función que rota el vector de acuerdo con el cuaternión</span>
 <a name="l00074"></a>00074             <span class="comment">// pasado como parámetro:</span>
-<a name="l00075"></a>00075             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>&amp;        Rotate(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html">Quaternion</a> q);
+<a name="l00075"></a>00075             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>&amp;        Rotate(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">Quaternion</a> q);
 <a name="l00076"></a>00076             
 <a name="l00077"></a>00077             <span class="comment">// Devuelve el vector rotado según el cuaternión pasado</span>
 <a name="l00078"></a>00078             <span class="comment">// como parámetro:</span>
-<a name="l00079"></a>00079             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>   GetRotated(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html">Quaternion</a>&amp; q) <span class="keyword">const</span>;
+<a name="l00079"></a>00079             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">Vector3</a>   GetRotated(<span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">Quaternion</a>&amp; q) <span class="keyword">const</span>;
 <a name="l00080"></a>00080             
 <a name="l00081"></a>00081             <span class="comment">// Función que devuelve una representación</span>
 <a name="l00082"></a>00082             <span class="comment">// del vector como texto:</span>
@@ -205,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 13:01:28 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Jueves, 24 de Octubre de 2013 17:41:57 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

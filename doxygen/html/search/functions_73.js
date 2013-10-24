@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sensorsubscriber',['SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#a7596701a0faf0144e9c52cb09a92de86',1,'dfv::SensorSubscriber']]],
   ['setbaudrate',['setBaudrate',['../classxsens_1_1Cmt3.html#a078e78847110f58bf2ccd0cfb4a6db8c',1,'xsens::Cmt3']]],
   ['setbluetoothstate',['setBluetoothState',['../classxsens_1_1Cmt3.html#a2c3b390662d41fa22eff650c882e3ac7',1,'xsens::Cmt3']]],
   ['setbusid',['setBusId',['../classxsens_1_1Message.html#a8f8333967341f688dd885bf72d250671',1,'xsens::Message']]],
@@ -56,5 +57,6 @@ var searchData=
   ['sortascending',['sortAscending',['../classxsens_1_1List.html#af668e4bfa511ded8eacff8ca6e19a90e',1,'xsens::List']]],
   ['sortascendingderef',['sortAscendingDeref',['../classxsens_1_1List.html#a2f7659a33159347cb008a269bb2b7799',1,'xsens::List']]],
   ['storexkfstate',['storeXkfState',['../classxsens_1_1Cmt3.html#a156e28148d2f53d584534367eff0cc41',1,'xsens::Cmt3']]],
+  ['subscribetotopics',['SubscribeToTopics',['../classdfv_1_1SensorSubscriber.html#ab33fdef7d3fff1bf80550a7c2f3b6889',1,'dfv::SensorSubscriber']]],
   ['swap',['swap',['../classxsens_1_1List.html#a77370ae25853be59aaae0eb71e1c1b29',1,'xsens::List']]]
 ];
