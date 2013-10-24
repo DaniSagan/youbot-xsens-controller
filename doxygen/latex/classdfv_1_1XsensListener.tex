@@ -1,6 +1,15 @@
 \hypertarget{classdfv_1_1XsensListener}{\section{\-Referencia de la \-Clase dfv\-:\-:\-Xsens\-Listener}
 \label{classdfv_1_1XsensListener}\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}}
 }
+
+
+\-Encapsula las comunicaciones de \-R\-O\-S de una red de sensores \-Xsens.  
+
+
+
+
+{\ttfamily \#include $<$xsens\-\_\-listener.\-h$>$}
+
 \subsection*{\-Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -10,9 +19,8 @@
 \hypertarget{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}{unsigned int \hyperlink{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}{\-Get\-Mt\-Count} () const }\label{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}
 
 \begin{DoxyCompactList}\small\item\em \-Función que devuelve el número de sensores detectados. \end{DoxyCompactList}\item 
-\hypertarget{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{\-Get\-Acc} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve el vector aceleración. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{\-Get\-Acc} (unsigned int mt\-\_\-index=0) const 
+\item 
 \hypertarget{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{\-Get\-Gyr} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}
 
 \begin{DoxyCompactList}\small\item\em \-Función que devuelve el vector giróscopo. \end{DoxyCompactList}\item 
@@ -28,6 +36,31 @@
 \hypertarget{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{\-Get\-Ori\-Euler} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}
 
 \begin{DoxyCompactList}\small\item\em \-Función que devuelve un vector con los ángulos de \-Euler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-Encapsula las comunicaciones de \-R\-O\-S de una red de sensores \-Xsens. 
+
+\-Esta clase se encarga de declarar y controlar el funcionamiento de la clase \hyperlink{classdfv_1_1SensorSubscriber}{\-Sensor\-Subscriber}. 
+
+\subsection{\-Documentación de las funciones miembro}
+\hypertarget{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Acc@{\-Get\-Acc}}
+\index{\-Get\-Acc@{\-Get\-Acc}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Acc}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Acc} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}
+\-Devuelve los valores leídos de los acelerómetros del sensor especificado.
+
+\-Función que devuelve el vector con las componentes en los ejes x, y, z en $\frac{m}{s^2}$ leídas de los acelerómetros 
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & \-I\-D del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Vector de 3 elementos con las componentes x, y, z de los acelerómetros 
+\end{DoxyReturn}
 
 
 \-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}

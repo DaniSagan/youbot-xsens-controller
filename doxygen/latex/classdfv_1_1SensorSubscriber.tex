@@ -23,9 +23,8 @@ const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1S
 \item 
 const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1SensorSubscriber_a11fe5e8b67856541ec6a24291923dc62}{\-Get\-Gyr} () const 
 \item 
-\hypertarget{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}{\-Get\-Mag} () const }\label{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve el vector campo magnético. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}{\-Get\-Mag} () const 
+\item 
 \hypertarget{classdfv_1_1SensorSubscriber_a0e1dad84a58e4ae8708f288c8ae0082d}{const \hyperlink{classdfv_1_1Quaternion}{dfv\-::\-Quaternion} \hyperlink{classdfv_1_1SensorSubscriber_a0e1dad84a58e4ae8708f288c8ae0082d}{\-Get\-Ori\-Quat} () const }\label{classdfv_1_1SensorSubscriber_a0e1dad84a58e4ae8708f288c8ae0082d}
 
 \begin{DoxyCompactList}\small\item\em \-Función que devuelve el cuaternión de orientación. \end{DoxyCompactList}\item 
@@ -39,6 +38,8 @@ const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1S
 
 \subsection{\-Descripción detallada}
 \-Encapsula las comunicaciones de \-R\-O\-S de un sensor \-Xsens. 
+
+\-No es necesario utilizar esta clase ya que de su funcionamiento se encarga la clase \hyperlink{classdfv_1_1XsensListener}{\-Xsens\-Listener}. 
 
 \subsection{\-Documentación del constructor y destructor}
 \hypertarget{classdfv_1_1SensorSubscriber_a7596701a0faf0144e9c52cb09a92de86}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Sensor\-Subscriber@{\-Sensor\-Subscriber}}
@@ -68,25 +69,32 @@ const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1S
 ) const}}\label{classdfv_1_1SensorSubscriber_a8d90eadc91d8c97154b3d89341d5db40}
 \-Devuelve los valores leídos de los acelerómetros
 
-\-Función que devuelve el vector con las velocidades angulares en los ejes x, y, z en $\frac{rad}{s}$ leídas de los acelerómetros \hypertarget{classdfv_1_1SensorSubscriber_a11fe5e8b67856541ec6a24291923dc62}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Get\-Gyr@{\-Get\-Gyr}}
+\-Función que devuelve el vector con las componentes en los ejes x, y, z en $\frac{m}{s^2}$ leídas de los acelerómetros \hypertarget{classdfv_1_1SensorSubscriber_a11fe5e8b67856541ec6a24291923dc62}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Get\-Gyr@{\-Get\-Gyr}}
 \index{\-Get\-Gyr@{\-Get\-Gyr}!dfv::SensorSubscriber@{dfv\-::\-Sensor\-Subscriber}}
 \subsubsection[{\-Get\-Gyr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Sensor\-Subscriber\-::\-Get\-Gyr} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 ) const}}\label{classdfv_1_1SensorSubscriber_a11fe5e8b67856541ec6a24291923dc62}
-\-Devuelve los valores leídos del giróscopo
+\-Devuelve los valores leídos de los giróscopos
 
-\-Función que devuelve el vector con las componentes x, y, z leídas de los acelerómetros \hypertarget{classdfv_1_1SensorSubscriber_ab33fdef7d3fff1bf80550a7c2f3b6889}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Subscribe\-To\-Topics@{\-Subscribe\-To\-Topics}}
+\-Función que devuelve el vector con las velocidades angulares en los ejes x, y, z en $\frac{rad}{s}$ leídas de los acelerómetros \hypertarget{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Get\-Mag@{\-Get\-Mag}}
+\index{\-Get\-Mag@{\-Get\-Mag}!dfv::SensorSubscriber@{dfv\-::\-Sensor\-Subscriber}}
+\subsubsection[{\-Get\-Mag}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Sensor\-Subscriber\-::\-Get\-Mag} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1SensorSubscriber_af6eb616df620fb7d3b9036166bb2fdf6}
+\-Devuelve los valores leídos de los magnetómetros
+
+\-Función que devuelve el vector con las componentes en los ejes x, y, z en unidades arbitrarias (normalizadas según la intensidad del campo magnético registrado) leídas de los magnetómetros \hypertarget{classdfv_1_1SensorSubscriber_ab33fdef7d3fff1bf80550a7c2f3b6889}{\index{dfv\-::\-Sensor\-Subscriber@{dfv\-::\-Sensor\-Subscriber}!\-Subscribe\-To\-Topics@{\-Subscribe\-To\-Topics}}
 \index{\-Subscribe\-To\-Topics@{\-Subscribe\-To\-Topics}!dfv::SensorSubscriber@{dfv\-::\-Sensor\-Subscriber}}
 \subsubsection[{\-Subscribe\-To\-Topics}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf dfv\-::\-Sensor\-Subscriber\-::\-Subscribe\-To\-Topics} (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
 )}}\label{classdfv_1_1SensorSubscriber_ab33fdef7d3fff1bf80550a7c2f3b6889}
-\-Realiza la subscripción a los topics publicados por el programa xsens\-\_\-driver.
-
-\-Función que devuelve el vector con las componentes x, y, z de la aceleración leídas de los acelerómetros 
+\-Realiza la subscripción a los topics publicados por el programa xsens\-\_\-driver. 
 
 \-La documentación para esta clase fue generada a partir del siguiente fichero\-:\begin{DoxyCompactItemize}
 \item 

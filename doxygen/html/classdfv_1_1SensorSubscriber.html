@@ -120,9 +120,7 @@ Métodos públicos</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#ab33fdef7d3fff1bf80550a7c2f3b6889">SubscribeToTopics</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#a8d90eadc91d8c97154b3d89341d5db40">GetAcc</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#a11fe5e8b67856541ec6a24291923dc62">GetGyr</a> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af6eb616df620fb7d3b9036166bb2fdf6"></a><!-- doxytag: member="dfv::SensorSubscriber::GetMag" ref="af6eb616df620fb7d3b9036166bb2fdf6" args="() const " -->
-const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#af6eb616df620fb7d3b9036166bb2fdf6">GetMag</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el vector campo magnético. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#af6eb616df620fb7d3b9036166bb2fdf6">GetMag</a> () const </td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e1dad84a58e4ae8708f288c8ae0082d"></a><!-- doxytag: member="dfv::SensorSubscriber::GetOriQuat" ref="a0e1dad84a58e4ae8708f288c8ae0082d" args="() const " -->
 const <a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1SensorSubscriber.html#a0e1dad84a58e4ae8708f288c8ae0082d">GetOriQuat</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el cuaternión de orientación. <br/></td></tr>
@@ -135,6 +133,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
 </table>
 <hr/><a name="details" id="details"></a><h2>Descripción detallada</h2>
 <div class="textblock"><p>Encapsula las comunicaciones de ROS de un sensor Xsens. </p>
+<p>No es necesario utilizar esta clase ya que de su funcionamiento se encarga la clase <a class="el" href="classdfv_1_1XsensListener.html" title="Encapsula las comunicaciones de ROS de una red de sensores Xsens.">XsensListener</a>. </p>
 </div><hr/><h2>Documentación del constructor y destructor</h2>
 <a class="anchor" id="a7596701a0faf0144e9c52cb09a92de86"></a><!-- doxytag: member="dfv::SensorSubscriber::SensorSubscriber" ref="a7596701a0faf0144e9c52cb09a92de86" args="(unsigned int mt_index_, ros::NodeHandle &amp;node_handle_)" -->
 <div class="memitem">
@@ -196,7 +195,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
 </div>
 <div class="memdoc">
 <p>Devuelve los valores leídos de los acelerómetros</p>
-<p>Función que devuelve el vector con las velocidades angulares en los ejes x, y, z en <img class="formulaInl" alt="$\frac{rad}{s}$" src="form_0.png"/> leídas de los acelerómetros </p>
+<p>Función que devuelve el vector con las componentes en los ejes x, y, z en <img class="formulaInl" alt="$\frac{m}{s^2}$" src="form_1.png"/> leídas de los acelerómetros </p>
 
 </div>
 </div>
@@ -213,8 +212,26 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
       </table>
 </div>
 <div class="memdoc">
-<p>Devuelve los valores leídos del giróscopo</p>
-<p>Función que devuelve el vector con las componentes x, y, z leídas de los acelerómetros </p>
+<p>Devuelve los valores leídos de los giróscopos</p>
+<p>Función que devuelve el vector con las velocidades angulares en los ejes x, y, z en <img class="formulaInl" alt="$\frac{rad}{s}$" src="form_0.png"/> leídas de los acelerómetros </p>
+
+</div>
+</div>
+<a class="anchor" id="af6eb616df620fb7d3b9036166bb2fdf6"></a><!-- doxytag: member="dfv::SensorSubscriber::GetMag" ref="af6eb616df620fb7d3b9036166bb2fdf6" args="() const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a> <a class="el" href="classdfv_1_1SensorSubscriber.html#af6eb616df620fb7d3b9036166bb2fdf6">dfv::SensorSubscriber::GetMag</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Devuelve los valores leídos de los magnetómetros</p>
+<p>Función que devuelve el vector con las componentes en los ejes x, y, z en unidades arbitrarias (normalizadas según la intensidad del campo magnético registrado) leídas de los magnetómetros </p>
 
 </div>
 </div>
@@ -231,8 +248,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
       </table>
 </div>
 <div class="memdoc">
-<p>Realiza la subscripción a los topics publicados por el programa xsens_driver.</p>
-<p>Función que devuelve el vector con las componentes x, y, z de la aceleración leídas de los acelerómetros </p>
+<p>Realiza la subscripción a los topics publicados por el programa xsens_driver. </p>
 
 </div>
 </div>
@@ -257,7 +273,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 17:41:58 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Jueves, 24 de Octubre de 2013 18:01:26 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

@@ -109,119 +109,116 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <a name="l00025"></a>00025 
 <a name="l00027"></a>00027 <span class="keyword">namespace </span>dfv
 <a name="l00028"></a>00028 {
-<a name="l00031"></a><a class="code" href="classdfv_1_1SensorSubscriber.html">00031</a>     <span class="keyword">class </span><a class="code" href="classdfv_1_1SensorSubscriber.html" title="Encapsula las comunicaciones de ROS de un sensor Xsens.">SensorSubscriber</a>
-<a name="l00032"></a>00032     {
-<a name="l00033"></a>00033         <span class="keyword">public</span>:
-<a name="l00036"></a>00036             <a class="code" href="classdfv_1_1SensorSubscriber.html#a7596701a0faf0144e9c52cb09a92de86">SensorSubscriber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index_, ros::NodeHandle&amp; node_handle_);
-<a name="l00037"></a>00037             
-<a name="l00040"></a>00040             <a class="code" href="classdfv_1_1SensorSubscriber.html#aad63894472798f2e15e3f54bb8c7c78c">~SensorSubscriber</a>();
-<a name="l00041"></a>00041             
+<a name="l00034"></a><a class="code" href="classdfv_1_1SensorSubscriber.html">00034</a>     <span class="keyword">class </span><a class="code" href="classdfv_1_1SensorSubscriber.html" title="Encapsula las comunicaciones de ROS de un sensor Xsens.">SensorSubscriber</a>
+<a name="l00035"></a>00035     {
+<a name="l00036"></a>00036         <span class="keyword">public</span>:
+<a name="l00039"></a>00039             <a class="code" href="classdfv_1_1SensorSubscriber.html#a7596701a0faf0144e9c52cb09a92de86">SensorSubscriber</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index_, ros::NodeHandle&amp; node_handle_);
+<a name="l00040"></a>00040             
+<a name="l00043"></a>00043             <a class="code" href="classdfv_1_1SensorSubscriber.html#aad63894472798f2e15e3f54bb8c7c78c">~SensorSubscriber</a>();
+<a name="l00044"></a>00044             
 <a name="l00048"></a>00048             <span class="keywordtype">bool</span>                    <a class="code" href="classdfv_1_1SensorSubscriber.html#ab33fdef7d3fff1bf80550a7c2f3b6889">SubscribeToTopics</a>();
 <a name="l00049"></a>00049             
 <a name="l00055"></a>00055             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#a8d90eadc91d8c97154b3d89341d5db40">GetAcc</a>() <span class="keyword">const</span>;
 <a name="l00056"></a>00056             
 <a name="l00062"></a>00062             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#a11fe5e8b67856541ec6a24291923dc62">GetGyr</a>() <span class="keyword">const</span>;
 <a name="l00063"></a>00063             
-<a name="l00065"></a>00065             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#af6eb616df620fb7d3b9036166bb2fdf6" title="Función que devuelve el vector campo magnético.">GetMag</a>() <span class="keyword">const</span>;
-<a name="l00066"></a>00066             
-<a name="l00068"></a>00068             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>   <a class="code" href="classdfv_1_1SensorSubscriber.html#a0e1dad84a58e4ae8708f288c8ae0082d" title="Función que devuelve el cuaternión de orientación.">GetOriQuat</a>() <span class="keyword">const</span>;
-<a name="l00069"></a>00069             
-<a name="l00071"></a>00071             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>       <a class="code" href="classdfv_1_1SensorSubscriber.html#a87b5976432890a79361a1cfc8d39f32d" title="Función que devuelve la matriz de orientación.">GetOriMatrix</a>() <span class="keyword">const</span>;
-<a name="l00072"></a>00072             
-<a name="l00074"></a>00074             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#ac9ab6d72a5dfaffb4e810d2246fd8eff" title="Función que devuelve un vector con los ángulos de Euler.">GetOriEuler</a>() <span class="keyword">const</span>;
-<a name="l00075"></a>00075             
-<a name="l00076"></a>00076             
+<a name="l00070"></a>00070             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#af6eb616df620fb7d3b9036166bb2fdf6">GetMag</a>() <span class="keyword">const</span>;
+<a name="l00071"></a>00071             
+<a name="l00073"></a>00073             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>   <a class="code" href="classdfv_1_1SensorSubscriber.html#a0e1dad84a58e4ae8708f288c8ae0082d" title="Función que devuelve el cuaternión de orientación.">GetOriQuat</a>() <span class="keyword">const</span>;
+<a name="l00074"></a>00074             
+<a name="l00076"></a>00076             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>       <a class="code" href="classdfv_1_1SensorSubscriber.html#a87b5976432890a79361a1cfc8d39f32d" title="Función que devuelve la matriz de orientación.">GetOriMatrix</a>() <span class="keyword">const</span>;
 <a name="l00077"></a>00077             
-<a name="l00078"></a>00078         <span class="keyword">private</span>:
-<a name="l00079"></a>00079             ros::NodeHandle&amp;    node_handle;
-<a name="l00080"></a>00080             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        mt_index;
+<a name="l00079"></a>00079             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1SensorSubscriber.html#ac9ab6d72a5dfaffb4e810d2246fd8eff" title="Función que devuelve un vector con los ángulos de Euler.">GetOriEuler</a>() <span class="keyword">const</span>;
+<a name="l00080"></a>00080             
 <a name="l00081"></a>00081             
-<a name="l00082"></a>00082             std::string         acc_topic_name;
-<a name="l00083"></a>00083             std::string         gyr_topic_name;
-<a name="l00084"></a>00084             std::string         mag_topic_name;
-<a name="l00085"></a>00085             std::string         ori_quat_topic_name;
-<a name="l00086"></a>00086             std::string         ori_matrix_topic_name;
-<a name="l00087"></a>00087             std::string         ori_euler_topic_name;
-<a name="l00088"></a>00088             
-<a name="l00089"></a>00089             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        acc;
-<a name="l00090"></a>00090             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        gyr;
-<a name="l00091"></a>00091             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        mag;
-<a name="l00092"></a>00092             
-<a name="l00093"></a>00093             <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>     ori_quat;
-<a name="l00094"></a>00094             <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>         ori_matrix;
-<a name="l00095"></a>00095             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        ori_euler;
-<a name="l00096"></a>00096             
-<a name="l00097"></a>00097             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        position_lla;            
-<a name="l00098"></a>00098             <span class="keywordtype">double</span>              temperature;
-<a name="l00099"></a>00099             
-<a name="l00100"></a>00100             ros::Subscriber     acc_subscriber;
-<a name="l00101"></a>00101             ros::Subscriber     gyr_subscriber;
-<a name="l00102"></a>00102             ros::Subscriber     mag_subscriber;
-<a name="l00103"></a>00103             ros::Subscriber     ori_quat_subscriber;
-<a name="l00104"></a>00104             ros::Subscriber     ori_matrix_subscriber;
-<a name="l00105"></a>00105             ros::Subscriber     ori_euler_subscriber;
-<a name="l00106"></a>00106             
-<a name="l00107"></a>00107             <span class="keywordtype">void</span>                AccSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
-<a name="l00108"></a>00108             <span class="keywordtype">void</span>                GyrSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
-<a name="l00109"></a>00109             <span class="keywordtype">void</span>                MagSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
-<a name="l00110"></a>00110             <span class="keywordtype">void</span>                OriQuatSubCallback(<span class="keyword">const</span> geometry_msgs::QuaternionStamped::ConstPtr&amp; msg);
-<a name="l00111"></a>00111             <span class="keywordtype">void</span>                OriMatrixSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
-<a name="l00112"></a>00112             <span class="keywordtype">void</span>                OriEulerSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
-<a name="l00113"></a>00113     };
-<a name="l00114"></a>00114     
-<a name="l00115"></a><a class="code" href="classdfv_1_1XsensListener.html">00115</a>     <span class="keyword">class </span><a class="code" href="classdfv_1_1XsensListener.html">XsensListener</a>
-<a name="l00116"></a>00116     {
-<a name="l00117"></a>00117         <span class="keyword">public</span>:
-<a name="l00118"></a>00118             <a class="code" href="classdfv_1_1XsensListener.html">XsensListener</a>(ros::NodeHandle&amp; node_handle_);
-<a name="l00119"></a>00119             ~<a class="code" href="classdfv_1_1XsensListener.html">XsensListener</a>(); 
-<a name="l00120"></a>00120 
-<a name="l00122"></a>00122             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classdfv_1_1XsensListener.html#a5d31c2bd34dcbd18c60634e994c02ed3" title="Función que devuelve el número de sensores detectados.">GetMtCount</a>() <span class="keyword">const</span>;
-<a name="l00123"></a>00123             
-<a name="l00125"></a>00125             <span class="comment">/*</span>
-<a name="l00126"></a>00126 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00127"></a>00127 <span class="comment">                \return Vector de 3 elementos con las componentes x, y, z de los acelerómetros</span>
-<a name="l00128"></a>00128 <span class="comment">            */</span>
-<a name="l00129"></a>00129             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a940577a890abfe31a9f765766abbb0ec" title="Función que devuelve el vector aceleración.">GetAcc</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
-<a name="l00130"></a>00130             
-<a name="l00132"></a>00132             <span class="comment">/*</span>
-<a name="l00133"></a>00133 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00134"></a>00134 <span class="comment">                \return Vector de 3 elementos con las componentes x, y, z de los giróscopos</span>
-<a name="l00135"></a>00135 <span class="comment">            */</span>
-<a name="l00136"></a>00136             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a3896a0a58d557a5e9299415a146d80ed" title="Función que devuelve el vector giróscopo.">GetGyr</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
-<a name="l00137"></a>00137             
-<a name="l00139"></a>00139             <span class="comment">/*</span>
-<a name="l00140"></a>00140 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00141"></a>00141 <span class="comment">                \return Vector de 3 elementos con las componentes x, y, z de los magnetómetros</span>
-<a name="l00142"></a>00142 <span class="comment">            */</span>
-<a name="l00143"></a>00143             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a5eb779af51de20f10434711cb06ea153" title="Función que devuelve el vector campo magnético.">GetMag</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00082"></a>00082             
+<a name="l00083"></a>00083         <span class="keyword">private</span>:
+<a name="l00084"></a>00084             ros::NodeHandle&amp;    node_handle;
+<a name="l00085"></a>00085             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>        mt_index;
+<a name="l00086"></a>00086             
+<a name="l00087"></a>00087             std::string         acc_topic_name;
+<a name="l00088"></a>00088             std::string         gyr_topic_name;
+<a name="l00089"></a>00089             std::string         mag_topic_name;
+<a name="l00090"></a>00090             std::string         ori_quat_topic_name;
+<a name="l00091"></a>00091             std::string         ori_matrix_topic_name;
+<a name="l00092"></a>00092             std::string         ori_euler_topic_name;
+<a name="l00093"></a>00093             
+<a name="l00094"></a>00094             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        acc;
+<a name="l00095"></a>00095             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        gyr;
+<a name="l00096"></a>00096             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        mag;
+<a name="l00097"></a>00097             
+<a name="l00098"></a>00098             <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>     ori_quat;
+<a name="l00099"></a>00099             <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>         ori_matrix;
+<a name="l00100"></a>00100             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        ori_euler;
+<a name="l00101"></a>00101             
+<a name="l00102"></a>00102             <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>        position_lla;            
+<a name="l00103"></a>00103             <span class="keywordtype">double</span>              temperature;
+<a name="l00104"></a>00104             
+<a name="l00105"></a>00105             ros::Subscriber     acc_subscriber;
+<a name="l00106"></a>00106             ros::Subscriber     gyr_subscriber;
+<a name="l00107"></a>00107             ros::Subscriber     mag_subscriber;
+<a name="l00108"></a>00108             ros::Subscriber     ori_quat_subscriber;
+<a name="l00109"></a>00109             ros::Subscriber     ori_matrix_subscriber;
+<a name="l00110"></a>00110             ros::Subscriber     ori_euler_subscriber;
+<a name="l00111"></a>00111             
+<a name="l00112"></a>00112             <span class="keywordtype">void</span>                AccSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00113"></a>00113             <span class="keywordtype">void</span>                GyrSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00114"></a>00114             <span class="keywordtype">void</span>                MagSubCallback(<span class="keyword">const</span> geometry_msgs::Vector3Stamped::ConstPtr&amp; msg);
+<a name="l00115"></a>00115             <span class="keywordtype">void</span>                OriQuatSubCallback(<span class="keyword">const</span> geometry_msgs::QuaternionStamped::ConstPtr&amp; msg);
+<a name="l00116"></a>00116             <span class="keywordtype">void</span>                OriMatrixSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
+<a name="l00117"></a>00117             <span class="keywordtype">void</span>                OriEulerSubCallback(<span class="keyword">const</span> std_msgs::Float64MultiArray::ConstPtr&amp; msg);
+<a name="l00118"></a>00118     };
+<a name="l00119"></a>00119     
+<a name="l00120"></a>00120     
+<a name="l00126"></a><a class="code" href="classdfv_1_1XsensListener.html">00126</a>     <span class="keyword">class </span><a class="code" href="classdfv_1_1XsensListener.html" title="Encapsula las comunicaciones de ROS de una red de sensores Xsens.">XsensListener</a>
+<a name="l00127"></a>00127     {
+<a name="l00128"></a>00128         <span class="keyword">public</span>:
+<a name="l00129"></a>00129             <a class="code" href="classdfv_1_1XsensListener.html" title="Encapsula las comunicaciones de ROS de una red de sensores Xsens.">XsensListener</a>(ros::NodeHandle&amp; node_handle_);
+<a name="l00130"></a>00130             ~<a class="code" href="classdfv_1_1XsensListener.html" title="Encapsula las comunicaciones de ROS de una red de sensores Xsens.">XsensListener</a>(); 
+<a name="l00131"></a>00131 
+<a name="l00133"></a>00133             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classdfv_1_1XsensListener.html#a5d31c2bd34dcbd18c60634e994c02ed3" title="Función que devuelve el número de sensores detectados.">GetMtCount</a>() <span class="keyword">const</span>;
+<a name="l00134"></a>00134             
+<a name="l00143"></a>00143             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a940577a890abfe31a9f765766abbb0ec">GetAcc</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
 <a name="l00144"></a>00144             
 <a name="l00146"></a>00146             <span class="comment">/*</span>
 <a name="l00147"></a>00147 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00148"></a>00148 <span class="comment">                \return Cuaternión de orientación</span>
+<a name="l00148"></a>00148 <span class="comment">                \return Vector de 3 elementos con las componentes x, y, z de los giróscopos</span>
 <a name="l00149"></a>00149 <span class="comment">            */</span>
-<a name="l00150"></a>00150             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>   <a class="code" href="classdfv_1_1XsensListener.html#a882a444ecd1452f22381e20780c97631" title="Función que devuelve el cuaternión de orientación.">GetOriQuat</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00150"></a>00150             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a3896a0a58d557a5e9299415a146d80ed" title="Función que devuelve el vector giróscopo.">GetGyr</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
 <a name="l00151"></a>00151             
 <a name="l00153"></a>00153             <span class="comment">/*</span>
 <a name="l00154"></a>00154 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00155"></a>00155 <span class="comment">                \return Matriz 3x3 de orientación</span>
+<a name="l00155"></a>00155 <span class="comment">                \return Vector de 3 elementos con las componentes x, y, z de los magnetómetros</span>
 <a name="l00156"></a>00156 <span class="comment">            */</span>
-<a name="l00157"></a>00157             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>       <a class="code" href="classdfv_1_1XsensListener.html#a8949e2302c992ae4d78132574ccb4c27" title="Función que devuelve la matriz de orientación.">GetOriMatrix</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00157"></a>00157             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a5eb779af51de20f10434711cb06ea153" title="Función que devuelve el vector campo magnético.">GetMag</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
 <a name="l00158"></a>00158             
 <a name="l00160"></a>00160             <span class="comment">/*</span>
 <a name="l00161"></a>00161 <span class="comment">                \param mt_index id del sensor</span>
-<a name="l00162"></a>00162 <span class="comment">                \return Vector con los ángulos en los ejes x, y, z respectivamente</span>
+<a name="l00162"></a>00162 <span class="comment">                \return Cuaternión de orientación</span>
 <a name="l00163"></a>00163 <span class="comment">            */</span>
-<a name="l00164"></a>00164             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a5680dd82710f4eb73521c614293da8f4" title="Función que devuelve un vector con los ángulos de Euler.">GetOriEuler</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00164"></a>00164             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Quaternion.html" title="Clase para la creación y manipulación de cuaterniones.">dfv::Quaternion</a>   <a class="code" href="classdfv_1_1XsensListener.html#a882a444ecd1452f22381e20780c97631" title="Función que devuelve el cuaternión de orientación.">GetOriQuat</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
 <a name="l00165"></a>00165             
-<a name="l00166"></a>00166         <span class="keyword">private</span>:            
-<a name="l00167"></a>00167             ros::NodeHandle node_handle;
-<a name="l00168"></a>00168             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_count;
-<a name="l00169"></a>00169             std::vector&lt;SensorSubscriber*&gt; sensors;
-<a name="l00170"></a>00170             
-<a name="l00171"></a>00171     };
-<a name="l00172"></a>00172 }
-<a name="l00173"></a>00173 
-<a name="l00174"></a>00174 <span class="preprocessor">#endif</span>
+<a name="l00167"></a>00167             <span class="comment">/*</span>
+<a name="l00168"></a>00168 <span class="comment">                \param mt_index id del sensor</span>
+<a name="l00169"></a>00169 <span class="comment">                \return Matriz 3x3 de orientación</span>
+<a name="l00170"></a>00170 <span class="comment">            */</span>
+<a name="l00171"></a>00171             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Matrix.html" title="Clase para la creación y manipulación de matrices de dimensión arbitraria.">dfv::Matrix</a>       <a class="code" href="classdfv_1_1XsensListener.html#a8949e2302c992ae4d78132574ccb4c27" title="Función que devuelve la matriz de orientación.">GetOriMatrix</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00172"></a>00172             
+<a name="l00174"></a>00174             <span class="comment">/*</span>
+<a name="l00175"></a>00175 <span class="comment">                \param mt_index id del sensor</span>
+<a name="l00176"></a>00176 <span class="comment">                \return Vector con los ángulos en los ejes x, y, z respectivamente</span>
+<a name="l00177"></a>00177 <span class="comment">            */</span>
+<a name="l00178"></a>00178             <span class="keyword">const</span> <a class="code" href="classdfv_1_1Vector3.html" title="Clase para creación y manipulación de vectores de 3 dimensiones.">dfv::Vector3</a>      <a class="code" href="classdfv_1_1XsensListener.html#a5680dd82710f4eb73521c614293da8f4" title="Función que devuelve un vector con los ángulos de Euler.">GetOriEuler</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_index = 0) <span class="keyword">const</span>;
+<a name="l00179"></a>00179             
+<a name="l00180"></a>00180         <span class="keyword">private</span>:            
+<a name="l00181"></a>00181             ros::NodeHandle node_handle;
+<a name="l00182"></a>00182             <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mt_count;
+<a name="l00183"></a>00183             std::vector&lt;SensorSubscriber*&gt; sensors;
+<a name="l00184"></a>00184             
+<a name="l00185"></a>00185     };
+<a name="l00186"></a>00186 }
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -240,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 17:41:57 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Jueves, 24 de Octubre de 2013 18:01:26 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

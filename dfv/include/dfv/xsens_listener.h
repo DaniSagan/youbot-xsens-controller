@@ -26,7 +26,10 @@
 //! El espacio de nombres para la librería dfv
 namespace dfv
 {
-    /*! \brief Encapsula las comunicaciones de ROS de un sensor Xsens
+    /*! \brief Encapsula las comunicaciones de ROS de un sensor Xsens.
+    
+        No es necesario utilizar esta clase ya que de su funcionamiento se encarga
+        la clase XsensListener.
     */
     class SensorSubscriber
     {
@@ -41,27 +44,29 @@ namespace dfv
             
             /*! Realiza la subscripción a los topics publicados por el programa
                 xsens_driver.
-                
-                Función que devuelve el vector con las componentes x, y, z
-                de la aceleración leídas de los acelerómetros
             */
             bool                    SubscribeToTopics();
             
             /*! Devuelve los valores leídos de los acelerómetros
                 
-                Función que devuelve el vector con las velocidades angulares en
-                los ejes x, y, z en \f$\frac{rad}{s}\f$ leídas de los acelerómetros
+                Función que devuelve el vector con las componentes en
+                los ejes x, y, z en \f$\frac{m}{s^2}\f$ leídas de los acelerómetros
             */
             const dfv::Vector3      GetAcc() const;
             
-            /*! Devuelve los valores leídos del giróscopo
+            /*! Devuelve los valores leídos de los giróscopos
                 
-                Función que devuelve el vector con las componentes x, y, z
-                leídas de los acelerómetros
+                Función que devuelve el vector con las velocidades angulares en
+                los ejes x, y, z en \f$\frac{rad}{s}\f$ leídas de los acelerómetros
             */
             const dfv::Vector3      GetGyr() const;
             
-            //! Función que devuelve el vector campo magnético
+            /*! Devuelve los valores leídos de los magnetómetros
+                
+                Función que devuelve el vector con las componentes en
+                los ejes x, y, z en unidades arbitrarias (normalizadas según la 
+                intensidad del campo magnético registrado) leídas de los magnetómetros
+            */
             const dfv::Vector3      GetMag() const;
             
             //! Función que devuelve el cuaternión de orientación
@@ -112,6 +117,12 @@ namespace dfv
             void                OriEulerSubCallback(const std_msgs::Float64MultiArray::ConstPtr& msg);
     };
     
+    
+    /*! \brief Encapsula las comunicaciones de ROS de una red de sensores Xsens.
+    
+        Esta clase se encarga de declarar y controlar el funcionamiento de la
+        clase SensorSubscriber.
+    */
     class XsensListener
     {
         public:
@@ -121,9 +132,12 @@ namespace dfv
             //! Función que devuelve el número de sensores detectados
             unsigned int GetMtCount() const;
             
-            //! Función que devuelve el vector aceleración
-            /*
-                \param mt_index id del sensor
+            /*! Devuelve los valores leídos de los acelerómetros del sensor
+                especificado.
+                
+                Función que devuelve el vector con las componentes en
+                los ejes x, y, z en \f$\frac{m}{s^2}\f$ leídas de los acelerómetros
+                \param mt_index ID del sensor
                 \return Vector de 3 elementos con las componentes x, y, z de los acelerómetros
             */
             const dfv::Vector3      GetAcc(unsigned int mt_index = 0) const;
