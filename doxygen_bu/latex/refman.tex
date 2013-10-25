@@ -1,0 +1,153 @@
+\documentclass[a4paper]{book}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=4,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\hfuzz=15pt
+\setlength{\emergencystretch}{15pt}
+\hbadness=750
+\tolerance=750
+\begin{document}
+\hypersetup{pageanchor=false,citecolor=blue}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large youbot-\/xsens-\/controller }\\
+\vspace*{1cm}
+{\large \-Generado por Doxygen 1.7.6.1}\\
+\vspace*{0.5cm}
+{\small Jueves, 24 de Octubre de 2013 18:35:24}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true,citecolor=blue}
+\chapter{\-Lista de tareas pendientes}
+\label{todo}
+\hypertarget{todo}{}
+\input{todo}
+\chapter{\-Indice de módulos}
+\input{modules}
+\chapter{\-Indice de namespaces}
+\input{namespaces}
+\chapter{Índice de clases}
+\input{annotated}
+\chapter{\-Indice de archivos}
+\input{files}
+\chapter{\-Documentación de módulos}
+\input{group__enums}
+\chapter{\-Documentación de namespaces}
+\input{namespacedfv}
+\input{namespacexsens}
+\chapter{\-Documentación de las clases}
+\input{structCmtDeviceConfiguration_1_1__devInfo}
+\input{unionxsens_1_1MessageHeader_1_1__mdl}
+\input{structxsens_1_1MessageHeader_1_1__mdl_1_1__mextd}
+\input{structxsens_1_1MessageHeader_1_1__mdl_1_1__mextd_1_1__mlen}
+\input{classgazebo_1_1CModel}
+\input{classgazebo_1_1CModelList}
+\input{classxsens_1_1Cmt1f}
+\input{classxsens_1_1Cmt1s}
+\input{classxsens_1_1Cmt2f}
+\input{classxsens_1_1Cmt2s}
+\input{classxsens_1_1Cmt3}
+\input{structCmtAnalogInData}
+\input{structCmtBinaryData}
+\input{structCmtCalData}
+\input{structCmtDataFormat}
+\input{structCmtDeviceConfiguration}
+\input{structCmtDeviceMode}
+\input{structCmtDeviceMode2}
+\input{structCmtEuler}
+\input{structCmtGpsPvtData}
+\input{structCmtGpsSatelliteInfo}
+\input{structCmtGpsStatus}
+\input{structCmtMatrix}
+\input{structCmtPortInfo}
+\input{structCmtQuat}
+\input{structCmtRawData}
+\input{structCmtRawPressureData}
+\input{structCmtScenario}
+\input{structCmtShortVector}
+\input{structCmtSyncInSettings}
+\input{structCmtSyncOutSettings}
+\input{structCmtUtcTime}
+\input{structCmtVector}
+\input{structCmtVersion}
+\input{classxsens_1_1Driver}
+\input{classxsens_1_1Exception}
+\input{classxsens_1_1FifoQueue}
+\input{classxsens_1_1FifoQueueBasic}
+\input{classxsens_1_1JanitorClassFunc}
+\input{classxsens_1_1JanitorClassFuncP1}
+\input{classxsens_1_1List}
+\input{classdfv_1_1Matrix}
+\input{classxsens_1_1Message}
+\input{structxsens_1_1MessageHeader}
+\input{classxsens_1_1MillisecondTimer}
+\input{classxsens_1_1Packet}
+\input{structxsens_1_1Packet_1_1PacketInfo}
+\input{classdfv_1_1Quaternion}
+\input{classxsens_1_1Sensor}
+\input{classdfv_1_1SensorSubscriber}
+\input{classxsens_1_1SensorSubscriber}
+\input{classxsens_1_1SensorSubscriberList}
+\input{classxsens_1_1TimeSync}
+\input{classdfv_1_1Vector3}
+\input{classdfv_1_1XsensListener}
+\input{classYoubot}
+\input{classdfv_1_1Youbot}
+\chapter{\-Documentación de archivos}
+\input{cmt1_8h}
+\input{cmt2_8h}
+\input{cmt3_8h}
+\input{cmtdef_8h}
+\input{cmtmessage_8h}
+\input{cmtpacket_8h}
+\input{cmtscan_8h}
+\input{xsens__fifoqueue_8h}
+\input{xsens__janitors_8h}
+\input{xsens__list_8h}
+\input{xsens__std_8h}
+\printindex
+\end{document}

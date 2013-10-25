@@ -1,11 +1,9 @@
 /*
- * Clases SensorSubscriber y SensorSubscriberList
+ * Clases SensorSubscriber y XsensListener
  * 
- * Estas clases no son utilizadas por el driver.
- * Forman parte de la librería xsens_driver, que
- * proporciona una interfaz sencilla para acceder
- * a los datos publicados en ROS por el driver en
- * otros programas.
+ * Estas clases no son utilizadas por el driver. Forman parte de la librería 
+ * dfv. Proporcionan una interfaz sencilla para acceder a los datos publicados 
+ * en ROS por el driver que se puede utilizar en otros programas.
  *
  * Autor: Daniel Fernández Villanueva
  * Mayo 2013
@@ -69,13 +67,18 @@ namespace dfv
             */
             const dfv::Vector3      GetMag() const;
             
-            //! Función que devuelve el cuaternión de orientación
+            /*! Devuelve el cuaternión de orientación calculado por el propio
+                sensor.
+            */
             const dfv::Quaternion   GetOriQuat() const;
             
-            //! Función que devuelve la matriz de orientación
+            /*! Devuelve la matriz de orientación calculada por el propio
+                sensor.
+            */
             const dfv::Matrix       GetOriMatrix() const;
             
-            //! Función que devuelve un vector con los ángulos de Euler
+            /*! Devuelve los ángulos de Euler calculados por el propio sensor.
+            */
             const dfv::Vector3      GetOriEuler() const;
             
             
@@ -126,59 +129,82 @@ namespace dfv
     class XsensListener
     {
         public:
+            /*! \brief Constructor por defecto.
+                
+                \param node_handle_ Handle del nodo donde lo declaremos.
+            */
             XsensListener(ros::NodeHandle& node_handle_);
+            
+            /*! \brief Destructor
+            */
             ~XsensListener(); 
 
             //! Función que devuelve el número de sensores detectados
             unsigned int GetMtCount() const;
             
-            /*! Devuelve los valores leídos de los acelerómetros del sensor
+            
+            /*! \brief Devuelve los valores leídos de los acelerómetros del sensor
                 especificado.
                 
                 Función que devuelve el vector con las componentes en
-                los ejes x, y, z en \f$\frac{m}{s^2}\f$ leídas de los acelerómetros
+                los ejes x, y, z en \f$\mbox{m/s}^2\f$ leídas de los acelerómetros
                 \param mt_index ID del sensor
-                \return Vector de 3 elementos con las componentes x, y, z de los acelerómetros
+                \return vector con las componentes en los ejes x, y, z en 
+                \f$\mbox{m/s}^2\f$ leídas de los acelerómetros
             */
             const dfv::Vector3      GetAcc(unsigned int mt_index = 0) const;
             
-            //! Función que devuelve el vector giróscopo
-            /*
+            /*! \brief Devuelve los valores leídos de los giróscopos del sensor
+                especificado.
+                
                 \param mt_index id del sensor
-                \return Vector de 3 elementos con las componentes x, y, z de los giróscopos
+                \return Vector de 3 elementos con las velocidades angulares en
+                los ejes x, y, z en \f$\mbox{rad/s}\f$ leídas de los giróscopos
             */
             const dfv::Vector3      GetGyr(unsigned int mt_index = 0) const;
             
-            //! Función que devuelve el vector campo magnético
-            /*
-                \param mt_index id del sensor
-                \return Vector de 3 elementos con las componentes x, y, z de los magnetómetros
+            /*! \brief Devuelve los valores leídos de los magnetómetros del
+                sensor especificado
+
+                \param mt_index ID del sensor
+                \return Vector de 3 elementos con las componentes en
+                los ejes x, y, z en unidades arbitrarias (normalizadas según la 
+                intensidad del campo magnético registrado) leídas de los magnetómetros
             */
             const dfv::Vector3      GetMag(unsigned int mt_index = 0) const;
             
-            //! Función que devuelve el cuaternión de orientación
-            /*
-                \param mt_index id del sensor
+            /*! \brief Devuelve el cuaternión de orientación calculado por el propio sensor.
+            
+                Este valor es válido sólo si se ha configurado el driver xsens_node
+                para que publique cuaterniones de orientación.
+        
+                \param mt_index ID del sensor
                 \return Cuaternión de orientación
             */
             const dfv::Quaternion   GetOriQuat(unsigned int mt_index = 0) const;
             
-            //! Función que devuelve la matriz de orientación
-            /*
-                \param mt_index id del sensor
+            /*! \brief Devuelve la matriz de orientación calculada por el propio sensor.
+            
+                Este valor es válido sólo si se ha configurado el driver xsens_node
+                para que publique matrices de orientación.
+                
+                \param mt_index ID del sensor
                 \return Matriz 3x3 de orientación
             */
             const dfv::Matrix       GetOriMatrix(unsigned int mt_index = 0) const;
             
-            //! Función que devuelve un vector con los ángulos de Euler
-            /*
-                \param mt_index id del sensor
+            /*! \brief Devuelve un vector con los ángulos de Euler calculados por el propio sensor.
+                
+                Este valor es válido sólo si se ha configurado el driver xsens_node
+                para que publique ángulos de Euler.
+                
+                \param mt_index ID del sensor
                 \return Vector con los ángulos en los ejes x, y, z respectivamente
             */
             const dfv::Vector3      GetOriEuler(unsigned int mt_index = 0) const;
             
         private:            
-            ros::NodeHandle node_handle;
+            ros::NodeHandle& node_handle;
             unsigned int mt_count;
             std::vector<SensorSubscriber*> sensors;
             

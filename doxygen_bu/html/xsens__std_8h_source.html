@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>youbot-xsens-controller: Fichero Fuente xsens_driver/include/xsens_driver/xsens_std.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">youbot-xsens-controller
+   
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Generado por Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Página&#160;principal</span></a></li>
+      <li><a href="pages.html"><span>Páginas&#160;relacionadas</span></a></li>
+      <li><a href="modules.html"><span>Módulos</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
+      <li><a href="annotated.html"><span>Clases</span></a></li>
+      <li class="current"><a href="files.html"><span>Archivos</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;de&#160;archivos</span></a></li>
+      <li><a href="globals.html"><span>Miembros&#160;de&#160;los&#160;ficheros</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">xsens_driver/include/xsens_driver/xsens_std.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="xsens__std_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00019"></a>00019 <span class="preprocessor">#ifndef XSENS_STD_H</span>
+<a name="l00020"></a>00020 <span class="preprocessor"></span><span class="preprocessor">#define XSENS_STD_H</span>
+<a name="l00021"></a>00021 <span class="preprocessor"></span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="preprocessor">#if defined(_WIN32) &amp;&amp; !defined(_WIN32_WINNT)</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#   define _WIN32_WINNT 0x0502</span>
+<a name="l00026"></a>00026 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00027"></a>00027 <span class="preprocessor"></span>
+<a name="l00028"></a>00028 <span class="preprocessor">#ifdef _WIN32</span>
+<a name="l00029"></a>00029 <span class="preprocessor"></span><span class="preprocessor">#   include &lt;windows.h&gt;</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#endif</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span>
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035 <span class="comment">// NOTE!!! When adding a value to this list, also add its description in xsens_std.cpp</span>
+<a name="l00043"></a><a class="code" href="group__enums.html#ga822a2260a20af524029eef9e9a51ff6f">00043</a> <span class="comment"></span><span class="keyword">enum</span> <a class="code" href="group__enums.html#ga822a2260a20af524029eef9e9a51ff6f" title="Xsens return values.">XsensResultValue</a> {
+<a name="l00044"></a>00044     <span class="comment">// general OK</span>
+<a name="l00045"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9ecc38cf5706b4dc62700e99abc3bc73">00045</a>      <a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9ecc38cf5706b4dc62700e99abc3bc73" title="0: Operation was performed successfully">XRV_OK</a>                 = 0     
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047     <span class="comment">// communication protocol</span>
+<a name="l00048"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9a275575b34ddda2b89a8070ac612fad">00048</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9a275575b34ddda2b89a8070ac612fad" title="1: No bus communication possible">XRV_NOBUS</a>              = 1     
+<a name="l00049"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa416f4189bde2b9dd21446305ae7757a1">00049</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa416f4189bde2b9dd21446305ae7757a1" title="2: InitBus and/or SetBID are not issued">XRV_BUSNOTREADY</a>        = 2     
+<a name="l00050"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68b8e1f0d5ab35d1e99d7de34145663d">00050</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68b8e1f0d5ab35d1e99d7de34145663d" title="3: Period sent is invalid">XRV_INVALIDPERIOD</a>      = 3     
+<a name="l00051"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa31a1aecb87a28eba8a713878fe62c4c1">00051</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa31a1aecb87a28eba8a713878fe62c4c1" title="4: The message is invalid or not implemented">XRV_INVALIDMSG</a>         = 4     
+<a name="l00052"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab389b4f2206de587e339a8f6ecde0837">00052</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab389b4f2206de587e339a8f6ecde0837" title="16: A slave did not respond to WaitForSetBID">XRV_INITBUSFAIL1</a>       = 16    
+<a name="l00053"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faefee03f60e63b0cc3a2a82a42d8748fe">00053</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faefee03f60e63b0cc3a2a82a42d8748fe" title="17: An incorrect answer received after WaitForSetBID">XRV_INITBUSFAIL2</a>       = 17    
+<a name="l00054"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa803ba36e0350314199c9fc835a3171b4">00054</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa803ba36e0350314199c9fc835a3171b4" title="18: After four bus-scans still undetected Motion Trackers">XRV_INITBUSFAIL3</a>       = 18    
+<a name="l00055"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa443976b5acba95a8afae99256a5c319c">00055</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa443976b5acba95a8afae99256a5c319c" title="20: No reply to SetBID message during SetBID procedure">XRV_SETBIDFAIL1</a>        = 20    
+<a name="l00056"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa727122b9edaf8059888e67fef35fd067">00056</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa727122b9edaf8059888e67fef35fd067" title="21: Other than SetBIDAck received">XRV_SETBIDFAIL2</a>        = 21    
+<a name="l00057"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9351c51a7d6b6abf6b85be46035ba00d">00057</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9351c51a7d6b6abf6b85be46035ba00d" title="24: Timer overflow - period too short to collect all data from Motion Trackers">XRV_MEASUREMENTFAIL1</a>   = 24    
+<a name="l00058"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa95e9eb24ae483c3a4b8b9e052e9eba6a">00058</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa95e9eb24ae483c3a4b8b9e052e9eba6a" title="25: Motion Tracker responds with other than SlaveData message">XRV_MEASUREMENTFAIL2</a>   = 25    
+<a name="l00059"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa99ce60822cc1f3c77c03da0b8d1f72a1">00059</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa99ce60822cc1f3c77c03da0b8d1f72a1" title="26: Total bytes of data of Motion Trackers including sample counter exceeds 255 bytes">XRV_MEASUREMENTFAIL3</a>   = 26    
+<a name="l00060"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faff820f6cdc4b91f571d6b10a443652d1">00060</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faff820f6cdc4b91f571d6b10a443652d1" title="27: Timer overflows during measurement">XRV_MEASUREMENTFAIL4</a>   = 27    
+<a name="l00061"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faa1d258ceae6984046fe93aacfdd0dca2">00061</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faa1d258ceae6984046fe93aacfdd0dca2" title="28: Timer overflows during measurement">XRV_MEASUREMENTFAIL5</a>   = 28    
+<a name="l00062"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9b5a75ae09b7a4df2e00a4eb32da51d6">00062</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa9b5a75ae09b7a4df2e00a4eb32da51d6" title="29: No correct response from Motion Tracker during measurement">XRV_MEASUREMENTFAIL6</a>   = 29    
+<a name="l00063"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68b65fffbe4ae87b0dc3eafb1be8ec1c">00063</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68b65fffbe4ae87b0dc3eafb1be8ec1c" title="30: Timer overflows during measurement">XRV_TIMEROVERFLOW</a>      = 30    
+<a name="l00064"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae3a09ebf9004e6407e80d7884d999eee">00064</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae3a09ebf9004e6407e80d7884d999eee" title="32: Baud rate does not comply with valid range">XRV_BAUDRATEINVALID</a>    = 32    
+<a name="l00065"></a>00065     <span class="comment">//,XRV_PARAMINVALID     = 33    //!&lt; 33: An invalid parameter is supplied</span>
+<a name="l00066"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabb0f7b5202c07b851ac168ec4aa61547">00066</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabb0f7b5202c07b851ac168ec4aa61547" title="33: An invalid parameter is supplied">XRV_INVALIDPARAM</a>       = 33    
+<a name="l00067"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae99b4f20ee2fafb65ccf99bcce4efc15">00067</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae99b4f20ee2fafb65ccf99bcce4efc15" title="35: TX PC Buffer is full">XRV_MEASUREMENTFAIL7</a>   = 35    
+<a name="l00068"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa23cd3452ea69367cd793c04004b118f9">00068</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa23cd3452ea69367cd793c04004b118f9" title="36: TX PC Buffer overflow, cannot fit full message">XRV_MEASUREMENTFAIL8</a>   = 36    
+<a name="l00069"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa24bb5c1e2b865c61d44f994436cef3f2">00069</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa24bb5c1e2b865c61d44f994436cef3f2" title="40: The device generated an error, try updating the firmware">XRV_DEVICEERROR</a>        = 40    
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     <span class="comment">// CMT / XME / etc</span>
+<a name="l00072"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa8b48357051e4a998c816b2ca8479f9f8">00072</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa8b48357051e4a998c816b2ca8479f9f8" title="256: A generic error occurred">XRV_ERROR</a>                  = 256   
+<a name="l00073"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabe016a566cef50dfe45d21ae4d9d2b0c">00073</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabe016a566cef50dfe45d21ae4d9d2b0c" title="257: Operation not implemented in this version (yet)">XRV_NOTIMPLEMENTED</a>         = 257   
+<a name="l00074"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa936b9b026d2756f421ca552f7ec42228">00074</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa936b9b026d2756f421ca552f7ec42228" title="258: A timeout occurred">XRV_TIMEOUT</a>                = 258   
+<a name="l00075"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faf6f3fafb23eaadc2967be9268677e981">00075</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faf6f3fafb23eaadc2967be9268677e981" title="259: Operation aborted because of no data read">XRV_TIMEOUTNODATA</a>          = 259   
+<a name="l00076"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1e2f996bc4345d6f57881702e1c2771c">00076</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1e2f996bc4345d6f57881702e1c2771c" title="260: Checksum fault occurred">XRV_CHECKSUMFAULT</a>          = 260   
+<a name="l00077"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa8bfdb82b26ce336f74b1d0b4151f713a">00077</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa8bfdb82b26ce336f74b1d0b4151f713a" title="261: No internal memory available">XRV_OUTOFMEMORY</a>            = 261   
+<a name="l00078"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68f789b8c8b8cbabd6d3e7b642be4557">00078</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa68f789b8c8b8cbabd6d3e7b642be4557" title="262: The requested item was not found">XRV_NOTFOUND</a>               = 262   
+<a name="l00079"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac4263f232cb69a4759320968c2cb3055">00079</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac4263f232cb69a4759320968c2cb3055" title="263: Unexpected message received (e.g. no acknowledge message received)">XRV_UNEXPECTEDMSG</a>          = 263   
+<a name="l00080"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae449fa77dff08f1ba2db8c7c2d8890a0">00080</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae449fa77dff08f1ba2db8c7c2d8890a0" title="264: Invalid id supplied">XRV_INVALIDID</a>              = 264   
+<a name="l00081"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa704398d489d9f02e6206989850add050">00081</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa704398d489d9f02e6206989850add050" title="265: Operation is invalid at this point">XRV_INVALIDOPERATION</a>       = 265       
+<a name="l00082"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa6424ef155b348915650a5fdfe9fd5e95">00082</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa6424ef155b348915650a5fdfe9fd5e95" title="266: Insufficient buffer space available">XRV_INSUFFICIENTSPACE</a>      = 266   
+<a name="l00083"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa21d923493c349ed671e995d6cb1cb32c">00083</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa21d923493c349ed671e995d6cb1cb32c" title="267: The specified i/o device can not be opened">XRV_INPUTCANNOTBEOPENED</a>    = 267   
+<a name="l00084"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa59919fd84d974987b6c1687fd598092c">00084</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa59919fd84d974987b6c1687fd598092c" title="268: The specified i/o device can not be opened">XRV_OUTPUTCANNOTBEOPENED</a>   = 268   
+<a name="l00085"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa16ebfc281a5629d2ace0945e742e2a14">00085</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa16ebfc281a5629d2ace0945e742e2a14" title="269: An I/O device is already opened with this object">XRV_ALREADYOPEN</a>            = 269   
+<a name="l00086"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4c54d66f9391c0e311be4cc1cd256ab5">00086</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4c54d66f9391c0e311be4cc1cd256ab5" title="270: End of file is reached">XRV_ENDOFFILE</a>              = 270   
+<a name="l00087"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa7fe5e99d9403dc3ae493017b98468d7c">00087</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa7fe5e99d9403dc3ae493017b98468d7c" title="271: A required settings file could not be opened or is missing some data">XRV_COULDNOTREADSETTINGS</a>   = 271   
+<a name="l00088"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa058b8917a2350322a985d3945b7890ef">00088</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa058b8917a2350322a985d3945b7890ef" title="272: No data is available">XRV_NODATA</a>                 = 272   
+<a name="l00089"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabe5d6d8e99eeb03058667d828b9fb9f3">00089</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabe5d6d8e99eeb03058667d828b9fb9f3" title="273: Tried to change a read-only value">XRV_READONLY</a>               = 273   
+<a name="l00090"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6facaa697ae31f268c4f6ec6668574d8dab">00090</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6facaa697ae31f268c4f6ec6668574d8dab" title="274: Tried to supply a NULL value where it is not allowed">XRV_NULLPTR</a>                = 274   
+<a name="l00091"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1e7b31fa21fede24583d9298e447e846">00091</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1e7b31fa21fede24583d9298e447e846" title="275: Insufficient data was supplied to a function">XRV_INSUFFICIENTDATA</a>       = 275   
+<a name="l00092"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1245df00b8f4110af798ea3ca27b77cc">00092</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa1245df00b8f4110af798ea3ca27b77cc" title="276: Busy processing, try again later">XRV_BUSY</a>                   = 276   
+<a name="l00093"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4f5eb13f07d04a8bbd68ffb5d86fba0e">00093</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4f5eb13f07d04a8bbd68ffb5d86fba0e" title="277: Invalid instance called">XRV_INVALIDINSTANCE</a>        = 277   
+<a name="l00094"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa2a459c5231461e1d7e798d4d059be13a">00094</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa2a459c5231461e1d7e798d4d059be13a" title="278: A trusted data stream proves to contain corrupted data">XRV_DATACORRUPT</a>            = 278   
+<a name="l00095"></a>00095 
+<a name="l00096"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabc06bc12efc3230668e4be338e67f0e2">00096</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabc06bc12efc3230668e4be338e67f0e2" title="279: Failure during read of settings">XRV_READINITFAILED</a>         = 279   
+<a name="l00097"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab00c6f3954fc82561c8a9c7206a99b25">00097</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab00c6f3954fc82561c8a9c7206a99b25" title="280: Could not find any MVN-compatible hardware">XRV_NOXMFOUND</a>              = 280   
+<a name="l00098"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac4ed5bc21e446f5d7122428f793effc0">00098</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac4ed5bc21e446f5d7122428f793effc0" title="281: Found only one responding Xbus Master">XRV_ONLYONEXMFOUND</a>         = 281   
+<a name="l00099"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faea107483c7e762a3323354ce45dc81f4">00099</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faea107483c7e762a3323354ce45dc81f4" title="282: No sensors found">XRV_MTCOUNTZERO</a>            = 282   
+<a name="l00100"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab2dd8e66b06dcd4d48c49bc6493ca45f">00100</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab2dd8e66b06dcd4d48c49bc6493ca45f" title="283: One or more sensors are not where they were expected">XRV_MTLOCATIONINVALID</a>      = 283   
+<a name="l00101"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6facde69a0b0e1d5c54b119e61703463b45">00101</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6facde69a0b0e1d5c54b119e61703463b45" title="284: Not enough sensors were found">XRV_INSUFFICIENTMTS</a>        = 284   
+<a name="l00102"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa696c6106e33e0d7e1e76037c1f349e9b">00102</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa696c6106e33e0d7e1e76037c1f349e9b" title="285: Failure during initialization of Fusion Engine">XRV_INITFUSIONFAILED</a>       = 285   
+<a name="l00103"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fad338b62639182b14f2597ced68332b77">00103</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fad338b62639182b14f2597ced68332b77" title="286: Something else was received than was requested">XRV_OTHER</a>                  = 286   
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4f6804db86d07ebd213960d10ff6eb62">00105</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa4f6804db86d07ebd213960d10ff6eb62" title="287: No file opened for reading/writing">XRV_NOFILEOPEN</a>             = 287   
+<a name="l00106"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa286030c8ef758b70a66bed69f0e43e70">00106</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa286030c8ef758b70a66bed69f0e43e70" title="288: No serial port opened for reading/writing">XRV_NOPORTOPEN</a>             = 288   
+<a name="l00107"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa53faa92b91b5fcff9e8eb0b2a684cca9">00107</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa53faa92b91b5fcff9e8eb0b2a684cca9" title="289: No file or serial port opened for reading/writing">XRV_NOFILEORPORTOPEN</a>       = 289   
+<a name="l00108"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa0c6efbd5618e57ea1be019b5db62df7b">00108</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa0c6efbd5618e57ea1be019b5db62df7b" title="290: A required port could not be found">XRV_PORTNOTFOUND</a>           = 290   
+<a name="l00109"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faa90998059204159f7a817642b663a0dd">00109</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faa90998059204159f7a817642b663a0dd" title="291: The low-level port handler failed to initialize">XRV_INITPORTFAILED</a>         = 291   
+<a name="l00110"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabc6637a09ea20b247937001e5150c6f0">00110</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabc6637a09ea20b247937001e5150c6f0" title="292: A calibration routine failed">XRV_CALIBRATIONFAILED</a>      = 292   
+<a name="l00111"></a>00111 
+<a name="l00112"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa0bc0b1bb4da5a855de377f5a7fdf3453">00112</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa0bc0b1bb4da5a855de377f5a7fdf3453" title="293: The in-config check of the device failed">XRV_CONFIGCHECKFAIL</a>        = 293   
+<a name="l00113"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faedea62569aaed473a00d7997a0f805ba">00113</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6faedea62569aaed473a00d7997a0f805ba" title="294: The operation is once only and has already been performed">XRV_ALREADYDONE</a>            = 294   
+<a name="l00114"></a>00114 
+<a name="l00115"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab6b53ed5917321bfd933740a57455238">00115</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fab6b53ed5917321bfd933740a57455238" title="295: The single connected device is configured as a slave">XRV_SYNC_SINGLE_SLAVE</a>      = 295   
+<a name="l00116"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa6d0711cdd0e9441e06eb8cad819b1706">00116</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa6d0711cdd0e9441e06eb8cad819b1706" title="296: More than one master was detected">XRV_SYNC_SECOND_MASTER</a>     = 296   
+<a name="l00117"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabea15bdd48c97647b1d196836bbbe1f6">00117</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fabea15bdd48c97647b1d196836bbbe1f6" title="297: A device was detected that was neither master nor slave">XRV_SYNC_NO_SYNC</a>           = 297   
+<a name="l00118"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa18896a5b8edc526446eabb742bf5cd5c">00118</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa18896a5b8edc526446eabb742bf5cd5c" title="298: No master detected">XRV_SYNC_NO_MASTER</a>         = 298   
+<a name="l00119"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac6a703db248440c47606cbe7c1ab9e05">00119</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fac6a703db248440c47606cbe7c1ab9e05" title="299: A device is not sending enough data">XRV_SYNC_DATA_MISSING</a>      = 299   
+<a name="l00120"></a>00120 
+<a name="l00121"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa5b8d087db95259213ddfd4373acd5e8a">00121</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa5b8d087db95259213ddfd4373acd5e8a" title="300: The version of the object is too low for the requested operation">XRV_VERSION_TOO_LOW</a>        = 300   
+<a name="l00122"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa23fe81f77b6805658e99ee47033edd95">00122</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fa23fe81f77b6805658e99ee47033edd95" title="301: The object has an unrecognized version, so it&#39;s not safe to perform the operation">XRV_VERSION_PROBLEM</a>        = 301   
+<a name="l00123"></a>00123 
+<a name="l00124"></a><a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae4feba3dec107a09485db51627436c7d">00124</a>     ,<a class="code" href="group__enums.html#gga822a2260a20af524029eef9e9a51ff6fae4feba3dec107a09485db51627436c7d" title="302: The process was aborted by an external event, usually a user action or process termination...">XRV_ABORTED</a>                = 302   
+<a name="l00125"></a>00125 };
+<a name="l00127"></a>00127 
+<a name="l00129"></a>00129 
+<a name="l00131"></a>00131 <span class="preprocessor">#ifndef DELNUL</span>
+<a name="l00132"></a>00132 <span class="preprocessor"></span>
+<a name="l00133"></a>00133 <span class="preprocessor">#define DELNUL(ptr)     do { delete ptr; ptr = NULL; } while (0);</span>
+<a name="l00134"></a>00134 <span class="preprocessor"></span>
+<a name="l00135"></a>00135 <span class="preprocessor">#define CHKDELNUL(ptr)  do { if (ptr != NULL) { delete ptr; ptr = NULL; } } while (0);</span>
+<a name="l00136"></a>00136 <span class="preprocessor"></span>
+<a name="l00137"></a>00137 <span class="preprocessor">#define LSTDELNUL(ptr)      do { delete[] ptr; ptr = NULL; } while (0);</span>
+<a name="l00138"></a>00138 <span class="preprocessor"></span>
+<a name="l00139"></a>00139 <span class="preprocessor">#define LSTCHKDELNUL(ptr)   do { if (ptr != NULL) { delete[] ptr; ptr = NULL; } } while (0);</span>
+<a name="l00140"></a>00140 <span class="preprocessor"></span>
+<a name="l00142"></a>00142 <span class="preprocessor">#define FREENUL(ptr)    do { free(ptr); ptr = NULL; } while (0);</span>
+<a name="l00143"></a>00143 <span class="preprocessor"></span>
+<a name="l00144"></a>00144 <span class="preprocessor">#define CHKFREENUL(ptr) do { if (ptr != NULL) { free(ptr); ptr = NULL; } } while (0);</span>
+<a name="l00145"></a>00145 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00146"></a>00146 <span class="preprocessor"></span>
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150 <span class="comment">/* \brief Retrieve a string corresponding to the given result code.</span>
+<a name="l00151"></a>00151 <span class="comment"></span>
+<a name="l00152"></a>00152 <span class="comment">    This function uses the CmtResultText list to return a string with the relevant result </span>
+<a name="l00153"></a>00153 <span class="comment">    code in a textual format. If the supplied result code is invalid the</span>
+<a name="l00154"></a>00154 <span class="comment">    &quot;!!Invalid result code!!&quot; string is returned.</span>
+<a name="l00155"></a>00155 <span class="comment">*/</span>
+<a name="l00156"></a>00156 <span class="preprocessor">#if !defined(_CMT_DLL_IMPORT) &amp;&amp; !defined(_XME_DLL_IMPORT)</span>
+<a name="l00157"></a>00157 <span class="preprocessor"></span><span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="xsens__std_8h.html#a7386853937f4c078e1458f2c34049ace">xsensResultText</a>(<span class="keyword">const</span> <a class="code" href="group__enums.html#ga822a2260a20af524029eef9e9a51ff6f" title="Xsens return values.">XsensResultValue</a> result);
+<a name="l00158"></a>00158 <span class="preprocessor">#endif</span>
+<a name="l00159"></a>00159 <span class="preprocessor"></span>
+<a name="l00161"></a>00161 
+<a name="l00162"></a><a class="code" href="xsens__std_8h.html#a607fd3321131e860064d62337638ac4b">00162</a> <span class="preprocessor">#define XSENS_LABEL_SIZE            256     //!&lt; The maximum length of a label</span>
+<a name="l00163"></a><a class="code" href="xsens__std_8h.html#a02f4fedac7a77df4b858b05304cdc7e5">00163</a> <span class="preprocessor"></span><span class="preprocessor">#define XSENS_SHORT_STRING_SIZE     256     //!&lt; The maximum length of a short string</span>
+<a name="l00164"></a><a class="code" href="xsens__std_8h.html#ae8c084d3a588e2e66f3b2c9c7427b3cb">00164</a> <span class="preprocessor"></span><span class="preprocessor">#define XSENS_LONG_STRING_SIZE      16384   //!&lt; The maximum length of a long string</span>
+<a name="l00165"></a>00165 <span class="preprocessor"></span>
+<a name="l00167"></a>00167 
+<a name="l00169"></a>00169 <span class="preprocessor">#endif  // XSENS_STD_H</span>
+<a name="l00170"></a>00170 <span class="preprocessor"></span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Generado el Jueves, 24 de Octubre de 2013 18:35:23 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

@@ -59,8 +59,10 @@ int main(int argc, char** argv)
         ros::spinOnce();
     }
     
+    ROS_INFO("Creating youbot...");
     dfv::Youbot youbot(node_handle);
     
+    ROS_INFO("Youbot Creted");
     std::vector<double> angs;
     
     unsigned int c = 50;

@@ -13,35 +13,51 @@
 \subsection*{\-Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classdfv_1_1XsensListener_a545d4b10d2c34166d82bc41403e39a00}{{\bfseries \-Xsens\-Listener} (ros\-::\-Node\-Handle \&node\-\_\-handle\-\_\-)}\label{classdfv_1_1XsensListener_a545d4b10d2c34166d82bc41403e39a00}
+\hyperlink{classdfv_1_1XsensListener_a545d4b10d2c34166d82bc41403e39a00}{\-Xsens\-Listener} (ros\-::\-Node\-Handle \&node\-\_\-handle\-\_\-)
+\begin{DoxyCompactList}\small\item\em \-Constructor por defecto. \end{DoxyCompactList}\item 
+\hypertarget{classdfv_1_1XsensListener_abe379af82320a08aa76f0741a7f11db0}{\hyperlink{classdfv_1_1XsensListener_abe379af82320a08aa76f0741a7f11db0}{$\sim$\-Xsens\-Listener} ()}\label{classdfv_1_1XsensListener_abe379af82320a08aa76f0741a7f11db0}
 
-\item 
+\begin{DoxyCompactList}\small\item\em \-Destructor. \end{DoxyCompactList}\item 
 \hypertarget{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}{unsigned int \hyperlink{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}{\-Get\-Mt\-Count} () const }\label{classdfv_1_1XsensListener_a5d31c2bd34dcbd18c60634e994c02ed3}
 
 \begin{DoxyCompactList}\small\item\em \-Función que devuelve el número de sensores detectados. \end{DoxyCompactList}\item 
 const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{\-Get\-Acc} (unsigned int mt\-\_\-index=0) const 
-\item 
-\hypertarget{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{\-Get\-Gyr} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve el vector giróscopo. \end{DoxyCompactList}\item 
-\hypertarget{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}{\-Get\-Mag} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve el vector campo magnético. \end{DoxyCompactList}\item 
-\hypertarget{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}{const \hyperlink{classdfv_1_1Quaternion}{dfv\-::\-Quaternion} \hyperlink{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}{\-Get\-Ori\-Quat} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve el cuaternión de orientación. \end{DoxyCompactList}\item 
-\hypertarget{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}{const \hyperlink{classdfv_1_1Matrix}{dfv\-::\-Matrix} \hyperlink{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}{\-Get\-Ori\-Matrix} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve la matriz de orientación. \end{DoxyCompactList}\item 
-\hypertarget{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{\-Get\-Ori\-Euler} (unsigned int mt\-\_\-index=0) const }\label{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}
-
-\begin{DoxyCompactList}\small\item\em \-Función que devuelve un vector con los ángulos de \-Euler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \-Devuelve los valores leídos de los acelerómetros del sensor especificado. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{\-Get\-Gyr} (unsigned int mt\-\_\-index=0) const 
+\begin{DoxyCompactList}\small\item\em \-Devuelve los valores leídos de los giróscopos del sensor especificado. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}{\-Get\-Mag} (unsigned int mt\-\_\-index=0) const 
+\begin{DoxyCompactList}\small\item\em \-Devuelve los valores leídos de los magnetómetros del sensor especificado. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Quaternion}{dfv\-::\-Quaternion} \hyperlink{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}{\-Get\-Ori\-Quat} (unsigned int mt\-\_\-index=0) const 
+\begin{DoxyCompactList}\small\item\em \-Devuelve el cuaternión de orientación calculado por el propio sensor. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Matrix}{dfv\-::\-Matrix} \hyperlink{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}{\-Get\-Ori\-Matrix} (unsigned int mt\-\_\-index=0) const 
+\begin{DoxyCompactList}\small\item\em \-Devuelve la matriz de orientación calculada por el propio sensor. \end{DoxyCompactList}\item 
+const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{\-Get\-Ori\-Euler} (unsigned int mt\-\_\-index=0) const 
+\begin{DoxyCompactList}\small\item\em \-Devuelve un vector con los ángulos de \-Euler calculados por el propio sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{\-Descripción detallada}
 \-Encapsula las comunicaciones de \-R\-O\-S de una red de sensores \-Xsens. 
 
 \-Esta clase se encarga de declarar y controlar el funcionamiento de la clase \hyperlink{classdfv_1_1SensorSubscriber}{\-Sensor\-Subscriber}. 
+
+\subsection{\-Documentación del constructor y destructor}
+\hypertarget{classdfv_1_1XsensListener_a545d4b10d2c34166d82bc41403e39a00}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Xsens\-Listener@{\-Xsens\-Listener}}
+\index{\-Xsens\-Listener@{\-Xsens\-Listener}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Xsens\-Listener}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dfv\-::\-Xsens\-Listener\-::\-Xsens\-Listener} (
+\begin{DoxyParamCaption}
+\item[{ros\-::\-Node\-Handle \&}]{node\-\_\-handle\-\_\-}
+\end{DoxyParamCaption}
+)}}\label{classdfv_1_1XsensListener_a545d4b10d2c34166d82bc41403e39a00}
+
+
+\-Constructor por defecto. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em node\-\_\-handle\-\_\-} & \-Handle del nodo donde lo declaremos. \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{\-Documentación de las funciones miembro}
 \hypertarget{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Acc@{\-Get\-Acc}}
@@ -51,15 +67,118 @@ const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \hyperlink{classdfv_1_1X
 \item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
 \end{DoxyParamCaption}
 ) const}}\label{classdfv_1_1XsensListener_a940577a890abfe31a9f765766abbb0ec}
-\-Devuelve los valores leídos de los acelerómetros del sensor especificado.
 
-\-Función que devuelve el vector con las componentes en los ejes x, y, z en $\frac{m}{s^2}$ leídas de los acelerómetros 
+
+\-Devuelve los valores leídos de los acelerómetros del sensor especificado. 
+
+\-Función que devuelve el vector con las componentes en los ejes x, y, z en $\mbox{m/s}^2$ leídas de los acelerómetros 
 \begin{DoxyParams}{\-Parámetros}
 {\em mt\-\_\-index} & \-I\-D del sensor \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Devuelve}
-\-Vector de 3 elementos con las componentes x, y, z de los acelerómetros 
+vector con las componentes en los ejes x, y, z en $\mbox{m/s}^2$ leídas de los acelerómetros 
+\end{DoxyReturn}
+\hypertarget{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Gyr@{\-Get\-Gyr}}
+\index{\-Get\-Gyr@{\-Get\-Gyr}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Gyr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Gyr} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a3896a0a58d557a5e9299415a146d80ed}
+
+
+\-Devuelve los valores leídos de los giróscopos del sensor especificado. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & id del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Vector de 3 elementos con las velocidades angulares en los ejes x, y, z en $\mbox{rad/s}$ leídas de los giróscopos 
+\end{DoxyReturn}
+\hypertarget{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Mag@{\-Get\-Mag}}
+\index{\-Get\-Mag@{\-Get\-Mag}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Mag}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Mag} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a5eb779af51de20f10434711cb06ea153}
+
+
+\-Devuelve los valores leídos de los magnetómetros del sensor especificado. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & \-I\-D del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Vector de 3 elementos con las componentes en los ejes x, y, z en unidades arbitrarias (normalizadas según la intensidad del campo magnético registrado) leídas de los magnetómetros 
+\end{DoxyReturn}
+\hypertarget{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Ori\-Euler@{\-Get\-Ori\-Euler}}
+\index{\-Get\-Ori\-Euler@{\-Get\-Ori\-Euler}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Ori\-Euler}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Vector3} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Ori\-Euler} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a5680dd82710f4eb73521c614293da8f4}
+
+
+\-Devuelve un vector con los ángulos de \-Euler calculados por el propio sensor. 
+
+\-Este valor es válido sólo si se ha configurado el driver xsens\-\_\-node para que publique ángulos de \-Euler.
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & \-I\-D del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Vector con los ángulos en los ejes x, y, z respectivamente 
+\end{DoxyReturn}
+\hypertarget{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Ori\-Matrix@{\-Get\-Ori\-Matrix}}
+\index{\-Get\-Ori\-Matrix@{\-Get\-Ori\-Matrix}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Ori\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Matrix} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Ori\-Matrix} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a8949e2302c992ae4d78132574ccb4c27}
+
+
+\-Devuelve la matriz de orientación calculada por el propio sensor. 
+
+\-Este valor es válido sólo si se ha configurado el driver xsens\-\_\-node para que publique matrices de orientación.
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & \-I\-D del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Matriz 3x3 de orientación 
+\end{DoxyReturn}
+\hypertarget{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}{\index{dfv\-::\-Xsens\-Listener@{dfv\-::\-Xsens\-Listener}!\-Get\-Ori\-Quat@{\-Get\-Ori\-Quat}}
+\index{\-Get\-Ori\-Quat@{\-Get\-Ori\-Quat}!dfv::XsensListener@{dfv\-::\-Xsens\-Listener}}
+\subsubsection[{\-Get\-Ori\-Quat}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf dfv\-::\-Quaternion} {\bf dfv\-::\-Xsens\-Listener\-::\-Get\-Ori\-Quat} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mt\-\_\-index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classdfv_1_1XsensListener_a882a444ecd1452f22381e20780c97631}
+
+
+\-Devuelve el cuaternión de orientación calculado por el propio sensor. 
+
+\-Este valor es válido sólo si se ha configurado el driver xsens\-\_\-node para que publique cuaterniones de orientación.
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em mt\-\_\-index} & \-I\-D del sensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-Cuaternión de orientación 
 \end{DoxyReturn}
 
 

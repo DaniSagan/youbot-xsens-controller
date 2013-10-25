@@ -9,5 +9,7 @@ var searchData=
   ['_7efifoqueuebasic',['~FifoQueueBasic',['../classxsens_1_1FifoQueueBasic.html#a0e9808c170b05a5616c193525d1b324c',1,'xsens::FifoQueueBasic']]],
   ['_7elist',['~List',['../classxsens_1_1List.html#a4d4a5cbd11cda6022990701c97276980',1,'xsens::List']]],
   ['_7emessage',['~Message',['../classxsens_1_1Message.html#a8cd4cc13aebfcd861727f311877cbfdf',1,'xsens::Message']]],
-  ['_7esensorsubscriber',['~SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#aad63894472798f2e15e3f54bb8c7c78c',1,'dfv::SensorSubscriber']]]
+  ['_7equaternion',['~Quaternion',['../classdfv_1_1Quaternion.html#a00b2b86c30aec69e96fd17bbedea3306',1,'dfv::Quaternion']]],
+  ['_7esensorsubscriber',['~SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#aad63894472798f2e15e3f54bb8c7c78c',1,'dfv::SensorSubscriber']]],
+  ['_7exsenslistener',['~XsensListener',['../classdfv_1_1XsensListener.html#abe379af82320a08aa76f0741a7f11db0',1,'dfv::XsensListener']]]
 ];

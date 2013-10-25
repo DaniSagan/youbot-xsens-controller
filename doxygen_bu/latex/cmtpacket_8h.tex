@@ -1,0 +1,86 @@
+\hypertarget{cmtpacket_8h}{\section{\-Referencia del \-Archivo xsens\-\_\-driver/include/xsens\-\_\-driver/cmtpacket.h}
+\label{cmtpacket_8h}\index{xsens\-\_\-driver/include/xsens\-\_\-driver/cmtpacket.\-h@{xsens\-\_\-driver/include/xsens\-\_\-driver/cmtpacket.\-h}}
+}
+
+
+\-Contains the \-C\-M\-T \-Packet interface.  
+
+
+{\ttfamily \#include $<$xsens\-\_\-driver/cmtdef.\-h$>$}\*
+{\ttfamily \#include $<$xsens\-\_\-driver/cmt2.\-h$>$}\*
+\subsection*{\-Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classxsens_1_1Packet}{xsens\-::\-Packet}
+\begin{DoxyCompactList}\small\item\em \-A structure containing \-M\-T data + timestamp and formatting information. \end{DoxyCompactList}\item 
+struct \hyperlink{structxsens_1_1Packet_1_1PacketInfo}{xsens\-::\-Packet\-::\-Packet\-Info}
+\begin{DoxyCompactList}\small\item\em \-Contains information about data in the packet and the format of that data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespacexsens}{xsens}
+\begin{DoxyCompactList}\small\item\em \-The namespace of all \-Xsens software since 2006. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{'defines'}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{cmtpacket_8h_ac7b0d2d6ccec4bca397c2de09ff95934}{\#define \hyperlink{cmtpacket_8h_ac7b0d2d6ccec4bca397c2de09ff95934}{\-C\-M\-T\-\_\-\-D\-A\-T\-A\-\_\-\-I\-T\-E\-M\-\_\-\-N\-O\-T\-\_\-\-A\-V\-A\-I\-L\-A\-B\-L\-E}~65535}\label{cmtpacket_8h_ac7b0d2d6ccec4bca397c2de09ff95934}
+
+\begin{DoxyCompactList}\small\item\em \-Indicates that a data item is not available in the packet. \end{DoxyCompactList}\item 
+\#define \hyperlink{cmtpacket_8h_a98303fa04f8bbd772faacb56c645fa10}{get\-Raw\-Gps\-Data}~get\-Gps\-Pvt\-Data
+\begin{DoxyCompactList}\small\item\em \-This function is obsolete, use get\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. \end{DoxyCompactList}\item 
+\#define \hyperlink{cmtpacket_8h_acd5ae8d71136dadf41020df26b77fa3d}{contains\-Raw\-Gps\-Data}~contains\-Gps\-Pvt\-Data
+\begin{DoxyCompactList}\small\item\em \-This function is obsolete, use contains\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. \end{DoxyCompactList}\item 
+\#define \hyperlink{cmtpacket_8h_af874f224d2e2a655ef2e17c33117e368}{update\-Raw\-Gps\-Data}~update\-Gps\-Pvt\-Data
+\begin{DoxyCompactList}\small\item\em \-This function is obsolete, use update\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-Contains the \-C\-M\-T \-Packet interface. \-This level contains the packet interface of \-Cmt. \-All code should be \-O\-S-\/independent.\hypertarget{xsens__std_8h_FileCopyright}{}\subsection{\-Copyright Notice}\label{xsens__std_8h_FileCopyright}
+\-Copyright (\-C) \-Xsens \-Technologies \-B.\-V., 2006. \-All rights reserved.
+
+\-This source code is intended for use only by \-Xsens \-Technologies \-B\-V and those that have explicit written permission to use it from \-Xsens \-Technologies \-B\-V.
+
+\-T\-H\-I\-S \-C\-O\-D\-E \-A\-N\-D \-I\-N\-F\-O\-R\-M\-A\-T\-I\-O\-N \-I\-S \-P\-R\-O\-V\-I\-D\-E\-D \char`\"{}\-A\-S I\-S\char`\"{} \-W\-I\-T\-H\-O\-U\-T \-W\-A\-R\-R\-A\-N\-T\-Y \-O\-F \-A\-N\-Y \-K\-I\-N\-D, \-E\-I\-T\-H\-E\-R \-E\-X\-P\-R\-E\-S\-S\-E\-D \-O\-R \-I\-M\-P\-L\-I\-E\-D, \-I\-N\-C\-L\-U\-D\-I\-N\-G \-B\-U\-T \-N\-O\-T \-L\-I\-M\-I\-T\-E\-D \-T\-O \-T\-H\-E \-I\-M\-P\-L\-I\-E\-D \-W\-A\-R\-R\-A\-N\-T\-I\-E\-S \-O\-F \-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y \-A\-N\-D/\-O\-R \-F\-I\-T\-N\-E\-S\-S \-F\-O\-R \-A \-P\-A\-R\-T\-I\-C\-U\-L\-A\-R \-P\-U\-R\-P\-O\-S\-E.\hypertarget{xsens__fifoqueue_8h_FileChangelog}{}\subsection{\-Changelog}\label{xsens__fifoqueue_8h_FileChangelog}
+\begin{DoxyParagraph}{2006-\/05-\/10, v0.0.1}
+\begin{DoxyItemize}
+\item \-Job \-Mulder\-: \-Created \-Cmtpacket.\-h \end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{2006-\/07-\/21, v0.1.0}
+\begin{DoxyItemize}
+\item \-Job \-Mulder\-: \-Updated file for release 0.\-1.\-0 \end{DoxyItemize}
+
+\end{DoxyParagraph}
+
+
+\subsection{\-Documentación de los 'defines'}
+\hypertarget{cmtpacket_8h_acd5ae8d71136dadf41020df26b77fa3d}{\index{cmtpacket.\-h@{cmtpacket.\-h}!contains\-Raw\-Gps\-Data@{contains\-Raw\-Gps\-Data}}
+\index{contains\-Raw\-Gps\-Data@{contains\-Raw\-Gps\-Data}!cmtpacket.h@{cmtpacket.\-h}}
+\subsubsection[{contains\-Raw\-Gps\-Data}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf contains\-Raw\-Gps\-Data}~contains\-Gps\-Pvt\-Data}}\label{cmtpacket_8h_acd5ae8d71136dadf41020df26b77fa3d}
+
+
+\-This function is obsolete, use contains\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. 
+
+\begin{DoxySeeAlso}{\-Ver también}
+contains\-Gps\-Pvt\-Data 
+\end{DoxySeeAlso}
+\hypertarget{cmtpacket_8h_a98303fa04f8bbd772faacb56c645fa10}{\index{cmtpacket.\-h@{cmtpacket.\-h}!get\-Raw\-Gps\-Data@{get\-Raw\-Gps\-Data}}
+\index{get\-Raw\-Gps\-Data@{get\-Raw\-Gps\-Data}!cmtpacket.h@{cmtpacket.\-h}}
+\subsubsection[{get\-Raw\-Gps\-Data}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf get\-Raw\-Gps\-Data}~get\-Gps\-Pvt\-Data}}\label{cmtpacket_8h_a98303fa04f8bbd772faacb56c645fa10}
+
+
+\-This function is obsolete, use get\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. 
+
+\begin{DoxySeeAlso}{\-Ver también}
+get\-Gps\-Pvt\-Data 
+\end{DoxySeeAlso}
+\hypertarget{cmtpacket_8h_af874f224d2e2a655ef2e17c33117e368}{\index{cmtpacket.\-h@{cmtpacket.\-h}!update\-Raw\-Gps\-Data@{update\-Raw\-Gps\-Data}}
+\index{update\-Raw\-Gps\-Data@{update\-Raw\-Gps\-Data}!cmtpacket.h@{cmtpacket.\-h}}
+\subsubsection[{update\-Raw\-Gps\-Data}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf update\-Raw\-Gps\-Data}~update\-Gps\-Pvt\-Data}}\label{cmtpacket_8h_af874f224d2e2a655ef2e17c33117e368}
+
+
+\-This function is obsolete, use update\-Gps\-Pvt\-Data instead. \-This function will be removed in future versions of the \-M\-T \-S\-D\-K. 
+
+\begin{DoxySeeAlso}{\-Ver también}
+update\-Gps\-Pvt\-Data 
+\end{DoxySeeAlso}

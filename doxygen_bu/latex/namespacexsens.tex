@@ -1,0 +1,241 @@
+\hypertarget{namespacexsens}{\section{\-Referencia del \-Namespace xsens}
+\label{namespacexsens}\index{xsens@{xsens}}
+}
+
+
+\-The namespace of all \-Xsens software since 2006.  
+
+
+\subsection*{\-Clases}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classxsens_1_1Cmt1s}{\-Cmt1s}
+\begin{DoxyCompactList}\small\item\em \-The low-\/level serial communication class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Cmt1f}{\-Cmt1f}
+\begin{DoxyCompactList}\small\item\em \-The low-\/level file communication class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Cmt2s}{\-Cmt2s}
+\begin{DoxyCompactList}\small\item\em \-Mid-\/level serial communication class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Cmt2f}{\-Cmt2f}
+\begin{DoxyCompactList}\small\item\em \-The mid-\/level file communication class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Cmt3}{\-Cmt3}
+\begin{DoxyCompactList}\small\item\em \-High-\/level communication class. \end{DoxyCompactList}\item 
+struct \hyperlink{structxsens_1_1MessageHeader}{\-Message\-Header}
+\begin{DoxyCompactList}\small\item\em \-A message header. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Message}{\-Message}
+\begin{DoxyCompactList}\small\item\em \-Class for storing a single message. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Packet}{\-Packet}
+\begin{DoxyCompactList}\small\item\em \-A structure containing \-M\-T data + timestamp and formatting information. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Driver}{\-Driver}
+\item 
+class \hyperlink{classxsens_1_1Exception}{\-Exception}
+\item 
+class \hyperlink{classxsens_1_1FifoQueue}{\-Fifo\-Queue}
+\begin{DoxyCompactList}\small\item\em \-A \-F\-I\-F\-O queue with limited length (cyclic). \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1FifoQueueBasic}{\-Fifo\-Queue\-Basic}
+\begin{DoxyCompactList}\small\item\em \-A \-F\-I\-F\-O queue with limited length (cyclic). \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1JanitorClassFunc}{\-Janitor\-Class\-Func}
+\begin{DoxyCompactList}\small\item\em \-Class function calling janitor class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1JanitorClassFuncP1}{\-Janitor\-Class\-Func\-P1}
+\begin{DoxyCompactList}\small\item\em \-Class function calling janitor class with a parameter. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1List}{\-List}
+\begin{DoxyCompactList}\small\item\em \-Dynamic list class. \end{DoxyCompactList}\item 
+class \hyperlink{classxsens_1_1Sensor}{\-Sensor}
+\item 
+class \hyperlink{classxsens_1_1SensorSubscriber}{\-Sensor\-Subscriber}
+\item 
+class \hyperlink{classxsens_1_1SensorSubscriberList}{\-Sensor\-Subscriber\-List}
+\item 
+class \hyperlink{classxsens_1_1TimeSync}{\-Time\-Sync}
+\item 
+class \hyperlink{classxsens_1_1MillisecondTimer}{\-Millisecond\-Timer}
+\end{DoxyCompactItemize}
+\subsection*{'typedefs'}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacexsens_a850f82baef114f6ca31db0da77c92ac4}{typedef int32\-\_\-t {\bfseries \-H\-A\-N\-D\-L\-E}}\label{namespacexsens_a850f82baef114f6ca31db0da77c92ac4}
+
+\item 
+\hypertarget{namespacexsens_a2679efcfb1565882c6aa789096f8878e}{typedef int64\-\_\-t \hyperlink{namespacexsens_a2679efcfb1565882c6aa789096f8878e}{\-Time\-Stamp}}\label{namespacexsens_a2679efcfb1565882c6aa789096f8878e}
+
+\begin{DoxyCompactList}\small\item\em \-A real-\/time timestamp (ms) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Funciones}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacexsens_a83d67697db21fcfda80de872daed93ba}{int {\bfseries \-\_\-wcsnicmp} (const wchar\-\_\-t $\ast$s1, const wchar\-\_\-t $\ast$s2, int count)}\label{namespacexsens_a83d67697db21fcfda80de872daed93ba}
+
+\item 
+\hypertarget{namespacexsens_a4afd105a52b808febde0c645742b1d0d}{int32\-\_\-t \hyperlink{namespacexsens_a4afd105a52b808febde0c645742b1d0d}{find\-Valid\-Message} (const uint8\-\_\-t $\ast$buffer, const uint16\-\_\-t buffer\-Length)}\label{namespacexsens_a4afd105a52b808febde0c645742b1d0d}
+
+\begin{DoxyCompactList}\small\item\em \-Find a valid message in the given buffer. \-If nothing is found, the function returns -\/1. \-Otherwise the index of the first character of the message is returned. \end{DoxyCompactList}\item 
+\hypertarget{namespacexsens_a369decd7118608e7f18577d108064dbe}{uint8\-\_\-t \hyperlink{namespacexsens_a369decd7118608e7f18577d108064dbe}{compute\-Checksum} (const uint8\-\_\-t $\ast$buffer, uint32\-\_\-t length)}\label{namespacexsens_a369decd7118608e7f18577d108064dbe}
+
+\begin{DoxyCompactList}\small\item\em \-Compute the checksum of the given byte string. \end{DoxyCompactList}\item 
+bool \hyperlink{namespacexsens_a8610d936efa1d28e3095c5aed8ac75b6}{cmt\-Scan\-Ports} (\hyperlink{classxsens_1_1List}{\-List}$<$ \hyperlink{structCmtPortInfo}{\-Cmt\-Port\-Info} $>$ \&ports, uint32\-\_\-t baudrate=0, uint32\-\_\-t single\-Scan\-Timeout=1000, uint32\-\_\-t scan\-Tries=1, bool ignore\-Non\-Xsens\-Devices=true)
+\begin{DoxyCompactList}\small\item\em \-Scan \-C\-O\-M ports for connected \-Xsens devices. \end{DoxyCompactList}\item 
+bool \hyperlink{namespacexsens_a655fd426de1238dc2363cd3c4ce8e421}{cmt\-Scan\-Port} (\hyperlink{structCmtPortInfo}{\-Cmt\-Port\-Info} \&port\-Info, uint32\-\_\-t baudrate=0, uint32\-\_\-t single\-Scan\-Timeout=1000, uint32\-\_\-t scan\-Tries=1)
+\begin{DoxyCompactList}\small\item\em \-Scan a single \-C\-O\-M port for connected \-Xsens devices. \end{DoxyCompactList}\item 
+\hypertarget{namespacexsens_ab7a92b3f4a776042e575eb7d58d1621d}{const \hyperlink{structCmtMatrix}{\-Cmt\-Matrix} {\bfseries \-Dfv\-To\-Cmt\-Matrix} (const \hyperlink{classdfv_1_1Matrix}{dfv\-::\-Matrix} \&m)}\label{namespacexsens_ab7a92b3f4a776042e575eb7d58d1621d}
+
+\item 
+\hypertarget{namespacexsens_a6eff5d01dc58d7e559ba372f243c980c}{const \hyperlink{classdfv_1_1Matrix}{dfv\-::\-Matrix} {\bfseries \-Cmt\-To\-Dfv\-Matrix} (const \hyperlink{structCmtMatrix}{\-Cmt\-Matrix} \&m)}\label{namespacexsens_a6eff5d01dc58d7e559ba372f243c980c}
+
+\item 
+\hypertarget{namespacexsens_a2eb81f616378d951ebc7cf9cff78e68a}{const \hyperlink{structCmtVector}{\-Cmt\-Vector} {\bfseries \-Dfv\-To\-Cmt\-Vector} (const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \&v)}\label{namespacexsens_a2eb81f616378d951ebc7cf9cff78e68a}
+
+\item 
+\hypertarget{namespacexsens_a3c7eab15fd6b77388bc223946cdd65c1}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries \-Cmt\-To\-Dfv\-Vector} (const \hyperlink{structCmtVector}{\-Cmt\-Vector} \&v)}\label{namespacexsens_a3c7eab15fd6b77388bc223946cdd65c1}
+
+\item 
+\hypertarget{namespacexsens_ad297c28bf812ad5f51670155e22b7edd}{const \hyperlink{structCmtShortVector}{\-Cmt\-Short\-Vector} {\bfseries \-Dfv\-To\-Cmt\-Short\-Vector} (const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \&v)}\label{namespacexsens_ad297c28bf812ad5f51670155e22b7edd}
+
+\item 
+\hypertarget{namespacexsens_a8768666496b1e425a9e3a460810fa01b}{const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} {\bfseries \-Cmt\-To\-Dfv\-Short\-Vector} (const \hyperlink{structCmtShortVector}{\-Cmt\-Short\-Vector} \&v)}\label{namespacexsens_a8768666496b1e425a9e3a460810fa01b}
+
+\item 
+\hypertarget{namespacexsens_abf90f370356f72dd7cbb8d61e6294927}{const geometry\-\_\-msgs\-::\-Vector3 {\bfseries \-To\-Vector3\-Msg} (const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \&v)}\label{namespacexsens_abf90f370356f72dd7cbb8d61e6294927}
+
+\item 
+\hypertarget{namespacexsens_a13ca679e76b6f0d6091253bea3bc7114}{const geometry\-\_\-msgs\-::\-Vector3\-Stamped {\bfseries \-To\-Vector3\-Stamped\-Msg} (const \hyperlink{classdfv_1_1Vector3}{dfv\-::\-Vector3} \&v)}\label{namespacexsens_a13ca679e76b6f0d6091253bea3bc7114}
+
+\item 
+uint32\-\_\-t \hyperlink{namespacexsens_a00d5dce92611428c34961bee5893155f}{get\-Time\-Of\-Day} (tm $\ast$date\-\_\-=\-N\-U\-L\-L, time\-\_\-t $\ast$secs\-\_\-=\-N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em \-A platform-\/independent clock. \end{DoxyCompactList}\item 
+int64\-\_\-t \hyperlink{namespacexsens_a783df0e55e9d5e5489d8da5b8bf62b2f}{get\-Date\-Time} (tm $\ast$date=0)
+\begin{DoxyCompactList}\small\item\em \-Retrieves the date and time (platform-\/independent) \end{DoxyCompactList}\item 
+void \hyperlink{namespacexsens_abb018ee35ad70d152160996633f6ee93}{get\-Date\-As\-String} (uint8\-\_\-t $\ast$dest, tm const $\ast$date=0)
+\begin{DoxyCompactList}\small\item\em \-Retrieves the date as string representation \-The format is \-Y\-Y\-Y\-Y\-M\-M\-D\-D so 25 dec 2010 is stored as an array dest\mbox{[}8\mbox{]} = \{'2', '0', '1', '0', '1', '2', '2', '5' \}. \end{DoxyCompactList}\item 
+void \hyperlink{namespacexsens_aeb73781a5d94756df21f5acead8c3c2c}{get\-Time\-As\-String} (uint8\-\_\-t $\ast$dest, tm const $\ast$date=0)
+\begin{DoxyCompactList}\small\item\em \-Retrieves the time as binary \-The format is \-H\-H\-M\-M\-S\-Shh (where \-H is hour and 'h' is hundredths) so 14\-:25\-:01.\-23 is stored as an array dest\mbox{[}8\mbox{]} = \{ '1', '4', '2', '5', '0', '1', '2', '3'\}. \end{DoxyCompactList}\item 
+void \hyperlink{namespacexsens_aa295555a3becd9dcbb25c451c24fa01a}{msleep} (uint32\-\_\-t ms)
+\begin{DoxyCompactList}\small\item\em \-A platform-\/independent sleep routine. \end{DoxyCompactList}\item 
+\hypertarget{namespacexsens_a40b10e8534dffdeeac80aa9000d28b12}{\hyperlink{namespacexsens_a2679efcfb1565882c6aa789096f8878e}{\-Time\-Stamp} {\bfseries time\-Stamp\-Now} ()}\label{namespacexsens_a40b10e8534dffdeeac80aa9000d28b12}
+
+\item 
+\hypertarget{namespacexsens_a40077dfcde41daf992648f9e7c38a98f}{void {\bfseries initialize\-Time} ()}\label{namespacexsens_a40077dfcde41daf992648f9e7c38a98f}
+
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacexsens_a5e265edacaaa5449e1505a85743433da}{bool \hyperlink{namespacexsens_a5e265edacaaa5449e1505a85743433da}{abort\-Scan}}\label{namespacexsens_a5e265edacaaa5449e1505a85743433da}
+
+\begin{DoxyCompactList}\small\item\em \-Set to true from another thread to abort any scan currently in progress. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Descripción detallada}
+\-The namespace of all \-Xsens software since 2006. 
+
+\subsection{\-Documentación de las funciones}
+\hypertarget{namespacexsens_a655fd426de1238dc2363cd3c4ce8e421}{\index{xsens@{xsens}!cmt\-Scan\-Port@{cmt\-Scan\-Port}}
+\index{cmt\-Scan\-Port@{cmt\-Scan\-Port}!xsens@{xsens}}
+\subsubsection[{cmt\-Scan\-Port}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf xsens\-::cmt\-Scan\-Port} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Cmt\-Port\-Info} \&}]{port\-Info, }
+\item[{uint32\-\_\-t}]{baudrate = {\ttfamily 0}, }
+\item[{uint32\-\_\-t}]{single\-Scan\-Timeout = {\ttfamily 1000}, }
+\item[{uint32\-\_\-t}]{scan\-Tries = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_a655fd426de1238dc2363cd3c4ce8e421}
+
+
+\-Scan a single \-C\-O\-M port for connected \-Xsens devices. 
+
+\-The cmt\-Scan\-Port function will scan a single port for connected \-Xsens devices. \-If the baudrate parameter is 0 (default), it will try to connect at all supported baud rates, starting with the most common 115k2, 460k8 and 58k6. \-If the baudrate parameter is non-\/zero, only the specified baud rate is tried. \-Any detected devices are returned in the port\-Info parameter. \hypertarget{namespacexsens_a8610d936efa1d28e3095c5aed8ac75b6}{\index{xsens@{xsens}!cmt\-Scan\-Ports@{cmt\-Scan\-Ports}}
+\index{cmt\-Scan\-Ports@{cmt\-Scan\-Ports}!xsens@{xsens}}
+\subsubsection[{cmt\-Scan\-Ports}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf xsens\-::cmt\-Scan\-Ports} (
+\begin{DoxyParamCaption}
+\item[{\-List$<$ {\bf \-Cmt\-Port\-Info} $>$ \&}]{ports, }
+\item[{uint32\-\_\-t}]{baudrate = {\ttfamily 0}, }
+\item[{uint32\-\_\-t}]{single\-Scan\-Timeout = {\ttfamily 1000}, }
+\item[{uint32\-\_\-t}]{scan\-Tries = {\ttfamily 1}, }
+\item[{bool}]{ignore\-Non\-Xsens\-Devices = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_a8610d936efa1d28e3095c5aed8ac75b6}
+
+
+\-Scan \-C\-O\-M ports for connected \-Xsens devices. 
+
+\-The cmt\-Scan\-Ports function will scan registered \-Xsens \-U\-S\-B converters and serial \-C\-O\-M ports for connected \-Xsens devices. \-If the baudrate parameter is 0 (default), it will try to connect at all supported baud rates, starting with the most common 115k2, 460k8 and 58k6. \-If the baudrate parameter is non-\/zero, only the specified baudrate is tried. \-Any detected devices are returned in the ports list, which is sorted by port nr. \hypertarget{namespacexsens_abb018ee35ad70d152160996633f6ee93}{\index{xsens@{xsens}!get\-Date\-As\-String@{get\-Date\-As\-String}}
+\index{get\-Date\-As\-String@{get\-Date\-As\-String}!xsens@{xsens}}
+\subsubsection[{get\-Date\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf xsens\-::get\-Date\-As\-String} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{dest, }
+\item[{tm const $\ast$}]{date = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_abb018ee35ad70d152160996633f6ee93}
+
+
+\-Retrieves the date as string representation \-The format is \-Y\-Y\-Y\-Y\-M\-M\-D\-D so 25 dec 2010 is stored as an array dest\mbox{[}8\mbox{]} = \{'2', '0', '1', '0', '1', '2', '2', '5' \}. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em dest} & \-: \-A pointer to an array of at least (!) 8 bytes \\
+\hline
+{\em date} & \-: \-If date is non-\/zero this date is converted, otherwise the current date is retrieved and used) \\
+\hline
+\end{DoxyParams}
+\hypertarget{namespacexsens_a783df0e55e9d5e5489d8da5b8bf62b2f}{\index{xsens@{xsens}!get\-Date\-Time@{get\-Date\-Time}}
+\index{get\-Date\-Time@{get\-Date\-Time}!xsens@{xsens}}
+\subsubsection[{get\-Date\-Time}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t {\bf xsens\-::get\-Date\-Time} (
+\begin{DoxyParamCaption}
+\item[{tm $\ast$}]{date = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_a783df0e55e9d5e5489d8da5b8bf62b2f}
+
+
+\-Retrieves the date and time (platform-\/independent) 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em date} & \-: if non-\/zero the local (!) date and time is stored in the tm struct this parameter points to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Devuelve}
+\-The \-U\-T\-C date and time as seconds since 1970 
+\end{DoxyReturn}
+\hypertarget{namespacexsens_aeb73781a5d94756df21f5acead8c3c2c}{\index{xsens@{xsens}!get\-Time\-As\-String@{get\-Time\-As\-String}}
+\index{get\-Time\-As\-String@{get\-Time\-As\-String}!xsens@{xsens}}
+\subsubsection[{get\-Time\-As\-String}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf xsens\-::get\-Time\-As\-String} (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{dest, }
+\item[{tm const $\ast$}]{date = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_aeb73781a5d94756df21f5acead8c3c2c}
+
+
+\-Retrieves the time as binary \-The format is \-H\-H\-M\-M\-S\-Shh (where \-H is hour and 'h' is hundredths) so 14\-:25\-:01.\-23 is stored as an array dest\mbox{[}8\mbox{]} = \{ '1', '4', '2', '5', '0', '1', '2', '3'\}. 
+
+
+\begin{DoxyParams}{\-Parámetros}
+{\em dest} & \-: \-A pointer to an array of at least (!) 8 bytes \\
+\hline
+{\em date} & \-: \-If date is non-\/zero this date is converted, otherwise the current date is retrieved and used) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Nota}
+(for now hundreths are set to 0) 
+\end{DoxyNote}
+\hypertarget{namespacexsens_a00d5dce92611428c34961bee5893155f}{\index{xsens@{xsens}!get\-Time\-Of\-Day@{get\-Time\-Of\-Day}}
+\index{get\-Time\-Of\-Day@{get\-Time\-Of\-Day}!xsens@{xsens}}
+\subsubsection[{get\-Time\-Of\-Day}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf xsens\-::get\-Time\-Of\-Day} (
+\begin{DoxyParamCaption}
+\item[{tm $\ast$}]{date\-\_\- = {\ttfamily \-N\-U\-L\-L}, }
+\item[{time\-\_\-t $\ast$}]{secs\-\_\- = {\ttfamily \-N\-U\-L\-L}}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_a00d5dce92611428c34961bee5893155f}
+
+
+\-A platform-\/independent clock. 
+
+\-The function returns the time of day in ms since midnight. \-If the {\ttfamily date} parameter is non-\/\-N\-U\-L\-L, corresponding the date is placed in the variable it points to. \hypertarget{namespacexsens_aa295555a3becd9dcbb25c451c24fa01a}{\index{xsens@{xsens}!msleep@{msleep}}
+\index{msleep@{msleep}!xsens@{xsens}}
+\subsubsection[{msleep}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf xsens\-::msleep} (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{ms}
+\end{DoxyParamCaption}
+)}}\label{namespacexsens_aa295555a3becd9dcbb25c451c24fa01a}
+
+
+\-A platform-\/independent sleep routine. 
+
+\-Time is measured in ms. \-The function will not return until the specified number of ms have passed. 

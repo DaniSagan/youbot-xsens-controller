@@ -63,6 +63,7 @@ var searchData=
   ['getmagneticdeclination',['getMagneticDeclination',['../classxsens_1_1Cmt3.html#a905e3ccce0c7cace1ec2c9deee20f75b',1,'xsens::Cmt3']]],
   ['getmessageid',['getMessageId',['../classxsens_1_1Message.html#a2858b866e804d9881d331878c3f9a242',1,'xsens::Message']]],
   ['getmessagestart',['getMessageStart',['../classxsens_1_1Message.html#a1c062f77b4440c409591b48c953b87d2',1,'xsens::Message']]],
+  ['getmodulus',['GetModulus',['../classdfv_1_1Quaternion.html#a53cd2807386dfc3d7c30965ba88479cd',1,'dfv::Quaternion']]],
   ['getmtcount',['GetMtCount',['../classdfv_1_1XsensListener.html#a5d31c2bd34dcbd18c60634e994c02ed3',1,'dfv::XsensListener::GetMtCount()'],['../classxsens_1_1Cmt3.html#a1a5d499a50125883037f34bd34e88c82',1,'xsens::Cmt3::getMtCount()']]],
   ['getname',['getName',['../classxsens_1_1Cmt1f.html#a1447858cb01e173d8ee02f45e39a39f2',1,'xsens::Cmt1f::getName(char *filename) const '],['../classxsens_1_1Cmt1f.html#a6cf9e6b889f186c2d2e41c877f01831e',1,'xsens::Cmt1f::getName(wchar_t *filename) const '],['../classxsens_1_1Cmt2f.html#a01a9f99cc134707db1b493bfa0eb9f21',1,'xsens::Cmt2f::getName(char *filename) const '],['../classxsens_1_1Cmt2f.html#a724e72138fbe29cc20eff1d7f9d6183f',1,'xsens::Cmt2f::getName(wchar_t *filename) const ']]],
   ['getobjectalignmentmatrix',['getObjectAlignmentMatrix',['../classxsens_1_1Cmt3.html#a4674f64eefbab2218d0cde28f00a19d0',1,'xsens::Cmt3']]],

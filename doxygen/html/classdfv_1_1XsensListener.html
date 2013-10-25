@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,32 +115,57 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a545d4b10d2c34166d82bc41403e39a00"></a><!-- doxytag: member="dfv::XsensListener::XsensListener" ref="a545d4b10d2c34166d82bc41403e39a00" args="(ros::NodeHandle &amp;node_handle_)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>XsensListener</b> (ros::NodeHandle &amp;node_handle_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a545d4b10d2c34166d82bc41403e39a00">XsensListener</a> (ros::NodeHandle &amp;node_handle_)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor por defecto.  <a href="#a545d4b10d2c34166d82bc41403e39a00"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe379af82320a08aa76f0741a7f11db0"></a><!-- doxytag: member="dfv::XsensListener::~XsensListener" ref="abe379af82320a08aa76f0741a7f11db0" args="()" -->
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#abe379af82320a08aa76f0741a7f11db0">~XsensListener</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d31c2bd34dcbd18c60634e994c02ed3"></a><!-- doxytag: member="dfv::XsensListener::GetMtCount" ref="a5d31c2bd34dcbd18c60634e994c02ed3" args="() const " -->
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a5d31c2bd34dcbd18c60634e994c02ed3">GetMtCount</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el número de sensores detectados. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a940577a890abfe31a9f765766abbb0ec">GetAcc</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3896a0a58d557a5e9299415a146d80ed"></a><!-- doxytag: member="dfv::XsensListener::GetGyr" ref="a3896a0a58d557a5e9299415a146d80ed" args="(unsigned int mt_index=0) const " -->
-const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a3896a0a58d557a5e9299415a146d80ed">GetGyr</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el vector giróscopo. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5eb779af51de20f10434711cb06ea153"></a><!-- doxytag: member="dfv::XsensListener::GetMag" ref="a5eb779af51de20f10434711cb06ea153" args="(unsigned int mt_index=0) const " -->
-const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a5eb779af51de20f10434711cb06ea153">GetMag</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el vector campo magnético. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a882a444ecd1452f22381e20780c97631"></a><!-- doxytag: member="dfv::XsensListener::GetOriQuat" ref="a882a444ecd1452f22381e20780c97631" args="(unsigned int mt_index=0) const " -->
-const <a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a882a444ecd1452f22381e20780c97631">GetOriQuat</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve el cuaternión de orientación. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8949e2302c992ae4d78132574ccb4c27"></a><!-- doxytag: member="dfv::XsensListener::GetOriMatrix" ref="a8949e2302c992ae4d78132574ccb4c27" args="(unsigned int mt_index=0) const " -->
-const <a class="el" href="classdfv_1_1Matrix.html">dfv::Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a8949e2302c992ae4d78132574ccb4c27">GetOriMatrix</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve la matriz de orientación. <br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5680dd82710f4eb73521c614293da8f4"></a><!-- doxytag: member="dfv::XsensListener::GetOriEuler" ref="a5680dd82710f4eb73521c614293da8f4" args="(unsigned int mt_index=0) const " -->
-const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a5680dd82710f4eb73521c614293da8f4">GetOriEuler</a> (unsigned int mt_index=0) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que devuelve un vector con los ángulos de Euler. <br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve los valores leídos de los acelerómetros del sensor especificado.  <a href="#a940577a890abfe31a9f765766abbb0ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a3896a0a58d557a5e9299415a146d80ed">GetGyr</a> (unsigned int mt_index=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve los valores leídos de los giróscopos del sensor especificado.  <a href="#a3896a0a58d557a5e9299415a146d80ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a5eb779af51de20f10434711cb06ea153">GetMag</a> (unsigned int mt_index=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve los valores leídos de los magnetómetros del sensor especificado.  <a href="#a5eb779af51de20f10434711cb06ea153"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a882a444ecd1452f22381e20780c97631">GetOriQuat</a> (unsigned int mt_index=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve el cuaternión de orientación calculado por el propio sensor.  <a href="#a882a444ecd1452f22381e20780c97631"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Matrix.html">dfv::Matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a8949e2302c992ae4d78132574ccb4c27">GetOriMatrix</a> (unsigned int mt_index=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la matriz de orientación calculada por el propio sensor.  <a href="#a8949e2302c992ae4d78132574ccb4c27"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdfv_1_1XsensListener.html#a5680dd82710f4eb73521c614293da8f4">GetOriEuler</a> (unsigned int mt_index=0) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve un vector con los ángulos de Euler calculados por el propio sensor.  <a href="#a5680dd82710f4eb73521c614293da8f4"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Descripción detallada</h2>
 <div class="textblock"><p>Encapsula las comunicaciones de ROS de una red de sensores Xsens. </p>
 <p>Esta clase se encarga de declarar y controlar el funcionamiento de la clase <a class="el" href="classdfv_1_1SensorSubscriber.html" title="Encapsula las comunicaciones de ROS de un sensor Xsens.">SensorSubscriber</a>. </p>
-</div><hr/><h2>Documentación de las funciones miembro</h2>
+</div><hr/><h2>Documentación del constructor y destructor</h2>
+<a class="anchor" id="a545d4b10d2c34166d82bc41403e39a00"></a><!-- doxytag: member="dfv::XsensListener::XsensListener" ref="a545d4b10d2c34166d82bc41403e39a00" args="(ros::NodeHandle &amp;node_handle_)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdfv_1_1XsensListener.html#a545d4b10d2c34166d82bc41403e39a00">dfv::XsensListener::XsensListener</a> </td>
+          <td>(</td>
+          <td class="paramtype">ros::NodeHandle &amp;&#160;</td>
+          <td class="paramname"><em>node_handle_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Constructor por defecto. </p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node_handle_</td><td>Handle del nodo donde lo declaremos. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Documentación de las funciones miembro</h2>
 <a class="anchor" id="a940577a890abfe31a9f765766abbb0ec"></a><!-- doxytag: member="dfv::XsensListener::GetAcc" ref="a940577a890abfe31a9f765766abbb0ec" args="(unsigned int mt_index=0) const " -->
 <div class="memitem">
 <div class="memproto">
@@ -155,15 +180,149 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
       </table>
 </div>
 <div class="memdoc">
-<p>Devuelve los valores leídos de los acelerómetros del sensor especificado.</p>
-<p>Función que devuelve el vector con las componentes en los ejes x, y, z en <img class="formulaInl" alt="$\frac{m}{s^2}$" src="form_1.png"/> leídas de los acelerómetros </p>
+
+<p>Devuelve los valores leídos de los acelerómetros del sensor especificado. </p>
+<p>Función que devuelve el vector con las componentes en los ejes x, y, z en <img class="formulaInl" alt="$\mbox{m/s}^2$" src="form_2.png"/> leídas de los acelerómetros </p>
 <dl class="params"><dt><b>Parámetros:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">mt_index</td><td>ID del sensor </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Devuelve:</b></dt><dd>Vector de 3 elementos con las componentes x, y, z de los acelerómetros </dd></dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>vector con las componentes en los ejes x, y, z en <img class="formulaInl" alt="$\mbox{m/s}^2$" src="form_2.png"/> leídas de los acelerómetros </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3896a0a58d557a5e9299415a146d80ed"></a><!-- doxytag: member="dfv::XsensListener::GetGyr" ref="a3896a0a58d557a5e9299415a146d80ed" args="(unsigned int mt_index=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a> <a class="el" href="classdfv_1_1XsensListener.html#a3896a0a58d557a5e9299415a146d80ed">dfv::XsensListener::GetGyr</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mt_index</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Devuelve los valores leídos de los giróscopos del sensor especificado. </p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mt_index</td><td>id del sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Vector de 3 elementos con las velocidades angulares en los ejes x, y, z en <img class="formulaInl" alt="$\mbox{rad/s}$" src="form_3.png"/> leídas de los giróscopos </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5eb779af51de20f10434711cb06ea153"></a><!-- doxytag: member="dfv::XsensListener::GetMag" ref="a5eb779af51de20f10434711cb06ea153" args="(unsigned int mt_index=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a> <a class="el" href="classdfv_1_1XsensListener.html#a5eb779af51de20f10434711cb06ea153">dfv::XsensListener::GetMag</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mt_index</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Devuelve los valores leídos de los magnetómetros del sensor especificado. </p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mt_index</td><td>ID del sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Vector de 3 elementos con las componentes en los ejes x, y, z en unidades arbitrarias (normalizadas según la intensidad del campo magnético registrado) leídas de los magnetómetros </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5680dd82710f4eb73521c614293da8f4"></a><!-- doxytag: member="dfv::XsensListener::GetOriEuler" ref="a5680dd82710f4eb73521c614293da8f4" args="(unsigned int mt_index=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a> <a class="el" href="classdfv_1_1XsensListener.html#a5680dd82710f4eb73521c614293da8f4">dfv::XsensListener::GetOriEuler</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mt_index</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Devuelve un vector con los ángulos de Euler calculados por el propio sensor. </p>
+<p>Este valor es válido sólo si se ha configurado el driver xsens_node para que publique ángulos de Euler.</p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mt_index</td><td>ID del sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Vector con los ángulos en los ejes x, y, z respectivamente </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8949e2302c992ae4d78132574ccb4c27"></a><!-- doxytag: member="dfv::XsensListener::GetOriMatrix" ref="a8949e2302c992ae4d78132574ccb4c27" args="(unsigned int mt_index=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Matrix.html">dfv::Matrix</a> <a class="el" href="classdfv_1_1XsensListener.html#a8949e2302c992ae4d78132574ccb4c27">dfv::XsensListener::GetOriMatrix</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mt_index</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Devuelve la matriz de orientación calculada por el propio sensor. </p>
+<p>Este valor es válido sólo si se ha configurado el driver xsens_node para que publique matrices de orientación.</p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mt_index</td><td>ID del sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Matriz 3x3 de orientación </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a882a444ecd1452f22381e20780c97631"></a><!-- doxytag: member="dfv::XsensListener::GetOriQuat" ref="a882a444ecd1452f22381e20780c97631" args="(unsigned int mt_index=0) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a> <a class="el" href="classdfv_1_1XsensListener.html#a882a444ecd1452f22381e20780c97631">dfv::XsensListener::GetOriQuat</a> </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>mt_index</em> = <code>0</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Devuelve el cuaternión de orientación calculado por el propio sensor. </p>
+<p>Este valor es válido sólo si se ha configurado el driver xsens_node para que publique cuaterniones de orientación.</p>
+<dl class="params"><dt><b>Parámetros:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mt_index</td><td>ID del sensor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Devuelve:</b></dt><dd>Cuaternión de orientación </dd></dl>
 
 </div>
 </div>
@@ -176,7 +335,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Todo</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Clases</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Archivos</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Funciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>&apos;typedefs&apos;</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Valores de enumeraciones</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Amigas</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>&apos;defines&apos;</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -188,7 +347,7 @@ const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 18:01:26 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Jueves, 24 de Octubre de 2013 23:26:53 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
