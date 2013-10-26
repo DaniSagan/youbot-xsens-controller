@@ -62,7 +62,7 @@ int main(int argc, char** argv)
     ROS_INFO("Creating youbot...");
     dfv::Youbot youbot(node_handle);
     
-    ROS_INFO("Youbot Creted");
+    ROS_INFO("Youbot Created");
     std::vector<double> angs;
     
     unsigned int c = 50;

@@ -6,5 +6,6 @@
 #include <dfv/quaternion.h>
 #include <dfv/matrix.h>
 #include <dfv/youbot.h>
+#include <dfv/xsens_listener.h>
 
 #endif

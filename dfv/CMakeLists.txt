@@ -31,5 +31,5 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 rosbuild_add_executable(example src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp src/youbot.cpp src/xsens_listener.cpp examples/example.cpp)
 
-rosbuild_add_library(${PROJECT_NAME} src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp src/youbot.cpp)
+rosbuild_add_library(${PROJECT_NAME} src/utils.cpp src/vector3.cpp src/quaternion.cpp src/matrix.cpp src/youbot.cpp src/xsens_listener.cpp)
 

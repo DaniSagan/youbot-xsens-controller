@@ -24,6 +24,114 @@
 namespace dfv
 {
 
+class Gripper
+{
+public:
+    Gripper(ros::NodeHandle& _node_handle);
+    ~Gripper();
+    
+    enum State
+    {
+        open = 0,
+        closed
+    };
+    
+    void Open();
+    void Close();
+    
+private:
+    static const std::string topic; 
+    static const float open_pos;
+    static const float closed_pos;
+    ros::NodeHandle& node_handle;
+    State state;
+    std::vector<brics_actuator::JointValue> values;
+    ros::Publisher publisher;
+    
+    void Publish();       
+};
+
+class Joint
+{
+public:
+    Joint(float _min_pos, float _max_pos, float _reset_pos);
+    ~Joint();   
+     
+    void SetTarget(float target_pos);
+    void SetTargetRel(float target_pos);
+    float GetState() const;
+    
+    friend class Arm;
+    
+private:    
+    void SetState(float state_pos);
+    
+    float min_pos;
+    float max_pos;
+    float reset_pos;
+    float state;    
+    float target;    
+};
+
+class Arm
+{
+public:
+    Arm(ros::NodeHandle& _node_handle);
+    ~Arm();
+    
+    std::vector<Joint> joints;
+    Arm& SetPos(std::vector<float> joint_pos);
+    Arm& Wait(float time);
+private:
+    ros::NodeHandle& node_handle;
+    static const std::string command_topic;
+    static const std::string state_topic;
+    ros::Publisher command_publisher;
+    ros::Subscriber state_subscriber; 
+    std::vector<brics_actuator::JointValue> joint_values;   
+    static const float joint_min_pos[];
+    static const float joint_max_pos[];
+    static const float joint_offset[];
+    
+    void StateCallback(const sensor_msgs::JointState::ConstPtr& msg);
+    void Publish();    
+};
+
+class Base
+{
+public:
+    Base(ros::NodeHandle& _node_handle);
+    ~Base();   
+    
+    Base& Move(float linear_vel, float side_vel, float angular_vel);
+    Base& MoveFor(float linear_vel, float side_vel, float angular_vel, float time);
+    Base& Stop();
+    
+private:
+    ros::NodeHandle& node_handle;
+    ros::Publisher publisher;  
+    static const std::string topic;
+    float linear_vel;
+    float side_vel;
+    float angular_vel;       
+      
+    void Publish();
+};
+
+class YoubotNew
+{
+public:
+    YoubotNew(ros::NodeHandle& node_handle_);
+    ~YoubotNew();
+    
+    Arm arm;
+    Base base;
+    Gripper gripper;
+    
+private:
+    ros::NodeHandle& node_handle;
+};
+
 /*! \brief Clase que encapsula la comunicaciones de ROS para el control del robot YouBot
 */
 class Youbot
@@ -72,11 +180,8 @@ class Youbot
         
         std::vector<float> joint_states;
         
-        // override methods
-        //virtual void Draw(sf::RenderWindow& window) const;
-        //virtual void HandleEvent(std::list<std::string>& responses, const sf::Event& event);
-        
-        //void SetFont(const sf::Font& font);
+        Youbot& MovePlatform(double linear_vel, double side_vel, double angular_vel, double time);
+        Youbot& StopPlatform();
         
     protected:
         ros::NodeHandle& node_handle;
@@ -91,9 +196,7 @@ class Youbot
         
         ros::Subscriber joint_states_subscriber;
         void JointStatesCallback(const sensor_msgs::JointState::ConstPtr& msg);
-        
-        //sf::String str_radius;
-        //sf::String str_height;
+
 };
 
 }

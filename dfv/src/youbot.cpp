@@ -3,6 +3,286 @@
 namespace dfv
 {
 
+//***********************//
+//        Gripper        //
+//***********************//
+const std::string Gripper::topic = "arm_1/gripper_controller/position_command";
+const float Gripper::open_pos = 0.01f;
+const float Gripper::closed_pos = 0.001f;
+
+Gripper::Gripper(ros::NodeHandle& _node_handle):
+    node_handle(_node_handle),
+    state(Gripper::closed)
+{
+    this->values.resize(2);
+    values[0].joint_uri = "gripper_finger_joint_l";
+    values[0].unit = std::string("m");
+    values[0].value = Gripper::closed_pos;
+    
+    values[1].joint_uri = "gripper_finger_joint_r";
+    values[1].unit = std::string("m");
+    values[1].value = Gripper::closed_pos;
+    
+    this->publisher = 
+        this->node_handle.advertise<brics_actuator::JointPositions>(Gripper::topic, 1000);
+}
+
+Gripper::~Gripper()
+{
+}
+
+void Gripper::Open()
+{
+    if(this->state == Gripper::closed)
+    {
+        this->state = Gripper::open;
+        values[0].value = Gripper::open_pos;
+        values[1].value = Gripper::open_pos;
+        this->Publish();
+    }
+}
+
+void Gripper::Close()
+{
+    if(this->state == Gripper::open)
+    {
+        this->state = Gripper::closed;
+        values[0].value = Gripper::closed_pos;
+        values[1].value = Gripper::closed_pos;
+        this->Publish();
+    }
+}
+
+void Gripper::Publish()
+{
+    brics_actuator::JointPositions msg;    
+    msg.positions = this->values;    
+    this->publisher.publish(msg); 
+}
+
+
+//*********************//
+//        Joint        //
+//*********************//
+
+Joint::Joint(float _min_pos, float _max_pos, float _reset_pos):
+    min_pos(_min_pos),
+    max_pos(_max_pos),
+    reset_pos(_reset_pos),
+    state(0.0),
+    target(_reset_pos)
+{
+}
+
+Joint::~Joint()
+{
+}
+
+void Joint::SetTarget(float target_pos)
+{
+    if(target_pos < this->min_pos) this->state = this->min_pos;
+    else if(target_pos > this->max_pos) this->state = this->max_pos;
+    else this->target = target_pos;
+}
+
+void Joint::SetTargetRel(float target_pos)
+{
+    this->SetTarget(target_pos + this->reset_pos);
+}
+
+float Joint::GetState() const
+{
+    return this->state;
+}
+
+void Joint::SetState(float state_pos)
+{
+    this->state = state_pos;
+}
+
+//*******************//
+//        Arm        //
+//*******************//
+
+const std::string Arm::command_topic = "arm_1/arm_controller/position_command";
+const std::string Arm::state_topic = "joint_states";
+
+const float Arm::joint_min_pos[] = {0.0100692f, 0.0100692f, -5.02655f, 0.0221239f, 0.110619f};
+const float Arm::joint_max_pos[] = {5.84014f, 2.61799f, -0.015708f, 3.4292f, 5.64159f};
+const float Arm::joint_offset[] = {2.959675f, 1.144533f, -2.57124f, 1.811086f, 2.91237f};
+
+Arm::Arm(ros::NodeHandle& _node_handle):
+    node_handle(_node_handle)
+{
+    this->command_publisher = 
+        _node_handle.advertise<brics_actuator::JointPositions>(Arm::command_topic, 1000);
+    
+    this->state_subscriber = 
+        this->node_handle.subscribe(Arm::state_topic, 
+                                    1,
+                                    &Arm::StateCallback,
+                                    this);
+                                    
+    for(unsigned int i = 0; i < 5; i++)
+    {
+        this->joints.push_back(Joint(Arm::joint_min_pos[i], 
+                                     Arm::joint_max_pos[i],
+                                     Arm::joint_offset[i]));
+    }
+    
+    this->joint_values.resize(5);
+    for(unsigned int i = 0; i < this->joints.size(); ++i)
+    {
+        std::stringstream ss;
+        ss << "arm_joint_" << (i+1);
+        joint_values[i].joint_uri = ss.str();
+        joint_values[i].unit = std::string("rad");
+        joint_values[i].value = 0.0;
+    }
+}
+
+Arm::~Arm()
+{
+}
+
+Arm& Arm::SetPos(std::vector<float> joint_pos)
+{
+    assert(joint_pos.size() == 5);
+    for(unsigned int i = 0; i < this->joints.size(); i++)
+    {
+        this->joints[i].SetTargetRel(joint_pos[i]);
+    }
+    this->Publish();
+    return *this;
+}
+
+Arm& Arm::Wait(float time)
+{
+    ros::Duration(time).sleep();
+    return *this;
+}
+
+void Arm::StateCallback(const sensor_msgs::JointState::ConstPtr& msg)
+{
+    for (unsigned int i = 0; i < this->joints.size(); i++)
+    {
+        this->joints[i].SetState(msg->position[i]);
+    }
+}
+
+void Arm::Publish()
+{
+    while(this->command_publisher.getNumSubscribers() == 0)
+    {        
+        ros::Duration(0.02f).sleep();
+        ros::spinOnce();        
+    }
+    
+    brics_actuator::JointPositions msg;    
+    for(unsigned int i = 0; i < this->joints.size(); ++i)
+    {
+        this->joint_values[i].value = this->joints[i].target;
+    }    
+    msg.positions = this->joint_values;
+    this->command_publisher.publish(msg);
+    ros::Duration(0.02f).sleep();
+    ros::spinOnce();
+    ROS_INFO("Setting arm position.");
+}
+
+//********************//
+//        Base        //
+//********************//
+
+const std::string Base::topic = "cmd_vel";
+
+Base::Base(ros::NodeHandle& _node_handle):
+    node_handle(_node_handle),
+    linear_vel(0.f),
+    side_vel(0.f),
+    angular_vel(0.f)
+{
+    this->publisher = 
+        this->node_handle.advertise<geometry_msgs::Twist>(Base::topic, 1000);
+}
+
+Base::~Base()
+{
+}
+
+Base& Base::Move(float linear_vel, float side_vel, float angular_vel)
+{
+    this->linear_vel = linear_vel;
+    this->side_vel = side_vel;
+    this->angular_vel = angular_vel;
+    this->Publish();
+    //ros::spinOnce();
+    return *this;
+}
+
+Base& Base::MoveFor(float linear_vel, float side_vel, float angular_vel, float time)
+{
+    ros::Time::waitForValid();
+    ros::Time start = ros::Time::now();
+    ros::Time end = start + ros::Duration(time);
+    this->linear_vel = linear_vel;
+    this->side_vel = side_vel;
+    this->angular_vel = angular_vel;
+    while(ros::Time::now() < end)
+    { 
+        this->Publish();
+    }
+    return *this;
+}
+
+Base& Base::Stop()
+{
+    this->linear_vel = 0.0;
+    this->side_vel = 0.0;
+    this->angular_vel = 0.0;
+    this->Publish();
+    return *this;
+}
+
+void Base::Publish()
+{
+    while(this->publisher.getNumSubscribers() == 0)
+    {        
+        ros::Duration(0.02f).sleep();
+        ros::spinOnce();        
+    }
+    geometry_msgs::Twist msg;
+    msg.linear.x = this->linear_vel;
+    msg.linear.y = this->side_vel;
+    msg.linear.z = 0.0;
+    msg.angular.x = 0.0;
+    msg.angular.y = 0.0;
+    msg.angular.z = this->angular_vel;
+    this->publisher.publish(msg);
+    ros::Duration(0.02f).sleep();
+    ros::spinOnce();
+}
+
+//**********************//
+//        Youbot        //
+//**********************//
+
+
+YoubotNew::YoubotNew(ros::NodeHandle& _node_handle):
+    arm(Arm(_node_handle)),
+    base(Base(_node_handle)),
+    gripper(Gripper(_node_handle)),
+    node_handle(_node_handle)
+{
+    
+}
+
+YoubotNew::~YoubotNew()
+{
+}
+
+
+//------------------------------
 const float Youbot::joint_min_pos[] = {0.0100692f, 0.0100692f, -5.02655f, 0.0221239f, 0.110619f};
 const float Youbot::joint_max_pos[] = {5.84014f, 2.61799f, -0.015708f, 3.4292f, 5.64159f};
 const float Youbot::joint_ini_pos[] = {2.959675f, 1.144533f, -2.57124f, 1.811086f, 2.91237f};
@@ -21,11 +301,11 @@ Youbot::Youbot(ros::NodeHandle& node_handle_,
     gripper_state(closed)
 {
     this->arm_publisher = 
-        this->node_handle.advertise<brics_actuator::JointPositions>(arm_topic_name_, 1);
+        this->node_handle.advertise<brics_actuator::JointPositions>(arm_topic_name_, 1000);
     this->gripper_publisher = 
-        this->node_handle.advertise<brics_actuator::JointPositions>(gripper_topic_name, 1);
+        this->node_handle.advertise<brics_actuator::JointPositions>(gripper_topic_name, 1000);
     this->cmd_vel_publisher = 
-        this->node_handle.advertise<geometry_msgs::Twist>(cmd_vel_topic_name, 1);
+        this->node_handle.advertise<geometry_msgs::Twist>(cmd_vel_topic_name, 1000);
     
     this->v_joint_values.resize(5);
     for(int i = 0; i < 5; ++i)
@@ -262,6 +542,38 @@ void Youbot::JointStatesCallback(const sensor_msgs::JointState::ConstPtr& msg)
     {
         this->joint_states[i] = msg->position[i];
     }
+}
+
+Youbot& Youbot::MovePlatform(double linear_vel, double side_vel, double angular_vel, double time)
+{
+    ros::Time::waitForValid();
+    ros::Time start = ros::Time::now();
+    ros::Time end = start + ros::Duration(time);
+    this->linear_vel.x = linear_vel;
+    this->linear_vel.y = side_vel;
+    this->linear_vel.z = 0.0;
+    this->angular_vel.x = 0.0;
+    this->angular_vel.y = 0.0;
+    this->angular_vel.z = angular_vel;
+    while(ros::Time::now() < end)
+    { 
+        this->PublishPlatformVel();
+        ros::Duration(0.02f).sleep();
+        ros::spinOnce();
+    }
+    return *this;
+}
+
+Youbot& Youbot::StopPlatform()
+{
+    this->linear_vel.x = 0.0;
+    this->linear_vel.y = 0.0;
+    this->linear_vel.z = 0.0;
+    this->angular_vel.x = 0.0;
+    this->angular_vel.y = 0.0;
+    this->angular_vel.z = 0.0;
+    this->PublishPlatformVel();    
+    return *this;
 }
 
 /*void Youbot::Draw(sf::RenderWindow& window) const

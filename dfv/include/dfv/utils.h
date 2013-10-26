@@ -7,6 +7,8 @@ namespace dfv
     
     long double DegToRad(long double deg);
     long double RadToDeg(long double rad);
+    
+    double NormalizeAngle(double angle);
 }
 
 #endif
