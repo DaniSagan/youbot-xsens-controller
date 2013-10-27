@@ -240,6 +240,11 @@ namespace dfv
         return this->mt_count;
     }
     
+    unsigned int XsensListener::Count() const
+    {
+        return this->mt_count;
+    }
+    
     const dfv::Vector3 XsensListener::GetAcc(unsigned int mt_index) const
     {
         return dfv::Vector3(this->sensors[mt_index]->GetAcc());

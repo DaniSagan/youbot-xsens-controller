@@ -259,7 +259,7 @@ void Base::Publish()
     msg.angular.y = 0.0;
     msg.angular.z = this->angular_vel;
     this->publisher.publish(msg);
-    ros::Duration(0.02f).sleep();
+    //ros::Duration(0.02f).sleep();
     ros::spinOnce();
 }
 
@@ -274,15 +274,22 @@ YoubotNew::YoubotNew(ros::NodeHandle& _node_handle):
     gripper(Gripper(_node_handle)),
     node_handle(_node_handle)
 {
-    
+    ros::spinOnce();
 }
 
 YoubotNew::~YoubotNew()
 {
 }
 
+YoubotNew& YoubotNew::Wait(float time)
+{   
+    ros::Duration(time).sleep();
+    return *this;
+}
+
 
 //------------------------------
+/*
 const float Youbot::joint_min_pos[] = {0.0100692f, 0.0100692f, -5.02655f, 0.0221239f, 0.110619f};
 const float Youbot::joint_max_pos[] = {5.84014f, 2.61799f, -0.015708f, 3.4292f, 5.64159f};
 const float Youbot::joint_ini_pos[] = {2.959675f, 1.144533f, -2.57124f, 1.811086f, 2.91237f};
@@ -291,6 +298,7 @@ const dfv::Vector3 Youbot::r[] = {dfv::Vector3(-0.034f, 0.f, 0.075f),
                                   dfv::Vector3(0.f, 0.f, 0.135f),
                                   dfv::Vector3(0.f, 0.f, 0.113f),
                                   dfv::Vector3(0.f, 0.f, 0.105f)};
+
 
 Youbot::Youbot(ros::NodeHandle& node_handle_, 
                std::string arm_topic_name_, 
@@ -558,7 +566,7 @@ Youbot& Youbot::MovePlatform(double linear_vel, double side_vel, double angular_
     while(ros::Time::now() < end)
     { 
         this->PublishPlatformVel();
-        ros::Duration(0.02f).sleep();
+        //ros::Duration(0.02f).sleep();
         ros::spinOnce();
     }
     return *this;
@@ -576,7 +584,7 @@ Youbot& Youbot::StopPlatform()
     return *this;
 }
 
-/*void Youbot::Draw(sf::RenderWindow& window) const
+void Youbot::Draw(sf::RenderWindow& window) const
 {
     const float scale = 200.f;
     const float center_off = 0.7f;

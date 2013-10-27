@@ -170,7 +170,7 @@ int main(int argc, char** argv)
     
     ros::init(argc, argv, "dfv_example");
     ros::NodeHandle node_handle;
-    dfv::Youbot youbot(node_handle); // creación de un objeto youbot
+    dfv::YoubotNew youbot(node_handle); // creación de un objeto youbot
     
     
     return 0;

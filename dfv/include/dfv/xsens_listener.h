@@ -142,6 +142,9 @@ namespace dfv
             //! Función que devuelve el número de sensores detectados
             unsigned int GetMtCount() const;
             
+            //! Función que devuelve el número de sensores detectados
+            unsigned int Count() const;
+            
             
             /*! \brief Devuelve los valores leídos de los acelerómetros del sensor
                 especificado.

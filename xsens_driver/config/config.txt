@@ -1,0 +1,6 @@
+# Configuración de los sensores para el programa xsens_node
+
+1: orient quaternion
+2: orient quaternion
+3: orient quaternion
+4: calibrated

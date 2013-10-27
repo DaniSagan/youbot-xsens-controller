@@ -128,12 +128,16 @@ public:
     Base base;
     Gripper gripper;
     
+    YoubotNew& Wait(float time);
+    
 private:
     ros::NodeHandle& node_handle;
 };
 
 /*! \brief Clase que encapsula la comunicaciones de ROS para el control del robot YouBot
 */
+
+/*
 class Youbot
 {
     public:
@@ -197,7 +201,7 @@ class Youbot
         ros::Subscriber joint_states_subscriber;
         void JointStatesCallback(const sensor_msgs::JointState::ConstPtr& msg);
 
-};
+};*/
 
 }
 
