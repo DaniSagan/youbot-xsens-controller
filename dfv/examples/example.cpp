@@ -164,13 +164,30 @@ int main(int argc, char** argv)
     std::cout << "Inversa de la matriz: " << std::endl;
     std::cout << m6 << std::endl;
     
+    // ************************************ //
+    // ******** Ejemplos con utils ******** //
+    // ************************************ //
+    
+    std::cout << std::endl;
+    std::cout << "Utils:" << std::endl;
+    std::cout << "------" << std::endl;
+    
+    std::string str = "Ejemplo de utilización de la función StrTokenize.";
+    std::cout << str << std::endl << "Tokens: " << std::endl;
+    std::vector<std::string> tokens = dfv::StrTokenize(str, ' ');
+    for(std::vector<std::string>::iterator it = tokens.begin();
+        it != tokens.end(); ++it)
+    {
+        std::cout << *it << std::endl;
+    }
+    
     // **************************************************** //
     // ******** Ejemplos de operaciones con Youbot ******** //
     // **************************************************** //
     
     ros::init(argc, argv, "dfv_example");
     ros::NodeHandle node_handle;
-    dfv::YoubotNew youbot(node_handle); // creación de un objeto youbot
+    dfv::Youbot youbot(node_handle); // creación de un objeto youbot
     
     
     return 0;

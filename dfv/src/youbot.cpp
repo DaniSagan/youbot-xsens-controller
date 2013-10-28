@@ -112,7 +112,8 @@ const float Arm::joint_max_pos[] = {5.84014f, 2.61799f, -0.015708f, 3.4292f, 5.6
 const float Arm::joint_offset[] = {2.959675f, 1.144533f, -2.57124f, 1.811086f, 2.91237f};
 
 Arm::Arm(ros::NodeHandle& _node_handle):
-    node_handle(_node_handle)
+    node_handle(_node_handle),
+    enabled(false)
 {
     this->command_publisher = 
         _node_handle.advertise<brics_actuator::JointPositions>(Arm::command_topic, 1000);
@@ -172,22 +173,41 @@ void Arm::StateCallback(const sensor_msgs::JointState::ConstPtr& msg)
 
 void Arm::Publish()
 {
-    while(this->command_publisher.getNumSubscribers() == 0)
-    {        
-        ros::Duration(0.02f).sleep();
-        ros::spinOnce();        
-    }
-    
-    brics_actuator::JointPositions msg;    
-    for(unsigned int i = 0; i < this->joints.size(); ++i)
+    if(this->enabled)
     {
-        this->joint_values[i].value = this->joints[i].target;
-    }    
-    msg.positions = this->joint_values;
-    this->command_publisher.publish(msg);
-    ros::Duration(0.02f).sleep();
-    ros::spinOnce();
-    ROS_INFO("Setting arm position.");
+        unsigned int timeout = 200;
+        while(this->command_publisher.getNumSubscribers() == 0 && timeout > 0)
+        {        
+            ros::Duration(0.02f).sleep();
+            ros::spinOnce(); 
+            timeout--;       
+        }
+        if(timeout == 0)
+        {
+            ROS_ERROR("Could not contact with Arm.");
+            return;
+        }
+        brics_actuator::JointPositions msg;    
+        for(unsigned int i = 0; i < this->joints.size(); ++i)
+        {
+            this->joint_values[i].value = this->joints[i].target;
+        }    
+        msg.positions = this->joint_values;
+        this->command_publisher.publish(msg);
+        ros::Duration(0.02f).sleep();
+        ros::spinOnce();
+        //ROS_INFO("Arm command published.");
+    }
+}
+
+Arm& Arm::Enable()
+{
+    this->enabled = true;
+}
+
+Arm& Arm::Disable()
+{
+    this->enabled = false;
 }
 
 //********************//
@@ -200,7 +220,8 @@ Base::Base(ros::NodeHandle& _node_handle):
     node_handle(_node_handle),
     linear_vel(0.f),
     side_vel(0.f),
-    angular_vel(0.f)
+    angular_vel(0.f),
+    enabled(false)
 {
     this->publisher = 
         this->node_handle.advertise<geometry_msgs::Twist>(Base::topic, 1000);
@@ -231,6 +252,7 @@ Base& Base::MoveFor(float linear_vel, float side_vel, float angular_vel, float t
     while(ros::Time::now() < end)
     { 
         this->Publish();
+        ros::Duration(0.02f).sleep();
     }
     return *this;
 }
@@ -246,21 +268,43 @@ Base& Base::Stop()
 
 void Base::Publish()
 {
-    while(this->publisher.getNumSubscribers() == 0)
-    {        
-        ros::Duration(0.02f).sleep();
-        ros::spinOnce();        
+    if(this->enabled)
+    {
+        unsigned int timeout = 200;
+        while(this->publisher.getNumSubscribers() == 0 && timeout > 0)
+        {        
+            ros::Duration(0.02f).sleep();
+            ros::spinOnce();   
+            timeout--;
+            //ROS_WARN("No subscribers to base topic");     
+        }
+        if(timeout == 0)
+        {
+            ROS_ERROR("Could not contact with base.");
+            return;
+        }
+        geometry_msgs::Twist msg;
+        msg.linear.x = this->linear_vel;
+        msg.linear.y = this->side_vel;
+        msg.linear.z = 0.0;
+        msg.angular.x = 0.0;
+        msg.angular.y = 0.0;
+        msg.angular.z = this->angular_vel;
+        this->publisher.publish(msg);
+        //ros::Duration(0.02f).sleep();
+        ros::spinOnce();
+        //ROS_INFO("Base command published.");
     }
-    geometry_msgs::Twist msg;
-    msg.linear.x = this->linear_vel;
-    msg.linear.y = this->side_vel;
-    msg.linear.z = 0.0;
-    msg.angular.x = 0.0;
-    msg.angular.y = 0.0;
-    msg.angular.z = this->angular_vel;
-    this->publisher.publish(msg);
-    //ros::Duration(0.02f).sleep();
-    ros::spinOnce();
+}
+
+Base& Base::Enable()
+{
+    this->enabled = true;
+}
+
+Base& Base::Disable()
+{
+    this->enabled = false;
 }
 
 //**********************//
@@ -268,7 +312,7 @@ void Base::Publish()
 //**********************//
 
 
-YoubotNew::YoubotNew(ros::NodeHandle& _node_handle):
+Youbot::Youbot(ros::NodeHandle& _node_handle):
     arm(Arm(_node_handle)),
     base(Base(_node_handle)),
     gripper(Gripper(_node_handle)),
@@ -277,11 +321,11 @@ YoubotNew::YoubotNew(ros::NodeHandle& _node_handle):
     ros::spinOnce();
 }
 
-YoubotNew::~YoubotNew()
+Youbot::~Youbot()
 {
 }
 
-YoubotNew& YoubotNew::Wait(float time)
+Youbot& Youbot::Wait(float time)
 {   
     ros::Duration(time).sleep();
     return *this;

@@ -48,7 +48,9 @@ int main(int argc, char** argv)
     }
     
     ROS_INFO("Creating youbot...");
-    dfv::YoubotNew youbot(node_handle);
+    dfv::Youbot youbot(node_handle);
+    youbot.arm.Enable();
+    youbot.base.Disable();
     
     ROS_INFO("Youbot Created");
     std::vector<float> angs;
@@ -150,7 +152,7 @@ std::vector<float> GetArmAngles(dfv::XsensListener& sensors)
     
     std::vector<float> angles(5);
     angles[0] = -yaw_0;
-    angles[1] = pitch_0;
+    angles[1] = pitch_0 - dfv::pi/2.0;
     angles[2] = pitch_1;
     angles[3] = pitch_2;
     angles[4] = 0.f;

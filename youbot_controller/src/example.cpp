@@ -25,12 +25,15 @@ int main(int argc, char** argv)
           .MovePlatform(0, -1, 0, 1)
           .StopPlatform();*/
     
-    dfv::YoubotNew youbot(node_handle);
-    /*youbot.base.MoveFor(1, 0, 0, 2)
-               .MoveFor(0, 0, 1, 2)
-               .MoveFor(1, 0, 0, 1)
-               .MoveFor(0, 0, 1, 2)
-               .Stop();*/
+    dfv::Youbot youbot(node_handle);
+    youbot.base.Enable();
+    youbot.arm.Disable();
+    
+    youbot.base.MoveFor(1, 0, 0, 5)
+               .MoveFor(0, 0, 1, 5)
+               .MoveFor(1, 0, 0, 5)
+               .MoveFor(0, 0, 1, 5)
+               .Stop();
                
     std::vector<float> arm_pos_1(5);
     arm_pos_1[0] = 1.5f;

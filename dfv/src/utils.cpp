@@ -15,15 +15,28 @@ namespace dfv
     
     double NormalizeAngle(double angle)
     {
-        while(angle < 0)
+        while(angle < -dfv::pi)
         {
             angle += 2*dfv::pi;
         }
-        while(angle > 2*dfv::pi)
+        while(angle >= dfv::pi)
         {
             angle -= 2*dfv::pi;
         }
         return angle;
+    }
+    
+    std::vector<std::string> StrTokenize(const std::string& str, char delimiter)
+    {
+        std::stringstream ss(str);
+        std::string s;
+        std::vector<std::string> res;
+        
+        while (getline(ss, s, delimiter)) 
+        {
+            res.push_back(s);
+        }
+        return res;
     }
 
 }

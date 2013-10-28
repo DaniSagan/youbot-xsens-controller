@@ -82,6 +82,8 @@ public:
     std::vector<Joint> joints;
     Arm& SetPos(std::vector<float> joint_pos);
     Arm& Wait(float time);
+    Arm& Enable();
+    Arm& Disable();
 private:
     ros::NodeHandle& node_handle;
     static const std::string command_topic;
@@ -92,6 +94,7 @@ private:
     static const float joint_min_pos[];
     static const float joint_max_pos[];
     static const float joint_offset[];
+    bool enabled;
     
     void StateCallback(const sensor_msgs::JointState::ConstPtr& msg);
     void Publish();    
@@ -106,6 +109,8 @@ public:
     Base& Move(float linear_vel, float side_vel, float angular_vel);
     Base& MoveFor(float linear_vel, float side_vel, float angular_vel, float time);
     Base& Stop();
+    Base& Enable();
+    Base& Disable();
     
 private:
     ros::NodeHandle& node_handle;
@@ -113,22 +118,23 @@ private:
     static const std::string topic;
     float linear_vel;
     float side_vel;
-    float angular_vel;       
+    float angular_vel;
+    bool enabled;       
       
     void Publish();
 };
 
-class YoubotNew
+class Youbot
 {
 public:
-    YoubotNew(ros::NodeHandle& node_handle_);
-    ~YoubotNew();
+    Youbot(ros::NodeHandle& node_handle_);
+    ~Youbot();
     
     Arm arm;
     Base base;
     Gripper gripper;
     
-    YoubotNew& Wait(float time);
+    Youbot& Wait(float time);
     
 private:
     ros::NodeHandle& node_handle;
