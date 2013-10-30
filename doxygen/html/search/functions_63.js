@@ -2,7 +2,7 @@ var searchData=
 [
   ['calcchecksum',['calcChecksum',['../classxsens_1_1Message.html#abf49d6900168d28a9a3a262e18c4a922',1,'xsens::Message']]],
   ['clear',['clear',['../classxsens_1_1Message.html#a8f4333f50bb8a1b4989f8179025c6e8f',1,'xsens::Message::clear()'],['../classxsens_1_1List.html#a9373a59d838df7cb2b490922e0575e34',1,'xsens::List::clear()']]],
-  ['close',['close',['../classxsens_1_1Cmt1s.html#a29d64fe8e43430225b02450cac4a65eb',1,'xsens::Cmt1s::close()'],['../classxsens_1_1Cmt1f.html#a998f005fb3832d4945e53a41b570d634',1,'xsens::Cmt1f::close()'],['../classxsens_1_1Cmt2s.html#a6c1d8935ef7ac15be3f5cd6b3801ebad',1,'xsens::Cmt2s::close()'],['../classxsens_1_1Cmt2f.html#a4aef4b12a2764c6f1022a43e48100040',1,'xsens::Cmt2f::close()']]],
+  ['close',['Close',['../classdfv_1_1Gripper.html#a0c552cd2c919e72997aa559ccc511242',1,'dfv::Gripper::Close()'],['../classxsens_1_1Cmt1s.html#a29d64fe8e43430225b02450cac4a65eb',1,'xsens::Cmt1s::close()'],['../classxsens_1_1Cmt1f.html#a998f005fb3832d4945e53a41b570d634',1,'xsens::Cmt1f::close()'],['../classxsens_1_1Cmt2s.html#a6c1d8935ef7ac15be3f5cd6b3801ebad',1,'xsens::Cmt2s::close()'],['../classxsens_1_1Cmt2f.html#a4aef4b12a2764c6f1022a43e48100040',1,'xsens::Cmt2f::close()']]],
   ['closeanddelete',['closeAndDelete',['../classxsens_1_1Cmt1f.html#a7f88bf518daead18acd478c53874f59e',1,'xsens::Cmt1f::closeAndDelete()'],['../classxsens_1_1Cmt2f.html#a59b667c6fb15792d45f207ddbee02caf',1,'xsens::Cmt2f::closeAndDelete()']]],
   ['closelogfile',['closeLogFile',['../classxsens_1_1Cmt3.html#a740c001f68c9fb45ac9ff4bd0cbb3b87',1,'xsens::Cmt3']]],
   ['closeport',['closePort',['../classxsens_1_1Cmt3.html#a3c1feb413892d464eaa07858cc55e864',1,'xsens::Cmt3']]],

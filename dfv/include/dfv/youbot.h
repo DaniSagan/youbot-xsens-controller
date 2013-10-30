@@ -24,19 +24,33 @@
 namespace dfv
 {
 
+/*! \brief Encapsula las comunicaciones de ROS del gripper del youbot.
+*/
 class Gripper
 {
 public:
+    /*! \brief Constructor por defecto
+    */
     Gripper(ros::NodeHandle& _node_handle);
+    
+    /*! \brief Destructor
+    */
     ~Gripper();
     
+    /*! \brief Estado del gripper
+    */
     enum State
     {
         open = 0,
         closed
     };
     
+    /*! \brief Abre el gripper
+    */
     void Open();
+    
+    /*! \brief Cierra el gripper
+    */
     void Close();
     
 private:

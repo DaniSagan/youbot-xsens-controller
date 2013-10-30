@@ -61,6 +61,7 @@ var searchData=
   ['size_5ftype',['size_type',['../classxsens_1_1FifoQueue.html#a6a595ab989816ba96cf0cbfa4d39b0b1',1,'xsens::FifoQueue::size_type()'],['../classxsens_1_1FifoQueueBasic.html#abef5a7d633ee8b57a33360bf3b3efdef',1,'xsens::FifoQueueBasic::size_type()']]],
   ['sortascending',['sortAscending',['../classxsens_1_1List.html#af668e4bfa511ded8eacff8ca6e19a90e',1,'xsens::List']]],
   ['sortascendingderef',['sortAscendingDeref',['../classxsens_1_1List.html#a2f7659a33159347cb008a269bb2b7799',1,'xsens::List']]],
+  ['state',['State',['../classdfv_1_1Gripper.html#a891fbbf96286d8615cb16957fb3bcaf2',1,'dfv::Gripper']]],
   ['storexkfstate',['storeXkfState',['../classxsens_1_1Cmt3.html#a156e28148d2f53d584534367eff0cc41',1,'xsens::Cmt3']]],
   ['subscribetotopics',['SubscribeToTopics',['../classdfv_1_1SensorSubscriber.html#ab33fdef7d3fff1bf80550a7c2f3b6889',1,'dfv::SensorSubscriber']]],
   ['swap',['swap',['../classxsens_1_1List.html#a77370ae25853be59aaae0eb71e1c1b29',1,'xsens::List']]]
