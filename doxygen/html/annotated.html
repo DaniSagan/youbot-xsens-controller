@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
     <ul class="tablist">
       <li class="current"><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
       <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
       <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
     </ul>
   </div>
@@ -88,8 +89,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <tr><td class="indexkey"><a class="el" href="unionxsens_1_1MessageHeader_1_1__mdl.html">xsens::MessageHeader::_mdl</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="structxsens_1_1MessageHeader_1_1__mdl_1_1__mextd.html">xsens::MessageHeader::_mdl::_mextd</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="structxsens_1_1MessageHeader_1_1__mdl_1_1__mextd_1_1__mlen.html">xsens::MessageHeader::_mdl::_mextd::_mlen</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classgazebo_1_1CModel.html">gazebo::CModel</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classgazebo_1_1CModelList.html">gazebo::CModelList</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Arm.html">dfv::Arm</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classArmController.html">ArmController</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Base.html">dfv::Base</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classBaseController.html">BaseController</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Cmt1f.html">xsens::Cmt1f</a></td><td class="indexvalue">The low-level file communication class </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Cmt1s.html">xsens::Cmt1s</a></td><td class="indexvalue">The low-level serial communication class </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Cmt2f.html">xsens::Cmt2f</a></td><td class="indexvalue">The mid-level file communication class </td></tr>
@@ -118,12 +121,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <tr><td class="indexkey"><a class="el" href="structCmtUtcTime.html">CmtUtcTime</a></td><td class="indexvalue">A structure for storing UTC Time values </td></tr>
   <tr><td class="indexkey"><a class="el" href="structCmtVector.html">CmtVector</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="structCmtVersion.html">CmtVersion</a></td><td class="indexvalue">A structure for storing the firmware version </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classController.html">Controller</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Driver.html">xsens::Driver</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Exception.html">xsens::Exception</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1FifoQueue.html">xsens::FifoQueue&lt; T, E &gt;</a></td><td class="indexvalue">A FIFO queue with limited length (cyclic) </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1FifoQueueBasic.html">xsens::FifoQueueBasic&lt; T &gt;</a></td><td class="indexvalue">A FIFO queue with limited length (cyclic) </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Gripper.html">dfv::Gripper</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1JanitorClassFunc.html">xsens::JanitorClassFunc&lt; T, R &gt;</a></td><td class="indexvalue">Class function calling janitor class </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1JanitorClassFuncP1.html">xsens::JanitorClassFuncP1&lt; T, P1, R &gt;</a></td><td class="indexvalue">Class function calling janitor class with a parameter </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Joint.html">dfv::Joint</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1List.html">xsens::List&lt; T &gt;</a></td><td class="indexvalue">Dynamic list class </td></tr>
   <tr><td class="indexkey"><a class="el" href="classdfv_1_1Matrix.html">dfv::Matrix</a></td><td class="indexvalue">Clase para la creación y manipulación de matrices de dimensión arbitraria </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Message.html">xsens::Message</a></td><td class="indexvalue">Class for storing a single message </td></tr>
@@ -133,14 +139,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
   <tr><td class="indexkey"><a class="el" href="structxsens_1_1Packet_1_1PacketInfo.html">xsens::Packet::PacketInfo</a></td><td class="indexvalue">Contains information about data in the packet and the format of that data </td></tr>
   <tr><td class="indexkey"><a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a></td><td class="indexvalue">Clase para la creación y manipulación de cuaterniones </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1Sensor.html">xsens::Sensor</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classdfv_1_1SensorSubscriber.html">dfv::SensorSubscriber</a></td><td class="indexvalue">Encapsula las comunicaciones de ROS de un sensor Xsens </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1SensorSubscriber.html">xsens::SensorSubscriber</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1SensorSubscriber.html">dfv::SensorSubscriber</a></td><td class="indexvalue">Encapsula las comunicaciones de ROS de un sensor Xsens </td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1SensorSubscriberList.html">xsens::SensorSubscriberList</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classxsens_1_1TimeSync.html">xsens::TimeSync</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a></td><td class="indexvalue">Clase para creación y manipulación de vectores de 3 dimensiones </td></tr>
   <tr><td class="indexkey"><a class="el" href="classdfv_1_1XsensListener.html">dfv::XsensListener</a></td><td class="indexvalue">Encapsula las comunicaciones de ROS de una red de sensores Xsens </td></tr>
-  <tr><td class="indexkey"><a class="el" href="classYoubot.html">Youbot</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Youbot.html">dfv::Youbot</a></td><td class="indexvalue">Clase que encapsula la comunicaciones de ROS para el control del robot YouBot </td></tr>
+  <tr><td class="indexkey"><a class="el" href="classdfv_1_1Youbot.html">dfv::Youbot</a></td><td class="indexvalue"></td></tr>
 </table>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -160,7 +165,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 23:26:53 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Miércoles, 30 de Octubre de 2013 12:45:23 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

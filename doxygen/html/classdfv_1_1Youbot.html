@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
       <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
       <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
     </ul>
   </div>
@@ -100,104 +101,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Tipos públicos</a> &#124;
 <a href="#pub-methods">Métodos públicos</a> &#124;
-<a href="#pub-attribs">Atributos públicos</a> &#124;
-<a href="#pub-static-attribs">Atributos públicos estáticos</a> &#124;
-<a href="#pro-methods">Métodos protegidos</a> &#124;
-<a href="#pro-attribs">Atributos protegidos</a>  </div>
+<a href="#pub-attribs">Atributos públicos</a>  </div>
   <div class="headertitle">
 <div class="title">Referencia de la Clase dfv::Youbot</div>  </div>
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="dfv::Youbot" -->
-<p>Clase que encapsula la comunicaciones de ROS para el control del robot YouBot.  
- <a href="classdfv_1_1Youbot.html#details">Más...</a></p>
-
-<p><code>#include &lt;<a class="el" href="dfv_2include_2dfv_2youbot_8h_source.html">youbot.h</a>&gt;</code></p>
-
 <p><a href="classdfv_1_1Youbot-members.html">Lista de todos los miembros.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-types"></a>
-Tipos públicos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>GripperState</b> { <b>closed</b> =  0, 
-<b>open</b>
- }</td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Métodos públicos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bef60e35a117942f345b07f19a09e1b"></a><!-- doxytag: member="dfv::Youbot::Youbot" ref="a7bef60e35a117942f345b07f19a09e1b" args="(ros::NodeHandle &amp;node_handle_, std::string arm_topic_name_=&quot;arm_1/arm_controller/position_command&quot;, std::string gripper_topic_name_=&quot;arm_1/gripper_controller/position_command&quot;, std::string joint_states_topic_name=&quot;joint_states&quot;, std::string cmd_vel_topic_name=&quot;cmd_vel&quot;)" -->
-&#160;</td><td class="memItemRight" valign="bottom"><b>Youbot</b> (ros::NodeHandle &amp;node_handle_, std::string arm_topic_name_=&quot;arm_1/arm_controller/position_command&quot;, std::string gripper_topic_name_=&quot;arm_1/gripper_controller/position_command&quot;, std::string joint_states_topic_name=&quot;joint_states&quot;, std::string cmd_vel_topic_name=&quot;cmd_vel&quot;)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9aefad604da0d465dadaf4ab923a089c"></a><!-- doxytag: member="dfv::Youbot::PublishArmPosition" ref="a9aefad604da0d465dadaf4ab923a089c" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PublishArmPosition</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72ecbf08b87d31f35384d2712d5273ae"></a><!-- doxytag: member="dfv::Youbot::PublishPlatformVel" ref="a72ecbf08b87d31f35384d2712d5273ae" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PublishPlatformVel</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aff3bcde6d3e88c59451004471e37b4ca"></a><!-- doxytag: member="dfv::Youbot::GetJointLocalQuaternion" ref="aff3bcde6d3e88c59451004471e37b4ca" args="(int index) const " -->
-<a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetJointLocalQuaternion</b> (int index) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa296d0281fc1c9c00ebea6cd1367c9ea"></a><!-- doxytag: member="dfv::Youbot::GetJointLocalQuatFromAngle" ref="aa296d0281fc1c9c00ebea6cd1367c9ea" args="(int index, float angle) const " -->
-<a class="el" href="classdfv_1_1Quaternion.html">dfv::Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetJointLocalQuatFromAngle</b> (int index, float angle) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad36241fa6b5c2bed6166a9102c709be1"></a><!-- doxytag: member="dfv::Youbot::GetJointPosition" ref="ad36241fa6b5c2bed6166a9102c709be1" args="(int index) const " -->
-<a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetJointPosition</b> (int index) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8cd5e38e039cc50fe0f93a9344d727e4"></a><!-- doxytag: member="dfv::Youbot::GetJointPosFromAngles" ref="a8cd5e38e039cc50fe0f93a9344d727e4" args="(unsigned int index, const std::vector&lt; float &gt; &amp;joint_angles) const " -->
-<a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetJointPosFromAngles</b> (unsigned int index, const std::vector&lt; float &gt; &amp;joint_angles) const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6eec4021fd747e169b0cd793ecf0a21d"></a><!-- doxytag: member="dfv::Youbot::OpenGripper" ref="a6eec4021fd747e169b0cd793ecf0a21d" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OpenGripper</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a83eb89c33c05f1f0b0043674fd1b4561"></a><!-- doxytag: member="dfv::Youbot::CloseGripper" ref="a83eb89c33c05f1f0b0043674fd1b4561" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>CloseGripper</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a2bedf8adcb1b34147f8122a0fc77a1"></a><!-- doxytag: member="dfv::Youbot::ResetArmPosition" ref="a2a2bedf8adcb1b34147f8122a0fc77a1" args="()" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetArmPosition</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e0c49ce6cd3d275d16cdafcd6c203d9"></a><!-- doxytag: member="dfv::Youbot::FindAnglesForPos" ref="a9e0c49ce6cd3d275d16cdafcd6c203d9" args="(dfv::Vector3 &amp;target_pos)" -->
-std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FindAnglesForPos</b> (<a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a> &amp;target_pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a78a15bc3779533fc764d2bb6e4e9de63"></a><!-- doxytag: member="dfv::Youbot::Youbot" ref="a78a15bc3779533fc764d2bb6e4e9de63" args="(ros::NodeHandle &amp;node_handle_)" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>Youbot</b> (ros::NodeHandle &amp;node_handle_)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1364d8b6b0b7cfd7a7d1090d01a4149"></a><!-- doxytag: member="dfv::Youbot::Wait" ref="ad1364d8b6b0b7cfd7a7d1090d01a4149" args="(float time)" -->
+<a class="el" href="classdfv_1_1Youbot.html">Youbot</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Wait</b> (float time)</td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Atributos públicos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af286b747f6864610fb1d365687fa58cd"></a><!-- doxytag: member="dfv::Youbot::joint_positions" ref="af286b747f6864610fb1d365687fa58cd" args="[5]" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>joint_positions</b> [5]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a37753d53f3b44950721a334f2291f66b"></a><!-- doxytag: member="dfv::Youbot::gripper_positions" ref="a37753d53f3b44950721a334f2291f66b" args="[2]" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>gripper_positions</b> [2]</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75f2e0846f6f2258076c789f8321593a"></a><!-- doxytag: member="dfv::Youbot::linear_vel" ref="a75f2e0846f6f2258076c789f8321593a" args="" -->
-<a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>linear_vel</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a636caf4b690b2ee5d90895c77b156b28"></a><!-- doxytag: member="dfv::Youbot::angular_vel" ref="a636caf4b690b2ee5d90895c77b156b28" args="" -->
-<a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>angular_vel</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b2fe1930c1defa4d9c8e5b188d7070f"></a><!-- doxytag: member="dfv::Youbot::joint_states" ref="a6b2fe1930c1defa4d9c8e5b188d7070f" args="" -->
-std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>joint_states</b></td></tr>
-<tr><td colspan="2"><h2><a name="pub-static-attribs"></a>
-Atributos públicos estáticos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05630a8b60d8ce1f096c32d119b1be59"></a><!-- doxytag: member="dfv::Youbot::joint_min_pos" ref="a05630a8b60d8ce1f096c32d119b1be59" args="[]" -->
-static const float&#160;</td><td class="memItemRight" valign="bottom"><b>joint_min_pos</b> []</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aafc2bd5c8d101ba0efea54e4c403d91a"></a><!-- doxytag: member="dfv::Youbot::joint_max_pos" ref="aafc2bd5c8d101ba0efea54e4c403d91a" args="[]" -->
-static const float&#160;</td><td class="memItemRight" valign="bottom"><b>joint_max_pos</b> []</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac51315d85fd33415400aa7ce942b45ef"></a><!-- doxytag: member="dfv::Youbot::joint_ini_pos" ref="ac51315d85fd33415400aa7ce942b45ef" args="[]" -->
-static const float&#160;</td><td class="memItemRight" valign="bottom"><b>joint_ini_pos</b> []</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a594b3f376aa5872a821f62d0e968028e"></a><!-- doxytag: member="dfv::Youbot::r" ref="a594b3f376aa5872a821f62d0e968028e" args="[]" -->
-static const <a class="el" href="classdfv_1_1Vector3.html">dfv::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>r</b> []</td></tr>
-<tr><td colspan="2"><h2><a name="pro-methods"></a>
-Métodos protegidos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addea2f360258a2c60e12119a3c4d944b"></a><!-- doxytag: member="dfv::Youbot::JointStatesCallback" ref="addea2f360258a2c60e12119a3c4d944b" args="(const sensor_msgs::JointState::ConstPtr &amp;msg)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>JointStatesCallback</b> (const sensor_msgs::JointState::ConstPtr &amp;msg)</td></tr>
-<tr><td colspan="2"><h2><a name="pro-attribs"></a>
-Atributos protegidos</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac933160ab53585f288cc799b52f69a68"></a><!-- doxytag: member="dfv::Youbot::node_handle" ref="ac933160ab53585f288cc799b52f69a68" args="" -->
-ros::NodeHandle &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>node_handle</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e7e06d117f2f78eb27cffdb62bc7693"></a><!-- doxytag: member="dfv::Youbot::arm_publisher" ref="a3e7e06d117f2f78eb27cffdb62bc7693" args="" -->
-ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><b>arm_publisher</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33b95ba16f704b706f691b87ed954425"></a><!-- doxytag: member="dfv::Youbot::gripper_publisher" ref="a33b95ba16f704b706f691b87ed954425" args="" -->
-ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><b>gripper_publisher</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02be5b55094854fc9113bdf722ebf53f"></a><!-- doxytag: member="dfv::Youbot::cmd_vel_publisher" ref="a02be5b55094854fc9113bdf722ebf53f" args="" -->
-ros::Publisher&#160;</td><td class="memItemRight" valign="bottom"><b>cmd_vel_publisher</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6bb0b4af437162dc72b5d266c316ad5a"></a><!-- doxytag: member="dfv::Youbot::v_joint_values" ref="a6bb0b4af437162dc72b5d266c316ad5a" args="" -->
-std::vector<br class="typebreak"/>
-&lt; brics_actuator::JointValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>v_joint_values</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a278c101488612b9e4b2f3ed4dc6d6d47"></a><!-- doxytag: member="dfv::Youbot::v_gripper_values" ref="a278c101488612b9e4b2f3ed4dc6d6d47" args="" -->
-std::vector<br class="typebreak"/>
-&lt; brics_actuator::JointValue &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>v_gripper_values</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeffb78d0de972814aeab8e7ff7841f53"></a><!-- doxytag: member="dfv::Youbot::gripper_state" ref="aeffb78d0de972814aeab8e7ff7841f53" args="" -->
-GripperState&#160;</td><td class="memItemRight" valign="bottom"><b>gripper_state</b></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae48d141f16468e936180d6de7fee2ec0"></a><!-- doxytag: member="dfv::Youbot::joint_states_subscriber" ref="ae48d141f16468e936180d6de7fee2ec0" args="" -->
-ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><b>joint_states_subscriber</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a546a5dd73d92a78e3e7a7e5e657e20c4"></a><!-- doxytag: member="dfv::Youbot::arm" ref="a546a5dd73d92a78e3e7a7e5e657e20c4" args="" -->
+<a class="el" href="classdfv_1_1Arm.html">Arm</a>&#160;</td><td class="memItemRight" valign="bottom"><b>arm</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae9afdaa79ea3b7d9ca16f1f787846c38"></a><!-- doxytag: member="dfv::Youbot::base" ref="ae9afdaa79ea3b7d9ca16f1f787846c38" args="" -->
+<a class="el" href="classdfv_1_1Base.html">Base</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82c9280fd7f7b981e3bec85a4db32b5f"></a><!-- doxytag: member="dfv::Youbot::gripper" ref="a82c9280fd7f7b981e3bec85a4db32b5f" args="" -->
+<a class="el" href="classdfv_1_1Gripper.html">Gripper</a>&#160;</td><td class="memItemRight" valign="bottom"><b>gripper</b></td></tr>
 </table>
-<hr/><a name="details" id="details"></a><h2>Descripción detallada</h2>
-<div class="textblock"><p>Clase que encapsula la comunicaciones de ROS para el control del robot YouBot. </p>
-</div><hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
-<li>dfv/include/dfv/<a class="el" href="dfv_2include_2dfv_2youbot_8h_source.html">youbot.h</a></li>
+<hr/>La documentación para esta clase fue generada a partir del siguiente fichero:<ul>
+<li>dfv/include/dfv/<a class="el" href="youbot_8h_source.html">youbot.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -217,7 +146,7 @@ ros::Subscriber&#160;</td><td class="memItemRight" valign="bottom"><b>joint_stat
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 23:26:53 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Miércoles, 30 de Octubre de 2013 12:45:19 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

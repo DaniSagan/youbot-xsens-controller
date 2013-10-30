@@ -1,0 +1,19 @@
+<package>
+  <description brief="youbot_sentinel">
+
+     youbot_sentinel
+
+  </description>
+  <author>Daniel</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/youbot_sentinel</url>
+  <depend package="std_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="dfv"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+
+</package>
+
+

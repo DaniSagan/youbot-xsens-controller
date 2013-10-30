@@ -117,5 +117,6 @@ var searchData=
   ['gotoconfig',['gotoConfig',['../classxsens_1_1Cmt3.html#a6d1a4f7cdad02be095d1a75d49ad1dc4',1,'xsens::Cmt3']]],
   ['gotomeasurement',['gotoMeasurement',['../classxsens_1_1Cmt3.html#a7744ae99e49fc340815fa5ab7284f41f',1,'xsens::Cmt3']]],
   ['gotoread',['gotoRead',['../classxsens_1_1Cmt1f.html#a06211472647b5865767127ce404713bf',1,'xsens::Cmt1f']]],
-  ['gotowrite',['gotoWrite',['../classxsens_1_1Cmt1f.html#a70655b6aa0207f32b9bb89e0bfbeda07',1,'xsens::Cmt1f']]]
+  ['gotowrite',['gotoWrite',['../classxsens_1_1Cmt1f.html#a70655b6aa0207f32b9bb89e0bfbeda07',1,'xsens::Cmt1f']]],
+  ['gripper',['Gripper',['../classdfv_1_1Gripper.html',1,'dfv']]]
 ];

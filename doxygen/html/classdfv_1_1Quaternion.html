@@ -74,6 +74,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Lista&#160;de&#160;clases</span></a></li>
       <li><a href="classes.html"><span>Índice&#160;de&#160;clases</span></a></li>
+      <li><a href="hierarchy.html"><span>Jerarquía&#160;de&#160;la&#160;clase</span></a></li>
       <li><a href="functions.html"><span>Miembros&#160;de&#160;las&#160;clases</span></a></li>
     </ul>
   </div>
@@ -220,7 +221,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Constructor de un cuaternión nulo. </p>
-<p>Construye un cuaternión cuyas componentes son nulas. <img class="formulaInl" alt="$q=0+0i+0j+0k$" src="form_4.png"/> </p>
+<p>Construye un cuaternión cuyas componentes son nulas. <img class="formulaInl" alt="$q=0+0i+0j+0k$" src="form_0.png"/> </p>
 
 </div>
 </div>
@@ -262,7 +263,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Constructor de un cuaternión arbitrario. </p>
-<p>Construye un cuaternión cuyas componentes son las especificadas. <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_5.png"/> </p>
+<p>Construye un cuaternión cuyas componentes son las especificadas. <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_1.png"/> </p>
 
 </div>
 </div>
@@ -282,7 +283,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Constructor copia de un cuaternión a partir de un vector. </p>
-<p>Construye un cuaternión cuyas componentes imaginarias son las componentes del vector especificado. <img class="formulaInl" alt="$v=x\vec{i}+y\vec{j}+z\vec{k}\rightarrow q=xi+yj+zk$" src="form_6.png"/> </p>
+<p>Construye un cuaternión cuyas componentes imaginarias son las componentes del vector especificado. <img class="formulaInl" alt="$v=x\vec{i}+y\vec{j}+z\vec{k}\rightarrow q=xi+yj+zk$" src="form_2.png"/> </p>
 
 </div>
 </div>
@@ -302,7 +303,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve el módulo del cuaternión. </p>
-<p>Función que devuelve el módulo/norma del cuaternión. Dado un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_5.png"/>, el módulo del cuaternión es el resultado de la operación: <img class="formulaInl" alt="$||q||=\sqrt{w^2+x^2+y^2+z^2}$" src="form_19.png"/> </p>
+<p>Función que devuelve el módulo/norma del cuaternión. Dado un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_1.png"/>, el módulo del cuaternión es el resultado de la operación: <img class="formulaInl" alt="$||q||=\sqrt{w^2+x^2+y^2+z^2}$" src="form_12.png"/> </p>
 
 </div>
 </div>
@@ -342,7 +343,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve el producto de cuaternión por un escalar. </p>
-<p>Operador de aritmético binario. Devuelve el producto de un cuaternión por un número escalar. Dado un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_5.png"/> y un escalar <img class="formulaInl" alt="$a$" src="form_12.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=qa=(wa)+(xa)i+(ya)j+(za)k$" src="form_16.png"/> </p>
+<p>Operador de aritmético binario. Devuelve el producto de un cuaternión por un número escalar. Dado un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_1.png"/> y un escalar <img class="formulaInl" alt="$a$" src="form_8.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=qa=(wa)+(xa)i+(ya)j+(za)k$" src="form_10.png"/> </p>
 
 </div>
 </div>
@@ -362,7 +363,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve el producto de Hamilton de dos cuaterniones. </p>
-<p>Operador de aritmético binario. Devuelve el producto de Hamilton de dos cuaterniones. Dados dos cuaterniones <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_8.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_9.png"/> esta función devuelve el cuaternión resultado de realizar el producto de Hamilton <img class="formulaInl" alt="$q'=q_1q_2=(w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2) + (x_1w_2 + w_1x_2 - z_1y_2 + y_1z_2)i + (y_1w_2 + z_1x_2 + w_1y_2 - x_1z_2)j + (z_1w_2 - y_1x_2 + x_1y_2 + w_1z_2)k $" src="form_18.png"/> </p>
+<p>Operador de aritmético binario. Devuelve el producto de Hamilton de dos cuaterniones. Dados dos cuaterniones <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_4.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_5.png"/> esta función devuelve el cuaternión resultado de realizar el producto de Hamilton <img class="formulaInl" alt="$q'=q_1q_2=(w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2) + (x_1w_2 + w_1x_2 - z_1y_2 + y_1z_2)i + (y_1w_2 + z_1x_2 + w_1y_2 - x_1z_2)j + (z_1w_2 - y_1x_2 + x_1y_2 + w_1z_2)k $" src="form_11.png"/> </p>
 
 </div>
 </div>
@@ -402,7 +403,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve la suma del cuaternión original y el cuaternión especificado. </p>
-<p>Operador de aritmético binario. Devuelve la suma del cuaternión original y el cuaternión especificado. Dado <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_8.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_9.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=q_1+q_2=(w_1+w_2)+(x_1+x_2)i+(y_1+y_2)j+(z_1+z_2)k$" src="form_10.png"/> </p>
+<p>Operador de aritmético binario. Devuelve la suma del cuaternión original y el cuaternión especificado. Dado <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_4.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_5.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=q_1+q_2=(w_1+w_2)+(x_1+x_2)i+(y_1+y_2)j+(z_1+z_2)k$" src="form_6.png"/> </p>
 
 </div>
 </div>
@@ -441,7 +442,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve el negativo del cuaternión. </p>
-<p>Operador unario que devuelve un cuaternión cuyas componentes son las negativas del cuaternión original. Dado <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_5.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=-w-xi-yj-zk$" src="form_7.png"/> </p>
+<p>Operador unario que devuelve un cuaternión cuyas componentes son las negativas del cuaternión original. Dado <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_1.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=-w-xi-yj-zk$" src="form_3.png"/> </p>
 
 </div>
 </div>
@@ -461,7 +462,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve la resta del cuaternión original y el cuaternión especificado. </p>
-<p>Operador de aritmético binario. Devuelve la resta del cuaternión original y el cuaternión especificado. Dado <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_8.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_9.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=q_1+q_2=(w_1-w_2)+(x_1-x_2)i+(y_1-y_2)j+(z_1-z_2)k$" src="form_11.png"/> </p>
+<p>Operador de aritmético binario. Devuelve la resta del cuaternión original y el cuaternión especificado. Dado <img class="formulaInl" alt="$q_1=w_1+x_1i+y_1j+z_1k$" src="form_4.png"/> y <img class="formulaInl" alt="$q_2=w_2+x_2i+y_2j+z_2k$" src="form_5.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=q_1+q_2=(w_1-w_2)+(x_1-x_2)i+(y_1-y_2)j+(z_1-z_2)k$" src="form_7.png"/> </p>
 
 </div>
 </div>
@@ -552,7 +553,7 @@ Amigas</h2></td></tr>
 <div class="memdoc">
 
 <p>Devuelve el producto de un numero escalar por el cuaternión original. </p>
-<p>Operador de aritmético binario. Devuelve el producto de un número escalar por el cuaternión original. Dado un escalar <img class="formulaInl" alt="$a$" src="form_12.png"/> y un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_5.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=aq=(aw)+(ax)i+(ay)j+(az)k$" src="form_15.png"/> </p>
+<p>Operador de aritmético binario. Devuelve el producto de un número escalar por el cuaternión original. Dado un escalar <img class="formulaInl" alt="$a$" src="form_8.png"/> y un cuaternión <img class="formulaInl" alt="$q=w+xi+yj+zk$" src="form_1.png"/> esta función devuelve el cuaternión <img class="formulaInl" alt="$q'=aq=(aw)+(ax)i+(ay)j+(az)k$" src="form_9.png"/> </p>
 
 </div>
 </div>
@@ -577,7 +578,7 @@ Amigas</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generado el Jueves, 24 de Octubre de 2013 23:26:53 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
+Generado el Miércoles, 30 de Octubre de 2013 12:45:19 para youbot-xsens-controller por &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

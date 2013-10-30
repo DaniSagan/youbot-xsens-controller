@@ -1,20 +1,17 @@
-\form#0:$\frac{m}{s^2}$
-\form#1:$\frac{rad}{s}$
-\form#2:$\mbox{m/s}^2$
-\form#3:$\mbox{rad/s}$
-\form#4:$q=0+0i+0j+0k$
-\form#5:$q=w+xi+yj+zk$
-\form#6:$v=x\vec{i}+y\vec{j}+z\vec{k}\rightarrow q=xi+yj+zk$
-\form#7:$q'=-w-xi-yj-zk$
-\form#8:$q_1=w_1+x_1i+y_1j+z_1k$
-\form#9:$q_2=w_2+x_2i+y_2j+z_2k$
-\form#10:$q'=q_1+q_2=(w_1+w_2)+(x_1+x_2)i+(y_1+y_2)j+(z_1+z_2)k$
-\form#11:$q'=q_1+q_2=(w_1-w_2)+(x_1-x_2)i+(y_1-y_2)j+(z_1-z_2)k$
-\form#12:$a$
-\form#13:$q'=a*q=aw+axi+ayj+azk$
-\form#14:$q'=aq=aw+axi+ayj+azk$
-\form#15:$q'=aq=(aw)+(ax)i+(ay)j+(az)k$
-\form#16:$q'=qa=(wa)+(xa)i+(ya)j+(za)k$
-\form#17:$q'=q_1q_2=(w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2) + (x_1w_2 + w_1x_2 - z_1y_2 + y_1z_2)i + (y_1w_2 + z_1x_2 + w_1y_2 - x_1z_2)j + (z_1w_2 - y_1x_2 + x_1y_2 + w_1z_2)k$
-\form#18:$q'=q_1q_2=(w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2) + (x_1w_2 + w_1x_2 - z_1y_2 + y_1z_2)i + (y_1w_2 + z_1x_2 + w_1y_2 - x_1z_2)j + (z_1w_2 - y_1x_2 + x_1y_2 + w_1z_2)k $
-\form#19:$||q||=\sqrt{w^2+x^2+y^2+z^2}$
+\form#0:$q=0+0i+0j+0k$
+\form#1:$q=w+xi+yj+zk$
+\form#2:$v=x\vec{i}+y\vec{j}+z\vec{k}\rightarrow q=xi+yj+zk$
+\form#3:$q'=-w-xi-yj-zk$
+\form#4:$q_1=w_1+x_1i+y_1j+z_1k$
+\form#5:$q_2=w_2+x_2i+y_2j+z_2k$
+\form#6:$q'=q_1+q_2=(w_1+w_2)+(x_1+x_2)i+(y_1+y_2)j+(z_1+z_2)k$
+\form#7:$q'=q_1+q_2=(w_1-w_2)+(x_1-x_2)i+(y_1-y_2)j+(z_1-z_2)k$
+\form#8:$a$
+\form#9:$q'=aq=(aw)+(ax)i+(ay)j+(az)k$
+\form#10:$q'=qa=(wa)+(xa)i+(ya)j+(za)k$
+\form#11:$q'=q_1q_2=(w_1w_2 - x_1x_2 - y_1y_2 - z_1z_2) + (x_1w_2 + w_1x_2 - z_1y_2 + y_1z_2)i + (y_1w_2 + z_1x_2 + w_1y_2 - x_1z_2)j + (z_1w_2 - y_1x_2 + x_1y_2 + w_1z_2)k $
+\form#12:$||q||=\sqrt{w^2+x^2+y^2+z^2}$
+\form#13:$\frac{m}{s^2}$
+\form#14:$\frac{rad}{s}$
+\form#15:$\mbox{m/s}^2$
+\form#16:$\mbox{rad/s}$

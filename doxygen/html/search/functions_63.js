@@ -43,7 +43,7 @@ var searchData=
   ['containstemp',['containsTemp',['../classxsens_1_1Packet.html#a16acb733d30cf9f92a932e0fc1219375',1,'xsens::Packet']]],
   ['containsutctime',['containsUtcTime',['../classxsens_1_1Packet.html#a28d53d5969ead11c4313dde53d5fc762',1,'xsens::Packet']]],
   ['containsvelocity',['containsVelocity',['../classxsens_1_1Packet.html#a81915ae2bda08491e930dcace46fe792',1,'xsens::Packet']]],
-  ['count',['count',['../classxsens_1_1List.html#a430ba09ad069373d9e92b0b92b10546b',1,'xsens::List']]],
+  ['count',['Count',['../classdfv_1_1XsensListener.html#ac7c7c4298be9812ce8bc4948a71ffe2b',1,'dfv::XsensListener::Count()'],['../classxsens_1_1List.html#a430ba09ad069373d9e92b0b92b10546b',1,'xsens::List::count()']]],
   ['create',['create',['../classxsens_1_1Cmt1f.html#afe9e7fd93967527fcabfdc0e248f9acc',1,'xsens::Cmt1f::create(const char *filename)'],['../classxsens_1_1Cmt1f.html#ae45a131665d3f94c209d51bdb382425c',1,'xsens::Cmt1f::create(const wchar_t *filename)'],['../classxsens_1_1Cmt2f.html#a5c4844e3bcf4bb897e902bf4caa7659c',1,'xsens::Cmt2f::create(const char *filename)'],['../classxsens_1_1Cmt2f.html#a182ff3dc4af83a61907468422e5c6c36',1,'xsens::Cmt2f::create(const wchar_t *filename)']]],
   ['createlogfile',['createLogFile',['../classxsens_1_1Cmt3.html#a8c539705b75ecde21bfa9f53fb861075',1,'xsens::Cmt3::createLogFile(const char *filename, bool startLogging=false)'],['../classxsens_1_1Cmt3.html#a5d1a972bd423e858175d7b0de1f92b54',1,'xsens::Cmt3::createLogFile(const wchar_t *filename, bool startLogging=false)']]]
 ];

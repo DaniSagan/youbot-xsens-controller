@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['cmodel',['CModel',['../classgazebo_1_1CModel.html',1,'gazebo']]],
-  ['cmodellist',['CModelList',['../classgazebo_1_1CModelList.html',1,'gazebo']]],
   ['cmt1f',['Cmt1f',['../classxsens_1_1Cmt1f.html',1,'xsens']]],
   ['cmt1s',['Cmt1s',['../classxsens_1_1Cmt1s.html',1,'xsens']]],
   ['cmt2f',['Cmt2f',['../classxsens_1_1Cmt2f.html',1,'xsens']]],
@@ -29,5 +27,6 @@ var searchData=
   ['cmtsyncoutsettings',['CmtSyncOutSettings',['../structCmtSyncOutSettings.html',1,'']]],
   ['cmtutctime',['CmtUtcTime',['../structCmtUtcTime.html',1,'']]],
   ['cmtvector',['CmtVector',['../structCmtVector.html',1,'']]],
-  ['cmtversion',['CmtVersion',['../structCmtVersion.html',1,'']]]
+  ['cmtversion',['CmtVersion',['../structCmtVersion.html',1,'']]],
+  ['controller',['Controller',['../classController.html',1,'']]]
 ];

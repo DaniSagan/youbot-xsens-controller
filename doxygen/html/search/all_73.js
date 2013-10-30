@@ -1,9 +1,9 @@
 var searchData=
 [
   ['sensor',['Sensor',['../classxsens_1_1Sensor.html',1,'xsens']]],
-  ['sensorsubscriber',['SensorSubscriber',['../classdfv_1_1SensorSubscriber.html',1,'dfv']]],
-  ['sensorsubscriber',['SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#a7596701a0faf0144e9c52cb09a92de86',1,'dfv::SensorSubscriber']]],
   ['sensorsubscriber',['SensorSubscriber',['../classxsens_1_1SensorSubscriber.html',1,'xsens']]],
+  ['sensorsubscriber',['SensorSubscriber',['../classdfv_1_1SensorSubscriber.html#a7596701a0faf0144e9c52cb09a92de86',1,'dfv::SensorSubscriber']]],
+  ['sensorsubscriber',['SensorSubscriber',['../classdfv_1_1SensorSubscriber.html',1,'dfv']]],
   ['sensorsubscriberlist',['SensorSubscriberList',['../classxsens_1_1SensorSubscriberList.html',1,'xsens']]],
   ['setbaudrate',['setBaudrate',['../classxsens_1_1Cmt3.html#a078e78847110f58bf2ccd0cfb4a6db8c',1,'xsens::Cmt3']]],
   ['setbluetoothstate',['setBluetoothState',['../classxsens_1_1Cmt3.html#a2c3b390662d41fa22eff650c882e3ac7',1,'xsens::Cmt3']]],

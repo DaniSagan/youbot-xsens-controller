@@ -7,5 +7,7 @@ var searchData=
   ['appenddeepcopy',['appendDeepCopy',['../classxsens_1_1List.html#a281f422db0c020845ff40f15dcd0fb47',1,'xsens::List']]],
   ['appendlist',['appendList',['../classxsens_1_1List.html#a9a8b7423cfb353aa98634622a8f7e2b8',1,'xsens::List']]],
   ['appendrelated',['appendRelated',['../classxsens_1_1List.html#af0f325e48e5aea053766f028bae9671b',1,'xsens::List']]],
-  ['appendshallowcopy',['appendShallowCopy',['../classxsens_1_1List.html#a08ccba42ccb4d17099ef7c0a225b17b5',1,'xsens::List']]]
+  ['appendshallowcopy',['appendShallowCopy',['../classxsens_1_1List.html#a08ccba42ccb4d17099ef7c0a225b17b5',1,'xsens::List']]],
+  ['arm',['Arm',['../classdfv_1_1Arm.html',1,'dfv']]],
+  ['armcontroller',['ArmController',['../classArmController.html',1,'']]]
 ];
