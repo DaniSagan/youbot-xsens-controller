@@ -2,20 +2,24 @@
 #define CONTROLLER_H
 
 #include <vector>
+#include <dfv/dfv.h>
 
 class Controller
 {
 public:
-    Controller();
+    Controller(dfv::XsensListener& sensors_, dfv::Youbot& youbot_);
     ~Controller();
     
-    virtual void Update(std::vector<dfv::Quaternion> links_ori);
-    std::vector<double> GetState() const;
-    unsigned int GetTicks() const;
+    virtual bool OnInit();
+    virtual std::vector<float> OnUpdate();
+    std::vector<float> GetState() const;
+    unsigned int GetFrame() const;
     
 protected:    
-    std::vector<double> state;
-    unsigned int ticks;
+    std::vector<float> state;
+    unsigned int frame;
+    dfv::XsensListener& sensors;
+    dfv::Youbot& youbot;
 };
 
 

@@ -3,20 +3,20 @@
 
 #include <vector>
 #include <dfv/dfv.h>
+#include "youbot_controller/controller.h"
 
-class ArmController
+class ArmController: public Controller
 {
 public:
-    ArmController();
+    ArmController(dfv::XsensListener& sensors_, dfv::Youbot& youbot_);
     ~ArmController();
     
-    void Update(dfv::Quaternion arm_ori,
-                dfv::Quaternion forearm_ori,
-                dfv::Quaternion hand_ori);
-    std::vector<double> GetState();
+    bool OnInit();
+    std::vector<float> OnUpdate();
+    std::vector<float> GetAngles();
     
-private:
-    std::vector<double> state;
+protected:
+    float ang_0_offset;
 };
 
 #endif

@@ -30,7 +30,7 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 #target_link_libraries(example ${PROJECT_NAME})
 
 #rosbuild_add_executable(youbot_controller src/youbot.cpp src/control.cpp src/youbot_controller.cpp)
-rosbuild_add_executable(youbot_controller src/youbot_controller.cpp)
+rosbuild_add_executable(youbot_controller src/controller.cpp src/arm_controller.cpp src/base_controller.cpp src/youbot_controller.cpp)
 #rosbuild_add_executable(test_example src/example.cpp)
 target_link_libraries(youbot_controller dfv)
 

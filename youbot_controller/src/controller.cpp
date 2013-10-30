@@ -1,6 +1,8 @@
 #include "youbot_controller/controller.h"
 
-Controller::Controller()
+Controller::Controller(dfv::XsensListener& sensors_, dfv::Youbot& youbot_):
+    sensors(sensors_),
+    youbot(youbot_)
 {
 }
 
@@ -8,17 +10,23 @@ Controller::~Controller()
 {
 }
 
-void Update(std::vector<dfv::Quaternion> links_ori)
+bool Controller::OnInit()
 {
-    this->ticks++;
+    return true;
 }
 
-std::vector<double> GetState() const;
+std::vector<float> Controller::OnUpdate()
+{
+    this->frame++;
+    return this->state;
+}
+
+std::vector<float> Controller::GetState() const
 {
     return this->state;
 }
 
-unsigned int GetTicks() const
+unsigned int Controller::GetFrame() const
 {
-    return this->ticks;
+    return this->frame;
 }
